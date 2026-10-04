@@ -1,0 +1,12 @@
+paper_id,verification_date,verified_source,scope_role,limitations_for_this_project
+KANG2023,2026-10-05,Publisher-hosted PDF,blind dream corpus/replication anchor,One congenital group and keyword approach; does not include BLV waking intent or contemporary AI outputs.
+ILIC2023,2026-10-05,PubMed Central,systematic dream/imagery context,Review; does not compare dream evidence with accessibility corpora.
+MEAIDI2014,2026-10-05,PubMed,controlled dream evidence,Participant questionnaire data cannot be converted to per-dream corpus estimates.
+VANDERHEIJDEN2024,2026-10-05,PubMed and publisher metadata,general multisensory-dream measurement context,Not a blindness or AI accessibility study.
+KREISS2022,2026-10-05,ACL Anthology,BLV preference/context baseline,No dream evidence and not contemporary generative-AI corpus comparison.
+MOHANBABU2024,2026-10-05,Author manuscript plus ACM DOI metadata,generative context-aware description baseline,Small user study; no blind-dream layer or shared cross-domain ontology.
+KAPUR2024,2026-10-05,ACL Anthology,BLV preference/metric-bias baseline,Evaluates metrics/preferences, not dream phenomenology or AI sensory exposure distributions.
+XIE2025,2026-10-05,Open author manuscript/PMC plus ACM DOI metadata,lived LMM accessibility use baseline,Interviews and description analysis; no blind-dream layer or common cross-domain corpus audit.
+KARMOLEGKOU2025,2026-10-05,ACL Anthology,MLLM evaluation baseline,No blind-dream phenomenology or BLV-originating intent corpus alignment.
+SCENESCOUT2025,2026-10-05,Publisher research page,navigation MLLM user-study baseline,Task-specific navigation system; no dream or broad sensory ontology.
+GUIDEDOG2026,2026-10-05,ACL Anthology,AI/human-verified guidance corpus baseline,No blind dream or BLV question corpus; dataset release/use terms still require Phase 3 verification.

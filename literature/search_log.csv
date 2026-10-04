@@ -1,0 +1,10 @@
+search_id,search_date,source,exact_query,filters_or_scope,result_count,status,screening_note
+S001,2026-10-05,web scholarly index,"blind dreams congenital blindness dream phenomenology sensory content mental imagery review",none,NOT_REPORTED,completed,Used for dream-phenomenology and imagery candidates.
+S002,2026-10-05,web scholarly index,"blind dreams artificial intelligence OR assistive AI",none,NOT_REPORTED,completed,No directly relevant joint empirical study identified in screened results.
+S003,2026-10-05,web scholarly index,"blind low vision large multimodal models image descriptions user preferences CHI 2025",none,NOT_REPORTED,completed,Used for BLV LMM and description-evaluation candidates.
+S004,2026-10-05,web scholarly index,"blindness dream phenomenology artificial intelligence",none,NOT_REPORTED,completed,Used as a direct novelty-threat search.
+S005,2026-10-05,PubMed,"sensory construction dreams blindness Meaidi 2014",none,1,completed,Verified controlled dream study metadata and abstract.
+S006,2026-10-05,ACL Anthology,"BLV image description preferences accessibility",none,NOT_REPORTED,completed,Verified ACL/EMNLP/Workshop accessibility papers.
+S007,2026-10-05,ACM and author open pages,"Beyond Visual Perception smartphone interaction visually impaired large multimodal models",none,NOT_REPORTED,completed,Verified CHI 2025 paper identity via author manuscript and indexed ACM DOI.
+S008,2026-10-05,ACM and author open pages,"Context-Aware Image Descriptions Web Accessibility Mohanbabu Pavel",none,NOT_REPORTED,completed,Verified ASSETS 2024 paper identity and study summary.
+S009,2026-10-05,ACL Anthology,"GuideDog accessibility-aware guidance",none,1,completed,Verified 2026 ACL long paper and dataset characteristics.

@@ -1,0 +1,22 @@
+# Private, author-identifying material. Never include in anonymous review packages.
+/private/
+
+# The supplied governing brief contains post-review author information. The
+# anonymous, distribution-safe protocol is PROTOCOL.md.
+/CHI2027_Blind_Dreams_AI_Research_Guide.md
+
+# Raw and derived research data are acquired and reproduced by documented scripts;
+# retain only manifests and small, explicitly approved fixtures in version control.
+/data/**/raw/
+/data/**/processed/
+
+# Local environments and rendered build artifacts.
+.venv/
+__pycache__/
+*.py[cod]
+/paper/**/build/
+/paper/**/*.aux
+/paper/**/*.bbl
+/paper/**/*.blg
+/paper/**/*.log
+/paper/**/*.out
