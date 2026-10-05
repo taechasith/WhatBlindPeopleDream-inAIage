@@ -1,6 +1,6 @@
 # Study 1 non-human model-candidate evaluation
 
-**Status:** `SMOLVLM2_REJECTED_PREEXPOSURE; ALTERNATIVE_CANDIDATE_REQUIRED`  
+**Status:** `SMOLVLM2_REJECTED_PREEXPOSURE; NO_REPLACEMENT_OUTPUT_AVAILABLE`
 **Date:** 2026-10-05
 
 ## Candidate evaluated
@@ -33,3 +33,12 @@ The original candidate artifact, command, environment, output, and audit are
 retained privately to prevent selection-history loss. A replacement must repeat
 the same deterministic generation and fail-closed grounding screen before it can
 be considered for ethics materials or final system freeze.
+
+## Replacement status
+
+The pinned Qwen2.5-VL candidate artifact was locally checksum-verified, but two
+CPU-only generation attempts were intentionally stopped before a complete output
+file was written. No Qwen text was inspected, screened, selected, or exposed.
+The reason is computational feasibility in the present local execution window,
+not a finding about model quality. A complete deterministic run on suitable
+hardware remains a required pre-exposure technical gate.

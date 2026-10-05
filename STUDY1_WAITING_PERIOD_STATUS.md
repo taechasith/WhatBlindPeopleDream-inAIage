@@ -39,10 +39,11 @@ and complete coding/analysis specifications.
 Four non-identifying v2 vector scenes, marker inventories, and prototype-only
 matching materials exist. They are not cleared for exposure. A local pinned
 model candidate and common local TTS candidate are recorded in
-`MODEL_PROVENANCE.md`; candidate generation is non-human only. Final DAI/SAI
-transcripts, output/audio hashes, independent grounding and safety/content
-audit, final source-license confirmation, and institutional governance review
-remain pending. No participant has received an AI output.
+`MODEL_PROVENANCE.md`; no complete replacement-model output has been written
+after two bounded CPU-only technical attempts. Final DAI/SAI transcripts,
+output/audio hashes, independent grounding and safety/content audit, final
+source-license confirmation, and institutional governance review remain pending.
+No participant has received an AI output.
 
 ## COLLECTION, CODING, AND ANALYSIS
 

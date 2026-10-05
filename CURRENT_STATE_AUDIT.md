@@ -32,9 +32,10 @@ not a claim of completed human-subject research.
 ## PARTIAL
 
 - Final Study 1 exposure system: SmolVLM2 was rejected after its non-human
-  grounding screen. A pinned Qwen2.5-VL candidate is undergoing the same
-  deterministic, local, non-human generation and fail-closed lexical screen.
-  No candidate is approved for participant exposure.
+  grounding screen. A pinned Qwen2.5-VL artifact is verified, but no complete
+  local CPU-only candidate output was written during two bounded technical
+  attempts. A deterministic run on suitable hardware and the same fail-closed
+  review are still required. No candidate is approved for participant exposure.
 - Final DAI / SAI / HUM / ANC scripts and audio: prototype materials support
   matching analysis, but final transcripts, speech renders, hashes, and
   independent factual/accessibility review remain prospective requirements.

@@ -1,6 +1,6 @@
 # Study 1 model provenance
 
-**Status:** `SMOLVLM2_REJECTED_AFTER_NONHUMAN_GROUNDING_SCREEN; REPLACEMENT_REQUIRED`  
+**Status:** `SMOLVLM2_REJECTED_AFTER_NONHUMAN_GROUNDING_SCREEN; NO_REPLACEMENT_OUTPUT_AVAILABLE`
 **Scope:** non-human pre-collection preparation only
 
 ## Rejected reproducible candidate system
@@ -38,7 +38,7 @@ environment remains separately documented in `requirements.txt`.
 | Terms recorded at acquisition | Apache-2.0 |
 | Artifact verification | All 16 remote repository files checksum-matched in the local cache; downloader sidecars are expected local extras |
 | Candidate generator | `code/generate_study1_qwen_candidates.py` |
-| Status | `PENDING_NONHUMAN_OUTPUT_AND_GROUNDING_SCREEN`; not selected for exposure |
+| Status | `NO_CANDIDATE_OUTPUT_WRITTEN`; not selected for exposure |
 
 The replacement is evaluated with the same original rendered scenes, frozen
 default prompt, deterministic decoding, word-range screen, marker-coverage
@@ -48,14 +48,17 @@ substitute for passing those checks.
 ### Candidate-generation attempt history
 
 The first local Qwen attempt was stopped before it wrote any candidate output
-after it exposed an unbounded/underutilized CPU-thread configuration. Its
-private stdout/stderr are retained as a terminated technical attempt, not
-screen results. The replacement run starts from the same immutable artifact and
-prompt, with `cpu_threads=16` recorded in its candidate manifest and
-`max_new_tokens=120`. These are pre-output computational settings, not changes
-to participant materials, a model-selection result, or a protocol amendment.
-Any text produced by the replacement still requires the same fail-closed lexical
-and independent grounding reviews.
+after it exposed an unbounded/underutilized CPU-thread configuration. A second,
+bounded run from the same immutable artifact and prompt used `cpu_threads=16`
+and `max_new_tokens=120`; it too was stopped before writing an output, rather
+than leaving a sustained CPU-only job running without an execution window. Both
+private stdout/stderr logs are retained as terminated technical attempts, not
+screen results. These are pre-output computational settings, not changes to
+participant materials, a model-selection result, or a protocol amendment.
+
+An appropriately resourced, deterministic run must produce a complete
+candidate-output artifact before the lexical and independent grounding reviews
+can occur. No replacement model is frozen and no participant-facing text exists.
 
 ## What this does and does not freeze
 
