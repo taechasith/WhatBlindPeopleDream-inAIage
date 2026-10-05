@@ -1,0 +1,3 @@
+status,coverage,statistics,interpretation
+PENDING_HUMAN_CODER,"5,050 items prepared for independent double coding","NOT_ESTIMABLE","No completed independent human labels; no kappa or alpha calculated."
+AUTOMATED_CANDIDATE,"25,251 corpus items","NOT_HUMAN_RELIABILITY","Deterministic lexical rules used only for exploratory diagnostics."
