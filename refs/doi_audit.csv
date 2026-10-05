@@ -1,0 +1,10 @@
+paper_id,doi,doi_resolution_source,title_verified,year_verified,venue_verified,peer_review_status,classification,verification_date,status,notes
+KANG2023,10.3390/brainsci13101394,publisher_pdf,yes,yes,yes,peer_reviewed,journal_article,2026-10-05,PASS,Direct DreamBank analysis.
+MEAIDI2014,10.1016/j.sleep.2013.12.008,PubMed,yes,yes,yes,peer_reviewed,journal_article,2026-10-05,PASS,Participant-level prompted dream study.
+VANDERHEIJDEN2024,10.3390/brainsci14060533,PubMed_and_publisher,yes,yes,yes,peer_reviewed,journal_article,2026-10-05,PASS,General multisensory-dream measurement context.
+BLINDREAM2025,10.1371/journal.pone.0327521,PLOS,yes,yes,yes,peer_reviewed,protocol,2026-10-05,PASS,Do not use as completed outcome evidence.
+MOHANBABU2024,10.1145/3663548.3675658,author_manuscript_and_index,yes,yes,yes,peer_reviewed,conference_article,2026-10-05,PASS,ASSETS study.
+XIE2025,10.1145/3706598.3714210,open_author_manuscript_and_index,yes,yes,yes,peer_reviewed,conference_article,2026-10-05,PASS,CHI study.
+KAPUR2024,10.18653/v1/2024.nlp4pi-1.26,ACL_Anthology,yes,yes,yes,peer_reviewed_workshop,workshop_article,2026-10-05,PASS,Use with workshop-status disclosure.
+GUIDEDOG2026,10.18653/v1/2026.acl-long.251,ACL_Anthology,yes,yes,yes,peer_reviewed,conference_article,2026-10-05,PASS,ACL long paper.
+HE2026,10.18653/v1/2026.acl-long.673,ACL_Anthology,yes,yes,yes,peer_reviewed,conference_article,2026-10-05,PASS,No dream/longitudinal claim.
