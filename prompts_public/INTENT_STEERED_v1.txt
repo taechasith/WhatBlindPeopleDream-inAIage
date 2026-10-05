@@ -1,0 +1,6 @@
+The user asked: "{blv_question}"
+
+Answer this question using the image, then describe only information relevant to
+answering it. State uncertainty when information is not visible or reliable. Do
+not infer identity, demographic attributes, relationships, emotions, intentions,
+or facts not visibly supported.

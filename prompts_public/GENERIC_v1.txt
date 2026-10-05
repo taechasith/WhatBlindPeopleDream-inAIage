@@ -1,0 +1,4 @@
+Describe the image for a person who cannot see it. State only information you
+can support from the image. If important information is uncertain or unreadable,
+say so. Do not infer identity, demographic attributes, relationships, emotions,
+intentions, or facts not visibly supported.

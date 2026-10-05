@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "status": "EXAMPLE_ONLY_NOT_A_MODEL_FREEZE",
+  "models": [
+    {
+      "model_id": "REPLACE_WITH_STABLE_MODEL_ID",
+      "provider_or_checkpoint": "REPLACE_WITH_PROVIDER_OR_CHECKPOINT",
+      "immutable_revision": "REPLACE_WITH_COMMIT_OR_VERSION",
+      "license": "REPLACE_WITH_LICENSE",
+      "runtime": "REPLACE_WITH_RUNTIME_AND_VERSION",
+      "hardware": "REPLACE_WITH_HARDWARE",
+      "decoding": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_new_tokens": 256,
+        "seed": "RECORD_IF_SUPPORTED"
+      },
+      "image_preprocessing": "RECORD_EXACT_POLICY",
+      "execution_command": "DOCUMENT_COMMAND_WITHOUT_SECRETS",
+      "authorized_use_confirmed": false
+    }
+  ]
+}

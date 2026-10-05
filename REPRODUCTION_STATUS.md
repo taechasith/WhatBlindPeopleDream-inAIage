@@ -1,6 +1,6 @@
 # Reproduction status
 
-**Checked:** 2026-10-05 (Asia/Bangkok)  
+**Checked:** 2026-10-06 (Asia/Bangkok)
 **Overall status:** `PARTIAL_REPRODUCTION`
 
 `PARTIAL_REPRODUCTION` is used because raw Study 0 corpora are intentionally not
@@ -13,9 +13,9 @@ current environment.
 | Study 0 source provenance | PARTIAL_REPRODUCTION | Manifest, license register, and hashes exist for local snapshots; source data must be independently acquired under their terms. |
 | Study 0 processing | PARTIAL_REPRODUCTION | Tracked scripts name local inputs, but no clean-environment regeneration log is archived. |
 | Study 0 exploratory analysis | PARTIAL_REPRODUCTION | Aggregate outputs are tracked and labeled exploratory; completed human coding/reliability are absent. |
-| Study 1 synthetic Python/R pipeline | PARTIAL_REPRODUCTION | A labeled end-to-end synthetic dry run, schema tests, R GLMM, and session records pass locally; it is not an empirical analysis path or a clean-clone validation. |
-| Study 1 R power simulation | LOCALLY_REPRODUCED_NONEMPIRICAL | 1,000-repetition GLMM simulation at 208 allocation slots ran under R 4.6.1/lme4 2.0-6; outputs and session information are tracked. |
-| Study 1 human-data analysis | NOT_APPLICABLE | No participant data exist and no activity is authorized while ethics status is `NOT_SUBMITTED`. |
+| Active public-data source inputs | PARTIAL_REPRODUCTION | VizWiz validation images and annotations, caption annotations, Kapur ratings, frozen 1,000-item sample, and input-validation manifest are locally acquired/validated; raw content remains excluded from Git. |
+| Active public-data intervention outputs | BLOCKED_AT_MODEL_COMPUTE_GATE | No authorized frozen executable VLM/runtime exists in the current environment; no intervention output or outcome has been generated. |
+| Future human-study synthetic pipeline | HISTORICAL_NONEMPIRICAL | Isolated under `future_human_study/`; no participant data exist. |
 | Anonymous review export | PARTIAL_REPRODUCTION | An allowlisted, non-writing checker is supplied; final archive, PDF, and link review have not occurred. |
 
 No component may be described as `CLEAN_REPRODUCTION_PASSED` until a fresh,

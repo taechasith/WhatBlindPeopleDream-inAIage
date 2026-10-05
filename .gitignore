@@ -1,5 +1,6 @@
 # Private, author-identifying material. Never include in anonymous review packages.
 /private/
+/future_human_study/private/
 
 # The supplied governing brief contains post-review author information. The
 # anonymous, distribution-safe protocol is PROTOCOL.md.
@@ -10,6 +11,8 @@
 /data/**/raw/
 /data/**/processed/
 /data/study0/annotation/
+/future_human_study/data/**/raw/
+/future_human_study/data/**/processed/
 
 # Local environments and rendered build artifacts.
 .venv/
@@ -25,3 +28,4 @@ __pycache__/
 # Transient console captures; named, machine-readable result artifacts are kept.
 /results/*_run_stdout.log
 /results/*_run_stderr.log
+/results/public_intervention_synthetic/

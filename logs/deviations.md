@@ -124,3 +124,23 @@ status.
   system from entering the prospective protocol.
 - **Person/agent making change:** autonomous research execution agent under the
   protocol-amendment rule.
+
+## 2026-10-06 -- Supersede current CHI human-study path with a public-data-only protocol
+
+- **Original plan:** The active CHI submission path included a prospective
+  human dream-incorporation experiment after ethics approval.
+- **New plan:** The current submission instead uses a public-data-only,
+  within-item computational intervention with released VizWiz image-question
+  pairs. Dream reports are a historical sensory-expression reference, not an
+  AI-exposure outcome. The former human protocol is retained under
+  `future_human_study/` for separately approved future work.
+- **Reason:** The new question identifies observable human-to-AI information
+  grounding while avoiding unsupported causal claims about cognition or dreams
+  and the recruitment/ethics dependency of the former path.
+- **Relevant results already seen:** Yes. Study 0 exploratory automated-label
+  results and non-human model-candidate tests had been seen. No new
+  computational-intervention output exists; the new protocol does not elevate
+  prior results to confirmatory evidence.
+- **Confirmatory/exploratory status:** The new intervention is prospectively
+  specified in `PROTOCOL_PUBLIC_DATA_v2.md`; retained Study 0 outputs remain
+  exploratory.

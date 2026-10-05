@@ -24,18 +24,20 @@
   information-environment branch only; it does not test human-to-AI grounding,
   blind dreams, or a long-term cognitive pathway.
 
-## Study 1 amendment: causal-chain evidence classification
+## Active public-data scope: evidence classification
 
-The new prospective protocol is justified by converging but non-interchangeable
-evidence. The full extraction is in `STUDY1_EVIDENCE_MAP.csv`.
+The current CHI scope is a secondary analysis plus a planned computational
+prompt intervention. The prospective human-study materials are retained only in
+`future_human_study/` and are not current evidence or a source of confirmatory
+claims.
 
-| Evidence layer | What is supported | What remains untested |
+| Evidence layer | What the active scope can support | What remains untested |
 |---|---|---|
-| Sensory substitution (Ortiz 2011; Striem-Amit et al. 2012; NeuroImage 2025) | Prolonged tactile/auditory training can support learned nonvisual representations and, in particular designs/samples, altered neural recruitment/connectivity. | Ordinary AI language descriptions, dream incorporation, and any long-term AI neural effect. |
-| Accessible description (Images, Words, and Imagination 2024; Xie et al. 2025) | Descriptions can support some BLV users' internal spatial/contextual understanding; AI acts as a visual-to-language information channel with documented reliability and social-context hazards. | A uniform mental-model benefit, sleep effects, or causal cognitive change. |
-| Pre-sleep narrative (Palmieri et al. 2026; Horton and Malcolm-Smith 2023) | Narrative/learning material can sometimes be detected in subsequent dreams; task-related dreaming is associated with memory performance. | AI specificity, blind/low-vision specificity, inevitability/high prevalence, and causal memory or neural mechanisms. |
+| DreamBank blind dream reports | Historical sensory-expression distributions in the released reports under an explicit ontology. | Participants' private experience, causal effects of AI, or a universal blind sensory profile. |
+| VizWiz BLV-originating questions | Released user-originated information intent as a model-input condition. | The preferences or needs of every BLV person/context. |
+| Within-item VLM prompt intervention | Once a frozen model run exists, changes in that model's output attributable to the supplied question/accessibility prompt. | Human benefit, safety, mental representation, cognition, or dreams. |
+| Human captions and Kapur/Kreiss released ratings | Source-bounded human-description and preference reference/construct-validation evidence. | Universal ground truth or a replacement for new human evaluation. |
+| GuideDog and Xie released material | Conditional validation/ecological context within their release terms. | General prevalence or causal real-world impact. |
 
-Accordingly, the only new confirmatory inference proposed for Study 1 is
-immediate source-coded dream-report incorporation after controlled AI-mediated
-exposure. The neuroplasticity arrow remains outside the study's evidentiary
-scope.
+DreamSpace similarity is a distributional text comparison only. It is never
+evidence that an AI shares, enters, or changes cognition or dream content.

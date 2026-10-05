@@ -2,7 +2,7 @@
 
 This dictionary describes schemas used by the repository without reproducing
 source text. It is a companion to `data/MANIFEST.csv`, `data/CHECKSUMS.csv`,
-`data/LICENSES.md`, `STUDY1_DATA_DICTIONARY.md`, and
+`data/LICENSES.md`, `future_human_study/STUDY1_DATA_DICTIONARY.md`, and
 `DATA_SHARING_PLAN_FINAL.md`.
 
 ## Status vocabulary
@@ -24,6 +24,17 @@ source text. It is a companion to `data/MANIFEST.csv`, `data/CHECKSUMS.csv`,
 | `results/automated_candidate_labels.csv` | source/item identifier plus category indicators | CONTROLLED | Contains no free text, but identifiers can facilitate linkage to restricted source material. Regenerate locally rather than distribute by default. |
 | Aggregate Study 0 results | source type, category, denominators, proportions, uncertainty, status | PUBLIC | Only when marked exploratory and after the anonymous-release audit. |
 
+## Active public-data intervention schema
+
+| Dataset/file | Key fields | Classification | Notes |
+| --- | --- | --- | --- |
+| Frozen VizWiz intervention sample | `sample_row_id`, image filename, BLV question, released answers/answerability, taxonomy | DO_NOT_SHARE | Source-derived question/answer text and image linkage. Regenerate locally from the named official release. |
+| Local validation images | VizWiz filename and pixels | DO_NOT_SHARE | Used only for the frozen within-item VLM prompt intervention. Never package in a review artifact. |
+| Frozen model manifest | stable model identifier/revision, license, runtime, hardware, decoding, prompt IDs, authorization confirmation | CONTROLLED | May reveal a provider configuration or local environment; publish only a redacted, anonymity-safe version if licensing permits. |
+| Real VLM outputs | `sample_row_id`, model ID, condition, output text, prompt and manifest hashes, generation timestamp | DO_NOT_SHARE | Source-image-linked generated text. Analyze locally; distribute only vetted aggregate results. |
+| Output-validation report | output/model-manifest hashes, model count, item count, condition list | AGGREGATE_ONLY | A schema/provenance check, not a scientific result. |
+| Aggregate intervention estimates | model/condition, outcomes, effect sizes, CIs, status | PUBLIC | Only after independently supported coding/validation and anonymous-release review. |
+
 ### Study 0 processed-corpus fields
 
 | Field group | Meaning | Release handling |
@@ -43,10 +54,11 @@ source text. It is a companion to `data/MANIFEST.csv`, `data/CHECKSUMS.csv`,
 | `human_ai_mismatch`, `social_impact_matrix` | category/finding, aggregate contrast, limitations, design implication | Aggregate exploratory output; plausible consequences are not measured harm. |
 | `dream_meta_summary`, `sample_flow`, `robustness`, `reliability` | aggregate counts, subsets, status, limitations | PUBLIC only with status and non-estimable fields preserved. |
 
-## Study 1 prospective schema
+## Future human-study schema
 
-No Study 1 participant record exists. The planned analysis schema is defined in
-`STUDY1_DATA_DICTIONARY.md`; its fields have the following release rules.
+No participant record exists. The superseded planned schema is defined in
+`future_human_study/STUDY1_DATA_DICTIONARY.md`; its fields have the following
+release rules. It is retained for future work only.
 
 | Field group | Classification | Rationale |
 | --- | --- | --- |
