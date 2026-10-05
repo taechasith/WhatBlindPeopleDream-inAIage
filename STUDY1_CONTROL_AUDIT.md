@@ -15,11 +15,11 @@ and adds two exposure controls: HUM (matched human reference description) and
 ANC (matched active neutral narrative). This separates source specificity from
 the more general effects of receiving pre-sleep audio/narrative content.
 
-| Dimension | False-source foil only | v1.1 design control |
+| Dimension | False-source foil only | v2 design control |
 |---|---|---|
 | Source identity | Not delivered; cannot compare delivery source | DAI vs HUM contrasts source/output provenance; disclosure is explicit. |
 | Target semantic information | Absent by design | Scene sets carry matched marker inventories; ANC has no target markers. |
-| Description length / speech duration | Unmatched | Same TTS and 12-minute envelope; word/TTS duration logged and adjusted. |
+| Description length / speech duration | Unmatched | Same TTS and 12-minute envelope; word/TTS duration logged and audited. It is not a primary-model covariate. |
 | Lexical complexity | Unmatched | Candidate descriptions are pre-audited; readability/word statistics frozen. |
 | Emotional salience | Unmatched | Neutral-to-mild scenes/narrative matched using a preregistered rubric. |
 | Spatial detail | Unmatched | DAI/HUM scene descriptions contain matched relation inventory; ANC contains no target-scene relation. |

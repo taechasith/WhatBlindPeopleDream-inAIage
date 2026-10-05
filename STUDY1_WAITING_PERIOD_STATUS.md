@@ -2,55 +2,68 @@
 
 ## STATUS
 
-**STUDY1_READY_PENDING_ETHICS** for protocol/design, non-human materials,
-blinded coding, and synthetic pipeline work. This status does not authorize any
-human contact, recruitment, screening, consent, exposure, or data collection.
+**PRECOLLECTION_PACKAGE_PARTIAL -- ETHICS_NOT_SUBMITTED.** Study 1 is not yet
+`STUDY1_READY_PENDING_ETHICS`, because required non-human implementation gates
+remain incomplete. This status authorizes only documentation, synthetic-data,
+and other non-human preparation. It does not authorize contact, recruitment,
+screening, consent, exposure, recording, advisory engagement, or participant
+data collection.
 
-## POWER DESIGN
+## FROZEN PROSPECTIVE DESIGN
 
-Four sessions per participant; two AI nights; eight delivered target and eight
-foil units per AI night; random participant intercept; 20% missing-report and
-10% attrition planning assumptions. The provisional enrollment target is 200
-(50 Latin-square blocks), expecting 180 completions. The R GLMM diagnostic and
-Python 1,000-repetition proxy are documented in `STUDY1_POWER_ANALYSIS.md`.
-The expanded 1,000-repetition R simulation is a required final pre-recruitment
-reproducibility check, not a participant-data requirement.
+`PROTOCOL_STUDY1_v2.md` is the prospective implementation protocol. It specifies
+four home sessions, 6--8 days apart: DAI, SAI, HUM, and ANC. No target-specific
+reconstruction task occurs before sleep. The primary confirmatory outcome is
+unit-level target-versus-decoy dream incorporation in the first eligible free
+report after DAI/SAI sessions. Delayed post-report reconstruction, if retained,
+is secondary and requires ethics-approved materials.
+
+## ALLOCATION AND POWER
+
+The current balanced allocation configuration is 208 anonymous slots (13
+four-condition-by-four-stimulus blocks), rather than the superseded 200-slot
+figure. This is not an enrollment authorization. The exact 1,000-repetition
+power simulation for the v2 primary model, including missing reports, attrition,
+semantic-unit dependence, and Monte Carlo uncertainty, remains required before
+the final recruitment target and allocation file can be locked.
 
 ## PREREGISTRATION
 
-**READY AS DRAFT.** `PREREGISTRATION_STUDY1_DRAFT.md` is complete but must not
-be publicly registered until the institutional sequencing is confirmed and the
-AI-system freeze record is complete.
+**DRAFT, NOT READY TO REGISTER.** The v2-aligned draft exists, but public
+registration must wait for the institutional sequencing decision, final power
+analysis, AI/TTS output freeze, final stimuli/license audit, allocation lock,
+and complete coding/analysis specifications.
 
-## STIMULI
+## STIMULI AND AI SYSTEM
 
-Four original, non-identifying prototype vector scenes and marker inventories
-are prepared and counterbalance-ready. They are not cleared for exposure.
-Final AI and TTS outputs remain intentionally pending in
-`STUDY1_AI_SYSTEM_FREEZE_TEMPLATE.md`; no model output has been fabricated.
+Four non-identifying v2 vector scenes, marker inventories, and prototype-only
+matching materials exist. They are not cleared for exposure. A local pinned
+model candidate and common local TTS candidate are recorded in
+`MODEL_PROVENANCE.md`; candidate generation is non-human only. Final DAI/SAI
+transcripts, output/audio hashes, independent grounding and safety/content
+audit, final source-license confirmation, and institutional governance review
+remain pending. No participant has received an AI output.
 
-## CODING SYSTEM
+## COLLECTION, CODING, AND ANALYSIS
 
-**READY.** Blinded template, 0/1/2/3/9 code system, independent-coding and
-adjudication protocol, and reliability script are prepared. No human coder data
-or reliability statistic exists.
-
-## ANALYSIS DRY RUN
-
-**PASS, SYNTHETIC ONLY.** Schema validation, missingness logic, logistic
-participant-random-intercept dry run, clustered bootstrap, tables, and labeled
-figure completed. Synthetic outputs are prohibited from future empirical claims.
+The neutral dream-collection and blinded-coding documentation is prepared as
+non-deployed material. No participant report or human-coder result exists. The
+synthetic-only dry run and expanded 1,000-repetition power simulation pass the
+current infrastructure checks; neither validates the final v2 exposure system
+or replaces its required independent grounding/accessibility review. Synthetic
+outputs must never be reported as empirical results.
 
 ## ETHICS PACKET
 
-**READY FOR INSTITUTIONAL REVIEW COMPLETION.** Protocol, information sheet,
-consent, recruitment, compensation, withdrawal, privacy/recording, sensitive-
-dream, distress, AI-disclosure, accessibility, and anonymous CHI note drafts
-are indexed in `ethics/ETHICS_PACKAGE_INDEX.md`.
+The ethics package is a synchronized draft for institutional review preparation,
+not a submitted or approved application. Institution-specific contacts,
+compensation, storage/retention details, referral route, screening procedure,
+and approval conditions remain pending.
 
 ## REMAINING HARD BLOCKER
 
-**Institutional ethics determination/approval.** No human activity may begin
-until it is documented. Before first exposure, also complete the non-negotiable
-system-freeze fields and expanded R power reproducibility check; these are
-pre-exposure implementation gates, not substitutes for ethics approval.
+**Institutional ethics determination/approval** remains necessary before any
+human activity. Before that point, complete the outstanding non-human freezes
+and validation checks above. Ethics approval is not a substitute for those
+implementation gates, and completion of those gates is not a substitute for
+ethics approval.

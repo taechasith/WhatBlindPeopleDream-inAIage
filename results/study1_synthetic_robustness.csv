@@ -1,0 +1,4 @@
+data_status,analysis,n_unit_rows,estimate_type,estimate,ci95_low,ci95_high,note
+SYNTHETIC_ONLY_NOT_EMPIRICAL,PRIMARY_UNIT_LEVEL_CODE_2_OR_3,1230,target_minus_decoy_rate_bootstrap_ci,,0.03987644311748408,0.09216479895401074,Primary model is in model_terms; this rate bootstrap is a transparent diagnostic.
+SYNTHETIC_ONLY_NOT_EMPIRICAL,SENSITIVITY_AMBIGUOUS_CODE_1_AS_ABSENT,1272,target_minus_decoy_rate_bootstrap_ci,,0.039208560493903366,0.09062873278247481,Code 9 remains missing; never convert no recall to absence.
+SYNTHETIC_ONLY_NOT_EMPIRICAL,ROBUSTNESS_REPORT_LEVEL_TARGET_MINUS_DECOY,81,mean_with_participant_cluster_bootstrap_ci,0.07164902998236332,0.0402504418024833,0.09401452865096654,One target-minus-decoy rate difference per complete report pair.

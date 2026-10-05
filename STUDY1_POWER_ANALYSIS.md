@@ -1,46 +1,64 @@
-# Study 1 power analysis plan
+# Study 1 power analysis
 
-## Status
+**Status:** `NONEMPIRICAL_PLANNING_SIMULATION_COMPLETE`
+**Not an outcome analysis; no participant data exist.**
 
-`code/power_study1.R` is the authoritative simulation specification for the
-preregistered logistic mixed-effects model. It was executed locally with R 4.6.1
-and lme4. The current R grid contains 40--120 participants with 50 repetitions;
-its result must be expanded and re-run after the ethics-approved protocol locks
-the final model, stimuli, and missingness assumptions.
+## Decision
 
-`code/power_study1.py` was also executed as a fast, transparent planning proxy using
-participant-level paired rate contrasts. It simulates participant random
-intercepts and session-level missing reports, but it is not a replacement for the
-R mixed-model simulation. Its CSV outputs are planning scenarios—not empirical
-findings and not a sample-size authorization.
+The pre-ethics allocation configuration is **208 anonymous slots** (13 complete
+four-condition-by-four-stimulus counterbalance blocks). It is powered for the
+predefined minimum scientifically interesting target-versus-decoy odds ratio of
+1.50 under the assumptions below, but is explicitly not powered to 80% for the
+smaller 1.35 sensitivity scenario. This is a design decision, not evidence that
+the target effect exists or has that magnitude.
 
-## Assumptions
+## Authoritative simulation
 
-No effect was derived from Study 0's Jensen--Shannon divergence. Scenarios use a
-4% false-source foil-unit base rate, participant random-intercept SD 0.65, two
-AI nights/participant, eight target and eight foil units/night, 20% missing
-dream-report rate, 10% potential attrition, and 1,000 repetitions. The
-scientifically meaningful scenario is target-vs-foil odds ratio 1.5; conservative
-and moderate scenarios use 2.0 and 3.0 respectively. These are deliberately
-assumed planning values, not estimates.
+`code/power_study1.R` was run on 2026-10-05 with:
 
-## Executed outputs and precision
+```powershell
+$env:R_LIBS_USER = 'C:/Users/HP OMEN/Documents/R/win-library/4.6'
+& 'C:/Program Files/R/R-4.6.1/bin/Rscript.exe' code/power_study1.R --reps 1000 --slots 208 --workers 4
+```
 
-`results/power_scenarios.csv` and `results/power_curve.csv` are the R GLMM
-simulation output. The first completed 50-repetition diagnostic run gave primary
-power 0.34/0.42/0.54/0.58/0.62 for the OR=1.5 scenario at 40/60/80/100/120;
-this low-precision diagnostic shows that 120 is not adequate for the smallest
-planning scenario. A separate 1,000-repetition Python proxy at N=200 returned
-0.944 for OR=1.5 and 1.000 for OR=2.0; it is a planning cross-check, not the
-authoritative GLMM estimate. These are planning simulations, not clinical or
-empirical claims.
+The output model is a binomial participant-random-intercept GLMM with the
+primary AI-condition-averaged target-versus-decoy coefficient; condition,
+period, order, and the four-level stimulus block are fixed effects. It does not
+use the Study 0 Jensen--Shannon result as an effect-size estimate. Environment
+details are in `results/power_r_sessioninfo.txt`.
 
-## Decision boundary
+| Scenario | Decoy incorporation probability | Target OR | Participant RE SD | Stimulus-generation SD | Missing report rate | Dropout rate | Mean effective participants | Simulations | Estimated power | Monte Carlo SE |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Small sensitivity | 0.04 | 1.35 | 0.65 | 0.25 | 0.20 | 0.10 | 193.15 | 1,000 | 0.669 | 0.0149 |
+| Minimum scientific interest | 0.04 | 1.50 | 0.65 | 0.25 | 0.20 | 0.10 | 192.81 | 1,000 | 0.891 | 0.0099 |
+| Plausible sensitivity | 0.04 | 2.00 | 0.65 | 0.25 | 0.20 | 0.10 | 192.86 | 1,000 | 1.000 | 0.0000 |
 
-The provisional design target is **200 enrolled participants** (50 complete
-Latin-square blocks), anticipating about 180 completing all sessions under the
-10% attrition planning assumption. This target preserves a margin above the
-smallest-effect proxy, but is not an empirical claim. Before recruitment, rerun
-the expanded R GLMM simulation with at least 1,000 repetitions, inspect
-convergence, and either retain or increase the target; the R model controls if
-it disagrees materially with the proxy.
+Each simulated participant has four sessions, including two AI sessions (DAI
+and SAI). Each retained AI session contributes eight delivered target and eight
+matched-decoy semantic-unit rows. The nominal pre-missingness primary unit-row
+count is 6,656. All values are assumptions or simulation outputs, not observed
+incorporation rates.
+
+## Assumption rationale and limitations
+
+- The 4% decoy rate and random-effect SDs are conservative planning values, not
+  imported from Study 0 or from a blind-dream prevalence estimate.
+- The OR=1.50 threshold is the minimum effect chosen for the prospective
+  target-specific incorporation question; it is not a clinically validated
+  threshold.
+- The simulation treats the four source stimuli as fixed blocks in the primary
+  model because a random effect with only four levels is unstable. A
+  random-stimulus formulation is sensitivity-only if estimable.
+- Clustered semantic units are handled with a participant random intercept in
+  the primary model and a participant-cluster bootstrap in analysis. A
+  report-level aggregation is also prespecified as a robustness check.
+- The DAI-versus-SAI interaction, DAI-versus-HUM package comparison, ANC
+  context comparison, and subgroup analyses are not individually powered
+  confirmatory endpoints.
+
+## Before recruitment
+
+Repeat this exact simulation only if an ethics-required protocol amendment
+changes the primary model, allocation structure, target/decoy unit count,
+missing-data plan, or recruitment target. Preserve the prior result and log the
+amendment; never tune the plan after viewing Study 1 outcomes.

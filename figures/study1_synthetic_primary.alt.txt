@@ -1,0 +1,1 @@
+Bar chart labelled synthetic-only dry run, not an empirical result. Matched-decoy synthetic incorporation rate: 0.067; delivered-target synthetic incorporation rate: 0.137.

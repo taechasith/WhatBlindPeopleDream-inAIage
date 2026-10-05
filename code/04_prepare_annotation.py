@@ -1,7 +1,11 @@
-"""Prepare deterministic blinded double-coding files; does not create labels."""
+"""Prepare local, ignored Study 0 double-coding packets; does not create labels."""
+import argparse
 import csv, random
 from pathlib import Path
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--output", default="data/study0/annotation")
+args = parser.parse_args()
 random.seed(20261005)
 categories = [
  "visual","auditory","tactile","olfactory","gustatory","proprioceptive","vestibular","interoceptive","thermal","pain","spatial_layout","distance_depth","direction_orientation","motion","social_context","identity_inference","emotion","threat","safety","uncertainty","privacy","agency","task_relevance","text_reading","navigation","unsupported_information","ambiguity","intent_match","nightmare"
@@ -18,11 +22,11 @@ for kind in sorted({x["source_stratum"] for x in items}):
     group=[x for x in items if x["source_stratum"]==kind]
     sample += random.sample(group, round(len(group)*.20))
 random.shuffle(sample)
-out=Path("annotation"); out.mkdir(exist_ok=True)
+out=Path(args.output); out.mkdir(parents=True, exist_ok=True)
 for coder in ("coder_a","coder_b"):
     with (out/f"{coder}.csv").open("w",newline="",encoding="utf-8") as f:
         fields=["source_stratum","item_id","text"]+categories
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(sample)
 with (out/"README.md").open("w",encoding="utf-8") as f:
-    f.write("Independent human coding required. Use 0=not expressed, 1=expressed, NA=cannot determine. Do not share completed labels between coders before first reliability calculation.\n")
+    f.write("LOCAL CONTROLLED PACKET. Independent human coding required. Use 0=not expressed, 1=expressed, NA=cannot determine. Do not share completed labels between coders before first reliability calculation. Do not commit or include raw text in anonymous/public supplements.\n")
 print(len(sample))

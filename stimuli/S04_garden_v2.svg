@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Original non-human garden prototype with a cat under an arch, watering can by flowerpot, wind chime over a path, wheelbarrow behind a sign, and a curving path to a gate">
+  <rect width="1200" height="800" fill="#dcefd6"/>
+  <path d="M510 800C492 666 711 654 696 514C684 413 490 411 557 283" fill="none" stroke="#d9bf8c" stroke-width="112"/>
+  <path d="M510 800C492 666 711 654 696 514C684 413 490 411 557 283" fill="none" stroke="#b79965" stroke-width="8" stroke-dasharray="25 19"/>
+  <g transform="translate(760 154)">
+    <path d="M20 380V155Q130 2 240 155V380" fill="none" stroke="#5d7d4b" stroke-width="29"/>
+    <path d="M45 380V165Q130 48 215 165V380" fill="none" stroke="#90a86c" stroke-width="11"/>
+    <path d="M0 380H261" stroke="#5d7d4b" stroke-width="22"/>
+    <g transform="translate(88 267)">
+      <ellipse cx="46" cy="50" rx="49" ry="28" fill="#74716b"/>
+      <circle cx="7" cy="35" r="23" fill="#858079"/>
+      <path d="M-10 19l4-28 19 19m3-19 21-18 2 31" fill="#858079" stroke="#5f5b57" stroke-width="5"/>
+      <path d="M45 75v30m27-30v30m-62-30v30m-24-40-31-21" fill="none" stroke="#5f5b57" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="2" cy="32" r="3" fill="#252525"/>
+    </g>
+  </g>
+  <g transform="translate(105 455)">
+    <path d="M0 104q25-109 109-109t109 109Z" fill="#739d59" stroke="#426a3e" stroke-width="10"/>
+    <path d="M109-6V-92m0 52C47-87 39-153 109-91c70-62 62 4 0 51" fill="#4c934e" stroke="#426a3e" stroke-width="7"/>
+    <path d="M5 104h207" stroke="#a75c39" stroke-width="30"/>
+  </g>
+  <g transform="translate(356 492)">
+    <path d="M0 77q0-74 80-74t80 74Z" fill="#78a8b4" stroke="#426a72" stroke-width="11"/>
+    <path d="M25 26C-37 4-34-43 9-37c25 3 35 27 33 45" fill="none" stroke="#426a72" stroke-width="13"/>
+    <path d="M145 28q84-27 77 50-5 53-65 33" fill="none" stroke="#426a72" stroke-width="15"/>
+    <path d="M0 77h164" stroke="#426a72" stroke-width="10"/>
+  </g>
+  <g transform="translate(573 124)">
+    <path d="M48 0v116M17 42h62M27 42v92m20-92v123m20-123v92" stroke="#53696e" stroke-width="9"/>
+    <path d="M17 134q10 34 20 0m10 31q10 34 20 0m10-31q10 34 20 0" fill="#d8c56e" stroke="#53696e" stroke-width="6"/>
+  </g>
+  <g transform="translate(180 242)">
+    <rect x="0" y="50" width="35" height="207" fill="#826646"/>
+    <rect x="-66" y="0" width="167" height="89" rx="8" fill="#f0e7c5" stroke="#5d5949" stroke-width="10"/>
+    <path d="M-25 45h85" stroke="#83a45b" stroke-width="9"/>
+  </g>
+  <g transform="translate(95 325)">
+    <path d="M0 151h232l-53-98H51Z" fill="#ac7441" stroke="#65472f" stroke-width="11"/>
+    <circle cx="50" cy="163" r="32" fill="#444b48"/><circle cx="183" cy="163" r="32" fill="#444b48"/>
+    <path d="M178 53l89-80" stroke="#65472f" stroke-width="14"/>
+  </g>
+  <g transform="translate(641 165)">
+    <rect x="0" y="0" width="111" height="130" fill="#77965b" stroke="#4d6d42" stroke-width="12"/>
+    <path d="M55 0v130M0 47h111" stroke="#b9cd92" stroke-width="8"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+data_status,stage,n_unit_rows
+SYNTHETIC_ONLY_NOT_EMPIRICAL,input_unit_rows,3072
+SYNTHETIC_ONLY_NOT_EMPIRICAL,AI_condition_unit_rows,1536
+SYNTHETIC_ONLY_NOT_EMPIRICAL,eligible_report_unit_rows,1296
+SYNTHETIC_ONLY_NOT_EMPIRICAL,primary_decidable_unit_rows,1230

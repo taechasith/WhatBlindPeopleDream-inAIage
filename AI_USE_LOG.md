@@ -1,0 +1,26 @@
+# Substantive AI-use log
+
+## Status
+
+This log distinguishes documented use from unknown provenance. It is not
+complete merely because a task is absent from the table. Before any conference
+submission, the research team must reconcile all substantive assistance with
+the then-current conference and publisher policy and produce the required
+disclosure. No AI system is an author.
+
+| Record | Workflow activity | System/version | Evidence in repository | Status and publication handling |
+| --- | --- | --- | --- | --- |
+| AI-001 | Automated candidate coding of Study 0 text | No generative model; deterministic lexical rules | `logs/model_use.md`; `code/04_apply_codebook.py` | Documented. May be described only as exploratory automated lexical coding, never human annotation or semantic ground truth. |
+| AI-002 | Non-human Study 1 VLM candidate screen | SmolVLM2 2.2B at pinned revision `482adb537c021c86670beed01cd58990d01e72e4`; deterministic local run | `MODEL_CANDIDATE_EVALUATION.md`; ignored private candidate outputs/audit | Rejected for exposure after marker-coverage and length failures. Not a participant result or a model-effect finding. |
+| AI-003 | Replacement Study 1 VLM candidate preparation | Qwen2.5-VL 7B at pinned revision `cc594898137f460bfe9f0759e9844b3ce807cfb5`; candidate-only preparation | `code/generate_study1_qwen_candidates.py`; `MODEL_PROVENANCE.md` | Pending non-human generation and fail-closed audit; not selected for exposure and not participant-facing. |
+| AI-004 | Literature, drafting, coding, analysis, or figure assistance during repository development | Not fully reconstructable from the current repository | No complete tool/version/prompt provenance is present | Disclosure status unresolved. Do not state that no generative-AI assistance occurred; reconcile the research record before submission. |
+
+## Required completion checks
+
+- Add a dated record for every substantive tool-assisted literature search,
+  extraction, code generation, stimulus generation, annotation assistance,
+  manuscript drafting, and figure generation.
+- Record the human verification performed and the output artifacts affected.
+- Do not list routine spellchecking unless the applicable policy requires it.
+- Do not use a model output as a participant, an independent coder, or an
+  empirical result.

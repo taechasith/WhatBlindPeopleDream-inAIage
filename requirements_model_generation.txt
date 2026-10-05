@@ -1,0 +1,6 @@
+# Isolated local generator environment used only for non-human candidate scripts.
+# The pinned model weights are held under private/ and are not installed by this file.
+transformers==4.52.4
+accelerate==1.3.0
+num2words==0.5.14
+# PyTorch version/device build must be recorded by the generation manifest.

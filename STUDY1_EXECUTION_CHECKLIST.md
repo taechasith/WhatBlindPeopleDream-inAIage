@@ -4,15 +4,15 @@ This checklist is ordered. Checking an item does not waive any earlier gate.
 
 ## Before ethics submission
 
-- [x] Freeze the v1.1 design, primary estimand, controls, coding, synthetic dry
-  run, and draft preregistration.
+- [x] Freeze the v2 prospective design, primary estimand, controls, coding,
+  synthetic dry run, and draft preregistration.
 - [x] Prepare non-deployed accessibility, consent, privacy, distress, recording,
   recruitment, and compensation drafts.
 - [ ] Select an institutionally permitted AI system and TTS route.
 - [ ] Generate final frozen outputs from that system; audit every claim against
   the source scene and marker inventory.
 - [ ] Obtain independent BLV advisory review of stimuli, terms, and burden.
-- [ ] Run expanded 1,000-repetition R GLMM power check and archive session info.
+- [x] Run expanded 1,000-repetition R GLMM power check and archive session info.
 - [ ] Complete institution-specific fields, local referral route, compensation,
   storage, retention, and contact details.
 
@@ -22,8 +22,10 @@ This checklist is ordered. Checking an item does not waive any earlier gate.
 - [ ] Confirm ethics sequencing for public preregistration; register only after
   the approved version is locked.
 - [ ] Finalize consent/recruitment material exactly as approved.
-- [ ] Generate the concealed allocation schedule only after the approved
-  enrollment target and staff roles are known.
+- [x] Generate and validate an anonymous-slot counterbalance schedule. Before
+  recruitment, the approved enrollment target, staff role separation, schedule
+  custodian, and access controls must be recorded; no participant is assigned
+  from the current pre-ethics file.
 - [ ] Pilot technology accessibility without collecting outcome data, if the
   ethics decision permits it.
 

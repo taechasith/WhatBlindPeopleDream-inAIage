@@ -1,7 +1,16 @@
-# Study 1 design freeze v1.1
+# Study 1 design freeze v1.1 (superseded for implementation)
 
 **Frozen:** 2026-10-05. This is a prospective design only. It authorizes no
 recruitment, contact, screening, consent, exposure, or data collection.
+
+> **Historical record only.** This v1.1 document is retained to preserve the
+> decision trail. It must not be used for recruitment, ethics submission,
+> preregistration, exposure, or analysis. The governing prospective documents
+> are `PROTOCOL_STUDY1_v2.md`, `STUDY1_ESTIMANDS.md`, and
+> `PRIMARY_OUTCOME_SPECIFICATION.md`. In particular, the v2 primary model has
+> no target-status-by-condition interaction or post-randomization delivery
+> covariate; those are secondary/sensitivity analyses. The v1.1 200-slot
+> planning figure is superseded by the documented 208-slot simulation.
 
 ## Confirmatory question and hypothesis
 

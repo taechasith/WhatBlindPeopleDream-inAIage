@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Original non-human workshop prototype with a spiral staircase, toolbox below a window, kettle by a plant, map, bell, and stool">
+  <rect width="1200" height="800" fill="#eee7d8"/>
+  <rect y="570" width="1200" height="230" fill="#b89c77"/>
+  <path d="M0 570H1200" stroke="#806549" stroke-width="12"/>
+  <g transform="translate(110 100)">
+    <rect width="254" height="190" rx="7" fill="#bce1ee" stroke="#4b5254" stroke-width="16"/>
+    <path d="M127 0V190M0 94H254" stroke="#f5f0df" stroke-width="11"/>
+    <path d="M30 36l62 47 44-44 74 70" fill="none" stroke="#8cb4bf" stroke-width="13"/>
+    <path d="M0 190l-22 39h298l-22-39" fill="#65544b"/>
+  </g>
+  <g transform="translate(150 365)">
+    <rect x="0" y="53" width="282" height="120" rx="13" fill="#bd6738" stroke="#65361f" stroke-width="12"/>
+    <path d="M82 53V20h116v33" fill="none" stroke="#65361f" stroke-width="16"/>
+    <path d="M0 108h282" stroke="#f0a667" stroke-width="10"/>
+    <circle cx="51" cy="108" r="8" fill="#65361f"/><circle cx="231" cy="108" r="8" fill="#65361f"/>
+  </g>
+  <g transform="translate(475 290)">
+    <path d="M0 127c0-58 100-58 100 0v72H0Z" fill="#71a36b" stroke="#41633c" stroke-width="10"/>
+    <path d="M50 127C-14 83 12 21 50 83C87 21 114 83 50 127Z" fill="#4f914b"/>
+    <path d="M50 127V54" stroke="#41633c" stroke-width="7"/>
+  </g>
+  <g transform="translate(625 372)">
+    <path d="M25 94q0-85 79-85t79 85Z" fill="#d7b85b" stroke="#6a5740" stroke-width="11"/>
+    <path d="M182 38q75-17 64 58q-5 42-48 24" fill="none" stroke="#6a5740" stroke-width="13"/>
+    <path d="M49 7V-26h110V7" fill="none" stroke="#6a5740" stroke-width="12"/>
+    <circle cx="101" cy="-47" r="16" fill="#6a5740"/>
+    <path d="M2 94h207" stroke="#6a5740" stroke-width="12"/>
+  </g>
+  <g transform="translate(85 76)">
+    <path d="M0 0l72-30 84 27-68 38Z" fill="#f3d486" stroke="#5d513d" stroke-width="8"/>
+    <path d="M72-30l16 65M0 0l88 35" stroke="#b8753f" stroke-width="5"/>
+  </g>
+  <g transform="translate(880 75)">
+    <path d="M0 83q0-76 65-76t65 76Z" fill="#d9ae3d" stroke="#594b38" stroke-width="11"/>
+    <path d="M0 83h130" stroke="#594b38" stroke-width="11"/>
+    <circle cx="65" cy="105" r="15" fill="#594b38"/>
+    <path d="M65 120v41" stroke="#594b38" stroke-width="7"/>
+  </g>
+  <g transform="translate(786 132)">
+    <path d="M185 453C45 453 17 337 74 253c40-59 157-70 211 0 66 84 18 200-100 200-78 0-119-82-79-139 30-42 102-36 121 10 15 37-10 78-42 78-28 0-42-31-27-53" fill="none" stroke="#514840" stroke-width="30" stroke-linecap="round"/>
+    <path d="M57 257l176 0M33 321l206 0M46 384l165 0" stroke="#735e4d" stroke-width="16"/>
+  </g>
+  <g transform="translate(800 515)">
+    <ellipse cx="75" cy="32" rx="83" ry="17" fill="#85613f"/>
+    <path d="M15 32v75m120-75v75" stroke="#6a482f" stroke-width="18"/>
+    <path d="M40 14v-38h70v38" fill="none" stroke="#6a482f" stroke-width="18"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+# Python environment observed during the 2026-10-05 reproducibility audit.
+# Install with: python -m pip install -r requirements.txt
+# R dependencies are documented separately in REPRODUCTION.md.
+matplotlib==3.9.2
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.5.1
+scipy==1.14.0
+statsmodels==0.15.0

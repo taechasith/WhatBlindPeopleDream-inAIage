@@ -1,0 +1,2 @@
+"data_status","estimand","estimate_log_odds","odds_ratio","ci95_low_log_odds","ci95_high_log_odds","p_value","model_based_probability_difference","n_participants","n_unit_rows","singular_fit"
+"SYNTHETIC_ONLY_NOT_EMPIRICAL","AI_average_target_vs_matched_decoy_odds_ratio",0.839089565283251,2.31425903558573,0.44137772314233,1.23680140742417,3.54772564612377e-05,0.0698812113543884,46,1230,FALSE
