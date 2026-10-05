@@ -31,3 +31,7 @@ selector after confirming Python 3.10 support:
 
 The full environment package record is `compute/pip_freeze_vlm.txt`; the GPU
 driver snapshot is `compute/nvidia_smi.txt`.
+
+`pandas` 2.3.3 was added to the dedicated environment before study execution
+solely for deterministic local reading/checkpointing of the frozen CSV sample;
+it is not used by the model or processor.
