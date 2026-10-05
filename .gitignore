@@ -16,6 +16,8 @@
 
 # Local environments and rendered build artifacts.
 .venv/
+.env_vlm/
+compute/model_cache/
 __pycache__/
 *.py[cod]
 /paper/**/build/

@@ -1,0 +1,47 @@
+{
+  "status": "TECHNICAL_PREFLIGHT_ONLY_NOT_STUDY_DATA",
+  "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "dtype": "float16",
+  "quantization": "none",
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "processor_class": "Qwen2_5_VLProcessor",
+  "model_class": "Qwen2_5_VLForConditionalGeneration",
+  "image_policy": {
+    "min_pixels": 200704,
+    "max_pixels": 501760
+  },
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 128,
+    "seed": 20261006
+  },
+  "prompt_sha256": {
+    "generic": "ba18ef928fade0b30b7b8d4aa400a607c32fe61ebb88c60f633207e78804e2be",
+    "intent_steered": "6b44ddd2106e7ad5cf4b352eab0ae85d53fccd0667d0e5b12d0f08c9f57f970b",
+    "accessibility_steered": "d412a8c312c362de48242fb0f85788ecdba49dbc7f387f69317775eaae89532e"
+  },
+  "synthetic_image_sha256": "a4993af2846e9ebefeea957eaef2998fd916eeae91fec553909daef1fb73dfff",
+  "load_seconds": 11.449321100022644,
+  "peak_vram_bytes": 7713738752,
+  "records": [
+    {
+      "condition": "generic",
+      "output_text": "The image contains two shapes: a blue rectangle and an orange circle. The text \"SYNTHETIC TEST\" is visible at the top of the image.",
+      "runtime_seconds": 4.819496200070716
+    },
+    {
+      "condition": "intent_steered",
+      "output_text": "The rectangle is blue.\n\nThe circle is orange.",
+      "runtime_seconds": 2.53275700006634
+    },
+    {
+      "condition": "accessibility_steered",
+      "output_text": "The rectangle is blue.",
+      "runtime_seconds": 1.8967532999813557
+    }
+  ],
+  "os": "Windows-10-10.0.26200-SP0"
+}

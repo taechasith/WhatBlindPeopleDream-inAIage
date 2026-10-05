@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "status": "FROZEN_PRIMARY_BEFORE_STUDY_INFERENCE",
+  "models": [
+    {
+      "model_id": "Qwen2.5-VL-3B-Instruct_FP16_66285546",
+      "provider_or_checkpoint": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "immutable_revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+      "license": "Qwen Research License Agreement; non-commercial research/evaluation use",
+      "runtime": "Python 3.10.4; transformers 5.18.0; torch 2.11.0+cu128; qwen-vl-utils 0.0.14",
+      "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU; driver 592.82; 8585216000 bytes VRAM",
+      "decoding": {"do_sample": false, "max_new_tokens": 128, "seed": 20261006},
+      "image_preprocessing": "Qwen2_5_VLProcessor; min_pixels=200704; max_pixels=501760; fixed across items and conditions",
+      "execution_command": "python code/11_run_primary_vlm.py --resume",
+      "authorized_use_confirmed": true
+    }
+  ]
+}
