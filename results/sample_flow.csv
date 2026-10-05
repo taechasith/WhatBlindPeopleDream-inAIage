@@ -1,0 +1,5 @@
+stage,n,unit,note
+DreamBank candidate series,400,dream reports,"Blind F, Blind M, Edna queried."
+Primary free-recall corpus,381,dream reports,Blind F/M only; Edna interview material not treated as comparable free recall.
+VizWiz text corpus,24842,questions,Train + validation annotations only.
+Released AI text corpus,28,descriptions,chi25_lmm released examples; exploratory only.
