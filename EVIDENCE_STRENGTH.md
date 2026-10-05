@@ -23,3 +23,19 @@
 - **Reciprocal Cognitive Sensing Loop:** Informs the observable AI-to-human
   information-environment branch only; it does not test human-to-AI grounding,
   blind dreams, or a long-term cognitive pathway.
+
+## Study 1 amendment: causal-chain evidence classification
+
+The new prospective protocol is justified by converging but non-interchangeable
+evidence. The full extraction is in `STUDY1_EVIDENCE_MAP.csv`.
+
+| Evidence layer | What is supported | What remains untested |
+|---|---|---|
+| Sensory substitution (Ortiz 2011; Striem-Amit et al. 2012; NeuroImage 2025) | Prolonged tactile/auditory training can support learned nonvisual representations and, in particular designs/samples, altered neural recruitment/connectivity. | Ordinary AI language descriptions, dream incorporation, and any long-term AI neural effect. |
+| Accessible description (Images, Words, and Imagination 2024; Xie et al. 2025) | Descriptions can support some BLV users' internal spatial/contextual understanding; AI acts as a visual-to-language information channel with documented reliability and social-context hazards. | A uniform mental-model benefit, sleep effects, or causal cognitive change. |
+| Pre-sleep narrative (Palmieri et al. 2026; Horton and Malcolm-Smith 2023) | Narrative/learning material can sometimes be detected in subsequent dreams; task-related dreaming is associated with memory performance. | AI specificity, blind/low-vision specificity, inevitability/high prevalence, and causal memory or neural mechanisms. |
+
+Accordingly, the only new confirmatory inference proposed for Study 1 is
+immediate source-coded dream-report incorporation after controlled AI-mediated
+exposure. The neuroplasticity arrow remains outside the study's evidentiary
+scope.
