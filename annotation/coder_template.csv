@@ -1,0 +1,2 @@
+blind_report_id,unit_blind_id,set_blind_label,report_eligibility,eligibility_reason,ordinal_code,primary_binary,spatial_relation,sensory_transformation,emotional_incorporation,novel_recombination,unsupported_inference,coder_rationale,coder_id,codebook_version,coded_at_utc
+EXAMPLE_ONLY,U01,SET_A,ELIGIBLE,,3,1,0,0,0,0,0,"Example row only; delete before coding.",CODER_PLACEHOLDER,v1.0,

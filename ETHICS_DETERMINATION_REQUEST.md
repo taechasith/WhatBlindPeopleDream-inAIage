@@ -53,12 +53,19 @@ sensitive information, and AI-generated content.
 ## Materials to submit with this request
 
 - `PROTOCOL_STUDY1_v1.md`
-- accessible draft consent and debriefing documents (not yet drafted)
-- full AI system/output audit and source-image license register (not yet built)
-- recruitment, compensation, data retention, and incident-response plans (not
-  yet finalized)
-- power analysis and preregistration (not yet possible because required design
-  inputs are unselected)
+- `STUDY1_DESIGN_FREEZE.md` and `STUDY1_CONTROL_AUDIT.md`
+- `STUDY1_STIMULI.csv` and non-deployed prototype vector stimuli
+- `DREAM_INCORPORATION_CODEBOOK_v1.md` and blinded-coding procedures
+- accessible draft participant information, consent, withdrawal, recruitment,
+  AI-disclosure, recording/privacy, compensation, and distress-response documents
+  in `ethics/` (not deployed; institutional fields intentionally pending)
+- full AI system/output audit and final source-image license register (not yet
+  built; model has not been selected)
+- draft recruitment, compensation, data retention, withdrawal, recording, and
+  incident-response documents in `ethics/` (not deployed; final institutional
+  requirements pending)
+- preregistration and simulation-based power analysis drafts (not public and
+  not final until the final AI system/stimulus delivery choice is locked)
 
 ## Determination record
 

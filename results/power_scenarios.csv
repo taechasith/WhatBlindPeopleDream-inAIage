@@ -1,0 +1,16 @@
+"scenario","participants","foil_probability","target_odds_ratio","random_intercept_sd","missing_dream_report_rate","dropout_assumption","simulation_repetitions","power","data_status","analysis","ai_nights_per_participant","semantic_units_per_ai_night","total_nominal_unit_observations"
+"minimal_scientific_interest",40,0.04,1.5,0.65,0.2,0.1,50,0.34,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1280
+"conservative",40,0.04,2,0.65,0.2,0.1,50,0.78,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1280
+"moderate",40,0.04,3,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1280
+"minimal_scientific_interest",60,0.04,1.5,0.65,0.2,0.1,50,0.42,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1920
+"conservative",60,0.04,2,0.65,0.2,0.1,50,0.94,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1920
+"moderate",60,0.04,3,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,1920
+"minimal_scientific_interest",80,0.04,1.5,0.65,0.2,0.1,50,0.54,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,2560
+"conservative",80,0.04,2,0.65,0.2,0.1,50,0.98,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,2560
+"moderate",80,0.04,3,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,2560
+"minimal_scientific_interest",100,0.04,1.5,0.65,0.2,0.1,50,0.58,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3200
+"conservative",100,0.04,2,0.65,0.2,0.1,50,0.98,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3200
+"moderate",100,0.04,3,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3200
+"minimal_scientific_interest",120,0.04,1.5,0.65,0.2,0.1,50,0.62,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3840
+"conservative",120,0.04,2,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3840
+"moderate",120,0.04,3,0.65,0.2,0.1,50,1,"SIMULATED_PLANNING_ONLY_NOT_EMPIRICAL","logistic_mixed_model",2,8,3840

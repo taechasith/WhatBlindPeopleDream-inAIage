@@ -1,0 +1,8 @@
+{
+  "data_status": "SYNTHETIC_ONLY_NOT_EMPIRICAL",
+  "repetitions": 200,
+  "target_minus_foil_rate_difference_ci95": [
+    0.03950553797468354,
+    0.10902777777777779
+  ]
+}

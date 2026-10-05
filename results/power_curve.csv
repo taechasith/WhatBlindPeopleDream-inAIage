@@ -1,0 +1,16 @@
+"scenario","participants","power"
+"minimal_scientific_interest",40,0.34
+"conservative",40,0.78
+"moderate",40,1
+"minimal_scientific_interest",60,0.42
+"conservative",60,0.94
+"moderate",60,1
+"minimal_scientific_interest",80,0.54
+"conservative",80,0.98
+"moderate",80,1
+"minimal_scientific_interest",100,0.58
+"conservative",100,0.98
+"moderate",100,1
+"minimal_scientific_interest",120,0.62
+"conservative",120,1
+"moderate",120,1

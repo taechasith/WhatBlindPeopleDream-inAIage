@@ -24,3 +24,19 @@ status.
 - **Status:** Study 1 is prospective and blocked before recruitment/data
   collection pending institutional ethics determination, finalized materials,
   and preregistered power analysis.
+
+## 2026-10-05 -- Replace false-source-only control in Study 1
+
+- **Original plan:** v1.0 specified an undisclosed false-source stimulus/marker
+  set as the matched control.
+- **New plan:** retain false-source foil units as the blinded coding negative
+  control and add matched human-reference-description (HUM) and active-neutral-
+  narrative (ANC) exposure conditions, yielding four weekly conditions.
+- **Reason:** an unexposed foil cannot balance pre-sleep audio, duration, lexical
+  content, emotional/spatial information, interaction, or expectancy. The
+  revised design permits source and exposure-context contrasts while preserving
+  the source-specific primary target-versus-foil test.
+- **Relevant results already seen:** no Study 1 outcomes exist; Study 0 results
+  remain exploratory and did not set this decision.
+- **Status:** prospective protocol amendment; requires ethics review and
+  preregistration before use.

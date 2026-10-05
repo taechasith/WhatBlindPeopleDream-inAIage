@@ -26,3 +26,16 @@
   diagnostics had been observed; no Study 1 data exist.
 - **Consequence:** No recruitment or pilot data collection before an institutional
   determination, finalized accessibility/safety materials, and power analysis.
+
+## 2026-10-05 -- Study 1 conservative provisional enrollment target
+
+- **Decision:** Plan for 200 enrolled adults in 50 complete Latin-square blocks,
+  anticipating 180 completions under the planning attrition assumption.
+- **Basis:** Study 0 was excluded from effect-size selection. A synthetic
+  1,000-repetition participant-cluster proxy at N=200 produced 0.944 power for
+  the prespecified OR=1.5 scenario; the completed small R GLMM diagnostic showed
+  N<=120 was inadequate for that smallest scenario.
+- **Outcome visibility at decision:** no Study 1 participant data exist.
+- **Consequence:** Before recruitment, expand/re-run the R GLMM simulation to at
+  least 1,000 repetitions. It may retain or increase but not outcome-tune the
+  target.
