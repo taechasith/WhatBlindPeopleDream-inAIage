@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    "accessibility_steered",
+    "generic",
+    "intent_steered"
+  ],
+  "model_manifest_sha256": "a7cc38dc24193aca2329b08e8e2976e8a1e128a0e9b39c704f5727176eac1fde",
+  "models": [
+    "Qwen2.5-VL-3B-Instruct_FP16_66285546"
+  ],
+  "n_frozen_items": 1000,
+  "n_models": 1,
+  "n_outputs": 3000,
+  "outputs_sha256": "0bbfe6cff0d46dfe6587d5818cb3f7724e01251eb5c8b14e3ee99ec1d45a29be",
+  "status": "REAL_OUTPUT_SCHEMA_VALIDATED_NOT_ANALYZED"
+}

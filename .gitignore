@@ -1,6 +1,7 @@
 # Private, author-identifying material. Never include in anonymous review packages.
 /private/
 /future_human_study/private/
+/annotation_public/private/
 
 # The supplied governing brief contains post-review author information. The
 # anonymous, distribution-safe protocol is PROTOCOL.md.
