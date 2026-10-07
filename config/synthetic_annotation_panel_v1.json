@@ -1,0 +1,54 @@
+{
+  "panel_id": "synthetic_annotation_panel_v1",
+  "status": "FROZEN_BEFORE_HUMAN_OUTCOMES_AND_CONDITION_UNBLINDING",
+  "packet_contract": {
+    "visible_fields": ["blind_item_id", "blv_question", "output_text"],
+    "forbidden_fields": ["condition", "prompt_type", "model_id", "source_image", "original_order"]
+  },
+  "schema_version": "1.1-jsonl",
+  "constructs": [
+    "task_answer",
+    "task_relevance",
+    "spatial_relation",
+    "grounded_uncertainty",
+    "unsupported_information",
+    "identity_inference",
+    "social_intent_inference",
+    "unrequested_visual_detail",
+    "accessibility_grounded_content",
+    "ambiguity"
+  ],
+  "label_values": ["0", "1", "NA"],
+  "abstention_policy": "Use abstain=true and label=NA when the frozen rubric cannot support a determination from the blinded question/output text. Do not infer unstated scene facts.",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 1400,
+    "seed": 20261008,
+    "retry_policy": "Retry technical process failures only with identical input and configuration. Do not retry an inconvenient or invalid substantive judgment."
+  },
+  "judges": [
+    {
+      "judge_id": "Qwen2.5_1.5B_989aa798",
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "immutable_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "local_dir": "compute/model_cache/Qwen2.5-1.5B-Instruct_989aa798",
+      "family": "Qwen2",
+      "license": "Apache-2.0",
+      "dtype": "float16",
+      "quantization": "none",
+      "device": "cuda",
+      "role_constraint": "secondary judge only; it is not the generator model and cannot be the sole or primary judge because the generator belongs to the Qwen family"
+    },
+    {
+      "judge_id": "Phi_3.5_mini_2fe19245",
+      "model_id": "microsoft/Phi-3.5-mini-instruct",
+      "immutable_revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+      "local_dir": "compute/model_cache/Phi-3.5-mini-instruct_2fe19245",
+      "family": "Phi-3",
+      "license": "MIT",
+      "dtype": "4-bit NF4 compute float16",
+      "quantization": "bitsandbytes NF4 4-bit double quantization",
+      "device": "cuda"
+    }
+  ]
+}
