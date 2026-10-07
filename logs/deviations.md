@@ -144,3 +144,33 @@ status.
 - **Confirmatory/exploratory status:** The new intervention is prospectively
   specified in `PROTOCOL_PUBLIC_DATA_v2.md`; retained Study 0 outputs remain
   exploratory.
+
+## 2026-10-08 -- Amend annotation gate for human-validated synthetic scaling
+
+- **Reason:** The primary 3,000-output computational intervention had been
+  frozen, but its measurement layer needed an explicit separation between
+  same-item human validation, synthetic scaling, and external construct
+  validation before any condition-level hypothesis was opened.
+- **Old rule:** A 20% human double-coded sample and optional LLM assistance
+  were specified, but the guide did not operationalize the same-item subset,
+  construct-by-construct scaling decision, synthetic-panel provenance, or the
+  boundary between external human evidence and same-rubric annotation.
+- **New rule:** Select 200 locked items and all three outputs per item
+  (`200 x 3 = 600`; 20% of 3,000) for blinded, independent double-human coding.
+  Freeze synthetic judges separately; compare them construct by construct to
+  adjudicated human labels; use synthetic labels at full scale only after the
+  predefined validation gate passes; and keep VizWiz, GuideDog, Kapur-Kreiss,
+  and Be My AI evidence as external construct validation.
+- **Why this occurred before condition unblinding:** The 3,000 outputs,
+  prompts, sample, model revision, and configuration were already frozen, but
+  no RQ2-RQ5 condition-level result had been opened and no private mapping was
+  inspected. The amendment therefore changes measurement governance before
+  outcome interpretation rather than after observing a hypothesis result.
+- **Effect on confirmatory status:** Confirmatory full-dataset claims require
+  human reliability and same-item, same-rubric validation for each scaled
+  construct. Nonpassing or unvalidated synthetic constructs are restricted to
+  human-subset or exploratory status.
+- **References motivating amendment:** Calderon, Reichart, and Dror (2025),
+  DOI 10.18653/v1/2025.acl-long.782; Pataranutaporn et al. (2025), DOI
+  10.1073/pnas.2519394122; Kapur and Kreiss (2024), DOI
+  10.18653/v1/2024.nlp4pi-1.26.
