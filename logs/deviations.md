@@ -269,3 +269,22 @@ status.
   but does not authorize full-scale synthetic measurement. A later prospective
   governance decision remains necessary before any threshold-based construct
   eligibility claim can be made.
+
+## 2026-10-08 -- Correct public-data preregistration wording to frozen/prospective wording
+
+- **Original plan/text:** Active public-data documents described the internally
+  frozen sample, question taxonomy, subset, and intervention as
+  `preregistered`.
+- **New plan/text:** Describe those elements as `frozen` and `pre-specified`.
+  Reserve `preregistered` for a study only when a dated public registration can
+  be documented.
+- **Reason:** The repository records a protocol freeze but no public
+  preregistration receipt. The correction prevents an unsupported provenance
+  claim and does not alter the locked sample, prompts, ontology, model,
+  analysis plan, or confirmation boundary.
+- **Outcome visibility:** No condition mapping, model-output label substance,
+  RQ2--RQ5 result, human label, human--synthetic validation, or external
+  validation outcome was inspected to make this correction.
+- **Confirmatory effect:** The study remains a prospectively frozen internal
+  protocol; this wording correction does not convert it into a publicly
+  preregistered study.

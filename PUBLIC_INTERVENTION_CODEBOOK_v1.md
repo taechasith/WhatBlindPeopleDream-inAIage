@@ -31,7 +31,7 @@ estimable from the available source`. `NA` is never converted to absence.
 
 1. Prefer released source labels and source-grounded human evidence.
 2. Where a label needs manual judgment, use independent blinded coders on the
-   preregistered stratified subset and calculate reliability before adjudication.
+   frozen stratified subset and calculate reliability before adjudication.
 3. A rule-based or frozen model-assisted label may be used only as a secondary
    diagnostic unless validated against the corresponding independent labels.
 

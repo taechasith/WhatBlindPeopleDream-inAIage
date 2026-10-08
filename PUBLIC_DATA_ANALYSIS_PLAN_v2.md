@@ -8,7 +8,7 @@ corpus and before its outcomes are inspected.
 Use the VizWiz validation split because its questions and answers are released.
 After legal source acquisition, generate an eligibility table without inspecting
 model outputs. Select 1,000 rows using seed `20261006`, stratified by
-`answerable` and a deterministic preregistered question taxonomy. The selected
+`answerable` and a frozen deterministic question taxonomy. The selected
 IDs and the complete exclusion flow are immutable before generation.
 
 Use at least two reproducibly obtainable VLMs. For each model, record immutable
@@ -21,7 +21,7 @@ model and label all model-generalization claims `NOT_ESTIMABLE`.
 
 1. Released source labels: VizWiz answerability/answers, GuideDog gold status,
    and released preference judgments where compatible.
-2. Independent human coding of a preregistered, stratified output subset. This
+2. Independent human coding of a frozen, stratified output subset. This
    is annotation of public source/model material, not participant recruitment;
    obtain any institutional determination required before beginning it.
 3. Rule-based or frozen model-assisted coding, evaluated against Level 1/2.

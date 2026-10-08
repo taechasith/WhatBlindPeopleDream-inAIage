@@ -34,10 +34,10 @@
 
 ## Confirmatory computational intervention
 
-The intervention uses a preregistered, deterministic sample of **1,000
+The intervention uses a frozen, deterministic sample of **1,000
 eligible VizWiz validation image-question items**. The sample is selected by a
 published seed after source acquisition, stratified by official answerability
-and preregistered question type. Test data and images without a released,
+and a frozen question taxonomy. Test data and images without a released,
 eligible use route are excluded.
 
 For every included item, each frozen VLM is run once under:
@@ -69,7 +69,7 @@ output. The model and prompt are not selected based on outcome performance.
 
 Each primary score requires independent human coding or an externally validated
 released label. Lexical/model-assisted labels are secondary diagnostics until
-validated against a preregistered manually inspectable held-out subset. No
+validated against a frozen manually inspectable held-out subset. No
 language model is ground truth.
 
 ## Statistical analysis

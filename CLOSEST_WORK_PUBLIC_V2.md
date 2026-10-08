@@ -19,7 +19,7 @@ new intervention corpus. This addendum supplements, rather than overwrites,
 
 Do not claim to be first for blind dreams, BLV VQA, image descriptions, prompt
 engineering, or accessibility evaluation. The proposed contribution is the
-combination of (1) a preregistered within-item intervention using actual
+combination of (1) a frozen, pre-specified within-item intervention using actual
 BLV-originating question context, (2) external preference/verified-guidance
 validation, and (3) a clearly noncausal comparison to blind dream expression.
 
