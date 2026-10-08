@@ -18,6 +18,21 @@ official Calderon, Reichart, and Dror implementation at
 https://github.com/nitaytech/AltTest, rather than a locally improvised
 approximation.
 
+## Frozen epsilon policy
+
+The primary cost-benefit hyperparameter is **epsilon = 0.10** for every
+compatible construct and each frozen judge. This treats the three planned
+coders as trained, independent non-expert coders following a fixed rubric and
+does not claim an expert-annotator efficiency premium. The value is fixed
+before human labels, adjudicated labels, human--synthetic comparisons,
+advantage probabilities, winning rates, or condition effects are seen.
+
+Human reliability still governs construct eligibility. A poorly reliable
+construct is classified `CONSTRUCT_NOT_RELIABLE`; epsilon must not be changed
+to make an LLM pass. Every Alt-Test report must state this fixed epsilon,
+coder-role rationale, human reliability, average advantage probability, and
+winning rate.
+
 ## Required procedure
 
 1. Run each compatible construct independently, with all human and synthetic

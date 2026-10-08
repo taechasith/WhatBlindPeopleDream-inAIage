@@ -195,3 +195,24 @@ status.
   do not fabricate a third. Record `ALT_TEST_TWO_HUMAN_LIMITATION`, interpret
   Alt-Test evidence as weaker, and preserve the original confirmatory
   human-coded analysis independently of synthetic scaling.
+
+## 2026-10-08 -- Freeze Alt-Test epsilon policy before human labels
+
+- **Original plan:** The protocol required a documented Alt-Test epsilon
+  rationale but did not set its numerical value before human labels,
+  human--synthetic agreement, or Alt-Test outcomes were available.
+- **New plan:** Set primary `epsilon = 0.10` for every compatible construct
+  and frozen judge. It treats the planned annotators as trained, independent
+  non-expert rubric coders and grants no expert-annotator efficiency premium.
+- **Reason:** The official Alt-Test FAQ identifies epsilon as a cost-benefit
+  hyperparameter, recommends a lower value for lower-cost annotators, and
+  requires reporting the rationale with human reliability, advantage
+  probability, and winning rate. Freezing it prevents selection after seeing
+  which judge would pass.
+- **Outcome visibility:** No human coder labels, adjudicated labels,
+  human--synthetic validation results, Alt-Test results, or condition-level
+  effects have been opened. Synthetic-panel output remains blinded and is not
+  inspected for substantive label patterns.
+- **Constraint:** Poor human reliability downgrades the construct to
+  `CONSTRUCT_NOT_RELIABLE`; epsilon may not be increased to rescue synthetic
+  scaling.

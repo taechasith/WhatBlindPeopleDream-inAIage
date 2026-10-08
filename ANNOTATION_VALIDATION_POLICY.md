@@ -63,6 +63,19 @@ weaker, and preserve the human-subset confirmatory analysis independently of
 synthetic scaling. Otherwise record `ALT_TEST_NOT_APPLICABLE` and apply a
 prospectively frozen alternative rule.
 
+### Frozen Alt-Test epsilon policy
+
+The primary Alt-Test cost-benefit hyperparameter is **epsilon = 0.10** for
+every compatible construct and frozen synthetic judge. This is deliberately
+conservative: the planned coders are trained, independent non-expert coders
+using a fixed rubric, and the policy grants no expert-annotator efficiency
+premium. Epsilon is not changed after observing human--human reliability,
+human--synthetic agreement, judge winning rates, advantage probabilities, or
+condition effects. If a construct's human reliability is inadequate, it is
+`CONSTRUCT_NOT_RELIABLE` rather than rescued by changing epsilon. Report the
+fixed primary epsilon, the coder-role rationale, human reliability, advantage
+probability, and winning rate for every Alt-Test result.
+
 Freeze one status per construct:
 
 - `HUMAN_VALIDATED_SYNTHETIC_SCALE_OK`
