@@ -1,11 +1,22 @@
 # Data source register
 
-**Register status:** prospective sources frozen before download or inspection.  
-**Rule:** `UNVERIFIED` means no data may enter the corpus until Phase 1/2 source
-verification records the access date, license/terms, release context, and exact
-retrieval method. An unavailable source is recorded as `ACCESS_UNAVAILABLE`.
+**Register scope:** this table preserves the Phase-0 prospective source register
+as frozen before acquisition. It is not the authoritative current acquisition
+record.
 
-| ID | Evidence layer | Source | Intended text unit | Prospective use | License / access status at freeze |
+**Authoritative current provenance:** consult `data/PUBLIC_DATA_SOURCE_GATE.csv`
+and `data/MANIFEST.csv` before deciding whether a source may be used. Those
+records show local acquisition for DreamBank, VizWiz VQA, VizWiz Captions, the
+Xie documentation snapshot, and Kapur--Kreiss preference data; GuideDog remains
+`ACCESS_REQUIRES_USER_CREDENTIALS`. Do not infer that GuideDog Gold validation
+has occurred.
+
+**Phase-0 rule retained for historical interpretation:** `UNVERIFIED` meant no
+data could enter the corpus until Phase 1/2 source verification recorded access
+date, license/terms, release context, and exact retrieval method. An unavailable
+source is recorded as `ACCESS_UNAVAILABLE`.
+
+| ID | Evidence layer | Source | Intended text unit | Prospective use | License / access status at Phase-0 freeze |
 |---|---|---|---|---|---|
 | DREAMBANK | Dream | https://dreambank.net/ and https://dreambank.net/grid.cgi | Dream report | Evidence-based blind-series corpus only | CC BY-NC-SA 4.0 reported in governing guide; verify on source before retrieval |
 | KANG2023 | Dream | https://doi.org/10.3390/brainsci13101394 | Published estimate / replication anchor | Coding logic and reported evidence | UNVERIFIED |

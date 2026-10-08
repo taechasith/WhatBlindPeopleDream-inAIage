@@ -1,15 +1,19 @@
-# Anonymous ethics note for CHI review — draft
+# Anonymous ethics note for CHI review - draft
 
-This project has two distinct components. Study 0 is an exploratory secondary
-analysis of released public research data. Study 1 is prospective human-
-participant research and will not begin recruitment, exposure, or data collection
-until the ethics-review process applicable to the authors' research environment
-has issued the required determination or approval. The submitted anonymous paper
-will report the decision type and any required safeguards only when doing so is
-permitted without compromising review anonymity; it will not invent an approval
-number or imply that approval has been granted.
+This submission reports a secondary analysis of released research datasets and
+published evidence, plus a deterministic local model intervention on released
+VizWiz image-question items. It involved no new participant recruitment,
+contact, screening, consent, exposure, recording, or data collection. The study
+does not scrape individual public posts.
 
-Study 1 materials are designed for accessible delivery, voluntary withdrawal,
-privacy-protective handling of sensitive dream narratives, and AI-output
-disclosure. The study does not claim clinical benefit, neural change, or real-
-world safety performance.
+Human-originating dream reports, BLV-originating questions, descriptions, and
+preference data are treated as potentially sensitive. Content-bearing source
+data and images remain local; the analysis avoids re-identification, does not
+infer unrecorded disability characteristics, and will not reproduce sensitive
+source material except where necessary and permitted. The authors will comply
+with the ethics-review requirements applicable to their research environment;
+this anonymous draft does not claim or invent an approval/determination number.
+
+The analysis concerns released text and frozen model outputs. It does not claim
+clinical benefit, neural change, change in dream content, or real-world safety
+performance.

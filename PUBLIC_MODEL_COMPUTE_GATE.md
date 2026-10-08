@@ -1,40 +1,49 @@
 # Public computational-intervention model/compute gate
 
-**Status:** BLOCKED — no frozen, executable VLM configuration as of 2026-10-06.
+**Status:** `PASSED_FOR_PRIMARY_OUTPUT_GENERATION; MEASUREMENT_VALIDATION_PENDING`
+as of 2026-10-08 (Asia/Bangkok).
 
-## Observed local environment
+## Observed local environment and primary run
 
 - Hardware detection reports an NVIDIA GeForce RTX 4060 Laptop GPU with 8,188
   MiB reported memory.
-- The active Python interpreter has CPU-only PyTorch 2.2.2; `cuda_available`
-  is `False`.
-- `transformers` and Pillow are installed, but `accelerate`, `bitsandbytes`,
-  and a supported local VLM runtime are absent. No qualifying vision-language
-  model checkpoint is present in the inspected local Hugging Face cache.
+- The dedicated `.env_vlm/` environment has CUDA-enabled PyTorch 2.11.0+cu128;
+  `torch.cuda.is_available()` was `True` on the RTX 4060 Laptop GPU.
+- The frozen primary model is `Qwen/Qwen2.5-VL-3B-Instruct` at immutable
+  revision `66285546d2b821cf421d4f5eb2576359d3770cd3`, documented in
+  [compute/MODEL_FREEZE.md](compute/MODEL_FREEZE.md).
+- A deterministic local run completed the locked 1,000-item by 3-condition
+  primary design with 3,000 valid outputs and zero logged primary-inference
+  technical failures. [MODEL_OUTPUT_FREEZE.md](MODEL_OUTPUT_FREEZE.md) and
+  `data/model_outputs/` preserve the output manifest and checksums.
 
-This is a capability audit, not a model run. No images were sent to a provider,
-no model text was generated, and no empirical result follows from it.
+This is a compute/provenance audit, not condition-level analysis. Passing this
+gate neither estimates RQ2--RQ5 nor establishes any substantive result.
 
-## Gate required before generation
+## Requirements met before accepting primary generation
 
-Before any output is accepted, an authorized researcher must record each model
-in `config/public_vlm_models.json` with:
+The frozen primary run records:
 
-1. provider or local checkpoint identifier and immutable revision;
-2. model license and permitted research use;
-3. runtime and package versions, hardware, and deterministic settings;
-4. prompt-template identifiers and image-preprocessing policy;
-5. date/time, local input manifest hash, and output checksum; and
-6. an executable command that can be rerun without exposing credentials.
+1. a provider/checkpoint identifier and immutable revision;
+2. model license and permitted research-use boundary;
+3. runtime/package versions, hardware, deterministic settings, and image policy;
+4. frozen prompt-template identifiers and hashes;
+5. local input/output manifests and checksums; and
+6. an executable, credential-free local inference command.
 
-The protocol requires at least one frozen model to estimate a model-specific
-effect. It targets two or more independently frozen models for replication. If
-only one is executed, model-generalization claims are `NOT_ESTIMABLE`.
+The protocol targets a later independently frozen model as a robustness
+replication if feasible. Until that replication is performed and analyzed under
+the frozen plan, cross-model generalization remains `NOT_ESTIMABLE`.
 
 ## Current consequence
 
-The project can validate sources, freeze prompts, and test the analysis
-pipeline with explicitly synthetic fixtures. It cannot generate intervention
-outputs, estimate RQ2--RQ5, validate automated labels, or draft final findings
-until this gate is satisfied. No placeholder text may be substituted for VLM
-outputs.
+The compute gate is satisfied, but the blinded measurement-validation gate
+remains binding. RQ2--RQ5 cannot be run until the synthetic panel is technically
+frozen; three genuine human coder files are locked; pre-adjudication reliability,
+adjudication, same-item synthetic validation, Alt-Test decisions where
+applicable, construct eligibility, and separate external validation are frozen
+in `CODED_DATA_FREEZE.md`.
+
+No placeholder, synthetic fixture, or model-derived label substitutes for those
+records. The private condition mapping remains unopened until that gate is
+complete.

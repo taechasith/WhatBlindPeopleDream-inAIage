@@ -1,14 +1,18 @@
 # Ethics and data-use note
 
-**Status at Phase 0:** prospective, no data acquired and no new human subjects
-activity initiated.
+**Current status:** active secondary analysis of formally released public
+research data. Documented local source acquisition and provenance are recorded
+in `data/PUBLIC_DATA_SOURCE_GATE.csv` and `data/MANIFEST.csv`. No new human
+subjects activity has been initiated.
 
 ## Study boundary
 
-The study is a secondary analysis of formally released public research datasets
-and published evidence. It will not recruit, contact, intervene with, track, or
-deceive people. It will not scrape fresh social-media content, even when public.
-Released research data are preferred over individual public posts.
+The active CHI-scope study is a secondary analysis of formally released public
+research datasets and published evidence plus a deterministic local
+image-question-to-model-output intervention. It does not recruit, contact,
+intervene with, track, deceive, screen, consent, or collect data from people.
+It does not scrape fresh social-media content, even when public. Released
+research data are preferred over individual public posts.
 
 ## Population sensitivity and mitigations
 
@@ -29,11 +33,12 @@ text information. The project will:
 
 ## License and access gate
 
-No prospective source in `DATA_SOURCES.md` is approved for corpus import until
-its official access page/repository has been checked and its license or terms,
-version, release context, and allowed fields are recorded. `ACCESS_UNAVAILABLE`,
-ambiguous, or non-research-compatible sources will be excluded rather than
-silently substituted.
+Only sources recorded as current-use eligible in
+`data/PUBLIC_DATA_SOURCE_GATE.csv` may enter the active study. Raw
+content-bearing data stay local and are not distributed by default. Sources
+with ambiguous terms, unavailable access, or incompatible research use are
+excluded rather than silently substituted. GuideDog remains gated and has not
+been downloaded or analyzed; no access control is bypassed.
 
 ## Institutional ethics determination
 
@@ -41,10 +46,11 @@ No local ethics/IRB determination has yet been documented. Before external
 dissemination or any activity outside the released-data boundary, the research
 team must obtain and record the applicable institutional determination (for
 example, exempt/not-human-subjects/review-required) from the responsible
-institution. If a determination requires approval before secondary analysis, all
-analysis pauses at that point. This record must include date, office, reference
-number if issued, scope, and conditions; it must not appear in anonymized review
-materials if it would reveal author identity.
+research environment. If a determination requires approval before secondary
+analysis or independent human annotation, those activities pause at that point.
+This record must include date, office, reference number if issued, scope, and
+conditions; it must not appear in anonymized review materials if it would reveal
+author identity.
 
 ## Risk framing
 
