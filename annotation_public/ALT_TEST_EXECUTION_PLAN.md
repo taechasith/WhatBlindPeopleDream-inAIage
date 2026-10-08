@@ -11,12 +11,22 @@ labels for human labels.
 - locked adjudicated labels for the same rows;
 - frozen individual synthetic-judge labels aligned by `blind_item_id` and
   construct; and
-- a construct eligibility record and the rationale for the selected epsilon.
+- the frozen blinded construct-applicability precheck in
+  `CONSTRUCT_APPLICABILITY_PRECHECK_v1.csv`; and
+- the rationale for the already frozen epsilon.
 
-No Alt-Test run occurs before all of these inputs are locked. It is run with the
-official Calderon, Reichart, and Dror implementation at
+No Alt-Test run occurs before all of these inputs are locked. Final construct
+eligibility is intentionally assigned only after this test and the other
+same-item validation evidence are complete. The test is run with the official
+Calderon, Reichart, and Dror implementation at
 https://github.com/nitaytech/AltTest, rather than a locally improvised
 approximation.
+
+Exclude rows with `PARSE_ERROR:*` from Alt-Test inputs: their stored `NA` value
+is a technical placeholder, not a semantic abstention. Exclude a PRESENT label
+with `EVIDENCE_SPAN_INVALID` from positive-label comparison as well. Preserve
+both categories in the technical manifest and report their coverage loss; never
+recode them as `0` or retry them for an inconvenient substantive judgment.
 
 ## Frozen epsilon policy
 

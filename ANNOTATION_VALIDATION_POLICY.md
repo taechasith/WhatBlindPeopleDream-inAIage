@@ -18,8 +18,13 @@ unblinding or RQ2-RQ5 analysis occurs before `CODED_DATA_FREEZE`.
 3. Freeze a selection manifest, shuffle rows, and hide grouping and condition
    clues from coders.
 4. Three independent human coders receive and code the identical 600 rows.
-5. Train using non-analytic examples, freeze instructions, lock all three raw files,
-   calculate reliability, then adjudicate. Never edit locked raw files.
+5. Train using non-analytic examples, freeze instructions, and require a separate
+   pseudonymous independence attestation for each return. The attestation binds
+   the received file to the distributed packet/material hashes and records that
+   no condition metadata, synthetic labels, other-coder labels, or LLM co-coder
+   was used.
+6. Validate and atomically lock all three raw files before reliability; calculate
+   reliability, then adjudicate. Never edit locked raw files.
 
 ## Reliability
 
@@ -29,6 +34,22 @@ suitable binary labels, weighted kappa for ordinal labels, and a three-coder
 Krippendorff's alpha where appropriate. Record rare-category paradoxes. Poor
 human reliability downgrades or excludes a construct; synthetic consensus cannot
 repair it.
+
+For the 600-row subset, bootstrap uncertainty is a prospectively frozen
+item-cluster procedure documented in
+`annotation_public/RELIABILITY_BOOTSTRAP_POLICY_v1.md`. It preserves all three
+outputs and every coder's missingness pattern within each of the 200 opaque
+source-item clusters.
+
+No numerical reliability pass/borderline threshold was frozen before human
+labels. Therefore the pre-adjudication report must use
+`reliability_decision=THRESHOLD_NOT_PREDEFINED` and
+`confirmatory_use=BLOCKED_PENDING_PROSPECTIVE_RULE`; it must not infer a pass,
+borderline, or final construct eligibility from observed reliability values.
+Any future numerical decision must be prospectively governed without access to
+condition-level results and recorded as a new deviation. Structural
+non-applicability is separated from poor reliability in
+`annotation_public/CONSTRUCT_APPLICABILITY_PRECHECK_v1.csv`.
 
 ## Synthetic Annotation Panel / HG-SAP
 
@@ -40,6 +61,16 @@ repair it.
   confidence, `evidence_span`, `reason_code`, and `parser_status`.
 - Treat unsupported PRESENT labels as `EVIDENCE_SPAN_INVALID` unless the
   codebook prospectively permits whole-text inference.
+
+`PARSE_ERROR:*` rows are technical decoding/serialization failures, not semantic
+abstentions. The frozen runner retains placeholder `NA` rows only to preserve
+the output's rectangular record structure. Preserve such rows, raw responses,
+and counts for coverage/failure reporting, but mark them
+`TECHNICALLY_INVALID_FOR_MEASUREMENT` and exclude them from label prevalence,
+human--synthetic agreement, Alt-Test, and scaled construct analysis. Likewise,
+an `EVIDENCE_SPAN_INVALID` PRESENT label is retained and reported but is not a
+valid positive measurement. Neither category may be recoded as a negative
+label or silently retried.
 
 It is a **Synthetic Annotation Panel** until it has passed same-item,
 same-rubric comparison with adjudicated human labels. Only a passing construct
@@ -83,6 +114,11 @@ Freeze one status per construct:
 - `MODEL_DERIVED_EXPLORATORY`
 - `MODEL_DERIVED_UNVALIDATED`
 - `CONSTRUCT_NOT_RELIABLE`
+
+The final eligibility table is created only after human reliability,
+adjudication, same-item validation, and Alt-Test applicability/decisions. A
+blinded construct-applicability precheck is an input to those steps, not a
+premature eligibility decision.
 
 ## External-validation boundary
 

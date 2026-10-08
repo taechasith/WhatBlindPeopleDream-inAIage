@@ -216,3 +216,56 @@ status.
 - **Constraint:** Poor human reliability downgrades the construct to
   `CONSTRUCT_NOT_RELIABLE`; epsilon may not be increased to rescue synthetic
   scaling.
+
+## 2026-10-08 -- Separate technical parser failures from semantic abstention
+
+- **Original plan:** The frozen synthetic runner preserved a rectangular table
+  by writing `label=NA, abstain=true` rows when a raw response could not be
+  parsed. The policy did not explicitly distinguish these technical
+  placeholders from an LLM's semantically justified abstention.
+- **New plan:** Retain every raw parser-failure record and placeholder row, but
+  mark `PARSE_ERROR:*` rows `TECHNICALLY_INVALID_FOR_MEASUREMENT`; exclude them
+  from prevalence, same-item human validation, Alt-Test, and scaled analyses.
+  Treat PRESENT labels marked `EVIDENCE_SPAN_INVALID` as invalid positive
+  measurements as well. Report both categories as coverage/failure counts.
+- **Reason:** A technical audit of the blinded running panel showed that a
+  parser failure could otherwise be mistakenly counted as semantic abstention.
+  The new rule prevents a serialization defect from being converted into a
+  scientific label, while preserving all artifacts and avoiding retry or
+  regeneration of substantive outputs.
+- **Outcome visibility:** Parser-status counts were inspected as permitted
+  technical metadata; no label substance by condition, private mapping, RQ2--RQ5
+  effect, human label, or human--synthetic result was inspected.
+- **Confirmatory effect:** This is a prospective validity/coverage rule applied
+  before any human reference exists. It cannot improve a judge by deleting
+  inconvenient semantic outcomes because invalid rows remain visible and are
+  reported in the technical freeze.
+
+## 2026-10-08 -- Harden pre-human reliability governance and preserve cluster structure
+
+- **Original plan:** The annotation policy required construct-level reliability
+  before adjudication, but did not specify a numerical reliability threshold,
+  a complete human-return locking protocol, an item-cluster uncertainty method,
+  or a distinction between structurally unavailable text-only constructs and
+  poor human agreement.
+- **New plan:** Before any genuine human labels exist, freeze an opaque
+  200-cluster bootstrap map and the 2,000-replicate percentile-bootstrap policy;
+  require locked independent A/B/C returns and attestation provenance; and
+  report `THRESHOLD_NOT_PREDEFINED` with non-confirmatory use rather than
+  deriving a pass/borderline/fail threshold after observing labels. The
+  applicability precheck records that `unsupported_information` and
+  `accessibility_grounded_content` are structurally `NA` in the current
+  question/output-only packet.
+- **Reason:** A source-only audit found that technical missingness, source-item
+  clustering, and structurally absent reference evidence could otherwise be
+  misread as substantive human disagreement, and that an unannounced threshold
+  would invite post-hoc eligibility decisions.
+- **Outcome visibility:** No human coder labels, adjudicated labels,
+  human--synthetic validation, synthetic label substance, private condition
+  mapping, or RQ2--RQ5 outcome was inspected. The opaque map was built
+  mechanically using only blind IDs and source-item IDs, without reading
+  condition fields.
+- **Confirmatory effect:** This amendment strengthens measurement provenance
+  but does not authorize full-scale synthetic measurement. A later prospective
+  governance decision remains necessary before any threshold-based construct
+  eligibility claim can be made.
