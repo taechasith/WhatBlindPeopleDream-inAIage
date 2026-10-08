@@ -53,6 +53,41 @@ prevalence measures cannot substitute for per-dream corpus frequencies.
 **Our added value:** Preserves estimands, uses it as literature evidence, and
 compares AI-era information distributions with—not as causes of—dream patterns.
 
+### Gonzalez Penuela et al. (2025): BLV-question-guided MLLM descriptions
+
+**Did/data/found:** An ICCV CV4A11y workshop extended abstract used questions
+retrieved from visually similar prior VizWiz-LF images to steer MLLM descriptions
+of target images.
+
+**Did not do:** It did not supply the target image's directly paired BLV
+question, compare an accessibility-policy condition, or connect descriptions to
+blind dream expression under a shared cross-domain ontology.
+
+**Our added value:** A frozen 1,000-item, three-condition direct-paired-question
+intervention and descriptive cross-domain audit. This is not the first use of
+BLV questions to guide MLLM descriptions.
+
+### Gonzalez Penuela et al. (2026) and Garg et al. (2026): real-world MLLM use and image quality
+
+**Did/data/found:** The CHI 2026 diary study examines real BLV MLLM use; the
+CHI 2026 image-quality study examines how BLV-captured product-image quality
+affects VLM captioning.
+
+**Did not do:** Neither provides blind-dream data, the shared ontology, or the
+same-item prompt intervention in this protocol.
+
+**Our added value:** Treats real-world use and image quality as essential scope
+and limitation context while testing the narrower information-mediation change
+from paired question and accessibility instructions.
+
+### SceneScout (2026): street-level AI access
+
+**Did/data/found:** The published CHI 2026 revision studies AI-driven access to
+street-level imagery for blind users.
+
+**Did not do:** It is a navigation-specific system study, not a question-steered
+cross-domain audit linking HumanSpace, IntentSpace, AISpace, and DreamSpace.
+
 ### Kreiss et al. (2022) and Mohanbabu & Pavel (2024): BLV description context
 
 **Did/data/found:** These studies show that context matters for accessible image
