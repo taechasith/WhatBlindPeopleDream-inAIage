@@ -90,8 +90,10 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     captions = build_captions(CAPTION_JSON)
     kapur = build_kapur(KAPUR_DIR)
-    captions.to_csv(args.output_dir / "vizwiz_captions_val.csv", index=False)
-    kapur.to_csv(args.output_dir / "kapur_preference_ratings.csv", index=False)
+    captions_path = args.output_dir / "vizwiz_captions_val.csv"
+    kapur_path = args.output_dir / "kapur_preference_ratings.csv"
+    captions.to_csv(captions_path, index=False)
+    kapur.to_csv(kapur_path, index=False)
     manifest = {
         "data_status": "RELEASED_SOURCE_DERIVED_LOCAL_ONLY",
         "inputs": {
@@ -104,6 +106,10 @@ def main() -> None:
             "vizwiz_captions_val_unique_images": int(captions["image_id"].nunique()),
             "kapur_preference_rows": len(kapur),
             "kapur_comparison_sets": sorted(kapur["comparison_set"].unique().tolist()),
+        },
+        "output_files": {
+            str(captions_path.relative_to(ROOT)): sha256(captions_path),
+            str(kapur_path.relative_to(ROOT)): sha256(kapur_path),
         },
     }
     (args.output_dir / "build_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
