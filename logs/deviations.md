@@ -288,3 +288,22 @@ status.
 - **Confirmatory effect:** The study remains a prospectively frozen internal
   protocol; this wording correction does not convert it into a publicly
   preregistered study.
+
+## 2026-10-08 -- Issue distribution-ready human coder packet v1.1
+
+- **Original plan/material:** The frozen v1 package preserved the correct
+  blinded 600-row subset and coding sheets, but did not include or checksum the
+  referenced codebook, return protocol, attestation, or per-coder assignment
+  receipt. Its instructions also ambiguously named the standalone template.
+- **New plan/material:** Preserve v1 unchanged and create a separate v1.1
+  package by byte-copying its subset and sheets, then adding hash-pinned v1.1
+  materials. Coders must complete the supplied `coding_sheet.csv`; v1.1 repairs
+  malformed quotation characters without changing any code, construct, or
+  rubric decision boundary.
+- **Reason:** A pre-distribution mechanical integrity audit identified that the
+  original materials could not prove which referenced rubric a coder received.
+- **Outcome visibility:** No human labels exist; no model-output content,
+  condition mapping, synthetic label substance, or RQ2--RQ5 result was read.
+- **Confirmatory effect:** The fixed seed, 200 selected items, 600 rows, row
+  order, output text, condition blinding, ontology, judges, and prompts remain
+  unchanged. v1.1 strengthens provenance only.

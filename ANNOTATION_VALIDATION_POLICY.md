@@ -140,3 +140,11 @@ inter-model agreement, construct-level human-versus-synthetic validation,
 alt-test decisions, separate external validation, eligibility table, and every
 label source/status. Commit this gate. Only then may the private mapping be
 used for RQ2-RQ5.
+## Human coder package version
+
+The only distribution-ready human coder package is `human_validation_v1_1`.
+It byte-preserves the frozen v1 analytic rows and sheets while hash-pinning the
+codebook, attestation, return protocol, and coder-specific assignment receipt.
+The original v1 directory is retained as an audit artifact and must not be
+distributed. This pre-label package correction does not authorize coding,
+unblinding, synthetic scaling, or RQ2--RQ5.

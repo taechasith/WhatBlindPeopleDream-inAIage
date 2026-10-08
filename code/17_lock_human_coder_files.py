@@ -32,9 +32,20 @@ EXPECTED_COLUMNS = (*VISIBLE_COLUMNS, *FIELDS, *METADATA_COLUMNS)
 ATTESTATION_COLUMNS = (
     "coder_role", "coder_id", "packet_sha256", "distributed_coding_sheet_sha256",
     "instructions_sha256", "training_sha256", "adjudication_protocol_sha256",
+    "codebook_sha256", "return_protocol_sha256", "assignment_receipt_sha256",
     "completion_datetime_utc", "independent_work_attested",
     "condition_metadata_not_seen", "synthetic_labels_not_seen",
     "other_coder_labels_not_seen", "no_llm_assistance_attested", "notes",
+)
+PACKAGE_MATERIALS = (
+    ("coding_sheet.csv", None),
+    ("CODER_INSTRUCTIONS_v1_1.md", "instructions_sha256"),
+    ("CODER_TRAINING_NONANALYTIC_v1_1.md", "training_sha256"),
+    ("adjudication_protocol_v1_1.md", "adjudication_protocol_sha256"),
+    ("PUBLIC_INTERVENTION_CODEBOOK_v1_1.md", "codebook_sha256"),
+    ("HUMAN_CODER_RETURN_PROTOCOL_v1_1.md", "return_protocol_sha256"),
+    ("assignment_receipt.csv", "assignment_receipt_sha256"),
+    ("HUMAN_CODER_INDEPENDENCE_ATTESTATION_TEMPLATE_v1_1.csv", None),
 )
 ALLOWED_LABELS = {"0", "1", "NA"}
 EXPECTED_ROWS = 600
@@ -88,14 +99,9 @@ def expected_package_hashes(package_root: Path, errors: list[dict[str, object]])
             add_error(errors, "distributed_package_checksums", "SCHEMA_INVALID", "artifact/sha256 columns required")
         return {}
     values = dict(zip(checksums["artifact"], checksums["sha256"], strict=False))
-    required = ["blinded_human_validation_subset_v1.csv"]
+    required = ["blinded_human_validation_subset_v1.csv", "PACKET_RELEASE_MANIFEST_v1_1.json"]
     for role in ("coder_a", "coder_b", "coder_c"):
-        required.extend([
-            f"{role}/coding_sheet.csv",
-            f"{role}/CODER_INSTRUCTIONS_v1.md",
-            f"{role}/CODER_TRAINING_NONANALYTIC_v1.md",
-            f"{role}/adjudication_protocol.md",
-        ])
+        required.extend(f"{role}/{filename}" for filename, _ in PACKAGE_MATERIALS)
     for artifact in required:
         if artifact not in values:
             add_error(errors, "distributed_package_checksums", "ARTIFACT_HASH_MISSING", artifact)
@@ -117,14 +123,24 @@ def validate_distributed_package(package_root: Path, errors: list[dict[str, obje
     expected_hash = hashes.get("blinded_human_validation_subset_v1.csv")
     if expected_hash and sha256(subset_path) != expected_hash:
         add_error(errors, "distributed_subset", "CHECKSUM_MISMATCH", "subset does not match distributed checksum")
+    release_manifest = package_root / "PACKET_RELEASE_MANIFEST_v1_1.json"
+    release_manifest_hash = hashes.get("PACKET_RELEASE_MANIFEST_v1_1.json")
+    if not release_manifest.is_file():
+        add_error(errors, "distributed_package", "RELEASE_MANIFEST_MISSING", str(release_manifest))
+    elif release_manifest_hash and sha256(release_manifest) != release_manifest_hash:
+        add_error(errors, "distributed_package", "RELEASE_MANIFEST_CHECKSUM_MISMATCH", release_manifest.name)
     for role in ("coder_a", "coder_b", "coder_c"):
+        for filename, _ in PACKAGE_MATERIALS:
+            material = package_root / role / filename
+            artifact = f"{role}/{filename}"
+            if not material.is_file():
+                add_error(errors, role, "DISTRIBUTED_MATERIAL_MISSING", artifact)
+                continue
+            if hashes.get(artifact) and sha256(material) != hashes[artifact]:
+                add_error(errors, role, "DISTRIBUTED_MATERIAL_CHECKSUM_MISMATCH", artifact)
         sheet = package_root / role / "coding_sheet.csv"
         if not sheet.is_file():
-            add_error(errors, role, "DISTRIBUTED_SHEET_MISSING", str(sheet))
             continue
-        artifact = f"{role}/coding_sheet.csv"
-        if hashes.get(artifact) and sha256(sheet) != hashes[artifact]:
-            add_error(errors, role, "DISTRIBUTED_SHEET_CHECKSUM_MISMATCH", artifact)
         source_sheet = read_csv(sheet, errors, f"{role}_distributed_sheet")
         if source_sheet is None:
             continue
@@ -216,9 +232,12 @@ def validate_return(
             material_expectations = {
                 "packet_sha256": expected_packet_hash,
                 "distributed_coding_sheet_sha256": expected_sheet_hash,
-                "instructions_sha256": distributed_hashes.get(f"{role}/CODER_INSTRUCTIONS_v1.md", ""),
-                "training_sha256": distributed_hashes.get(f"{role}/CODER_TRAINING_NONANALYTIC_v1.md", ""),
-                "adjudication_protocol_sha256": distributed_hashes.get(f"{role}/adjudication_protocol.md", ""),
+                "instructions_sha256": distributed_hashes.get(f"{role}/CODER_INSTRUCTIONS_v1_1.md", ""),
+                "training_sha256": distributed_hashes.get(f"{role}/CODER_TRAINING_NONANALYTIC_v1_1.md", ""),
+                "adjudication_protocol_sha256": distributed_hashes.get(f"{role}/adjudication_protocol_v1_1.md", ""),
+                "codebook_sha256": distributed_hashes.get(f"{role}/PUBLIC_INTERVENTION_CODEBOOK_v1_1.md", ""),
+                "return_protocol_sha256": distributed_hashes.get(f"{role}/HUMAN_CODER_RETURN_PROTOCOL_v1_1.md", ""),
+                "assignment_receipt_sha256": distributed_hashes.get(f"{role}/assignment_receipt.csv", ""),
             }
             for column, expected_value in material_expectations.items():
                 if not expected_value or attestation_record[column] != expected_value:
