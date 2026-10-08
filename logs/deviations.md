@@ -174,3 +174,24 @@ status.
   DOI 10.18653/v1/2025.acl-long.782; Pataranutaporn et al. (2025), DOI
   10.1073/pnas.2519394122; Kapur and Kreiss (2024), DOI
   10.18653/v1/2024.nlp4pi-1.26.
+
+## 2026-10-08 -- Require three independent human coders for formal Alt-Test scaling
+
+- **Original plan:** Two independent human coders would code the same blinded
+  600-output validation subset before adjudication and construct-level
+  synthetic validation.
+- **New plan:** Three independent human coders (A, B, and C) will independently
+  code the exact same frozen 600 rows under the same rubric. All three raw
+  files will be locked before reliability and adjudication. The official
+  Calderon et al. Alt-Test implementation will be run construct by construct
+  only after the raw human files and adjudicated labels are locked.
+- **Reason:** The official Alt-Test FAQ states that two-human leave-one-out
+  comparisons lack a robust consensus reference and recommends at least three
+  human annotators for more reliable comparison.
+- **Outcome visibility:** This amendment occurs before any human labels exist.
+  The 600-row subset, fixed seed, row order, frozen model outputs, synthetic
+  judges, condition blinding, and RQ2-RQ5 results remain unchanged and unseen.
+- **Fallback:** If only two genuine human coders can ultimately be obtained,
+  do not fabricate a third. Record `ALT_TEST_TWO_HUMAN_LIMITATION`, interpret
+  Alt-Test evidence as weaker, and preserve the original confirmatory
+  human-coded analysis independently of synthetic scaling.

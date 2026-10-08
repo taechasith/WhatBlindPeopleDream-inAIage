@@ -2,7 +2,7 @@
 
 Selects 200 locked VizWiz item IDs with a fixed seed, uses only the private
 blind-ID-to-item mapping mechanically, includes all three blinded outputs per
-selected item, and emits two byte-identical independent-coder packages.  It
+selected item, and emits three byte-identical independent-coder packages. It
 never reads or writes condition labels into a coder-visible artifact.
 """
 from __future__ import annotations
@@ -121,7 +121,7 @@ def main() -> None:
     (args.outdir / "human_validation_subset_manifest.json").write_text(
         json.dumps(selection_manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    for coder in ("coder_a", "coder_b"):
+    for coder in ("coder_a", "coder_b", "coder_c"):
         coder_dir = args.outdir / coder
         coder_dir.mkdir(parents=True, exist_ok=True)
         coding.to_csv(coder_dir / "coding_sheet.csv", index=False)
@@ -131,13 +131,14 @@ def main() -> None:
         {"artifact": "blinded_human_validation_subset_v1.csv", "sha256": sha256(subset_packet)},
         {"artifact": "coder_a/coding_sheet.csv", "sha256": sha256(args.outdir / "coder_a" / "coding_sheet.csv")},
         {"artifact": "coder_b/coding_sheet.csv", "sha256": sha256(args.outdir / "coder_b" / "coding_sheet.csv")},
+        {"artifact": "coder_c/coding_sheet.csv", "sha256": sha256(args.outdir / "coder_c" / "coding_sheet.csv")},
         *[
             {"artifact": f"{coder}/{material}", "sha256": sha256(args.outdir / coder / material)}
-            for coder in ("coder_a", "coder_b")
+            for coder in ("coder_a", "coder_b", "coder_c")
             for material in ("CODER_INSTRUCTIONS_v1.md", "CODER_TRAINING_NONANALYTIC_v1.md", "adjudication_protocol.md")
         ],
     ])
-    if checksums.iloc[1].sha256 != checksums.iloc[2].sha256:
+    if len({checksums.iloc[index].sha256 for index in (1, 2, 3)}) != 1:
         raise AssertionError("Coder packages are not byte-identical.")
     checksums.to_csv(args.outdir / "CHECKSUMS.csv", index=False)
     print(json.dumps(selection_manifest, sort_keys=True))

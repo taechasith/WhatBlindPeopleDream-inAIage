@@ -11,9 +11,9 @@ no condition-level outcome, contrast, or hypothesis interpretation.
 
 ## Required sequence
 
-1. Provide the shuffled blinded packet to two independent human coders using
+1. Provide the same shuffled blinded packet to three independent human coders using
    `annotation_public/CODER_INSTRUCTIONS_v1.md` and the frozen template.
-2. Preserve both completed coding files unchanged and calculate reliability
+2. Preserve all three completed coding files unchanged and calculate reliability
    before any discussion or adjudication.
 3. Perform documented adjudication only after the pre-adjudication record is
    locked.
@@ -37,4 +37,6 @@ local-only and excluded from version control and review materials.
 
 Automated lexical or model-assisted labels cannot be substituted for the
 independent human coding required for confirmatory results. Synthetic labels
-cannot be used. No RQ2--RQ5 result is estimable until the coded-data freeze.
+cannot be used. If only two genuine human files are ultimately available,
+record `ALT_TEST_TWO_HUMAN_LIMITATION`; do not fabricate a third. No RQ2--RQ5
+result is estimable until the coded-data freeze.

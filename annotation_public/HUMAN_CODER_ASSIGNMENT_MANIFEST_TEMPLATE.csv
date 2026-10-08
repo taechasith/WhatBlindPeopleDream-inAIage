@@ -1,2 +1,2 @@
-packet_id,packet_sha256,codebook_version,coder_a_id,coder_b_id,assignment_date_utc,blinding_statement,training_material_version,notes
-human_validation_v1,,,,,"Coders received no condition, prompt, model, source-image, hypothesis-direction, synthetic-label, or co-coder-label information.",CODER_TRAINING_NONANALYTIC_v1,
+packet_id,packet_sha256,codebook_version,coder_a_id,coder_b_id,coder_c_id,assignment_date_utc,blinding_statement,training_material_version,notes
+human_validation_v1,,,,,,"Coders received no condition, prompt, model, source-image, hypothesis-direction, synthetic-label, or another coder's labels.",CODER_TRAINING_NONANALYTIC_v1,

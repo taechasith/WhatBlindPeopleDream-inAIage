@@ -87,8 +87,9 @@ The validator is fail-closed: it requires exactly the frozen sample, one output
 for every condition per model/item, nonblank output, and a matching model
 manifest hash. Validation is not analysis, coding, or a scientific finding.
 
-After two independent blinded coding files have been created according to
-`PUBLIC_INTERVENTION_CODEBOOK_v1.md` and reconciled under
+After three independent blinded coding files have been created according to
+`PUBLIC_INTERVENTION_CODEBOOK_v1.md`, reliability has been recorded, and the
+files have been reconciled under
 `annotation_public/adjudication_protocol.md`, run the analysis locally:
 
 ```powershell

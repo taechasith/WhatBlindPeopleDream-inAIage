@@ -17,17 +17,18 @@ unblinding or RQ2-RQ5 analysis occurs before `CODED_DATA_FREEZE`.
 2. Include all three condition outputs per item: `200 x 3 = 600` rows.
 3. Freeze a selection manifest, shuffle rows, and hide grouping and condition
    clues from coders.
-4. Both independent human coders receive and code the identical 600 rows.
-5. Train using non-analytic examples, freeze instructions, lock raw files,
+4. Three independent human coders receive and code the identical 600 rows.
+5. Train using non-analytic examples, freeze instructions, lock all three raw files,
    calculate reliability, then adjudicate. Never edit locked raw files.
 
 ## Reliability
 
-Assess each construct separately. Retain raw agreement, prevalence, and
-uncertainty where feasible; use Cohen's kappa for suitable binary labels,
-weighted kappa for ordinal labels, and Krippendorff's alpha where appropriate.
-Record rare-category paradoxes. Poor human reliability downgrades or excludes a
-construct; synthetic consensus cannot repair it.
+Assess each construct separately. Retain every pairwise raw agreement,
+prevalence, and uncertainty where feasible; use pairwise Cohen's kappa for
+suitable binary labels, weighted kappa for ordinal labels, and a three-coder
+Krippendorff's alpha where appropriate. Record rare-category paradoxes. Poor
+human reliability downgrades or excludes a construct; synthetic consensus cannot
+repair it.
 
 ## Synthetic Annotation Panel / HG-SAP
 
@@ -53,8 +54,14 @@ validity, and confidence calibration where applicable. Accuracy alone does not
 certify rare constructs.
 
 Use the Alternative Annotator Test only through the authors' method/code or a
-verified faithful implementation, when compatible. Otherwise record
-`ALT_TEST_NOT_APPLICABLE` and apply a prospectively frozen alternative rule.
+verified faithful implementation, when compatible. A formal synthetic-scaling
+gate requires the three independent human coders above: the official Alt-Test
+FAQ explains that two-human leave-one-out comparisons lack a robust consensus
+reference. If only two genuine coders are ultimately available, do not fabricate
+a third; record `ALT_TEST_TWO_HUMAN_LIMITATION`, interpret Alt-Test evidence as
+weaker, and preserve the human-subset confirmatory analysis independently of
+synthetic scaling. Otherwise record `ALT_TEST_NOT_APPLICABLE` and apply a
+prospectively frozen alternative rule.
 
 Freeze one status per construct:
 
@@ -78,7 +85,7 @@ to BLV people; use “synthetic accessibility-oriented evaluator” or
 
 ## Coded-data freeze and unblinding gate
 
-Before unblinding, retain checksums and provenance for: locked human A/B files,
+Before unblinding, retain checksums and provenance for: locked human A/B/C files,
 human reliability, locked adjudicated subset, frozen synthetic outputs,
 inter-model agreement, construct-level human-versus-synthetic validation,
 alt-test decisions, separate external validation, eligibility table, and every
