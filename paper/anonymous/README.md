@@ -26,6 +26,27 @@ not be rendered, shared, or uploaded as a completed paper before
 5. Run anonymity, metadata, reference, accessibility, and CHI preflight audits
    after the final PDF and A0 poster are built.
 
+## Reproducible post-freeze fact packet
+
+Do not type empirical values into the manuscript from a terminal, spreadsheet,
+or memory. After the immutable `RESULTS_FREEZE` exists, generate an anonymous
+fact packet and numeric LaTeX macros with:
+
+```powershell
+python code/31_build_paper_fact_packet.py `
+  --results-freeze results/results_freeze/RESULTS_FREEZE.json `
+  --outdir paper/anonymous/generated
+```
+
+The command fails unless the freeze receipt, upstream provenance receipts,
+results ledger, table hashes, row counts, canonical schemas, and canonical
+artifact paths reconcile. It produces `paper_fact_packet.json`,
+`paper_fact_packet.csv`, `results_macros.tex`, and a checksum manifest. The
+packet is data only: it does not select results, interpret effects, or write
+empirical prose. It does not by itself complete `RESULTS_FREEZE_AUDIT.md`;
+complete that audit before interpreting facts or drafting the paper. Never
+manually alter generated artifacts; regenerate them from the frozen ledger.
+
 ## Review-stage anonymity
 
 Do not add names, affiliations, emails, acknowledgements, institutional details,
