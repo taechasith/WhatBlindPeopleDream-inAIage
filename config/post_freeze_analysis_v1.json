@@ -50,6 +50,13 @@
       "family": "within judge, primary family, and contrast"
     }
   },
+  "representational_space": {
+    "lexical_codebook_script": "code/04_apply_codebook.py",
+    "spaces": ["DREAM", "BLV_USER_QUESTION", "HUMAN_CAPTION", "AI_GENERIC", "AI_INTENT_STEERED", "AI_ACCESSIBILITY_STEERED"],
+    "bootstrap_repetitions": 1000,
+    "metrics": ["jensen_shannon_divergence", "cosine_similarity", "hellinger_distance"],
+    "association_test": "NOT_ESTIMABLE_WITH_THREE_CONDITION_PROFILES"
+  },
   "reporting": {
     "effect": "paired mean proportion difference (numerator minus denominator)",
     "confirmatory_statuses": ["COMPUTATIONAL_PRIMARY", "PUBLIC_HUMAN_BENCHMARKED"],

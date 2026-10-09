@@ -111,3 +111,19 @@
   `CODED_DATA_FROZEN_PUBLIC_DATA_ONLY`. The resulting metrics cannot license
   claims of semantic correctness, BLV preference, human usefulness, or lived
   experience.
+
+## 2026-10-09 -- Freeze distributional RQ4 implementation
+
+- **Decision:** Operationalize RQ4 with the existing frozen lexical candidate
+  codebook applied identically to DreamSpace, IntentSpace, HumanSpace, and the
+  three unblinded AI-output conditions. Report Jensen--Shannon divergence,
+  cosine similarity, and Hellinger distance with bootstrap uncertainty.
+- **Basis:** RQ4 is a representational-space comparison, not a user study.
+  The shared ontology permits a text-expression profile comparison but not a
+  cognitive-equivalence inference.
+- **Outcome visibility at decision:** No condition mapping, condition-level
+  output profile, RQ2--RQ5 effect, or profile distance was accessed.
+- **Consequence:** A three-condition association between DreamSpace distance
+  and human-reference alignment is explicitly `NOT_ESTIMABLE`; the paper may
+  report profile distances only with the stated lexical and distributional
+  limitations.
