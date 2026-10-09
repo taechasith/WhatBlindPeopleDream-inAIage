@@ -16,6 +16,7 @@ $panelDir = Join-Path $root 'annotation_public\private\synthetic_panel_v1'
 $strength = Join-Path $root 'annotation_public\private\computational_robustness_v1\summary\construct_measurement_strength.csv'
 $outdir = Join-Path $root 'results\post_freeze_analysis_v1'
 $spaceOutdir = Join-Path $root 'results\representational_space_v1'
+$resultsFreezeDir = Join-Path $root 'results\results_freeze'
 
 if (-not (Test-Path -LiteralPath $python)) { throw 'Dedicated analysis Python is unavailable.' }
 while (-not (Test-Path -LiteralPath $freeze)) {
@@ -35,4 +36,11 @@ if (-not (Test-Path -LiteralPath (Join-Path $spaceOutdir 'RQ4_MANIFEST.json'))) 
     if ($LASTEXITCODE -ne 0) { throw 'Post-freeze RQ4 representational-space analysis failed.' }
 }
 
-Write-Output 'POST_FREEZE_RQ2_RQ3_RQ4_RQ5_ANALYSES_COMPLETE'
+if (-not (Test-Path -LiteralPath (Join-Path $resultsFreezeDir 'RESULTS_FREEZE.json'))) {
+    & $python (Join-Path $root 'code\29_freeze_public_data_results.py') `
+        --coded-data-freeze $freeze --post-freeze-analysis $outdir `
+        --space-analysis $spaceOutdir --outdir $resultsFreezeDir
+    if ($LASTEXITCODE -ne 0) { throw 'Public-data results freeze failed.' }
+}
+
+Write-Output 'RESULTS_FROZEN_READY_FOR_FIGURES_AND_MANUSCRIPT'
