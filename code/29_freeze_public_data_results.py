@@ -194,7 +194,7 @@ def validate_rq4(
         fail("RQ4 does not cover exactly the frozen representational-space comparisons")
     profile_keys = set(zip(profiles.space.astype(str), profiles.category.astype(str)))
     expected_profiles = {(space, category) for space in spaces for category in categories}
-    if profile_keys != expected_profiles:
+    if profiles.duplicated(["space", "category"]).any() or profile_keys != expected_profiles:
         fail("RQ4 profiles do not cover exactly the frozen spaces and lexical categories")
     if space_manifest.get("coded_data_freeze_sha256") != sha256(coded_path):
         fail("RQ4 receipt is not tied to this coded-data freeze")
