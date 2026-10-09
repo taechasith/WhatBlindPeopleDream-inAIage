@@ -1,0 +1,60 @@
+{
+  "analysis_id": "public_data_post_freeze_v1",
+  "status": "FROZEN_PRE_UNBLINDING",
+  "authorization": {
+    "required_coded_data_status": "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY",
+    "condition_unblinding_permitted_only_after_status": "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY",
+    "unblinding_count": 1,
+    "prohibitions_before_authorization": [
+      "condition_effect_estimation",
+      "condition-level_descriptive_statistics",
+      "output_text_inspection_by_condition"
+    ]
+  },
+  "design": {
+    "expected_items": 1000,
+    "expected_conditions": ["generic", "intent_steered", "accessibility_steered"],
+    "expected_primary_outputs": 3000,
+    "contrasts": [
+      {"id": "intent_minus_generic", "numerator": "intent_steered", "denominator": "generic"},
+      {"id": "accessibility_minus_intent", "numerator": "accessibility_steered", "denominator": "intent_steered"}
+    ]
+  },
+  "measurement": {
+    "synthetic_label_eligibility": {
+      "parser_status": "PARSED",
+      "abstain": false,
+      "label_values": ["0", "1"]
+    },
+    "primary_family": [
+      "task_answer",
+      "spatial_relation",
+      "identity_inference",
+      "social_intent_inference",
+      "ambiguity"
+    ],
+    "human_reference_metrics": [
+      "human_answer_mode_string_coverage",
+      "human_caption_max_token_f1"
+    ],
+    "human_reference_boundary": "Released human answers and captions are source references. String/token overlap is bounded reference alignment, not semantic correctness, BLV preference, usefulness, or human rating."
+  },
+  "inference": {
+    "cluster_unit": "sample_row_id",
+    "bootstrap_repetitions": 5000,
+    "permutation_repetitions": 10000,
+    "seed": 20261006,
+    "confidence_level": 0.95,
+    "fdr": {
+      "method": "benjamini-hochberg",
+      "family": "within judge, primary family, and contrast"
+    }
+  },
+  "reporting": {
+    "effect": "paired mean proportion difference (numerator minus denominator)",
+    "confirmatory_statuses": ["COMPUTATIONAL_PRIMARY", "PUBLIC_HUMAN_BENCHMARKED"],
+    "secondary_statuses": ["COMPUTATIONAL_SECONDARY"],
+    "exploratory_statuses": ["MODEL_DERIVED_EXPLORATORY"],
+    "exclude_from_substantive_claims": ["MEASUREMENT_UNSTABLE"]
+  }
+}

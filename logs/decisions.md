@@ -89,3 +89,25 @@
   `NOT_APPLICABLE_TO_CURRENT_DESIGN`; constructs must be classified prospectively
   as computationally observable, public-human benchmarked, or model-derived
   exploratory before condition unblinding.
+
+## 2026-10-09 -- Freeze post-gate computational analysis implementation
+
+- **Decision:** Before coded-data freeze and before condition unblinding,
+  freeze an executable analysis configuration for the one permitted unblinding.
+  It reports synthetic judges separately, applies paired cluster bootstrap and
+  paired sign-flip inference, uses BH correction within judge and contrast for
+  the primary construct family, and labels released-answer/caption comparisons
+  as bounded human-reference alignment.
+- **Basis:** The public-data protocol already specifies within-item contrasts,
+  model-specific reporting, bootstrap uncertainty, and a distinction between
+  human-reference alignment and BLV preference. The executable version makes
+  those choices inspectable before outcomes are read.
+- **Outcome visibility at decision:** No condition mapping, synthetic-label
+  pattern by condition, RQ2--RQ5 effect, or final human-reference comparison
+  was accessed.
+- **Consequence:** `config/post_freeze_analysis_v1.json`,
+  `POST_FREEZE_ANALYSIS_PROTOCOL_v1.md`, and
+  `code/27_run_post_freeze_public_analysis.py` may execute only after
+  `CODED_DATA_FROZEN_PUBLIC_DATA_ONLY`. The resulting metrics cannot license
+  claims of semantic correctness, BLV preference, human usefulness, or lived
+  experience.
