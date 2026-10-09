@@ -44,15 +44,6 @@ def read_json(path: Path, expected_status: str) -> dict[str, Any]:
     return record
 
 
-def single_value(frame: pd.DataFrame, column: str, name: str) -> str:
-    if column not in frame.columns:
-        fail(f"{name} lacks required column {column}")
-    values = set(frame[column].astype(str))
-    if len(values) != 1:
-        fail(f"{name} is not internally consistent for {column}")
-    return next(iter(values))
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--panel-freeze", type=Path, required=True)
