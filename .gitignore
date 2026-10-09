@@ -33,6 +33,7 @@ __pycache__/
 /paper/**/*.blg
 /paper/**/*.log
 /paper/**/*.out
+/poster/**/build/
 
 # Transient console captures; named, machine-readable result artifacts are kept.
 /results/*_run_stdout.log
