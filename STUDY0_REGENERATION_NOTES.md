@@ -4,6 +4,15 @@
 **Status:** exploratory lexical-diagnostic regeneration; not confirmatory
 analysis.
 
+**Current-scope note (2026-10-09):** This historical Study 0 diagnostic remains
+limited to public-data lexical measurement. Its lack of human coding does not
+create a current prerequisite for the separate public-data computational
+measurement scope. It does not authorize RQ2--RQ5, access to private model
+outputs or condition mappings, or a claim of human-equivalent measurement.
+Before `CODED_DATA_FREEZE`, it also does not authorize human-readable label
+substance or condition-level inspection; designated blinded scripts may perform
+technical and robustness audits without exposing their contents.
+
 ## Purpose
 
 This note documents the correction made after an audit found that several
@@ -96,7 +105,10 @@ dreamers. They are not confirmatory confidence intervals.
 ## Limits that remain
 
 1. No independent human coding, adjudication, kappa, alpha, or model-versus-human
-   performance estimate exists. See `results/reliability.csv`.
+   performance estimate is claimed. See `results/reliability.csv`. This limits
+   Study 0 to its stated lexical-diagnostic interpretation, but does not make
+   new human coding or an AltTest a current prerequisite for public-data
+   computational measurement.
 2. The AI sample is only 28 heterogeneous released examples, not a deployment
    sample or an estimate of any model's behavior.
 3. Source roles differ: questions express requests, descriptions provide text,
@@ -116,4 +128,8 @@ dreamers. They are not confirmatory confidence intervals.
 Study 0 can motivate preregistered questions for Study 1. It cannot establish
 that AI changes cognition, neural organization, dream content, safety, agency,
 or lived experience. Any future use of its output must retain the label
-`EXPLORATORY_AUTOMATED_CANDIDATE`.
+`EXPLORATORY_AUTOMATED_CANDIDATE`. A released human reference may be used only
+as source-specific calibration for a named measure, with its unit and provenance
+recorded; it is not new coding or evidence of general human equivalence. The
+separate `future_human_validation/` archive remains prospective and cannot
+retroactively validate these results.

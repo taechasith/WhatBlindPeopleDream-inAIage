@@ -7,6 +7,24 @@ authorize access to restricted data or any human-participant activity. Raw and
 processed corpora are excluded from version control by design. Do not replace
 them with scraped copies, public reposts, or fabricated fixtures.
 
+### Active public-data-only boundary
+
+The active scope is blinded computational measurement over authorized public
+data. It does not require new human coding, adjudication, reliability
+calculation, or an Alternative Annotator Test (AltTest). It also does not
+authorize human-readable label substance, a private condition mapping, or
+condition-level inspection before `CODED_DATA_FREEZE`, or running RQ2--RQ5.
+Designated automated blinded scripts may process protected artifacts for
+technical and robustness audits without exposing their contents. A released
+human label, rating, or reference may be used only as a source-specific
+calibration input with its documented unit, provenance, and use terms; it is not
+newly collected coding or a general human-equivalence claim.
+
+`future_human_validation/` remains an isolated archive for possible future
+human-study validation. Its coding and AltTest workflow is not a dependency of
+the present reproduction path and cannot retroactively validate a computational
+measurement.
+
 The authoritative current status is in `REPRODUCTION_STATUS.md`. A successful
 run of one component does not convert historical Study 0 into confirmatory
 evidence or establish an effect on people.
@@ -55,7 +73,9 @@ python code/10_export_tables.py
 
 The resulting distributions, alignment metrics, and robustness tables must keep
 their `EXPLORATORY_AUTOMATED_CANDIDATE` status. The current repository does not
-contain completed independent human coding or a human reliability statistic.
+contain a human reliability statistic; that limits the interpretation of these
+historical lexical diagnostics but is not a prerequisite for the active
+public-data-only measurement scope.
 
 ## Active public-data intervention: pre-generation gates
 
@@ -87,23 +107,27 @@ The validator is fail-closed: it requires exactly the frozen sample, one output
 for every condition per model/item, nonblank output, and a matching model
 manifest hash. Validation is not analysis, coding, or a scientific finding.
 
-After three independent blinded coding files have been created according to
-`PUBLIC_INTERVENTION_CODEBOOK_v1.md`, reliability has been recorded, and the
-files have been reconciled under
-`annotation_public/adjudication_protocol.md`, run the analysis locally:
+## Active public-data computational measurement
 
-```powershell
-python code/09_analyze_public_intervention.py `
-  --outputs C:\authorized-local-path\model_outputs.csv `
-  --labels C:\authorized-local-path\adjudicated_labels.csv `
-  --outdir C:\authorized-local-path\analysis
-```
+No new independent coding files, adjudication, human reliability calculation,
+or AltTest are current prerequisites for the public-data-only measurement path.
+Use only the documented blinded computational-measurement workflow and only
+source-permitted public inputs. The designated workflow may process protected
+blinded artifacts for technical and robustness audits without exposing their
+contents. Before `CODED_DATA_FREEZE`, do not manually inspect human-readable
+label substance, access a private condition mapping, inspect condition-level
+results, or use this guide to execute RQ2--RQ5.
 
-The script produces condition prevalence and paired image-cluster bootstrap
-tables, but it does not decide whether supplied records are real, independent,
-or publishable. `code/09_generate_public_intervention_synthetic.py` exercises
-only the plumbing; its output is ignored and documented in
-`REPRODUCTION_PUBLIC_DRYRUN.md`.
+Any released human reference used for calibration must be recorded separately
+with its source, unit, provenance, and matched measurement target. Calibration
+does not make a model-derived measurement a human label and does not support a
+claim about participant experience, semantic equivalence, safety, or
+preference.
+
+`code/09_generate_public_intervention_synthetic.py` remains a plumbing check
+only. Its invented output is ignored and documented in
+`REPRODUCTION_PUBLIC_DRYRUN.md`; it is neither a replacement for public inputs
+nor evidence for the active scope.
 
 ## Future human-study synthetic-only dry run
 

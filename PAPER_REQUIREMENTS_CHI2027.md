@@ -38,8 +38,18 @@ claim that a manuscript, poster, or submission package is ready.
 
 ## Remaining pre-submission gates
 
-This project remains blocked before manuscript creation by the blinded
-measurement-validation sequence: synthetic-panel technical freeze, genuine
-independent human coder files, reliability, adjudication, same-item validation,
-construct eligibility, coded-data freeze, controlled unblinding, and results
-freeze.
+For the active public-data-only scope, new human coding, adjudication,
+reliability calculation, and an Alternative Annotator Test (AltTest) are not
+preconditions for manuscript creation. Results must instead remain within the
+documented blinded computational-measurement and source-specific public-human
+calibration boundary, with provenance, anonymous-review, accessibility, and
+results-freeze checks complete. This correction permits designated automated
+blinded scripts to process protected artifacts for technical and robustness
+audits, but before `CODED_DATA_FREEZE` it does not permit human-readable label
+substance, a private condition mapping, condition-level inspection, or
+RQ2--RQ5.
+
+`future_human_validation/` preserves the independent-coding, adjudication, and
+AltTest workflow for possible future human-study claims. It is non-active for
+this public-data submission and cannot retroactively turn a computational
+measurement into human-validated evidence.

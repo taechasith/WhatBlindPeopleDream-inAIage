@@ -1,0 +1,7 @@
+archive_path,source_path,source_commit,status,reason
+README.md,scope-amendment,575a153,FUTURE_ONLY,Explains the supersession boundary
+public_annotation,annotation_public human-coder materials,c5da170,FUTURE_ONLY,Blinded human coding adjudication and return workflow
+public_annotation/CONSTRUCT_APPLICABILITY_PRECHECK_v1_PRE_SCOPE_CORRECTION.csv,annotation_public/CONSTRUCT_APPLICABILITY_PRECHECK_v1.csv,575a153,FUTURE_ONLY,Pre-amendment same-item human-scaling applicability decision
+code,code human-validation scripts,c5da170,FUTURE_ONLY,Subset build human reliability coder lock and packet-build scripts
+alt_test,compute/ALT_TEST_IMPLEMENTATION_AUDIT.md,c5da170,FUTURE_ONLY,Alt-Test provenance for a later matched-human study
+private,annotation_public/private/human_validation_v1 and v1_1,c5da170,LOCAL_PRIVATE_FUTURE_ONLY,Private packets or future human labels must never enter the anonymous bundle

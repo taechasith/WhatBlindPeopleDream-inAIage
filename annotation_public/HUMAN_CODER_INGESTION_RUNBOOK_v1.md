@@ -1,4 +1,8 @@
-# Blinded human-coder ingestion runbook v1
+# Blinded human-coder ingestion runbook v1 — historical future-validation only
+
+> Superseded for the current zero-new-human-data CHI study on 2026-10-09.
+> The workflow is preserved under `future_human_validation/`; it is not a
+> current gate and must not be executed for the public-data-only submission.
 
 Use this runbook only after the applicable institutional ethics determination
 permits the independent annotation workflow and three genuine human coders have

@@ -1,6 +1,7 @@
 # Private, author-identifying material. Never include in anonymous review packages.
 /private/
 /future_human_study/private/
+/future_human_validation/private/
 /annotation_public/private/
 /annotation/locked/
 /annotation/received/

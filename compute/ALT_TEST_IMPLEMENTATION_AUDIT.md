@@ -1,8 +1,15 @@
-# Alternative Annotator Test implementation audit
+# Alternative Annotator Test implementation audit — future validation only
+
+**Current-study status:** `ALT_TEST_CURRENT_STUDY = NOT_APPLICABLE_TO_CURRENT_DESIGN`.
+The current public-data computational study does not claim that a synthetic
+instrument is interchangeable with a human annotator, and it collects no new
+same-item human labels. This audit is retained only for a future
+matched-human-validation study; it is not a current technical, legal, or
+scientific gate.
 
 **Checked:** 2026-10-08 (Asia/Bangkok)
-**Purpose:** pre-human-label implementation/provenance check only. No study
-labels, condition mapping, or model-effect result was used.
+**Historical purpose:** pre-human-label implementation/provenance check only.
+No study labels, condition mapping, or model-effect result was used.
 
 ## Official implementation identified
 
@@ -11,8 +18,8 @@ labels, condition mapping, or model-effect result was used.
 - Resolved `HEAD` on check date: `18428b1f4f34ac61c4978bc180263b90111e7337`
 - Official materials advertised by the repository: Python implementation and
   `alt_test_example.ipynb`.
-- Frozen project policy: primary epsilon is `0.10`; this audit does not alter
-  that policy.
+- Historical policy at the time of audit: primary epsilon was `0.10`; this has
+  no current-study role.
 
 ## License/use status
 
@@ -23,11 +30,10 @@ on research labels.
 
 Status: `LICENSE_UNSPECIFIED_FOR_LOCAL_EXECUTION_OR_REDISTRIBUTION`.
 
-Before running the official code on locked human/model labels, record a
-permitted route for local use (for example, an explicit upstream license,
-written permission, or another official distribution with applicable terms).
-Do not replace it with an improvised approximation. This is a legal/provenance
-gate, independent of and subsequent to the human-coder gate.
+Before any future matched-human study runs the official code on locked
+human/model labels, record a permitted route for local use (for example, an
+explicit upstream license, written permission, or another official distribution
+with applicable terms). Do not replace it with an improvised approximation.
 
 ## Required future environment record
 

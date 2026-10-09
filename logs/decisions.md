@@ -70,3 +70,22 @@
 - **Consequence:** Source acquisition, packet/code preparation, and synthetic
   dry runs may continue. RQ2--RQ5 effects, external validation, final figures,
   and manuscript results remain `NOT_ESTIMABLE` until the gate is met.
+
+## 2026-10-09 -- Use computational measurement with public-human calibration
+
+- **Decision:** Complete the current CHI submission as a zero-new-human-data
+  public-data computational study. Synthetic panel outputs are model-derived
+  computational measurements, not replacements for human annotation. Current
+  gating is computational robustness plus separate, bounded calibration against
+  released public human evidence.
+- **Basis:** The controlled intervention concerns model-output differences under
+  released BLV-originating questions. The study makes no synthetic-human
+  equivalence claim and therefore does not require or run the Alternative
+  Annotator Test.
+- **Outcome visibility at decision:** No condition mapping, condition-level
+  RQ2--RQ5 result, or label pattern by condition was accessed.
+- **Consequence:** The former three-coder workflow is retained under
+  `future_human_validation/`; `ALT_TEST_CURRENT_STUDY` is
+  `NOT_APPLICABLE_TO_CURRENT_DESIGN`; constructs must be classified prospectively
+  as computationally observable, public-human benchmarked, or model-derived
+  exploratory before condition unblinding.

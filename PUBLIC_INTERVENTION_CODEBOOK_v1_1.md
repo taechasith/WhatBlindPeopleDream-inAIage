@@ -1,8 +1,8 @@
 # Public intervention codebook v1.1
 
-**Status:** prospective packet clarification before any human labels. This is
-the same ontology and label set as v1.0; it only repairs malformed quotation
-characters and is distributed as a hash-pinned coder-package artifact.
+**Status:** frozen computational-measurement codebook. This is the same ontology
+and label set as v1.0/v1.1; its current use is governed by the public-data-only
+measurement framework, with no newly collected human labels.
 
 **Applies to:** frozen VLM outputs, released human captions/guidance, and
 released validation material in the public-data protocol. It does not apply to
@@ -31,17 +31,24 @@ estimable from the available source`. `NA` is never converted to absence.
 | Accessibility-grounded content | A task-relevant, grounded feature supported by released answer/caption/guidance or image evidence | Mere lexical overlap or generic verbosity |
 | DreamSpace expression | CSO profile in historical dream-report text only | Any causal or experiential equivalence claim |
 
-## Scoring hierarchy
+## Measurement hierarchy
 
-1. Prefer released source labels and source-grounded human evidence.
-2. Where manual judgment is needed, use independent blinded coders on the
-   frozen stratified subset and calculate reliability before adjudication.
-3. A rule-based or frozen model-assisted label is secondary unless validated
-   against corresponding independent labels.
+1. Prefer direct released source labels for the bounded task they measure.
+2. For direct output properties, use frozen computational annotation with
+   evidence spans and the pre-specified robustness gate.
+3. Use released human-labelled data only as external calibration where its
+   population, task, and measurement overlap support the stated claim.
+4. Keep subjective, grounding-dependent, or lived-experience constructs
+   model-derived exploratory unless a compatible released public-human
+   benchmark supports a narrower claim.
 
 ## Confirmatory measures
 
-The primary family is task relevance, task answer, spatial relation, grounded
-uncertainty, and unsupported information where estimable. Identity/social
-inference and unrequested detail are secondary harm-relevant diagnostics; they
-are not measured harm. DreamSpace distances are descriptive profile measures.
+The primary computational family is direct answer/reference coverage, explicit
+spatial relation, explicit uncertainty wording, and explicit identity/social
+inference, subject to the frozen construct-tier and robustness decisions.
+Grounded uncertainty, unsupported information, and unrequested visual-detail
+judgments are model-derived exploratory unless separately narrowed and grounded
+by an eligible released reference. Identity/social inference and visual detail
+are output properties, not measured harm. DreamSpace distances are descriptive
+profile measures.

@@ -1,0 +1,131 @@
+{
+  "protocol_id": "computational_measurement_robustness_v1",
+  "schema_version": "1.0",
+  "status": "FROZEN_BLINDED_PUBLIC_DATA_ONLY",
+  "purpose": "Technical robustness measurement of frozen synthetic annotations before any condition unblinding. This configuration never authorizes condition-level analysis or a human-equivalence claim.",
+  "blinding": {
+    "condition_labels_exposed": false,
+    "condition_mapping_access": "PROHIBITED",
+    "selection_input_field": "blind_item_id",
+    "permitted_packet_columns": [
+      "blind_item_id",
+      "blv_question",
+      "output_text"
+    ],
+    "forbidden_packet_columns": [
+      "condition",
+      "condition_label",
+      "prompt_type",
+      "generator_condition",
+      "treatment",
+      "arm"
+    ],
+    "reporting_unit": "blinded construct-level metric only"
+  },
+  "baseline_panel": {
+    "panel_config_path": "config/synthetic_annotation_panel_v1.json",
+    "canonical_prompt_path": "annotation_public/SYNTHETIC_PANEL_PROMPT_v1.md",
+    "required_freeze_status": "FROZEN_BLINDED_SYNTHETIC_PANEL_OUTPUTS",
+    "expected_packet_rows": 3000,
+    "expected_judge_count": 2,
+    "expected_construct_count": 10
+  },
+  "prompt_paraphrase": {
+    "prompt_path": "annotation_public/SYNTHETIC_PANEL_PROMPT_PARAPHRASE_v1.md",
+    "purpose": "Frozen wording perturbation of the baseline synthetic-panel instruction. It must use the same judges, revisions, decoding settings, packet schema, construct list, and label contract as the baseline panel."
+  },
+  "selection": {
+    "algorithm": "sha256_rank_blind_item_id_v1",
+    "selection_seed": "20261009",
+    "prompt_paraphrase_subset_rows": 300,
+    "exact_rerun_subset_rows": 60,
+    "nesting": "exact_rerun_subset is the first 60 SHA-256-ranked blind_item_id values from the 300-row prompt_paraphrase_subset",
+    "selection_prohibitions": [
+      "condition mapping",
+      "condition label",
+      "generator identity",
+      "prompt identity",
+      "output label",
+      "output text",
+      "question text",
+      "construct label",
+      "outcome statistic"
+    ]
+  },
+  "label_contract": {
+    "allowed_labels": [
+      "0",
+      "1",
+      "NA"
+    ],
+    "negative_label": "0",
+    "positive_label": "1",
+    "semantic_abstention_label": "NA",
+    "positive_label_requires_explicit_evidence_span": true,
+    "valid_parser_statuses": [
+      "PARSED",
+      "EVIDENCE_SPAN_INVALID",
+      "PARSE_ERROR:JSONDecodeError",
+      "PARSE_ERROR:ValueError"
+    ],
+    "technical_parser_status_prefix": "PARSE_ERROR:",
+    "valid_boolean_literals": [
+      "true",
+      "false"
+    ]
+  },
+  "audit": {
+    "evidence_span_search_fields": [
+      "blv_question",
+      "output_text"
+    ],
+    "text_normalization": "unicode_nfkc_casefold_whitespace_collapse_v1",
+    "require_singleton_provenance_per_judge_file": true,
+    "require_exact_blind_id_membership": true,
+    "require_exact_construct_membership_across_measurement_sets": true,
+    "allow_documented_technical_invalid_records": true,
+    "allow_undocumented_label_or_abstain_incoherence": false,
+    "allow_unanchored_parsed_positive_labels": false,
+    "label_flip_control": "One deterministic in-memory binary-label flip must change the binary positive count by exactly one when a binary record exists. This is a code-path control, not an empirical robustness result."
+  },
+  "rule_anchors": {
+    "anchor_version": "deterministic_schema_and_lexical_anchors_v1",
+    "no_construct_specific_lexicons": true,
+    "anchors": [
+      "complete_record_accounting",
+      "label_abstain_coherence",
+      "explicit_positive_evidence_span",
+      "lexical_evidence_span_grounding",
+      "counterfactual_label_flip_code_path",
+      "nested_subset_membership",
+      "same_judge_provenance_across_measurement_sets"
+    ]
+  },
+  "summary": {
+    "primary_candidate_constructs": [
+      "spatial_relation",
+      "identity_inference",
+      "social_intent_inference",
+      "ambiguity"
+    ],
+    "minimum_valid_record_rate_per_judge": 0.95,
+    "minimum_valid_positive_span_rate_per_judge": 0.95,
+    "minimum_positive_records_per_judge": 20,
+    "exact_rerun_label_consistency_required": 1.0,
+    "minimum_prompt_paraphrase_binary_agreement": 0.8,
+    "minimum_cross_judge_binary_agreement": 0.6,
+    "maximum_binary_flip_rate": 0.2,
+    "minimum_comparable_binary_records": 20,
+    "construct_decision": "PREDECLARED_BLINDED_ALGORITHM",
+    "unblinding_authorized": false,
+    "human_equivalence_authorized": false,
+    "prohibited_outputs": [
+      "condition-level metric",
+      "condition comparison",
+      "condition effect estimate",
+      "hypothesis test",
+      "condition mapping",
+      "human-equivalence claim"
+    ]
+  }
+}

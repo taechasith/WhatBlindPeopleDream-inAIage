@@ -1,4 +1,9 @@
-"""Prepare local, ignored Study 0 double-coding packets; does not create labels."""
+"""Historical future-only Study 0 human-validation packet builder.
+
+The active CHI public-data study collects zero new human labels. This retained
+script is archived under ``future_human_validation/`` and must not be invoked by
+the current computational measurement pipeline.
+"""
 import argparse
 import csv, random
 from pathlib import Path
@@ -28,5 +33,5 @@ for coder in ("coder_a","coder_b"):
         fields=["source_stratum","item_id","text"]+categories
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(sample)
 with (out/"README.md").open("w",encoding="utf-8") as f:
-    f.write("LOCAL CONTROLLED PACKET. Independent human coding required. Use 0=not expressed, 1=expressed, NA=cannot determine. Do not share completed labels between coders before first reliability calculation. Do not commit or include raw text in anonymous/public supplements.\n")
+    f.write("FUTURE MATCHED-HUMAN VALIDATION ONLY. Use 0=not expressed, 1=expressed, NA=cannot determine. Do not share completed labels between coders before first reliability calculation. Do not commit or include raw text in anonymous/public supplements.\n")
 print(len(sample))

@@ -12,15 +12,17 @@
 - **RQ2:** For the same released VizWiz image-question item, does supplying the
   BLV-originating question and accessibility constraints change the information
   profile of a frozen VLM output relative to an image-only prompt?
-- **RQ3:** Do intent-steered outputs better satisfy pre-specified task-relevance,
-  answerability, spatial-information, uncertainty, and unsupported-inference
-  measures than generic outputs, and how do they compare with released human
-  reference descriptions?
+- **RQ3:** Do intent-steered outputs differ from generic outputs on
+  pre-specified computational measures and, where compatible released data
+  exist, show different bounded alignment with human references or BLV
+  preference evidence?
 - **RQ4:** Is similarity to DreamSpace associated with accessibility-relevance
   measures, or are sensory-expression resemblance and user alignment distinct
   constructs?
-- **RQ5:** Across the available reference data, which unrequested visual detail,
-  identity/social inference, or certainty patterns are overproduced by AI text?
+- **RQ5:** Across the available reference data, which explicit visual-detail,
+  identity/social-inference, uncertainty-expression, or model-derived
+  unsupported-information patterns are added or omitted by AI text under the
+  stated measurement-strength boundaries?
 
 ## Evidence spaces and units
 
@@ -67,10 +69,13 @@ output. The model and prompt are not selected based on outcome performance.
    where the image and released human references permit verification. It is
    `NOT_ESTIMABLE` otherwise.
 
-Each primary score requires independent human coding or an externally validated
-released label. Lexical/model-assisted labels are secondary diagnostics until
-validated against a frozen manually inspectable held-out subset. No
-language model is ground truth.
+Each outcome is assigned prospectively to a measurement tier in
+`MEASUREMENT_FRAMEWORK_PUBLIC_DATA_v1.md`. Tier A properties are direct,
+text-observable computational measurements subject to the frozen robustness
+gate. Tier B measures are additionally calibrated against compatible released
+human-labelled public evidence. Tier C measures are model-derived exploratory
+constructs and cannot license human-centred claims. No language model is
+ground truth, and the study collects no new human annotations.
 
 ## Statistical analysis
 
@@ -82,9 +87,14 @@ language model is ground truth.
   image-question cluster bootstrap confidence intervals.
 - Report model-specific effects first; a pooled model is secondary and does not
   imply all VLMs behave alike.
-- Pre-specify one primary family: task relevance, answerability, spatial
-  relation, uncertainty, and unsupported inference. Use Benjamini--Hochberg
-  correction within that family and report effect sizes and confidence intervals.
+- Pre-specify one primary family: direct output answer/reference coverage,
+  explicit spatial relation, explicit identity inference, explicit social/intent
+  inference, and explicit ambiguity. Include a construct in this family only if
+  it passes the frozen computational robustness gate; use Benjamini--Hochberg
+  correction within that family and report effect sizes and confidence
+  intervals. Broad CSO lexical profiles, grounded uncertainty, and general
+  unsupported-information judgments remain secondary or exploratory unless a
+  direct released reference supports a narrower metric.
 - DreamSpace comparisons use Jensen--Shannon divergence, cosine similarity,
   Hellinger distance, and bootstrap intervals. They are descriptive profile
   comparisons, never cognitive transfer or user usefulness claims.

@@ -1,150 +1,115 @@
-# Annotation and Validation Policy
+# Computational Measurement and Public-Human Calibration Policy
 
-This is an operational checklist. The canonical authority is
-`CHI2027_Blind_Dreams_AI_Research_Guide.md`.
+**Canonical authority:** `CHI2027_Blind_Dreams_AI_Research_Guide.md`.
 
-## State and boundary
+## Current scope
 
-Status: `PRIMARY_MODEL_OUTPUTS_FROZEN_MEASUREMENT_VALIDATION_PENDING`.
+Status: `SYNTHETIC_PANEL_RUNNING; PUBLIC_DATA_ONLY; CONDITIONS_BLINDED`.
 
-The 3,000 frozen Qwen outputs, private condition mapping, prompts, sample,
-model revision, and generation configuration must not change. No condition
-unblinding or RQ2-RQ5 analysis occurs before `CODED_DATA_FREEZE`.
+This policy governs a zero-new-human-data computational study. The 3,000 frozen
+Qwen outputs, locked 1,000-item sample, prompts, generator configuration, and
+private condition mapping must not change. No condition unblinding or RQ2--RQ5
+analysis occurs before `CODED_DATA_FREEZE`.
 
-## 600-row human validation subset
+No newly recruited coder, participant, same-item human label, human
+adjudication, human-human reliability statistic, or Alt-Test decision is a
+current-study gate. The previous matched-human methodology remains in
+`future_human_validation/` for future research only.
 
-1. Select 200 locked items reproducibly with a prospectively frozen seed.
-2. Include all three condition outputs per item: `200 x 3 = 600` rows.
-3. Freeze a selection manifest, shuffle rows, and hide grouping and condition
-   clues from coders.
-4. Three independent human coders receive and code the identical 600 rows.
-5. Train using non-analytic examples, freeze instructions, and require a separate
-   pseudonymous independence attestation for each return. The attestation binds
-   the received file to the distributed packet/material hashes and records that
-   no condition metadata, synthetic labels, other-coder labels, or LLM co-coder
-   was used.
-6. Validate and atomically lock all three raw files before reliability; calculate
-   reliability, then adjudicate. Never edit locked raw files.
+## Synthetic computational measurement instrument
 
-## Reliability
+Phi-3.5-mini is the primary frozen judge and Qwen2.5-1.5B is the secondary
+sensitivity judge. Qwen2.5-VL-3B is the generator and cannot be its own sole
+judge. Freeze model revision, prompt, decoding settings, schema, retry policy,
+and abstention policy before unblinding.
 
-Assess each construct separately. Retain every pairwise raw agreement,
-prevalence, and uncertainty where feasible; use pairwise Cohen's kappa for
-suitable binary labels, weighted kappa for ordinal labels, and a three-coder
-Krippendorff's alpha where appropriate. Record rare-category paradoxes. Poor
-human reliability downgrades or excludes a construct; synthetic consensus cannot
-repair it.
+Retain per-construct `row_id`, `judge_id`, `label`, `abstain`, optional
+confidence, `evidence_span`, `reason_code`, and `parser_status`. A
+`PARSE_ERROR:*` placeholder is `TECHNICALLY_INVALID_FOR_MEASUREMENT`, not a
+semantic abstention. A positive label without a valid explicit evidence span is
+`EVIDENCE_SPAN_INVALID`. Retain invalid records for coverage accounting; never
+silently recode, remove, or retry a substantive output.
 
-For the 600-row subset, bootstrap uncertainty is a prospectively frozen
-item-cluster procedure documented in
-`annotation_public/RELIABILITY_BOOTSTRAP_POLICY_v1.md`. It preserves all three
-outputs and every coder's missingness pattern within each of the 200 opaque
-source-item clusters.
+Synthetic annotation is **model-derived measurement**, not a human substitute.
+It may characterize observable output properties but cannot claim what blind
+people feel, prefer, rate, or experience without compatible existing human data.
 
-No numerical reliability pass/borderline threshold was frozen before human
-labels. Therefore the pre-adjudication report must use
-`reliability_decision=THRESHOLD_NOT_PREDEFINED` and
-`confirmatory_use=BLOCKED_PENDING_PROSPECTIVE_RULE`; it must not infer a pass,
-borderline, or final construct eligibility from observed reliability values.
-Any future numerical decision must be prospectively governed without access to
-condition-level results and recorded as a new deviation. Structural
-non-applicability is separated from poor reliability in
-`annotation_public/CONSTRUCT_APPLICABILITY_PRECHECK_v1.csv`.
+## Methodological analogy
 
-## Synthetic Annotation Panel / HG-SAP
+Pataranutaporn et al. used LLM-generated simulations alongside observed human
+survey data to examine where model-generated predictions aligned with or
+diverged from reported human responses. The relevant lesson here is narrower:
+model simulation can be a research object and diagnostic instrument when its
+limits are made visible. This study likewise compares computational
+measurements with available released human evidence where constructs overlap; it
+does not treat a coherent synthetic output as lived understanding or as a
+substitute for direct human judgment.
 
-- Freeze multiple blinded judges from different model families where feasible.
-- Qwen2.5-VL-3B is not the sole or primary judge of its own outputs.
-- Freeze model/version, prompt, generation settings, schema, seed where
-  applicable, retry policy, and abstention policy before unblinding.
-- Preserve per-construct `row_id`, `judge_id`, `label`, `abstain`, optional
-  confidence, `evidence_span`, `reason_code`, and `parser_status`.
-- Treat unsupported PRESENT labels as `EVIDENCE_SPAN_INVALID` unless the
-  codebook prospectively permits whole-text inference.
+## Construct tiers and statuses
 
-`PARSE_ERROR:*` rows are technical decoding/serialization failures, not semantic
-abstentions. The frozen runner retains placeholder `NA` rows only to preserve
-the output's rectangular record structure. Preserve such rows, raw responses,
-and counts for coverage/failure reporting, but mark them
-`TECHNICALLY_INVALID_FOR_MEASUREMENT` and exclude them from label prevalence,
-human--synthetic agreement, Alt-Test, and scaled construct analysis. Likewise,
-an `EVIDENCE_SPAN_INVALID` PRESENT label is retained and reported but is not a
-valid positive measurement. Neither category may be recoded as a negative
-label or silently retried.
+Freeze one prospective tier and one status per construct before unblinding.
 
-It is a **Synthetic Annotation Panel** until it has passed same-item,
-same-rubric comparison with adjudicated human labels. Only a passing construct
-may be described as scaled by HG-SAP.
+- **Tier A / computationally observable:** direct textual-output property,
+  explicit evidence span, and robust computational measurement.
+- **Tier B / public-human benchmarked:** bounded external comparison with a
+  released real-human dataset; it remains external rather than same-item.
+- **Tier C / model-derived exploratory:** material synthetic interpretation
+  without adequate public-human grounding.
 
-## Construct-specific validation
+Statuses:
 
-For each construct, compare judge labels to the 600 adjudicated human labels.
-Record confusion matrix, balanced accuracy, precision, recall, F1 or macro-F1,
-specificity/sensitivity, MCC where useful, coverage, abstention, evidence-span
-validity, and confidence calibration where applicable. Accuracy alone does not
-certify rare constructs.
-
-Use the Alternative Annotator Test only through the authors' method/code or a
-verified faithful implementation, when compatible. A formal synthetic-scaling
-gate requires the three independent human coders above: the official Alt-Test
-FAQ explains that two-human leave-one-out comparisons lack a robust consensus
-reference. If only two genuine coders are ultimately available, do not fabricate
-a third; record `ALT_TEST_TWO_HUMAN_LIMITATION`, interpret Alt-Test evidence as
-weaker, and preserve the human-subset confirmatory analysis independently of
-synthetic scaling. Otherwise record `ALT_TEST_NOT_APPLICABLE` and apply a
-prospectively frozen alternative rule.
-
-### Frozen Alt-Test epsilon policy
-
-The primary Alt-Test cost-benefit hyperparameter is **epsilon = 0.10** for
-every compatible construct and frozen synthetic judge. This is deliberately
-conservative: the planned coders are trained, independent non-expert coders
-using a fixed rubric, and the policy grants no expert-annotator efficiency
-premium. Epsilon is not changed after observing human--human reliability,
-human--synthetic agreement, judge winning rates, advantage probabilities, or
-condition effects. If a construct's human reliability is inadequate, it is
-`CONSTRUCT_NOT_RELIABLE` rather than rescued by changing epsilon. Report the
-fixed primary epsilon, the coder-role rationale, human reliability, advantage
-probability, and winning rate for every Alt-Test result.
-
-Freeze one status per construct:
-
-- `HUMAN_VALIDATED_SYNTHETIC_SCALE_OK`
-- `HUMAN_SUBSET_ONLY_CONFIRMATORY`
+- `COMPUTATIONAL_PRIMARY`
+- `PUBLIC_HUMAN_BENCHMARKED`
+- `COMPUTATIONAL_SECONDARY`
 - `MODEL_DERIVED_EXPLORATORY`
-- `MODEL_DERIVED_UNVALIDATED`
-- `CONSTRUCT_NOT_RELIABLE`
+- `MEASUREMENT_UNSTABLE`
 
-The final eligibility table is created only after human reliability,
-adjudication, same-item validation, and Alt-Test applicability/decisions. A
-blinded construct-applicability precheck is an input to those steps, not a
-premature eligibility decision.
+No construct is upgraded because a preferred condition effect appears.
 
-## External-validation boundary
+## Computational robustness gate
 
-VizWiz human answers/captions, GuideDog Gold, Kapur-Kreiss real BLV preference
-judgments, and released Be My AI data assess convergent validity, ecological
-relevance, preference, and quality relationships. They are not same-item,
-same-rubric annotations of the 3,000 Qwen outputs, and cannot alone certify
-synthetic labels.
+Before unblinding, assess each construct using blinded data only:
 
-Persona prompting is optional and exploratory. Never attribute an LLM judgment
-to BLV people; use “synthetic accessibility-oriented evaluator” or
-“model-derived accessibility judgment” where accurate.
+1. inter-model agreement and disagreement;
+2. parser/coverage completeness, abstention, and evidence-span validity;
+3. prevalence stability;
+4. frozen prompt-paraphrase stability on a prospectively selected technical
+   subset;
+5. deterministic rerun consistency where technically appropriate;
+6. label-flip sensitivity; and
+7. lexical/rule cross-checks where possible.
 
-## Coded-data freeze and unblinding gate
+Agreement between Phi and Qwen is not proof of validity; shared model bias is a
+recorded limitation. Failed robustness yields `MEASUREMENT_UNSTABLE`.
 
-Before unblinding, retain checksums and provenance for: locked human A/B/C files,
-human reliability, locked adjudicated subset, frozen synthetic outputs,
-inter-model agreement, construct-level human-versus-synthetic validation,
-alt-test decisions, separate external validation, eligibility table, and every
-label source/status. Commit this gate. Only then may the private mapping be
-used for RQ2-RQ5.
-## Human coder package version
+## Public-human calibration boundary
 
-The only distribution-ready human coder package is `human_validation_v1_1`.
-It byte-preserves the frozen v1 analytic rows and sheets while hash-pinning the
-codebook, attestation, return protocol, and coder-specific assignment receipt.
-The original v1 directory is retained as an audit artifact and must not be
-distributed. This pre-label package correction does not authorize coding,
-unblinding, synthetic scaling, or RQ2--RQ5.
+Create `PUBLIC_HUMAN_CALIBRATION_MATRIX.csv` before unblinding. For each
+construct record source dataset, human label type, population, task relation,
+same-item/different-item relation, measurement overlap, validation strength,
+and limitations.
+
+VizWiz answers/captions, Kapur--Kreiss BLV ratings, lawfully accessible
+GuideDog Gold, and released Be My AI evidence remain separate external sources.
+They cannot be pooled or represented as newly collected labels for Qwen outputs.
+VizWiz captions are not BLV preference; GuideDog is `ACCESS_UNAVAILABLE` until
+authorized access is documented; Be My AI is ecological only.
+
+Persona-conditioned synthetic evaluators are optional exploratory instruments.
+Describe their output as model-derived predictions, never as BLV ratings or
+human experience.
+
+## Alt-Test
+
+`ALT_TEST_CURRENT_STUDY = NOT_APPLICABLE_TO_CURRENT_DESIGN` because this study
+does not claim synthetic-human annotator interchangeability. Do not execute or
+approximate Alt-Test without matched human annotations. It remains a future
+validation method only.
+
+## Coded-data freeze
+
+Before unblinding, freeze and checksum: both synthetic judges' individual
+outputs; model/prompt/config provenance; parser and evidence-span audit;
+disagreement map; construct tiers/statuses; computational robustness results;
+public-human calibration matrix; available external validation; label
+provenance; and a Git commit. No new human data are required.

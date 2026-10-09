@@ -1,14 +1,18 @@
-# Public-intervention independent coding materials
+# Public computational measurement materials
 
-This directory contains schema-only materials for future independent coding of
-real VLM outputs. It contains no source image, source question, model output,
-condition, model identity, participant information, or empirical label.
+This directory contains active, distribution-safe resources for the current
+public-data computational study, including the frozen synthetic-panel prompt and
+construct applicability precheck. It contains no source image, model output,
+private condition mapping, participant information, or empirical label.
 
-The packet generator will randomize a neutral `blind_item_id` and withhold the
-condition, model identity, hypothesis direction, and sequence from coders. Each
-coder works independently. Reconciliation happens only after reliability is
-calculated on the raw independent records.
+The current study collects zero new human data. Synthetic instruments receive a
+neutral `blind_item_id`, the BLV-originated question, and an output text while
+condition, source image, generator identity, original order, and hypothesis
+direction remain withheld until `CODED_DATA_FREEZE`.
 
-Do not create a coding packet until an authorized frozen VLM run has passed
-`code/08_validate_public_intervention_outputs.py`. Coding is not currently
-complete and no reliability statistic is estimable.
+The prior independent-human-coder, adjudication, and Alt-Test files remain in
+this directory only for repository history and are snapshotted under
+`future_human_validation/`. They are **not current-study instructions**. Do not
+distribute or use them for the current CHI submission; consult
+`ANNOTATION_VALIDATION_POLICY.md` and
+`CONSTRUCT_MEASUREMENT_TIER_MATRIX.csv` instead.

@@ -1,0 +1,37 @@
+construct,measurement_layer,prospective_tier,proposed_measurement_status,bounded_operationalization,public_human_calibration,claim_boundary
+task_answer,synthetic_panel,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Output addresses the released BLV-originated question or explicitly states inability,VizWiz VQA answers and answerability,Not universal correctness or user satisfaction
+task_relevance,synthetic_panel,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Output content is related to the released question,VizWiz BLV-originated questions and answer context,Not a BLV user rating of relevance
+spatial_relation,synthetic_panel,TIER_A,COMPUTATIONAL_PRIMARY,Explicit spatial relation in output text,None required for text presence,Not image-grounded spatial truth
+grounded_uncertainty,synthetic_panel,TIER_C,MODEL_DERIVED_EXPLORATORY,Model judgment that uncertainty wording is appropriate,None sufficiently direct,Do not claim correct calibrated uncertainty
+unsupported_information,synthetic_panel,TIER_C,MODEL_DERIVED_EXPLORATORY,Model judgment of unsupported content from limited text evidence,Narrow answer contradiction may be separately calibrated,Do not claim hallucination prevalence without direct grounding
+identity_inference,synthetic_panel,TIER_A,COMPUTATIONAL_PRIMARY,Explicit identity demographic or personal-attribute claim in output text,None required for text presence,Not truth or experienced harm
+social_intent_inference,synthetic_panel,TIER_A,COMPUTATIONAL_PRIMARY,Explicit relationship emotion role ownership or intention claim,None required for text presence,Not truth or social impact
+unrequested_visual_detail,synthetic_panel,TIER_C,MODEL_DERIVED_EXPLORATORY,Model judgment that visual detail is not needed for the question,None sufficiently direct,Do not claim information overload or user preference
+accessibility_grounded_content,synthetic_panel,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Alignment with compatible released human reference material,VizWiz captions answers and where lawful GuideDog Gold,Not accessibility quality or user benefit
+ambiguity,synthetic_panel,TIER_A,COMPUTATIONAL_PRIMARY,Explicit ambiguity or underspecification language in output text,None required for text presence,Not user confusion
+visual,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit visual vocabulary in text,None required for text presence,Not visual experience
+auditory,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit auditory vocabulary in text,None required for text presence,Not auditory experience
+tactile,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit tactile vocabulary in text,None required for text presence,Not tactile experience
+olfactory,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit olfactory vocabulary in text,None required for text presence,Not olfactory experience
+gustatory,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit gustatory vocabulary in text,None required for text presence,Not gustatory experience
+proprioceptive,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit bodily position or movement-sense vocabulary,None required for text presence,Not bodily experience
+vestibular,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit balance or acceleration vocabulary,None required for text presence,Not vestibular experience
+interoceptive,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit internal bodily-state vocabulary,None required for text presence,Not interoceptive experience
+thermal,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit temperature vocabulary,None required for text presence,Not thermal experience
+pain,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit pain vocabulary,None required for text presence,Not pain experience
+spatial_layout,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit layout or containment wording,None required for text presence,Not image-grounded layout truth
+distance_depth,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit distance or depth wording,None required for text presence,Not image-grounded depth truth
+direction_orientation,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit direction or orientation wording,None required for text presence,Not image-grounded orientation truth
+motion,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit movement or action wording,None required for text presence,Not visual truth or action accuracy
+social_context,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit social context wording,None required for text presence,Not social reality
+identity_inference,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit identity-attribute claim in text,None required for text presence,Not truth or experienced harm
+emotion,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit emotion wording,None required for text presence,Not felt emotion
+threat,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit threat wording,None required for text presence,Not actual risk
+safety,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit safety or hazard wording,None required for text presence,Not actual safety
+uncertainty,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit uncertainty marker,None required for text presence,Not calibration or appropriateness
+privacy,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit privacy wording,None required for text presence,Not privacy impact
+agency,cso_text_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Explicit decision control or option wording,None required for text presence,Not epistemic autonomy
+text_reading,cso_text_extractor,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Text-reading or transcription-related content,VizWiz questions and answers,Not OCR correctness without a specific reference
+navigation,cso_text_extractor,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Navigation-related content,VizWiz questions and answer context,Not navigation performance or safety
+intent_match,cso_text_extractor,TIER_B,PUBLIC_HUMAN_BENCHMARKED,Alignment to released BLV-originated question,VizWiz questions and answers,Not a user preference rating
+nightmare,dreamspace_extractor,TIER_A,COMPUTATIONAL_SECONDARY,Literal or self-labelled nightmare wording in DreamSpace reports,DreamBank report text only,Not a nightmare phenotype or prevalence beyond source unit

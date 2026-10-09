@@ -4,16 +4,18 @@
 label, human label, or model-output text was inspected to create this document.
 
 **Date frozen:** 2026-10-08
-**Applies after:** `CODED_DATA_FREEZE` only.
-**Does not replace:** same-item human-versus-synthetic validation or the human
-coding gate.
+**Applies:** before `CODED_DATA_FREEZE`, as the frozen public-human calibration
+plan, and again after the condition-level analysis is permitted.
+**Does not replace:** computational robustness. It is not same-item human
+annotation of the current outputs and is never represented as such.
 
 ## Boundary
 
 Released external datasets answer construct-specific questions in their own
-measurement settings. They cannot serve as missing human labels for the blinded
-600-row same-item validation subset, cannot justify synthetic scaling on their
-own, and cannot be pooled into the primary within-item intervention analysis.
+measurement settings. They provide external public-human calibration, not
+synthetic-human equivalence, not same-item ratings of the current outputs, and
+not a universal accessibility ground truth. They cannot be pooled into the
+primary within-item intervention analysis.
 
 Every external result must retain its source, unit, denominator, comparison
 set, and `NOT_ESTIMABLE` reasons. No caption, answer, preference rating, or
@@ -94,8 +96,9 @@ same-item validation source, prevalence sample, or generalizable estimate.
 
 ## Reporting rule
 
-External validation must be reported in a separate table from (1) human-human
-reliability, (2) synthetic-versus-adjudicated-human validation, and (3) the
-primary Qwen within-item intervention. Each table must name the construct,
-source, unit, N, uncertainty method, limitation, and whether the quantity is
-estimable.
+External public-human calibration must be reported separately from (1) the
+computational measurement robustness audit and (2) the primary Qwen within-item
+intervention. Each table must name the construct, source, unit, N, uncertainty
+method, limitation, and whether the quantity is estimable. It must not be
+described as a new human judgment or as evidence that a synthetic annotator is
+human-equivalent.

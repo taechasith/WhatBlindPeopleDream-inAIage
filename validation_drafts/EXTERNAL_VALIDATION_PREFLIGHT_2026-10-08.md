@@ -32,4 +32,7 @@ source checksums on 2026-10-08.
 - GuideDog remains `ACCESS_UNAVAILABLE`.
 - Be My AI/Xie remains an ecological descriptive check only.
 
-No external source substitutes for the same-item three-human validation subset.
+No external source is same-item human annotation of the current outputs. Under
+the 2026-10-09 public-data-only amendment, these sources instead provide
+bounded external public-human calibration and do not make synthetic annotation
+human-equivalent.

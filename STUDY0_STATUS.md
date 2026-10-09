@@ -6,8 +6,10 @@ confirmatory, human-coded, or causal evidence.
 Study 0 compares released DreamBank reports (381), BLV-originating VizWiz
 questions (24,842), and a small released AI-description set (28) using
 deterministic lexical candidate rules. It is not semantic annotation, an LLM
-classification, or human coding. Independent double coding is pending and no
-reliability statistic is estimable.
+classification, or human coding. No new human coding is part of Study 0's
+active computational scope, and no human reliability statistic is claimed.
+`future_human_validation/` retains separate prospective human-study materials;
+it is not a current gate and cannot retroactively validate Study 0.
 
 ## Applicability correction and current diagnostic outputs
 
@@ -36,6 +38,18 @@ These values describe distributions of lexical-rule hits only. They do **not**
 measure sensory cognition, user preference, task success, AI hallucination,
 or a causal AI effect on dreams. They must not be interpreted as cognitive
 transfer or evidence that AI descriptions enter dreams.
+
+## Public-human calibration boundary
+
+If a released human label, rating, or reference is used with this public-data
+work, it can calibrate only a named measurement at its documented source unit,
+provenance, and permitted use. It is not new human coding, does not make the
+lexical rules semantic ground truth, and does not establish human equivalence,
+participant experience, safety, or preference. Study 0 does not authorize
+RQ2--RQ5 or, before `CODED_DATA_FREEZE`, human-readable label substance,
+private condition mappings, or condition-level inspection. Designated blinded
+scripts may still process protected artifacts for technical and robustness
+audits without exposing their contents.
 
 The correction is documented in `STUDY0_REGENERATION_NOTES.md` and
 `logs/deviations.md`. The primary limitations, sample flow, and current machine

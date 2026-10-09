@@ -37,13 +37,13 @@ the frozen plan, cross-model generalization remains `NOT_ESTIMABLE`.
 
 ## Current consequence
 
-The compute gate is satisfied, but the blinded measurement-validation gate
+The compute gate is satisfied, but the blinded computational-measurement gate
 remains binding. RQ2--RQ5 cannot be run until the synthetic panel is technically
-frozen; three genuine human coder files are locked; pre-adjudication reliability,
-adjudication, same-item synthetic validation, Alt-Test decisions where
-applicable, construct eligibility, and separate external validation are frozen
-in `CODED_DATA_FREEZE.md`.
+frozen; computational robustness is completed; construct tiers and measurement
+strength are frozen; public-human calibration and available external validation
+are documented; and `CODED_DATA_FREEZE.md` is committed.
 
-No placeholder, synthetic fixture, or model-derived label substitutes for those
-records. The private condition mapping remains unopened until that gate is
-complete.
+No placeholder or synthetic fixture is an empirical result. Model-derived
+measurement is not human judgment, and the private condition mapping remains
+unopened until the gate is complete. The former matched-human validation
+workflow is retained only under `future_human_validation/`.

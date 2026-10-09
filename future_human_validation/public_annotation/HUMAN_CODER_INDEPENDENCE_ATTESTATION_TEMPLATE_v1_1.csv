@@ -1,0 +1,2 @@
+coder_role,coder_id,packet_sha256,distributed_coding_sheet_sha256,instructions_sha256,training_sha256,adjudication_protocol_sha256,codebook_sha256,return_protocol_sha256,assignment_receipt_sha256,completion_datetime_utc,independent_work_attested,condition_metadata_not_seen,synthetic_labels_not_seen,other_coder_labels_not_seen,no_llm_assistance_attested,notes
+,,,,,,,,,,,YES,YES,YES,YES,YES,

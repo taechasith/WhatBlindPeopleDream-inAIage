@@ -17,17 +17,24 @@ text/hash, seed/decoding settings, failure/retry policy, and output hashes.
 If two eligible models cannot be reproduced, conduct the intervention with one
 model and label all model-generalization claims `NOT_ESTIMABLE`.
 
-## Validation hierarchy
+## Measurement and calibration hierarchy
 
-1. Released source labels: VizWiz answerability/answers, GuideDog gold status,
-   and released preference judgments where compatible.
-2. Independent human coding of a frozen, stratified output subset. This
-   is annotation of public source/model material, not participant recruitment;
-   obtain any institutional determination required before beginning it.
-3. Rule-based or frozen model-assisted coding, evaluated against Level 1/2.
+1. **Tier A — computationally observable:** direct text-output properties with
+   explicit evidence spans, frozen rule/classifier checks, and the pre-specified
+   computational robustness gate.
+2. **Tier B — public-human benchmarked:** measurements whose bounded use can be
+   externally calibrated against released human answers, captions,
+   human-verified guidance, or BLV preference evidence. These datasets are
+   external evidence, not newly collected or same-item ratings of the current
+   outputs.
+3. **Tier C — model-derived exploratory:** subjective or grounding-dependent
+   constructs without a sufficiently direct public human benchmark.
 
-Only measures with a documented validation path may be confirmatory. All other
-CSO profiles remain descriptive diagnostics.
+The study collects no new human annotations and does not claim that synthetic
+annotators replace people. Only Tier A measures that pass computational
+robustness, and Tier B measures with their stated external boundary, may support
+the corresponding confirmatory computational claims. Tier C profiles remain
+explicitly model-derived exploratory diagnostics.
 
 ## Reporting rules
 

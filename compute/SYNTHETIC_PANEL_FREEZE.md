@@ -1,8 +1,8 @@
 # Synthetic Annotation Panel Freeze v1
 
-**Status:** `FROZEN_BEFORE_HUMAN_LABELS_AND_CONDITION_UNBLINDING`
+**Status:** `FROZEN_BEFORE_COMPUTATIONAL_ROBUSTNESS_AND_CONDITION_UNBLINDING`
 **Purpose:** blinded, model-derived annotation only; not human-equivalent
-coding and not confirmatory ground truth before same-item validation.
+coding and not evidence of lived human experience.
 
 ## Frozen input and blinding
 
@@ -49,9 +49,11 @@ in `compute/SYNTHETIC_JUDGE_CANDIDATE_AUDIT.md`.
 ## Interpretation boundary
 
 Run outputs remain individual synthetic annotations with preserved disagreement.
-They may be compared with the same-item adjudicated human subset only after
-human coding exists. Until then they are `MODEL_DERIVED_UNVALIDATED` and cannot
-be unblinded, aggregated by condition, or used for RQ2-RQ5.
+Before unblinding, they must pass the frozen computational robustness audit and
+be assigned a construct-specific measurement status. Existing released human
+data may provide external calibration only; it is not same-item annotation of
+the current outputs. Until the coded-data freeze, outputs cannot be aggregated
+by condition or used for RQ2-RQ5.
 
 ## Post-run technical output freeze
 
@@ -71,8 +73,8 @@ The gate requires exactly 3,000 raw records and 30,000 construct records per
 judge; matching prompt/config/revision hashes; unique blinded IDs; valid parser
 states; and no duplicate raw IDs that could indicate an unexplained retry. It
 creates a blinded per-item/construct disagreement map, manifest, checksums, and
-technical output-freeze record. Those artifacts remain `MODEL_DERIVED_UNVALIDATED`
-until the independent human reference gate is complete.
+technical output-freeze record. Those artifacts remain uninterpreted until the
+separate computational-robustness and public-human-calibration gate is complete.
 
 The only accepted parser states are `PARSED`, `EVIDENCE_SPAN_INVALID`,
 `PARSE_ERROR:JSONDecodeError`, and `PARSE_ERROR:ValueError`. The latter two are

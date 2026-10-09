@@ -5,7 +5,8 @@
 
 ## Purpose
 
-Exercise the output/coding analysis path before a real VLM run exists. The
+Exercise the historical output/coding plumbing path before a real VLM run
+exists. The
 fixture generator creates invented IDs, output text, labels, probabilities, and
 two imaginary model names. It reads no VizWiz question, answer, caption, image,
 DreamBank report, or VLM output.
@@ -34,5 +35,13 @@ python code/09_analyze_public_intervention.py `
 The generated values, directions, confidence intervals, labels, model names,
 and text are invented test fixtures. They are not included in any result table,
 figure, manuscript, poster, or claim. A real run still requires the frozen
-model/compute gate, output validation, independent coding, reliability, and
-provenance review.
+model/compute gate, output validation, provenance review, and the documented
+public-human calibration boundary where applicable. It does **not** make new
+human coding, adjudication, reliability, or an AltTest a current prerequisite
+for the public-data-only computational measurement scope. It also does not
+authorize human-readable label substance, a private condition mapping, or
+condition-level inspection before `CODED_DATA_FREEZE`, or RQ2--RQ5. The
+designated automated workflow may process protected artifacts for technical and
+robustness audits without exposing their contents. The separate
+`future_human_validation/` archive remains available for future human-study
+validation and is not exercised by this dry run.

@@ -1,5 +1,17 @@
 # Analysis plan
 
+> **HISTORICAL / SUPERSEDED FOR ACTIVE WORK (2026-10-09).** This v1 plan is
+> preserved as an immutable record of the former full-program analysis design.
+> Active work is governed by the public-data-only computational-measurement
+> scope in `PROTOCOL_PUBLIC_DATA_v2.md` and `PUBLIC_DATA_ANALYSIS_PLAN_v2.md`.
+> The active scope does not require new human coding or an AltTest, does not
+> authorize human-readable label substance, private condition mappings, or
+> condition-level inspection before `CODED_DATA_FREEZE`, and does not authorize
+> RQ2--RQ5. Designated automated blinded scripts may perform technical and
+> robustness audits without exposing their contents.
+> `future_human_validation/` remains a separate prospective archive and cannot
+> retroactively validate current computational measurements.
+
 **Version:** v1.0, frozen 2026-10-05 before data acquisition/outcome inspection.
 
 ## Shared representation

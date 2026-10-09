@@ -307,3 +307,38 @@ status.
 - **Confirmatory effect:** The fixed seed, 200 selected items, 600 rows, row
   order, output text, condition blinding, ontology, judges, and prompts remain
   unchanged. v1.1 strengthens provenance only.
+
+## 2026-10-09 -- Supersede new-human annotation gate for the current public-data study
+
+- **Original plan:** The current CHI submission path required three new,
+  independently returned human-coder files for the frozen 600-row subset,
+  pre-adjudication reliability, adjudication, same-item synthetic-versus-human
+  validation, and Alt-Test decisions before `CODED_DATA_FREEZE`.
+- **New plan:** The current submission is deliberately public-data-only and
+  collects zero new human data. It uses the frozen synthetic panel as a
+  computational measurement instrument; applies a prospective blinded
+  computational robustness gate; and uses released human-labelled datasets only
+  for bounded external public-human calibration. The previous A/B/C, adjudication,
+  and Alt-Test materials are retained under `future_human_validation/` for a
+  later matched-human validation study.
+- **Reason:** The study does not ask whether a synthetic annotator replaces a
+  human. Requiring new human labels would introduce a new collection dependency
+  while not matching the current computational intervention claim. The revision
+  narrows claims to observable output properties and to the specific external
+  human evidence available in released datasets.
+- **Archive:** Before amendment, the supplied governing guide was copied to
+  `guides/archive/CHI2027_Blind_Dreams_AI_Research_Guide_pre_public_data_only_2026-10-09.md`.
+  Its SHA-256 is
+  `9BEDAA370D5E8349DA71B710051565326AC769D18717B20E29733BB6DCD61E13`.
+- **What did not change:** The locked 1,000-item sample, 3,000 Qwen outputs,
+  prompts, generator revision, output freeze, synthetic judge configurations,
+  Study 0 data, research questions, condition blinding, and private mapping.
+- **Outcome visibility:** No RQ2--RQ5 condition-level effect, private condition
+  mapping, human label, adjudicated label, or synthetic-label condition pattern
+  was opened to make this amendment. Permitted technical progress metadata only
+  were inspected.
+- **Confirmatory effect:** `ALT_TEST_CURRENT_STUDY = NOT_APPLICABLE_TO_CURRENT_DESIGN`.
+  Synthetic labels are never called human judgments or evidence of lived
+  experience. Every construct must receive a prospective Tier A/B/C and
+  measurement-strength decision before unblinding; unsupported or unstable
+  constructs remain exploratory or `MEASUREMENT_UNSTABLE`.
