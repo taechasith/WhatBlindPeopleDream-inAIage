@@ -24,6 +24,7 @@ $auditDir = Join-Path $robustRoot 'audit'
 $anchorDir = Join-Path $robustRoot 'rule_anchors'
 $summaryDir = Join-Path $robustRoot 'summary'
 $calibration = Join-Path $root 'results\public_human_calibration_matrix.csv'
+$codedFreezeDir = Join-Path $root 'results\coded_data_freeze'
 
 if (-not (Test-Path -LiteralPath $python)) { throw 'Dedicated CUDA inference Python is unavailable.' }
 if (-not (Test-Path -LiteralPath $packet)) { throw 'Frozen blinded packet is unavailable.' }
@@ -97,4 +98,13 @@ if (-not (Test-Path -LiteralPath (Join-Path $summaryDir 'CONSTRUCT_STRENGTH_MANI
     if ($LASTEXITCODE -ne 0) { throw 'Blinded construct-strength summary failed.' }
 }
 
-Write-Output 'BLINDED_ROBUSTNESS_PIPELINE_COMPLETE'
+if (-not (Test-Path -LiteralPath (Join-Path $codedFreezeDir 'CODED_DATA_FREEZE.json'))) {
+    & $python (Join-Path $root 'code\26_freeze_coded_data_public_only.py') `
+        --panel-freeze $freezeReceipt --subset-manifest $subsetManifest `
+        --measurement-audit-dir $auditDir --rule-anchor-dir $anchorDir `
+        --construct-strength-dir $summaryDir --calibration-receipt $calibration `
+        --outdir $codedFreezeDir
+    if ($LASTEXITCODE -ne 0) { throw 'Public-data coded-data freeze failed.' }
+}
+
+Write-Output 'CODED_DATA_FREEZE_READY_FOR_PRESPECIFIED_UNBLINDING'
