@@ -17,6 +17,7 @@ $strength = Join-Path $root 'annotation_public\private\computational_robustness_
 $outdir = Join-Path $root 'results\post_freeze_analysis_v1'
 $spaceOutdir = Join-Path $root 'results\representational_space_v1'
 $resultsFreezeDir = Join-Path $root 'results\results_freeze'
+$figureOutdir = Join-Path $root 'figures\final_public_data_v1'
 
 if (-not (Test-Path -LiteralPath $python)) { throw 'Dedicated analysis Python is unavailable.' }
 while (-not (Test-Path -LiteralPath $freeze)) {
@@ -43,4 +44,11 @@ if (-not (Test-Path -LiteralPath (Join-Path $resultsFreezeDir 'RESULTS_FREEZE.js
     if ($LASTEXITCODE -ne 0) { throw 'Public-data results freeze failed.' }
 }
 
-Write-Output 'RESULTS_FROZEN_READY_FOR_FIGURES_AND_MANUSCRIPT'
+if (-not (Test-Path -LiteralPath (Join-Path $figureOutdir 'FIGURE_MANIFEST.csv'))) {
+    & $python (Join-Path $root 'code\30_generate_public_data_figures.py') `
+        --results-freeze (Join-Path $resultsFreezeDir 'RESULTS_FREEZE.json') `
+        --post-freeze-analysis $outdir --space-analysis $spaceOutdir --outdir $figureOutdir
+    if ($LASTEXITCODE -ne 0) { throw 'Data-driven figure generation failed.' }
+}
+
+Write-Output 'FIGURES_COMPLETE_READY_FOR_MANUSCRIPT_DRAFTING'
