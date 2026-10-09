@@ -34,6 +34,14 @@ def save(figure: plt.Figure, stem: str, alt_text: str, outdir: Path, files: list
     plt.close(figure)
 
 
+def require_frozen_table(freeze: dict[str, object], name: str, path: Path) -> None:
+    table = dict(freeze.get("tables", {})).get(name)
+    if not isinstance(table, dict) or not path.is_file():
+        fail(f"results freeze does not commit required table: {name}")
+    if str(table.get("sha256")) != sha256(path):
+        fail(f"results table differs from the frozen ledger: {name}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results-freeze", type=Path, required=True)
@@ -46,10 +54,18 @@ def main() -> None:
     freeze = json.loads(args.results_freeze.read_text(encoding="utf-8"))
     if freeze.get("status") != "RESULTS_FROZEN_PUBLIC_DATA_ONLY":
         fail("results are not frozen")
-    rq2 = pd.read_csv(args.post_freeze_analysis / "RQ2_results.csv")
-    rq3 = pd.read_csv(args.post_freeze_analysis / "RQ3_results.csv")
-    rq5 = pd.read_csv(args.post_freeze_analysis / "RQ5_results.csv")
-    rq4 = pd.read_csv(args.space_analysis / "RQ4_results.csv")
+    if freeze.get("figure_script_sha256") != sha256(Path(__file__).resolve()):
+        fail("figure-generation script differs from its pre-unblinding commitment")
+    rq2_path = args.post_freeze_analysis / "RQ2_results.csv"
+    rq3_path = args.post_freeze_analysis / "RQ3_results.csv"
+    rq5_path = args.post_freeze_analysis / "RQ5_results.csv"
+    rq4_path = args.space_analysis / "RQ4_results.csv"
+    for name, path in (("RQ2", rq2_path), ("RQ3", rq3_path), ("RQ5", rq5_path), ("RQ4", rq4_path)):
+        require_frozen_table(freeze, name, path)
+    rq2 = pd.read_csv(rq2_path)
+    rq3 = pd.read_csv(rq3_path)
+    rq5 = pd.read_csv(rq5_path)
+    rq4 = pd.read_csv(rq4_path)
     for frame, name in ((rq2, "RQ2"), (rq3, "RQ3"), (rq4, "RQ4"), (rq5, "RQ5")):
         if frame.empty:
             fail(f"{name} results table is empty")
@@ -70,26 +86,37 @@ def main() -> None:
 
     # Figure 2: primary within-item synthetic-measurement effects.
     selected = rq2.loc[rq2.analysis_role == "CONFIRMATORY_COMPUTATIONAL"].copy()
-    if selected.empty:
-        selected = rq2.copy()
     selected = selected.dropna(subset=["effect", "ci_low", "ci_high"])
     if selected.empty:
-        fail("RQ2 has no estimable rows for the condition-effect figure")
-    selected["label"] = selected["construct"] + " | " + selected["judge_id"]
-    labels = list(dict.fromkeys(selected.label.tolist()))
-    figure, axes = plt.subplots(1, 2, figsize=(15, max(5, 0.42 * len(labels) + 2)), sharey=True)
-    contrasts = ["intent_minus_generic", "accessibility_minus_intent"]
-    for axis, contrast in zip(axes, contrasts):
-        current = selected.loc[selected.contrast == contrast].set_index("label").reindex(labels)
-        y = np.arange(len(labels))
-        axis.axvline(0, color="black", linewidth=0.8)
-        axis.errorbar(current.effect, y, xerr=[current.effect - current.ci_low, current.ci_high - current.effect], fmt="o", color="black", capsize=2)
-        axis.set_title(contrast.replace("_", " "))
-        axis.set_xlabel("Paired difference in label prevalence")
-        axis.set_yticks(y, labels if axis is axes[0] else [])
-        axis.grid(axis="x", linestyle=":", color="0.65")
-    axes[0].invert_yaxis()
-    save(figure, "figure_2_prompt_condition_effects", f"Within-item paired label-prevalence differences with 95% bootstrap intervals for {len(selected)} judge-construct-contrast records. Zero indicates no estimated difference. Judges remain separate; this is computational measurement, not human judgment.", args.outdir, files)
+        figure, axis = plt.subplots(figsize=(10, 4))
+        axis.set_axis_off()
+        axis.text(
+            0.5,
+            0.55,
+            "No estimable predeclared confirmatory\ncomputational measurement rows",
+            ha="center",
+            va="center",
+            fontsize=15,
+            bbox={"boxstyle": "round,pad=0.6", "facecolor": "white", "edgecolor": "black"},
+        )
+        axis.text(0.5, 0.25, "The frozen measurement-strength gate prevents plotting unstable or exploratory labels as primary effects.", ha="center", va="center", fontsize=10)
+        save(figure, "figure_2_prompt_condition_effects", "A measurement-status figure stating that no estimable predeclared confirmatory computational measurement rows were available. It explicitly does not substitute unstable or exploratory labels.", args.outdir, files)
+    else:
+        selected["label"] = selected["construct"] + " | " + selected["judge_id"]
+        labels = list(dict.fromkeys(selected.label.tolist()))
+        figure, axes = plt.subplots(1, 2, figsize=(15, max(5, 0.42 * len(labels) + 2)), sharey=True)
+        contrasts = ["intent_minus_generic", "accessibility_minus_intent"]
+        for axis, contrast in zip(axes, contrasts):
+            current = selected.loc[selected.contrast == contrast].set_index("label").reindex(labels)
+            y = np.arange(len(labels))
+            axis.axvline(0, color="black", linewidth=0.8)
+            axis.errorbar(current.effect, y, xerr=[current.effect - current.ci_low, current.ci_high - current.effect], fmt="o", color="black", capsize=2)
+            axis.set_title(contrast.replace("_", " "))
+            axis.set_xlabel("Paired difference in label prevalence")
+            axis.set_yticks(y, labels if axis is axes[0] else [])
+            axis.grid(axis="x", linestyle=":", color="0.65")
+        axes[0].invert_yaxis()
+        save(figure, "figure_2_prompt_condition_effects", f"Within-item paired label-prevalence differences with 95% bootstrap intervals for {len(selected)} predeclared confirmatory computational judge-construct-contrast records. Zero indicates no estimated difference. Judges remain separate; this is computational measurement, not human judgment.", args.outdir, files)
 
     # Figure 3: bounded human-reference alignment.
     rq3 = rq3.dropna(subset=["effect", "ci_low", "ci_high"])
@@ -128,7 +155,7 @@ def main() -> None:
         fail("RQ5 has no estimable output-property rows")
     current["absolute_effect"] = current.effect.abs()
     current = current.nlargest(min(12, len(current)), "absolute_effect").copy().sort_values("effect")
-    current["label"] = current.construct + " | " + current.contrast + " | " + current.judge_id
+    current["label"] = current.construct + " | " + current.contrast + " | " + current.judge_id + " | " + current.analysis_role
     figure, axis = plt.subplots(figsize=(14, max(5, 0.4 * len(current) + 2)))
     colors = ["white" if value < 0 else "0.65" for value in current.effect]
     hatches = ["///" if value < 0 else "" for value in current.effect]
@@ -139,7 +166,7 @@ def main() -> None:
     axis.set_yticks(np.arange(len(current)), current.label)
     axis.set_xlabel("Paired difference in label prevalence")
     axis.grid(axis="x", linestyle=":", color="0.65")
-    save(figure, "figure_5_largest_output_property_changes", f"The {len(current)} largest absolute paired changes in computationally measured output properties. Solid gray bars are increases in the numerator condition; hatched white bars are decreases. These are output properties, not measured human harms or preferences.", args.outdir, files)
+    save(figure, "figure_5_largest_output_property_changes", f"The {len(current)} largest absolute paired changes in computationally measured output properties, with the construct measurement role embedded in each label. Solid gray bars are increases in the numerator condition; hatched white bars are decreases. These are output properties, not measured human harms or preferences.", args.outdir, files)
 
     pd.DataFrame(files).to_csv(args.outdir / "FIGURE_MANIFEST.csv", index=False)
     (args.outdir / "FIGURE_METHODS.md").write_text("# Figure methods\n\nAll five figures are generated from `RESULTS_FROZEN_PUBLIC_DATA_ONLY`. Exact source-table hashes are in the results freeze and figure manifest. Grayscale, direct text labels, markers, and hatching avoid color-only encoding.\n", encoding="utf-8")

@@ -34,6 +34,62 @@ def fail(message: str) -> None:
     raise ValueError(f"REPRESENTATIONAL_SPACE_ANALYSIS_FAILED: {message}")
 
 
+def committed_sources(freeze_path: Path, freeze: dict[str, object]) -> dict[str, tuple[Path, str]]:
+    ledger = freeze_path.parent / "CODED_DATA_CHECKSUMS.csv"
+    if not ledger.is_file() or freeze.get("coded_data_checksums_sha256") != sha256(ledger):
+        fail("coded-data checksum ledger is missing or changed")
+    rows = pd.read_csv(ledger, dtype=str, keep_default_na=False)
+    if not {"artifact", "path", "sha256"}.issubset(rows.columns) or rows.artifact.duplicated().any():
+        fail("coded-data checksum ledger schema is incomplete")
+    sources: dict[str, tuple[Path, str]] = {}
+    for row in rows.to_dict("records"):
+        path = Path(str(row["path"]))
+        expected = str(row["sha256"])
+        if not path.is_file() or sha256(path) != expected:
+            fail(f"committed source is absent or changed: {row['artifact']}")
+        sources[str(row["artifact"])] = (path, expected)
+    for name, expected in dict(freeze.get("source_checksums", {})).items():
+        if name not in sources or sources[name][1] != str(expected):
+            fail(f"coded-data freeze source commitment is incomplete or inconsistent: {name}")
+    return sources
+
+
+def require_committed(sources: dict[str, tuple[Path, str]], name: str, path: Path) -> None:
+    if name not in sources or path.resolve() != sources[name][0].resolve() or sha256(path) != sources[name][1]:
+        fail(f"source does not match coded-data commitment: {name}")
+
+
+def verify_post_analysis_receipt(directory: Path, manifest: dict[str, object]) -> None:
+    checksums_path = directory / "ANALYSIS_CHECKSUMS.csv"
+    if not checksums_path.is_file() or manifest.get("analysis_checksums_sha256") != sha256(checksums_path):
+        fail("post-freeze analysis checksum ledger is missing or changed")
+    checksums = pd.read_csv(checksums_path, dtype=str, keep_default_na=False)
+    if not {"artifact", "sha256"}.issubset(checksums.columns) or checksums.artifact.duplicated().any():
+        fail("post-freeze analysis checksum ledger schema is incomplete")
+    expected = {"RQ2_results": directory / "RQ2_results.csv", "RQ3_results": directory / "RQ3_results.csv", "RQ5_results": directory / "RQ5_results.csv"}
+    for artifact, path in expected.items():
+        row = checksums.loc[checksums.artifact == artifact]
+        if len(row) != 1 or not path.is_file() or str(row.iloc[0].sha256) != sha256(path):
+            fail(f"post-freeze result is absent or changed: {artifact}")
+    completion = Path(str(manifest.get("unblinding_completion_receipt", "")))
+    if not completion.is_file():
+        fail("authorized unblinding completion receipt is unavailable")
+    completed = json.loads(completion.read_text(encoding="utf-8"))
+    if completed.get("status") != "UNBLINDING_COMPLETED_PUBLIC_DATA_ONLY":
+        fail("authorized unblinding completion receipt has an unexpected status")
+    ledger = Path(str(manifest.get("unblinding_ledger", "")))
+    if not ledger.is_file() or completed.get("started_ledger_sha256") != sha256(ledger):
+        fail("authorized unblinding completion receipt is not linked to its start ledger")
+    if completed.get("analysis_checksums_sha256") != sha256(checksums_path):
+        fail("authorized unblinding completion receipt is not linked to analysis checksums")
+    if Path(str(completed.get("analysis_directory", ""))).resolve() != directory.resolve():
+        fail("authorized unblinding completion receipt names a different analysis directory")
+    for shorthand, artifact in (("RQ2", "RQ2_results"), ("RQ3", "RQ3_results"), ("RQ5", "RQ5_results")):
+        result_row = checksums.loc[checksums.artifact == artifact]
+        if completed.get("result_sha256", {}).get(shorthand) != str(result_row.iloc[0].sha256):
+            fail(f"authorized unblinding completion receipt is not linked to {artifact}")
+
+
 def profile(rows: list[dict[str, object]], rules: list[str]) -> np.ndarray:
     if not rows:
         return np.full(len(rules), np.nan)
@@ -65,11 +121,19 @@ def row_matrix(rows: list[dict[str, object]], rules: list[str]) -> np.ndarray:
     )
 
 
-def bootstrap_profiles(matrix: np.ndarray, repetitions: int, rng: np.random.Generator) -> np.ndarray:
-    """Ordinary text-unit bootstrap, sampled once per space and reused by pairs."""
+def bootstrap_profiles(
+    matrix: np.ndarray,
+    repetitions: int,
+    rng: np.random.Generator,
+    fixed_indices: np.ndarray | None = None,
+) -> np.ndarray:
+    """Bootstrap profiles, optionally using a shared item-level resample matrix."""
     profiles = np.empty((repetitions, matrix.shape[1]), dtype=float)
+    if fixed_indices is not None and fixed_indices.shape != (repetitions, matrix.shape[0]):
+        fail("paired bootstrap index shape does not match the frozen AI item design")
     for index in range(repetitions):
-        sampled = matrix[rng.integers(0, matrix.shape[0], matrix.shape[0])]
+        draw = fixed_indices[index] if fixed_indices is not None else rng.integers(0, matrix.shape[0], matrix.shape[0])
+        sampled = matrix[draw]
         profiles[index] = np.nanmean(sampled, axis=0)
     return profiles
 
@@ -112,10 +176,25 @@ def main() -> None:
     analysis = json.loads((args.post_freeze_analysis / "ANALYSIS_MANIFEST.json").read_text(encoding="utf-8"))
     if freeze.get("status") != "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY" or analysis.get("status") != "RQ2_RQ3_RQ5_COMPLETE_PUBLIC_DATA_ONLY":
         fail("coded-data freeze and authorized post-freeze analysis are required")
+    if analysis.get("condition_unblinded_once") is not True or analysis.get("frozen_coded_data_status") != freeze.get("status"):
+        fail("post-freeze analysis receipt does not document the one authorized unblinding")
+    sources = committed_sources(args.coded_data_freeze, freeze)
+    for name, path in {
+        "analysis_config": args.config,
+        "rq4_script": Path(__file__).resolve(),
+        "dreams": args.dreams,
+        "intent_corpus": args.intent,
+        "captions": args.captions,
+        "primary_outputs": args.outputs,
+        "lexical_codebook": ROOT / config["representational_space"]["lexical_codebook_script"],
+    }.items():
+        require_committed(sources, name, path)
+    verify_post_analysis_receipt(args.post_freeze_analysis, analysis)
     for source in (args.dreams, args.intent, args.captions, args.outputs):
         if not source.is_file():
             fail(f"required source unavailable: {source}")
-    codebook = runpy.run_path(str(ROOT / config["representational_space"]["lexical_codebook_script"]))
+    codebook_path = ROOT / config["representational_space"]["lexical_codebook_script"]
+    codebook = runpy.run_path(str(codebook_path))
     rules: dict[str, str] = codebook["RULES"]
     label = codebook["label"]
     applicable_rules = [rule for rule in rules if rule not in {"task_relevance", "intent_match", "unsupported_information", "nightmare"}]
@@ -124,7 +203,7 @@ def main() -> None:
     intent = pd.read_csv(args.intent, dtype=str, keep_default_na=False)
     captions = pd.read_csv(args.captions, dtype=str, keep_default_na=False)
     outputs = pd.read_csv(args.outputs, dtype=str, keep_default_na=False)
-    if not {"dream_text"}.issubset(dreams.columns) or not {"source_type", "input_text"}.issubset(intent.columns) or not {"caption_text"}.issubset(captions.columns) or not {"condition", "output_text"}.issubset(outputs.columns):
+    if not {"dream_text"}.issubset(dreams.columns) or not {"source_type", "input_text"}.issubset(intent.columns) or not {"caption_text"}.issubset(captions.columns) or not {"sample_row_id", "condition", "output_text"}.issubset(outputs.columns):
         fail("source schema is incomplete")
     spaces: dict[str, list[dict[str, object]]] = {
         "DREAM": [label(text, "DREAM") for text in dreams.dream_text if text],
@@ -134,8 +213,21 @@ def main() -> None:
     condition_space = {"generic": "AI_GENERIC", "intent_steered": "AI_INTENT_STEERED", "accessibility_steered": "AI_ACCESSIBILITY_STEERED"}
     if set(outputs.condition) != set(condition_space):
         fail("output condition set differs from frozen intervention design")
+    if outputs.duplicated(["sample_row_id", "condition"]).any():
+        fail("frozen AI outputs contain duplicate item-condition records")
+    expected_items = int(config["design"]["expected_items"])
+    ai_item_ids: set[str] | None = None
     for condition, space in condition_space.items():
-        spaces[space] = [label(text, "AI_DESCRIPTION") for text in outputs.loc[outputs.condition == condition, "output_text"] if text]
+        condition_rows = outputs.loc[outputs.condition == condition, ["sample_row_id", "output_text"]].copy()
+        if len(condition_rows) != expected_items or (condition_rows.output_text == "").any():
+            fail(f"frozen AI output coverage is incomplete for {condition}")
+        condition_rows = condition_rows.sort_values("sample_row_id", key=lambda value: value.astype(str)).reset_index(drop=True)
+        current_ids = set(condition_rows.sample_row_id.astype(str))
+        if ai_item_ids is None:
+            ai_item_ids = current_ids
+        elif current_ids != ai_item_ids:
+            fail("AI conditions do not cover the same frozen item identifiers")
+        spaces[space] = [label(text, "AI_DESCRIPTION") for text in condition_rows.output_text]
     if any(len(rows) == 0 for rows in spaces.values()):
         fail("one or more spaces have no available text rows")
 
@@ -150,7 +242,17 @@ def main() -> None:
     bootstrap_space_profiles = {
         space: bootstrap_profiles(matrix, bootstrap_repetitions, rng)
         for space, matrix in matrices.items()
+        if not space.startswith("AI_")
     }
+    ai_spaces = ["AI_GENERIC", "AI_INTENT_STEERED", "AI_ACCESSIBILITY_STEERED"]
+    ai_matrix_sizes = {matrices[space].shape[0] for space in ai_spaces}
+    if ai_matrix_sizes != {expected_items}:
+        fail("AI condition matrices do not retain the frozen paired item count")
+    paired_ai_indices = rng.integers(0, expected_items, size=(bootstrap_repetitions, expected_items))
+    for space in ai_spaces:
+        bootstrap_space_profiles[space] = bootstrap_profiles(
+            matrices[space], bootstrap_repetitions, rng, fixed_indices=paired_ai_indices
+        )
     comparisons = []
     for left, right in combinations(spaces, 2):
         metrics = distances(profiles[left], profiles[right])
@@ -168,7 +270,19 @@ def main() -> None:
     pd.DataFrame(profile_rows).to_csv(args.outdir / "RQ4_space_profiles.csv", index=False)
     pd.DataFrame(comparisons).to_csv(args.outdir / "RQ4_results.csv", index=False)
     association.to_csv(args.outdir / "RQ4_association_status.csv", index=False)
-    manifest = {"status": "RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY", "condition_unblinded_once": True, "new_human_data_collected": False, "lexical_codebook_sha256": sha256(ROOT / config["representational_space"]["lexical_codebook_script"]), "spaces": {name: len(rows) for name, rows in spaces.items()}, "categories": applicable_rules, "interpretation_boundary": "Text distributions only; no inference about cognition, lived experience, preference, or causal transfer."}
+    manifest = {
+        "status": "RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY",
+        "condition_unblinded_once": True,
+        "new_human_data_collected": False,
+        "coded_data_freeze_sha256": sha256(args.coded_data_freeze),
+        "post_freeze_analysis_manifest_sha256": sha256(args.post_freeze_analysis / "ANALYSIS_MANIFEST.json"),
+        "lexical_codebook_sha256": sha256(codebook_path),
+        "rq4_script_sha256": sha256(Path(__file__).resolve()),
+        "paired_ai_bootstrap": "Shared sample_row_id bootstrap draws were used for every AI-condition comparison.",
+        "spaces": {name: len(rows) for name, rows in spaces.items()},
+        "categories": applicable_rules,
+        "interpretation_boundary": "Text distributions only; no inference about cognition, lived experience, preference, or causal transfer.",
+    }
     (args.outdir / "RQ4_MANIFEST.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(manifest, sort_keys=True))
 

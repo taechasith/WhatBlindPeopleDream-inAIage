@@ -43,24 +43,44 @@ function Test-JudgeComplete {
     return $labelLines -eq ($expectedLabels + 1) -and $rawLines -eq $expectedItems
 }
 
+function Test-ReceiptStatus {
+    param([string]$Path, [string]$ExpectedStatus)
+    if (-not (Test-Path -LiteralPath $Path)) { return $false }
+    try {
+        $receipt = Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+        return $receipt.status -eq $ExpectedStatus
+    } catch {
+        return $false
+    }
+}
+
+function Assert-EmptyOrReceipt {
+    param([string]$Directory, [string]$Receipt, [string]$Status)
+    if ((Test-Path -LiteralPath $Directory) -and -not (Test-ReceiptStatus -Path $Receipt -ExpectedStatus $Status)) {
+        throw "Immutable stage directory exists without its expected valid receipt: $Directory"
+    }
+}
+
 while (-not (@($panel.judges | Where-Object { -not (Test-JudgeComplete $_.judge_id) }).Count -eq 0)) {
     Start-Sleep -Seconds 60
 }
 
-if (-not (Test-Path -LiteralPath (Join-Path $baselineFreeze 'SYNTHETIC_PANEL_OUTPUT_FREEZE.json'))) {
+$freezeReceipt = Join-Path $baselineFreeze 'SYNTHETIC_PANEL_OUTPUT_FREEZE.json'
+Assert-EmptyOrReceipt -Directory $baselineFreeze -Receipt $freezeReceipt -Status 'FROZEN_BLINDED_SYNTHETIC_PANEL_OUTPUTS'
+if (-not (Test-ReceiptStatus -Path $freezeReceipt -ExpectedStatus 'FROZEN_BLINDED_SYNTHETIC_PANEL_OUTPUTS')) {
     & $python (Join-Path $root 'code\16_freeze_synthetic_panel_outputs.py') `
         --config $config --prompt $prompt --packet $packet --panel-dir $panelDir --outdir $baselineFreeze
     if ($LASTEXITCODE -ne 0) { throw 'Baseline synthetic-panel freeze failed.' }
 }
 
-$freezeReceipt = Join-Path $baselineFreeze 'SYNTHETIC_PANEL_OUTPUT_FREEZE.json'
-if (-not (Test-Path -LiteralPath (Join-Path $subsets 'COMPUTATIONAL_MEASUREMENT_SUBSET_MANIFEST_v1.json'))) {
+$subsetManifest = Join-Path $subsets 'COMPUTATIONAL_MEASUREMENT_SUBSET_MANIFEST_v1.json'
+Assert-EmptyOrReceipt -Directory $subsets -Receipt $subsetManifest -Status 'FROZEN_BLINDED_MEASUREMENT_ROBUSTNESS_SUBSETS'
+if (-not (Test-ReceiptStatus -Path $subsetManifest -ExpectedStatus 'FROZEN_BLINDED_MEASUREMENT_ROBUSTNESS_SUBSETS')) {
     & $python (Join-Path $root 'code\21_build_measurement_robustness_subsets.py') `
         --config $robustConfig --packet $packet --baseline-freeze $freezeReceipt --outdir $subsets
     if ($LASTEXITCODE -ne 0) { throw 'Blinded robustness subset build failed.' }
 }
 
-$subsetManifest = Join-Path $subsets 'COMPUTATIONAL_MEASUREMENT_SUBSET_MANIFEST_v1.json'
 $paraPacket = Join-Path $subsets 'prompt_paraphrase_subset_v1.csv'
 $rerunPacket = Join-Path $subsets 'exact_rerun_subset_v1.csv'
 
@@ -76,7 +96,9 @@ function Invoke-FrozenJudgeSet {
 Invoke-FrozenJudgeSet -PacketPath $paraPacket -PromptPath $paraphrasePrompt -OutputDir $paraphraseDir
 Invoke-FrozenJudgeSet -PacketPath $rerunPacket -PromptPath $prompt -OutputDir $rerunDir
 
-if (-not (Test-Path -LiteralPath (Join-Path $auditDir 'AUDIT_MANIFEST.json'))) {
+$auditReceipt = Join-Path $auditDir 'AUDIT_MANIFEST.json'
+Assert-EmptyOrReceipt -Directory $auditDir -Receipt $auditReceipt -Status 'BLINDED_COMPUTATIONAL_MEASUREMENT_AUDIT_COMPLETE'
+if (-not (Test-ReceiptStatus -Path $auditReceipt -ExpectedStatus 'BLINDED_COMPUTATIONAL_MEASUREMENT_AUDIT_COMPLETE')) {
     & $python (Join-Path $root 'code\22_audit_synthetic_measurements.py') `
         --config $robustConfig --subset-manifest $subsetManifest --baseline-freeze $freezeReceipt `
         --baseline-packet $packet --baseline-labels-dir $panelDir `
@@ -85,20 +107,26 @@ if (-not (Test-Path -LiteralPath (Join-Path $auditDir 'AUDIT_MANIFEST.json'))) {
     if ($LASTEXITCODE -ne 0) { throw 'Blinded measurement audit failed.' }
 }
 
-if (-not (Test-Path -LiteralPath (Join-Path $anchorDir 'RULE_ANCHOR_MANIFEST.json'))) {
+$anchorReceipt = Join-Path $anchorDir 'RULE_ANCHOR_MANIFEST.json'
+Assert-EmptyOrReceipt -Directory $anchorDir -Receipt $anchorReceipt -Status 'BLINDED_RULE_ANCHORS_COMPLETE'
+if (-not (Test-ReceiptStatus -Path $anchorReceipt -ExpectedStatus 'BLINDED_RULE_ANCHORS_COMPLETE')) {
     & $python (Join-Path $root 'code\23_apply_computational_rule_anchors.py') `
         --config $robustConfig --subset-manifest $subsetManifest --measurement-audit-dir $auditDir --outdir $anchorDir
     if ($LASTEXITCODE -ne 0) { throw 'Blinded rule-anchor audit failed.' }
 }
 
-if (-not (Test-Path -LiteralPath (Join-Path $summaryDir 'CONSTRUCT_STRENGTH_MANIFEST.json'))) {
+$summaryReceipt = Join-Path $summaryDir 'CONSTRUCT_STRENGTH_MANIFEST.json'
+Assert-EmptyOrReceipt -Directory $summaryDir -Receipt $summaryReceipt -Status 'BLINDED_CONSTRUCT_MEASUREMENT_STRENGTH_FROZEN'
+if (-not (Test-ReceiptStatus -Path $summaryReceipt -ExpectedStatus 'BLINDED_CONSTRUCT_MEASUREMENT_STRENGTH_FROZEN')) {
     & $python (Join-Path $root 'code\24_summarize_blinded_measurement_robustness.py') `
         --config $robustConfig --subset-manifest $subsetManifest --measurement-audit-dir $auditDir `
         --rule-anchor-dir $anchorDir --calibration-receipt $calibration --outdir $summaryDir
     if ($LASTEXITCODE -ne 0) { throw 'Blinded construct-strength summary failed.' }
 }
 
-if (-not (Test-Path -LiteralPath (Join-Path $codedFreezeDir 'CODED_DATA_FREEZE.json'))) {
+$codedReceipt = Join-Path $codedFreezeDir 'CODED_DATA_FREEZE.json'
+Assert-EmptyOrReceipt -Directory $codedFreezeDir -Receipt $codedReceipt -Status 'CODED_DATA_FROZEN_PUBLIC_DATA_ONLY'
+if (-not (Test-ReceiptStatus -Path $codedReceipt -ExpectedStatus 'CODED_DATA_FROZEN_PUBLIC_DATA_ONLY')) {
     & $python (Join-Path $root 'code\26_freeze_coded_data_public_only.py') `
         --panel-freeze $freezeReceipt --subset-manifest $subsetManifest `
         --measurement-audit-dir $auditDir --rule-anchor-dir $anchorDir `
