@@ -57,17 +57,41 @@ def distances(first: np.ndarray, second: np.ndarray) -> dict[str, float]:
     return {"jensen_shannon_divergence": float((kl(first, midpoint) + kl(second, midpoint)) / 2), "cosine_similarity": cosine, "hellinger_distance": hellinger, "n_categories": int(len(first))}
 
 
-def bootstrap_pair(first: list[dict[str, object]], second: list[dict[str, object]], rules: list[str], repetitions: int, rng: np.random.Generator) -> tuple[float, float, float]:
-    estimates = []
-    for _ in range(repetitions):
-        boot_first = [first[index] for index in rng.integers(0, len(first), len(first))]
-        boot_second = [second[index] for index in rng.integers(0, len(second), len(second))]
-        estimate = distances(profile(boot_first, rules), profile(boot_second, rules))["jensen_shannon_divergence"]
-        if np.isfinite(estimate):
-            estimates.append(estimate)
-    if not estimates:
-        return np.nan, np.nan, np.nan
-    return float(np.mean(estimates)), float(np.quantile(estimates, 0.025)), float(np.quantile(estimates, 0.975))
+def row_matrix(rows: list[dict[str, object]], rules: list[str]) -> np.ndarray:
+    """Represent fixed lexical labels as a text-unit-by-category matrix."""
+    return np.array(
+        [[np.nan if row[rule] == "" else float(row[rule]) for rule in rules] for row in rows],
+        dtype=float,
+    )
+
+
+def bootstrap_profiles(matrix: np.ndarray, repetitions: int, rng: np.random.Generator) -> np.ndarray:
+    """Ordinary text-unit bootstrap, sampled once per space and reused by pairs."""
+    profiles = np.empty((repetitions, matrix.shape[1]), dtype=float)
+    for index in range(repetitions):
+        sampled = matrix[rng.integers(0, matrix.shape[0], matrix.shape[0])]
+        profiles[index] = np.nanmean(sampled, axis=0)
+    return profiles
+
+
+def bootstrap_js(first: np.ndarray, second: np.ndarray) -> np.ndarray:
+    """Compute paired replicate JSD values from precomputed space bootstraps."""
+    mask = np.isfinite(first) & np.isfinite(second)
+    first = np.where(mask, first, 0.0)
+    second = np.where(mask, second, 0.0)
+    first_totals, second_totals = first.sum(axis=1), second.sum(axis=1)
+    usable = (first_totals > 0) & (second_totals > 0)
+    values = np.full(len(first), np.nan)
+    if not usable.any():
+        return values
+    left = first[usable] / first_totals[usable, None]
+    right = second[usable] / second_totals[usable, None]
+    midpoint = (left + right) / 2
+    with np.errstate(divide="ignore", invalid="ignore"):
+        left_kl = np.where(left > 0, left * np.log2(left / midpoint), 0.0).sum(axis=1)
+        right_kl = np.where(right > 0, right * np.log2(right / midpoint), 0.0).sum(axis=1)
+    values[usable] = (left_kl + right_kl) / 2
+    return values
 
 
 def main() -> None:
@@ -116,15 +140,24 @@ def main() -> None:
         fail("one or more spaces have no available text rows")
 
     profiles = {space: profile(rows, applicable_rules) for space, rows in spaces.items()}
+    matrices = {space: row_matrix(rows, applicable_rules) for space, rows in spaces.items()}
     profile_rows = []
     for space, values in profiles.items():
         for category, value in zip(applicable_rules, values):
             profile_rows.append({"space": space, "category": category, "n_text_units": len(spaces[space]), "proportion_expressed": value, "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE", "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth."})
     rng = np.random.default_rng(int(config["inference"]["seed"]))
+    bootstrap_repetitions = int(config["representational_space"]["bootstrap_repetitions"])
+    bootstrap_space_profiles = {
+        space: bootstrap_profiles(matrix, bootstrap_repetitions, rng)
+        for space, matrix in matrices.items()
+    }
     comparisons = []
     for left, right in combinations(spaces, 2):
         metrics = distances(profiles[left], profiles[right])
-        _, ci_low, ci_high = bootstrap_pair(spaces[left], spaces[right], applicable_rules, int(config["representational_space"]["bootstrap_repetitions"]), rng)
+        estimates = bootstrap_js(bootstrap_space_profiles[left], bootstrap_space_profiles[right])
+        estimates = estimates[np.isfinite(estimates)]
+        ci_low = float(np.quantile(estimates, 0.025)) if len(estimates) else np.nan
+        ci_high = float(np.quantile(estimates, 0.975)) if len(estimates) else np.nan
         comparisons.append({"space_a": left, "space_b": right, "n_a": len(spaces[left]), "n_b": len(spaces[right]), **metrics, "js_ci_low": ci_low, "js_ci_high": ci_high, "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY", "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness."})
     association = pd.DataFrame([{
         "analysis": "DreamSpace distance versus human-reference alignment",
