@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "policy_id": "anonymous_a0_poster_content_selection_v1",
+  "status": "FROZEN_PRE_RESULTS_POSTER_CONTENT_POLICY",
+  "review_stage": "ANONYMOUS_REVIEW",
+  "selection_principle": "Resolve only predeclared semantic keys. Never rank, filter, break ties, or phrase a claim using effect magnitude, confidence interval, p value, FDR value, direction, or apparent favorability.",
+  "title": "What Blind People Dream, Ask, and What AI Tells Them: A Public-Data Study of Sensory Mediation in the AI Age",
+  "subtitle": "A controlled within-item VLM intervention compares DreamSpace, BLV-originating intent, released human references, and AI-mediated output while separating model-derived text measurement from human judgment.",
+  "design_anchor": {
+    "locked_items": 1000,
+    "prompt_conditions": 3,
+    "frozen_judge_count": 2
+  },
+  "sample_summary_template": "Locked design: N = {locked_items} image-question items × {prompt_conditions} frozen prompt conditions; {frozen_judge_count} frozen computational measurement models; released human-reference calibration.",
+  "methods": [
+    "Historical blind dream reports, BLV-originating questions, released human references, and a locked within-item VLM intervention were mapped to one sensory-information ontology.",
+    "Each locked image-question item was generated under generic, BLV-intent-steered, and accessibility-steered prompts using the same frozen VLM configuration.",
+    "Two frozen model-family judges provide computational text measurements; released human-labelled datasets provide external calibration, not same-item human ratings."
+  ],
+  "implications": [
+    "Accessibility evaluation should test whether steering changes explicit task, spatial, social, identity, and uncertainty information rather than generic visual detail alone.",
+    "Dream-language resemblance and human-reference alignment should remain distinct evaluation targets; neither alone establishes lived accessibility value."
+  ],
+  "limitations": [
+    "Synthetic labels are computational measurements, not human judgments or substitutes for blind and low-vision lived experience.",
+    "Released captions and answers are bounded external references; they do not establish BLV preference, usefulness, safety, or semantic correctness.",
+    "DreamSpace comparisons concern textual distributions only. This study does not test dream incorporation, cognition, neural change, or causal effects on people.",
+    "Measurement status and model-family disagreement remain in the provenance record; unstable or non-estimable measurements cannot support substantive claims."
+  ],
+  "ethics_note": "This anonymous review-stage project is a secondary analysis of released research data and frozen model outputs; no new human data were collected. Applicable institutional determination remains required before external dissemination.",
+  "discussion_points": [
+    "Which explicit information properties should a user question be able to steer?",
+    "Which released human reference can legitimately validate a computational accessibility metric?",
+    "How should systems communicate uncertainty and avoid unsupported social or identity inference?"
+  ],
+  "selection_blocks": [
+    {
+      "family": "RQ2",
+      "selection_type": "paired_judge_construct",
+      "constructs": [
+        "task_answer",
+        "spatial_relation"
+      ],
+      "contrast": "intent_minus_generic",
+      "judges": [
+        "Phi_3.5_mini_2fe19245",
+        "Qwen2.5_1.5B_989aa798"
+      ],
+      "rationale": "Predeclared direct BLV-intent anchors: task-linked answer provision and explicit spatial relation. Both frozen judges are retained for every selected construct."
+    },
+    {
+      "family": "RQ3",
+      "selection_type": "reference_metric",
+      "metrics": [
+        "human_answer_mode_string_coverage",
+        "human_caption_max_token_f1"
+      ],
+      "contrast": "intent_minus_generic",
+      "rationale": "Predeclared released-human-reference anchors for the direct BLV-intent contrast. These remain bounded reference-alignment measures, not human ratings or BLV preference."
+    },
+    {
+      "family": "RQ4",
+      "selection_type": "unordered_space_pair",
+      "space_pairs": [
+        [
+          "DREAM",
+          "BLV_USER_QUESTION"
+        ],
+        [
+          "HUMAN_CAPTION",
+          "AI_ACCESSIBILITY_STEERED"
+        ]
+      ],
+      "rationale": "Predeclared text-profile comparisons preserve the theoretical distinction between historical dream expression and BLV intent, and a bounded human-caption versus accessibility-steered-AI comparison."
+    },
+    {
+      "family": "RQ5",
+      "selection_type": "paired_judge_construct",
+      "constructs": [
+        "identity_inference",
+        "social_intent_inference"
+      ],
+      "contrast": "accessibility_minus_intent",
+      "judges": [
+        "Phi_3.5_mini_2fe19245",
+        "Qwen2.5_1.5B_989aa798"
+      ],
+      "rationale": "Predeclared safeguards anchor the fixed accessibility instruction against unsupported identity, relationship, emotion, or intent inference. Both frozen judges are retained."
+    }
+  ],
+  "required_figures": [
+    "figure_1_reciprocal_cognitive_sensing_loop.svg",
+    "figure_2_prompt_condition_effects.svg",
+    "figure_3_human_reference_alignment.svg",
+    "figure_4_representational_space_distances.svg",
+    "figure_5_largest_output_property_changes.svg"
+  ]
+}
