@@ -292,6 +292,7 @@ if (Test-Path -LiteralPath $finalAuditDir) {
 Invoke-PythonTool -Script (Join-Path $root 'code\32_audit_final_anonymous_package.py') -ToolArguments @(
     '--results-freeze', $resultsFreeze,
     '--fact-packet-dir', $factPacketDir,
+    '--traceability-manifest', $traceReceipt,
     '--claim-ledger', (Join-Path $traceabilityDir 'CLAIM_TRACEABILITY.csv'),
     '--manuscript-dir', $manuscriptDir,
     '--manuscript-pdf', $manuscriptPdf,

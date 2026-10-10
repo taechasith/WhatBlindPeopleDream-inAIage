@@ -281,6 +281,66 @@ def audit_fact_packet(audit: Audit, results_freeze: Path, fact_packet_dir: Path)
     return facts
 
 
+def audit_traceability_manifest(
+    audit: Audit,
+    traceability_manifest: Path,
+    results_freeze: Path,
+    fact_packet_dir: Path,
+    manuscript_dir: Path,
+    manuscript_pdf: Path,
+    poster_content: Path,
+    claim_ledger: Path,
+    page_accounting: Path,
+) -> None:
+    """Bind post-render records to the exact frozen publication artifacts.
+
+    The claim ledger and page-accounting record are not sufficient by
+    themselves: both must reconcile to the immutable manifest emitted by the
+    post-render traceability step.  This check deliberately verifies hashes
+    only; it does not estimate or interpret any study result.
+    """
+    try:
+        payload = read_json(traceability_manifest, "publication traceability manifest")
+    except ValueError as exc:
+        audit.fail("TRACEABILITY_PROVENANCE", str(exc), traceability_manifest)
+        return
+    if payload.get("status") != "PUBLICATION_TRACEABILITY_FROZEN_FROM_RENDERED_ARTIFACTS":
+        audit.fail("TRACEABILITY_PROVENANCE", "unexpected traceability-manifest status", traceability_manifest)
+        return
+    if payload.get("new_human_data_collected") is not False:
+        audit.fail("TRACEABILITY_PROVENANCE", "traceability manifest does not attest to zero new human data", traceability_manifest)
+    bindings = {
+        "results_freeze_sha256": results_freeze,
+        "fact_packet_manifest_sha256": fact_packet_dir / "PAPER_FACT_PACKET_MANIFEST.json",
+        "manuscript_render_manifest_sha256": manuscript_dir / "MANUSCRIPT_RENDER_MANIFEST.json",
+        "poster_content_manifest_sha256": poster_content.parent / "POSTER_CONTENT_MANIFEST.json",
+        "manuscript_pdf_sha256": manuscript_pdf,
+    }
+    for field, path in bindings.items():
+        if not path.is_file() or payload.get(field) != sha256(path):
+            audit.fail("TRACEABILITY_PROVENANCE", f"{field} does not bind to the supplied immutable artifact", path)
+    artifacts = payload.get("artifacts")
+    expected_artifacts = {
+        "CLAIM_TRACEABILITY.csv": claim_ledger,
+        "PAGE_ACCOUNTING.json": page_accounting,
+    }
+    if not isinstance(artifacts, dict):
+        audit.fail("TRACEABILITY_PROVENANCE", "traceability manifest has no artifact-hash mapping", traceability_manifest)
+    else:
+        for name, path in expected_artifacts.items():
+            if not path.is_file() or artifacts.get(name) != sha256(path):
+                audit.fail("TRACEABILITY_PROVENANCE", f"traceability artifact {name} is absent or hash-mismatched", path)
+    try:
+        recorded_accounting = payload.get("page_accounting")
+        supplied_accounting = read_json(page_accounting, "supplied page-accounting record")
+        if recorded_accounting != supplied_accounting:
+            audit.fail("TRACEABILITY_PROVENANCE", "manifest page-accounting payload differs from the supplied record", page_accounting)
+    except ValueError as exc:
+        audit.fail("TRACEABILITY_PROVENANCE", str(exc), page_accounting)
+    if not any(record["check"] == "TRACEABILITY_PROVENANCE" and record["severity"] == "ERROR" for record in audit.records):
+        audit.pass_("TRACEABILITY_PROVENANCE", "post-render claim and page records bind to this frozen manuscript and source provenance", traceability_manifest)
+
+
 def numeric_equal(source: str, reported: str, decimals: str) -> bool:
     if decimals.strip().upper() == "EXACT":
         return source.strip() == reported.strip()
@@ -684,6 +744,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results-freeze", type=Path, required=True)
     parser.add_argument("--fact-packet-dir", type=Path, required=True)
+    parser.add_argument("--traceability-manifest", type=Path, required=True)
     parser.add_argument("--claim-ledger", type=Path, required=True)
     parser.add_argument("--manuscript-dir", type=Path, required=True)
     parser.add_argument("--manuscript-pdf", type=Path, required=True)
@@ -707,6 +768,17 @@ def main() -> int:
         private_patterns = []
     artifacts = audit_results_provenance(audit, args.results_freeze)
     facts = audit_fact_packet(audit, args.results_freeze, args.fact_packet_dir)
+    audit_traceability_manifest(
+        audit,
+        args.traceability_manifest,
+        args.results_freeze,
+        args.fact_packet_dir,
+        args.manuscript_dir,
+        args.manuscript_pdf,
+        args.poster_content,
+        args.claim_ledger,
+        args.page_accounting,
+    )
     audit_claim_traceability(audit, args.claim_ledger, facts, args.manuscript_dir, args.poster_content)
     audit_identity_and_language(audit, args.manuscript_dir, args.poster_content, private_patterns)
     audit_figures(audit, args.figures_dir, private_patterns)

@@ -38,7 +38,9 @@ function Assert-EmptyOrReceipt {
         throw "Immutable stage directory exists without its expected valid receipt: $Directory"
     }
 }
-while (-not (Test-Path -LiteralPath $freeze)) {
+# A partial/invalid receipt must never authorize condition unblinding.  Wait
+# for the exact completed blinded-freeze status rather than file existence.
+while (-not (Test-ReceiptStatus -Path $freeze -ExpectedStatus 'CODED_DATA_FROZEN_PUBLIC_DATA_ONLY')) {
     Start-Sleep -Seconds 60
 }
 
