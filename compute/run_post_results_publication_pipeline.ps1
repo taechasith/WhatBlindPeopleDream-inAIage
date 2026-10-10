@@ -111,6 +111,16 @@ function Find-Executable {
             return $command.Source
         }
     }
+    # MiKTeX's per-user installer does not always update PATH for already-open
+    # PowerShell sessions.  This is a deterministic local fallback, not a
+    # toolchain substitution: the same named executable is still required.
+    $miktexBin = Join-Path $env:LOCALAPPDATA 'Programs\MiKTeX\miktex\bin\x64'
+    foreach ($name in $Names) {
+        $candidate = Join-Path $miktexBin $name
+        if (Test-Path -LiteralPath $candidate -PathType Leaf) {
+            return $candidate
+        }
+    }
     throw "PUBLICATION_PIPELINE_FAILED: required $Label executable is unavailable. No partial compile/build will be started."
 }
 
