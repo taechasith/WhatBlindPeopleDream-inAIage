@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "policy_id": "anonymous_chi_render_selection_v1",
+  "status": "FROZEN_PRE_RESULTS_SELECTION_POLICY",
+  "review_stage": "ANONYMOUS_REVIEW",
+  "page_budget": {
+    "target": "at most four pages excluding references",
+    "max_result_rows": 12,
+    "max_figures": 3,
+    "selection_principle": "Select predeclared semantic anchors only; never rank, filter, or break ties using effect magnitude, confidence interval, p value, FDR value, direction, or apparent favorability."
+  },
+  "title": "What Blind People Dream, Ask, and What AI Tells Them: A Public-Data Study of Sensory Mediation in the AI Age",
+  "motivation": "This public-data study connects historical blind dream expression, BLV-originating information-seeking questions, human accessibility references, and the information made available by a frozen multimodal AI system. It tests a prompt intervention on model output while separating distributional comparison from claims about cognition or lived experience.",
+  "method_scope": "We analyze released research datasets and a frozen within-item VLM intervention with no new human data collection. Synthetic annotations are computational measurements, not human judgments; released human-labelled datasets provide bounded external calibration only where their labels directly support the construct.",
+  "impact_scope": "The paper discusses design implications for how systems expose task-relevant, spatial, uncertainty, and social information. It does not report perceived benefit, lived experience, measured harm, cognitive change, or a dream effect.",
+  "citation_keys": [
+    "KANG2023",
+    "XIE2025",
+    "KREISS2022",
+    "KAPUR2024",
+    "GUIDEDOG2026",
+    "PATARANUTAPORN2025"
+  ],
+  "selection_blocks": [
+    {
+      "family": "RQ2",
+      "selection_type": "paired_judge_construct",
+      "constructs": [
+        "task_answer",
+        "spatial_relation"
+      ],
+      "contrast": "intent_minus_generic",
+      "judges": [
+        "Phi_3.5_mini_2fe19245",
+        "Qwen2.5_1.5B_989aa798"
+      ],
+      "rationale": "These predeclared anchors represent question-linked answer provision and explicit spatial relation under the user-intent prompt contrast. Both frozen measurement judges are retained for each selected construct."
+    },
+    {
+      "family": "RQ3",
+      "selection_type": "reference_metric",
+      "metrics": [
+        "human_answer_mode_string_coverage",
+        "human_caption_max_token_f1"
+      ],
+      "contrast": "intent_minus_generic",
+      "rationale": "These are the two prospectively specified, bounded released-human-reference metrics for the direct BLV-intent contrast. They remain reference-alignment measures, not human ratings or BLV preference claims."
+    },
+    {
+      "family": "RQ4",
+      "selection_type": "unordered_space_pair",
+      "space_pairs": [
+        [
+          "DREAM",
+          "BLV_USER_QUESTION"
+        ],
+        [
+          "HUMAN_CAPTION",
+          "AI_ACCESSIBILITY_STEERED"
+        ]
+      ],
+      "rationale": "These predeclared comparisons anchor the theoretical distinction between historical dream expression and BLV intent, and the bounded comparison between human captions and accessibility-steered AI text. They are distributional text-profile comparisons only."
+    },
+    {
+      "family": "RQ5",
+      "selection_type": "paired_judge_construct",
+      "constructs": [
+        "identity_inference",
+        "social_intent_inference"
+      ],
+      "contrast": "accessibility_minus_intent",
+      "judges": [
+        "Phi_3.5_mini_2fe19245",
+        "Qwen2.5_1.5B_989aa798"
+      ],
+      "rationale": "These predeclared output-text properties directly address the fixed accessibility instruction not to infer identity, relationships, emotion, or intent without visible support. Both frozen measurement judges are retained for each selected construct."
+    }
+  ],
+  "figures": [
+    {
+      "artifact": "figure_1_reciprocal_cognitive_sensing_loop.png",
+      "fact_families": [],
+      "caption": "Conceptual architecture connecting DreamSpace, BLV-originating intent, frozen AI mediation, and the accessible information environment. The only tested intervention is prompt condition on AI output; cognition and dream change remain untested."
+    },
+    {
+      "artifact": "figure_2_prompt_condition_effects.png",
+      "fact_families": [
+        "RQ2"
+      ],
+      "caption": "Predeclared within-item paired computational measurements for the user-intent prompt contrast. The two frozen measurement judges are displayed separately; values describe output-text properties rather than human judgment."
+    },
+    {
+      "artifact": "figure_4_representational_space_distances.png",
+      "fact_families": [
+        "RQ4"
+      ],
+      "caption": "Distributional distances among historical dream-report expression, BLV-originating questions, human captions, and AI text. Lower distance denotes only closer measured text-profile distributions, not cognitive similarity or accessibility value."
+    }
+  ]
+}
