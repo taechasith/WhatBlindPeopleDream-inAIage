@@ -21,6 +21,11 @@ Create a content record satisfying [POSTER_CONTENT_SCHEMA.md](POSTER_CONTENT_SCH
 ./compute/run_anonymous_a0_poster.ps1 -ContentJson poster/anonymous/POSTER_CONTENT.json
 ```
 
-The final renderer requires Inkscape and `pypdf`. It produces a one-page A0 landscape SVG and PDF, resets review-stage PDF metadata to anonymous values, rejects PDF annotations/external links, and writes an accessibility note plus a manifest with checksums.
+The final renderer uses Inkscape when available, or a tested local Microsoft
+Edge headless A0-print fallback when Inkscape is unavailable; both paths pass
+through the same `pypdf` metadata, one-page, annotation, and A0-geometry
+verification. It produces a one-page A0 landscape SVG and PDF, resets
+review-stage PDF metadata to anonymous values, rejects PDF annotations/external
+links, and writes an accessibility note plus a manifest with checksums.
 
 Do not add author names, affiliations, acknowledgements, email addresses, personal repositories, institutional logos, or identifiable links to this directory or the content record before anonymous review is complete.

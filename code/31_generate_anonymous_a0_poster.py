@@ -12,10 +12,12 @@ import base64
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 from textwrap import wrap
 from typing import Any
@@ -280,18 +282,86 @@ def build_svg(content: dict[str, Any], figures_dir: Path, figure_rows: dict[str,
     return "\n".join(svg) + "\n"
 
 
+def edge_executable() -> str | None:
+    """Locate the locally installed Microsoft Edge binary on Windows.
+
+    Edge is a documented renderer fallback for this pipeline only when
+    Inkscape is unavailable.  The generated PDF is still passed through the
+    same pypdf metadata and A0-geometry verification below.
+    """
+    candidates = [shutil.which("msedge"), shutil.which("msedge.exe")]
+    program_files_x86 = os.environ.get("ProgramFiles(x86)", r"C:\\Program Files (x86)")
+    program_files = os.environ.get("ProgramFiles", r"C:\\Program Files")
+    candidates.extend([
+        str(Path(program_files_x86) / "Microsoft" / "Edge" / "Application" / "msedge.exe"),
+        str(Path(program_files) / "Microsoft" / "Edge" / "Application" / "msedge.exe"),
+    ])
+    for candidate in candidates:
+        if candidate and Path(candidate).is_file():
+            return candidate
+    return None
+
+
+def render_pdf_with_edge(svg_path: Path, pdf_path: Path, renderer: str) -> None:
+    """Print a self-contained A0 HTML wrapper using Edge headless.
+
+    Printing an SVG URL directly uses Edge's default Letter page size.  The
+    wrapper fixes the CSS print page to ISO A0 landscape and embeds the already
+    verified local SVG markup.  It is a transient technical artifact, not a
+    review-stage source file.
+    """
+    wrapper = svg_path.with_name(f".{svg_path.stem}.edge-print.html")
+    if wrapper.exists():
+        fail("stale Edge print wrapper exists; refuse to overwrite a technical artifact")
+    markup = svg_path.read_text(encoding="utf-8")
+    wrapper.write_text(
+        "<!doctype html><html><head><meta charset=\"utf-8\"><style>"
+        f"@page{{size:{WIDTH_MM}mm {HEIGHT_MM}mm;margin:0}}"
+        f"html,body{{width:{WIDTH_MM}mm;height:{HEIGHT_MM}mm;margin:0;padding:0;overflow:hidden}}"
+        f"svg{{display:block;width:{WIDTH_MM}mm;height:{HEIGHT_MM}mm}}"
+        "</style></head><body>" + markup + "</body></html>",
+        encoding="utf-8",
+    )
+    try:
+        completed = subprocess.run(
+            [renderer, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={pdf_path.resolve()}", wrapper.resolve().as_uri()],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.returncode != 0:
+            fail(f"Edge PDF export failed: {completed.stderr.strip() or completed.stdout.strip()}")
+        deadline = time.monotonic() + 90
+        while not pdf_path.is_file() or pdf_path.stat().st_size == 0:
+            if time.monotonic() >= deadline:
+                fail("Edge PDF export did not create a nonempty PDF within 90 seconds")
+            time.sleep(0.25)
+        # Edge can return before the PDF writer closes.  A short stability
+        # check prevents pypdf from reading a partial file.
+        initial_size = pdf_path.stat().st_size
+        time.sleep(0.5)
+        if pdf_path.stat().st_size != initial_size:
+            time.sleep(0.5)
+    finally:
+        wrapper.unlink(missing_ok=True)
+
+
 def render_pdf(svg_path: Path, pdf_path: Path) -> None:
     renderer = shutil.which("inkscape")
-    if renderer is None:
-        fail("Inkscape is required to produce the required A0 PDF but is not on PATH")
-    completed = subprocess.run(
-        [renderer, str(svg_path), f"--export-filename={pdf_path}"],
-        text=True,
-        capture_output=True,
-        check=False,
-    )
-    if completed.returncode != 0 or not pdf_path.is_file():
-        fail(f"Inkscape PDF export failed: {completed.stderr.strip() or completed.stdout.strip()}")
+    if renderer is not None:
+        completed = subprocess.run(
+            [renderer, str(svg_path), f"--export-filename={pdf_path}"],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.returncode != 0 or not pdf_path.is_file():
+            fail(f"Inkscape PDF export failed: {completed.stderr.strip() or completed.stdout.strip()}")
+        return
+    edge = edge_executable()
+    if edge is None:
+        fail("A0 PDF export requires Inkscape or locally installed Microsoft Edge")
+    render_pdf_with_edge(svg_path, pdf_path, edge)
 
 
 def scrub_and_verify_pdf(pdf_path: Path) -> None:

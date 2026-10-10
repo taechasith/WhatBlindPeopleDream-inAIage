@@ -210,6 +210,23 @@ def macro_name(fact_id: str, family: str, field: str) -> str:
     return rf"\Paper{FAMILY_MACROS[family]}F{ordinal:04d}{title_field}"
 
 
+def paper_claim_id(fact_id: str, field: str) -> str:
+    """Return the immutable source marker used by the post-render audit.
+
+    The marker is deliberately a LaTeX comment rather than visible prose.  It
+    lets the later traceability builder bind every displayed *numeric* table
+    value to a fact-packet row without asking a human to transcribe results or
+    inspecting a condition mapping.  Non-numeric NOT_ESTIMABLE values are not
+    claims and are omitted by that later builder.
+    """
+    return f"PAPER_{fact_id}_{field.upper()}"
+
+
+def paper_claim_markers(fact_id: str, fact: dict[str, Any]) -> list[str]:
+    family = str(fact["result_family"])
+    return [f"% CLAIM-ID: {paper_claim_id(fact_id, field)}" for field in NUMERIC_FIELDS[family]]
+
+
 def validate_plan(
     plan_path: Path,
     results_freeze_path: Path,
@@ -359,7 +376,14 @@ def table_row(fact_id: str, fact: dict[str, Any]) -> str:
 
 def render_result_block(block: dict[str, Any], facts: dict[str, dict[str, Any]]) -> str:
     family = block["family"]
-    rows = [table_row(fact_id, facts[fact_id]) for fact_id in block["fact_ids"]]
+    rows: list[str] = []
+    for fact_id in block["fact_ids"]:
+        # Keep one machine-auditable marker for every numeric field that the
+        # table template may display.  The post-render traceability utility
+        # retains only finite numeric values and treats NOT_ESTIMABLE as a
+        # non-numeric state rather than silently inventing a claim.
+        rows.extend(paper_claim_markers(fact_id, facts[fact_id]))
+        rows.append(table_row(fact_id, facts[fact_id]))
     if family in {"RQ2", "RQ5"}:
         header = r"Property and measurement status & Contrast & Estimate [95\% CI] & Paired $n$ & FDR $q$"
         specification = "p{0.26\\linewidth}p{0.18\\linewidth}p{0.23\\linewidth}rr"
@@ -535,6 +559,12 @@ def main() -> None:
         "new_human_data_collected": False,
         "anonymous_review": True,
         "fact_ids_rendered": [fact_id for block in plan["result_blocks"] for fact_id in block["fact_ids"]],
+        "paper_claim_marker_schema": "PAPER_{fact_id}_{source_column_upper}",
+        "paper_claim_marker_fields": {
+            fact_id: list(NUMERIC_FIELDS[str(facts[fact_id]["result_family"])])
+            for block in plan["result_blocks"]
+            for fact_id in block["fact_ids"]
+        },
         "figures_rendered": [figure["artifact"] for figure in plan["figures"]],
         "artifacts": {},
         "page_target": "at most four pages excluding references; final PDF verification required",
