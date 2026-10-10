@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "review_stage": "ANONYMOUS_REVIEW",
+  "results_freeze_sha256": "REPLACE_WITH_RESULTS_FREEZE_SHA256",
+  "fact_packet_manifest_sha256": "REPLACE_WITH_PAPER_FACT_PACKET_MANIFEST_SHA256",
+  "figure_manifest_sha256": "REPLACE_WITH_FINAL_FIGURE_MANIFEST_SHA256",
+  "title": "What Blind People Dream, Ask, and What AI Tells Them: A Public-Data Study of Sensory Mediation in the AI Age",
+  "motivation": "REPLACE_WITH_AUDITED_NONRESULT_CONTEXT",
+  "method_scope": "REPLACE_WITH_AUDITED_METHOD_SCOPE",
+  "impact_scope": "REPLACE_WITH_AUDITED_IMPLICATION_SCOPE",
+  "citation_keys": [
+    "REPLACE_WITH_AUDITED_BIBTEX_KEY"
+  ],
+  "result_blocks": [
+    {"family": "RQ2", "fact_ids": ["RQ2_0001"]},
+    {"family": "RQ3", "fact_ids": ["RQ3_0001"]},
+    {"family": "RQ4", "fact_ids": ["RQ4_0001"]},
+    {"family": "RQ5", "fact_ids": ["RQ5_0001"]}
+  ],
+  "figures": [
+    {
+      "artifact": "figure_1_reciprocal_cognitive_sensing_loop.png",
+      "caption": "REPLACE_WITH_AUDITED_CONCEPTUAL_CAPTION",
+      "fact_ids": []
+    }
+  ]
+}
