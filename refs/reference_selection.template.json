@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "review_stage": "ANONYMOUS_REVIEW",
+  "results_freeze_sha256": "REPLACE_WITH_RESULTS_FREEZE_SHA256",
+  "citations": [
+    {
+      "citation_key": "Kang2023MentalImagery",
+      "paper_id": "KANG2023",
+      "claim_use": "background_context",
+      "evidence_boundary": "Historical DreamBank analysis of a defined congenital-blind corpus; it does not establish contemporary AI effects, BLV intent, or cognitive equivalence."
+    }
+  ]
+}
