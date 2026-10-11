@@ -342,3 +342,27 @@ status.
   experience. Every construct must receive a prospective Tier A/B/C and
   measurement-strength decision before unblinding; unsupported or unstable
   constructs remain exploratory or `MEASUREMENT_UNSTABLE`.
+
+## 2026-10-12 -- Repair watcher completion check for multiline CSV evidence spans
+
+- **Original plan/implementation:** The blinded robustness watcher treated a
+  synthetic judge as complete only when the physical line count of its CSV
+  label file equalled the expected record count plus a header.
+- **New plan/implementation:** The watcher now uses the PowerShell CSV parser
+  and counts logical CSV records, while retaining the existing exact raw JSONL
+  line-count requirement. A CSV parse failure remains incomplete and therefore
+  fail-closed.
+- **Reason:** The frozen rubric permits evidence spans containing newlines. A
+  valid quoted multiline span increases physical file lines without adding a
+  label record. The Qwen label file contained exactly 30,000 unique
+  item--construct CSV records for 3,000 blind IDs and 10 frozen constructs,
+  while its physical line count was higher. The original watcher would wait
+  indefinitely despite an internally valid panel.
+- **Outcome visibility:** Only structural counts, CSV schema/uniqueness, raw
+  record counts, and file metadata were inspected. No label content, condition
+  mapping, condition-level result, RQ2--RQ5 effect, or public-human validation
+  result was accessed.
+- **Confirmatory effect:** No model, prompt, sample, ontology, judge,
+  generation, raw output, or measurement rule changed. This is a prospective
+  technical parsing correction that enables the already frozen blinded workflow
+  to validate the same logical records.

@@ -226,6 +226,13 @@ $pdflatex = Find-Executable -Names @('pdflatex.exe', 'pdflatex') -Label 'pdflate
 $bibtex = Find-Executable -Names @('bibtex.exe', 'bibtex') -Label 'bibtex'
 New-Item -ItemType Directory -Path $pdfBuildDir -ErrorAction Stop | Out-Null
 $manuscriptPdf = Join-Path $pdfBuildDir 'main.pdf'
+$previousPath = $env:Path
+# Some user PATH entries are legacy file paths rather than directories, which
+# can make MiKTeX maintenance discovery fail before a compile begins.  Use a
+# process-local, minimal PATH for the already selected local MiKTeX binaries;
+# do not modify the user's global environment.
+$latexBin = Split-Path -Parent $pdflatex
+$env:Path = "$latexBin;C:\Windows\System32;C:\Windows"
 try {
     Push-Location $manuscriptDir
     $latexArgs = @('-interaction=nonstopmode', '-halt-on-error', '-file-line-error', "-output-directory=$pdfBuildDir", 'main.tex')
@@ -239,6 +246,7 @@ try {
     Invoke-LoggedExternal -Executable $pdflatex -Arguments $latexArgs -Log (Join-Path $pdfBuildDir 'pdflatex_pass3.log') -Label 'LaTeX pass 3'
 } finally {
     Pop-Location -ErrorAction SilentlyContinue
+    $env:Path = $previousPath
 }
 if (-not (Test-Path -LiteralPath $manuscriptPdf -PathType Leaf)) {
     throw "PUBLICATION_PIPELINE_FAILED: LaTeX did not produce the required manuscript PDF."

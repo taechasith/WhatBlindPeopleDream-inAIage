@@ -38,9 +38,18 @@ function Test-JudgeComplete {
     $labels = Join-Path $panelDir ($JudgeId + '_labels.csv')
     $raw = Join-Path $panelDir ($JudgeId + '_raw.jsonl')
     if (-not ((Test-Path -LiteralPath $labels) -and (Test-Path -LiteralPath $raw))) { return $false }
-    $labelLines = (Get-Content -LiteralPath $labels | Measure-Object -Line).Lines
+    # Evidence spans are permitted to contain embedded newlines.  Count parsed
+    # CSV records, rather than physical text lines, so a valid quoted span
+    # cannot make a completed frozen panel appear incomplete.
+    try {
+        $labelRows = @(
+            Import-Csv -LiteralPath $labels -ErrorAction Stop
+        ).Count
+    } catch {
+        return $false
+    }
     $rawLines = (Get-Content -LiteralPath $raw | Measure-Object -Line).Lines
-    return $labelLines -eq ($expectedLabels + 1) -and $rawLines -eq $expectedItems
+    return $labelRows -eq $expectedLabels -and $rawLines -eq $expectedItems
 }
 
 function Test-ReceiptStatus {
