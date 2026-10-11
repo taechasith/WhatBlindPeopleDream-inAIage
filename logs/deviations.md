@@ -350,8 +350,10 @@ status.
   label file equalled the expected record count plus a header.
 - **New plan/implementation:** The watcher now uses the PowerShell CSV parser
   and counts logical CSV records, while retaining the existing exact raw JSONL
-  line-count requirement. A CSV parse failure remains incomplete and therefore
-  fail-closed.
+  line-count requirement. The synthetic-panel resume and freeze readers now
+  preserve the literal frozen abstention label `NA` rather than allowing the
+  CSV library's default missing-value parser to coerce it. A CSV parse failure
+  remains incomplete and therefore fail-closed.
 - **Reason:** The frozen rubric permits evidence spans containing newlines. A
   valid quoted multiline span increases physical file lines without adding a
   label record. The Qwen label file contained exactly 30,000 unique

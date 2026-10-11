@@ -136,13 +136,15 @@ def main() -> None:
     parsed_path = args.outdir / f"{args.judge_id}_labels.csv"
     done: set[str] = set()
     if args.resume and parsed_path.exists():
-        prior = pd.read_csv(parsed_path, usecols=["blind_item_id"])
+        prior = pd.read_csv(parsed_path, usecols=["blind_item_id"], keep_default_na=False)
         done = set(prior.blind_item_id.dropna().astype(str))
     prompt_hash = digest_text(instruction)
     config_hash = digest_text(json.dumps(config, sort_keys=True))
     all_records: list[dict[str, object]] = []
     if parsed_path.exists() and args.resume:
-        all_records.extend(pd.read_csv(parsed_path).to_dict("records"))
+        # ``NA`` is an intentional frozen abstention label.  Do not coerce it
+        # to a missing value during an interrupted technical resume.
+        all_records.extend(pd.read_csv(parsed_path, keep_default_na=False).to_dict("records"))
 
     with raw_path.open("a", encoding="utf-8") as raw_file:
         for row in packet.itertuples(index=False):

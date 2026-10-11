@@ -140,7 +140,9 @@ def main() -> None:
                 fail(f"{judge_id} raw record has a config-hash mismatch")
             if not valid_parser_status(record["parse_status"]):
                 fail(f"{judge_id} raw record has an invalid parser status")
-        labels = pd.read_csv(labels_path, dtype=str)
+        # ``NA`` is a frozen, literal abstention label—not a missing CSV cell.
+        # Preserve it while checking schema and provenance.
+        labels = pd.read_csv(labels_path, dtype=str, keep_default_na=False)
         if not required_columns.issubset(labels.columns):
             fail(f"label schema is incomplete for {judge_id}")
         labels["blind_item_id"] = labels["blind_item_id"].astype(str)
