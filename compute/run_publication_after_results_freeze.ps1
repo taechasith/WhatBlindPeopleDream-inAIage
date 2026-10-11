@@ -16,6 +16,7 @@ $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
 $resultsFreeze = Join-Path $root 'results\results_freeze\RESULTS_FREEZE.json'
+$figureManifest = Join-Path $root 'figures\final_public_data_v1\FIGURE_MANIFEST.csv'
 $controller = Join-Path $root 'compute\run_post_results_publication_pipeline.ps1'
 
 function Test-ReceiptStatus {
@@ -32,7 +33,10 @@ function Test-ReceiptStatus {
 if (-not (Test-Path -LiteralPath $controller -PathType Leaf)) {
     throw "PUBLICATION_WATCHER_BLOCKED: controller is missing: $controller"
 }
-while (-not (Test-ReceiptStatus -Path $resultsFreeze -ExpectedStatus 'RESULTS_FROZEN_PUBLIC_DATA_ONLY')) {
+while (
+    -not (Test-ReceiptStatus -Path $resultsFreeze -ExpectedStatus 'RESULTS_FROZEN_PUBLIC_DATA_ONLY') -or
+    -not (Test-Path -LiteralPath $figureManifest -PathType Leaf)
+) {
     Start-Sleep -Seconds 60
 }
 
