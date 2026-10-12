@@ -275,7 +275,11 @@ def build_svg(content: dict[str, Any], figures_dir: Path, figure_rows: dict[str,
     for index, (heading, items) in enumerate(zip(footer_titles, footer_items)):
         x = MARGIN + index * (footer_width + footer_gap)
         svg.append(panel(x, footer_y, footer_width, footer_height, heading))
-        item_size = 20 if index < 3 else 18
+        # The frozen content includes explicit measurement and ethics
+        # boundaries.  Keep all of them rather than trimming a limitation;
+        # a slightly smaller, still A0-readable footer face preserves that
+        # disclosure within the fixed panel geometry.
+        item_size = 17 if index < 3 else 16
         text, _ = svg_list(x + 26, footer_y + 105, footer_width - 52, items, item_size, max_height=footer_height - 132)
         svg.append(text)
     svg.append("</svg>")
