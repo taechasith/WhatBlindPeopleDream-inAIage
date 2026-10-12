@@ -22,7 +22,7 @@ $spaceOutdir = Join-Path $root 'results\representational_space_v1'
 $resultsFreezeDir = Join-Path $root 'results\results_freeze'
 $figureOutdir = Join-Path $root 'figures\final_public_data_v1'
 $technicalRecovery = Join-Path $root 'results\coded_data_recovery\TECHNICAL_RECOVERY_AUTHORIZATION.json'
-$downstreamRecovery = Join-Path $root 'results\downstream_technical_recovery_v3\DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZATION.json'
+$downstreamRecovery = Join-Path $root 'results\downstream_technical_recovery_v4\DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZATION.json'
 
 if (-not (Test-Path -LiteralPath $analysisPython)) { throw 'Analysis Python is unavailable.' }
 
