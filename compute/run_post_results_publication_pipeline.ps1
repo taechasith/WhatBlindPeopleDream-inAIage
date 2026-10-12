@@ -137,7 +137,7 @@ function Invoke-LoggedExternal {
     }
 }
 
-$analysisPython = (Get-Command python.exe -CommandType Application -ErrorAction Stop).Source
+$analysisPython = (Get-Command python.exe -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
 $resultsFreeze = Resolve-RepoPath $ResultsFreeze
 $figuresDir = Resolve-RepoPath $FiguresDir
 $factPacketDir = Resolve-RepoPath $FactPacketDir
