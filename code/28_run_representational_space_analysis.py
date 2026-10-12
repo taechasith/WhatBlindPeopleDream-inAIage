@@ -239,7 +239,7 @@ def main() -> None:
     downstream = verify_downstream_recovery(args.downstream_recovery, args.coded_data_freeze)
     if downstream is not None:
         replacements = downstream.get("replacements", {})
-        recovery = {"replacements": {"analysis_script": replacements["analysis_script"], "rq4_script": replacements["rq4_script"]}}
+        recovery = {"replacements": replacements}
     sources = committed_sources(args.coded_data_freeze, freeze, recovery)
     if downstream is not None:
         replacement = downstream["replacements"].get("rq4_script", {})
