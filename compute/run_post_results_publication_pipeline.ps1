@@ -131,7 +131,17 @@ function Invoke-LoggedExternal {
         [Parameter(Mandatory = $true)][string]$Log,
         [Parameter(Mandatory = $true)][string]$Label
     )
-    & $Executable @Arguments *> $Log
+    # MiKTeX emits an update reminder on stderr even when the compiler itself
+    # has not failed.  With the controller's global ErrorActionPreference=Stop,
+    # PowerShell otherwise turns that native stderr line into a terminating
+    # NativeCommandError before the real process exit code can be inspected.
+    $priorErrorActionPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        & $Executable @Arguments *> $Log
+    } finally {
+        $ErrorActionPreference = $priorErrorActionPreference
+    }
     if ($LASTEXITCODE -ne 0) {
         throw "PUBLICATION_PIPELINE_FAILED: $Label failed; inspect $Log."
     }
