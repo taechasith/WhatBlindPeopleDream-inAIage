@@ -255,7 +255,7 @@ def build_svg(content: dict[str, Any], figures_dir: Path, figure_rows: dict[str,
     # while all numeric claims live inside the frozen result figures/content.
     method_height = 330
     svg.append(panel(left_x, main_y, left_w, method_height, "How we studied sensory mediation"))
-    methods, _ = svg_list(left_x + 30, main_y + 105, left_w - 60, content["methods"], 22, max_height=method_height - 125)
+    methods, _ = svg_list(left_x + 30, main_y + 105, left_w - 60, content["methods"], 17, max_height=method_height - 125)
     svg.append(methods)
     f1 = figures_dir / REQUIRED_FIGURES[0]
     svg.append(figure_panel(left_x, main_y + method_height + 30, left_w, main_height - method_height - 30, "1. Reciprocal Cognitive Sensing Loop", f1, figure_rows[f1.name]["alt_text"]))
