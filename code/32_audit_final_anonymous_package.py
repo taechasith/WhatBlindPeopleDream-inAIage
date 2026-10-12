@@ -583,6 +583,17 @@ def audit_pdf_metadata(
     for identity_label, pattern in GENERIC_IDENTITY_PATTERNS:
         match = pattern.search(extracted)
         if match:
+            # acmart's anonymous-review boilerplate includes this publisher
+            # permissions mailbox. It is neither an author contact nor an
+            # identifier, and this exception is deliberately exact rather
+            # than a general email allowlist.
+            if (
+                not poster
+                and identity_label == "EMAIL"
+                and match.group(0).lower() == "permissions@acm.org"
+                and "request permissions from permissions@acm.org" in extracted.lower()
+            ):
+                continue
             audit.fail(label, f"PDF text has {identity_label}: {compact(match.group(0))}", path)
     for pattern in private_patterns:
         if pattern.search(extracted):
