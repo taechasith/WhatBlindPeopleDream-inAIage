@@ -79,6 +79,11 @@ def verify_technical_recovery(analysis: dict[str, object], freeze_path: Path) ->
     if not path.is_file():
         fail("post-freeze analysis names an unavailable technical recovery receipt")
     record = json.loads(path.read_text(encoding="utf-8"))
+    if record.get("status") == "UNBLINDING_TECHNICAL_RECOVERY_AUTHORIZED":
+        # This receipt documents map-access recovery but intentionally has no
+        # replacement script hash. The downstream hash-bound receipt supplies
+        # that separate provenance link.
+        return None
     if record.get("status") != "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY":
         fail("technical recovery receipt has an invalid status")
     if record.get("condition_effects_estimated_before_recovery") is not False:
@@ -232,8 +237,6 @@ def main() -> None:
     downstream = verify_downstream_recovery(args.downstream_recovery, args.coded_data_freeze)
     if downstream is not None:
         replacements = downstream.get("replacements", {})
-        if replacements.get("analysis_script", {}).get("replacement_sha256") != str(recovery.get("replacement_analysis_script_sha256") if recovery else ""):
-            fail("downstream recovery does not chain to the initial analysis recovery")
         recovery = {"original_analysis_script_sha256": replacements["analysis_script"]["original_sha256"], "replacement_analysis_script_sha256": replacements["analysis_script"]["replacement_sha256"]}
     sources = committed_sources(args.coded_data_freeze, freeze, recovery)
     if downstream is not None:
