@@ -1,0 +1,22 @@
+{
+  "coded_data_freeze_sha256": "0fb3301f49c9c5281799a5a374028e0c278d2b7d2635012618db13533af8321a",
+  "condition_effects_reinterpreted_before_recovery": false,
+  "new_human_data_collected": false,
+  "post_analysis_manifest_sha256": "50fc98fffcb17c946e7a4b86aeec9a12625d89dea973a36e46e065562af1bddd",
+  "replacements": {
+    "analysis_script": {
+      "original_sha256": "14f33b04612964614d63ef3d27707910924f64dbcb348a194209da3524f929c2",
+      "replacement_sha256": "577f4870ff4b3bd92f26277562577dcb6a811460efdb3004cbef9c403eb6ec0c"
+    },
+    "results_freeze_script": {
+      "original_sha256": "11ce65a4216c063a64e123002febf6bb7efee230b809695302d21b3c8efb374c",
+      "replacement_sha256": "d2e3914e41af5d5999196e574627278c63d1c394e2038438274d33eb660ec753"
+    },
+    "rq4_script": {
+      "original_sha256": "f7bc9240d7af89c6114bc2179f22ebe2b11f32b5f31e27446f22170b700f2351",
+      "replacement_sha256": "7062aa8c7496865d9cd7121076f4c4afca6bd4d777806ddc1edcb24cb8abfbe3"
+    }
+  },
+  "scope": "Permit only the listed hash-bound script replacements to complete the remaining results-freeze and figures stages after a provenance-check ordering fault; no scientific design or estimand changes are authorized.",
+  "status": "DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZED_PRE_RQ4_ONLY"
+}

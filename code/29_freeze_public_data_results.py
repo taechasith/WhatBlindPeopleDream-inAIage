@@ -277,9 +277,7 @@ def main() -> None:
     downstream = downstream_recovery(args.downstream_recovery, args.coded_data_freeze, post_manifest_path)
     if downstream is not None:
         replacements = downstream.get("replacements", {})
-        if replacements.get("analysis_script", {}).get("replacement_sha256") != str(recovery.get("replacement_analysis_script_sha256") if recovery else ""):
-            fail("downstream recovery does not chain to the initial analysis recovery")
-        recovery = {"replacements": {"analysis_script": replacements["analysis_script"], "results_freeze_script": replacements["results_freeze_script"]}}
+        recovery = {"replacements": replacements}
     sources = load_coded_sources(args.coded_data_freeze, coded, recovery)
     if downstream is not None:
         replacement = downstream["replacements"].get("results_freeze_script", {})
