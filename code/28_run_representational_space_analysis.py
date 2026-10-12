@@ -50,21 +50,23 @@ def committed_sources(
         path = Path(str(row["path"]))
         expected = str(row["sha256"])
         actual = sha256(path) if path.is_file() else ""
+        replacements = recovery.get("replacements", {}) if recovery else {}
         permitted_recovery = (
             recovery is not None
-            and str(row["artifact"]) == "analysis_script"
-            and expected == str(recovery["original_analysis_script_sha256"])
-            and actual == str(recovery["replacement_analysis_script_sha256"])
+            and str(row["artifact"]) in replacements
+            and expected == str(replacements[str(row["artifact"])]["original_sha256"])
+            and actual == str(replacements[str(row["artifact"])]["replacement_sha256"])
         )
         if not path.is_file() or (actual != expected and not permitted_recovery):
             fail(f"committed source is absent or changed: {row['artifact']}")
         sources[str(row["artifact"])] = (path, actual if permitted_recovery else expected)
     for name, expected in dict(freeze.get("source_checksums", {})).items():
+        replacements = recovery.get("replacements", {}) if recovery else {}
         permitted_recovery = (
             recovery is not None
-            and name == "analysis_script"
-            and str(expected) == str(recovery["original_analysis_script_sha256"])
-            and sources.get(name, (None, None))[1] == str(recovery["replacement_analysis_script_sha256"])
+            and name in replacements
+            and str(expected) == str(replacements[name]["original_sha256"])
+            and sources.get(name, (None, None))[1] == str(replacements[name]["replacement_sha256"])
         )
         if name not in sources or (sources[name][1] != str(expected) and not permitted_recovery):
             fail(f"coded-data freeze source commitment is incomplete or inconsistent: {name}")
@@ -237,15 +239,13 @@ def main() -> None:
     downstream = verify_downstream_recovery(args.downstream_recovery, args.coded_data_freeze)
     if downstream is not None:
         replacements = downstream.get("replacements", {})
-        recovery = {"original_analysis_script_sha256": replacements["analysis_script"]["original_sha256"], "replacement_analysis_script_sha256": replacements["analysis_script"]["replacement_sha256"]}
+        recovery = {"replacements": {"analysis_script": replacements["analysis_script"], "rq4_script": replacements["rq4_script"]}}
     sources = committed_sources(args.coded_data_freeze, freeze, recovery)
     if downstream is not None:
         replacement = downstream["replacements"].get("rq4_script", {})
-        expected = sources["rq4_script"][1]
         actual = sha256(Path(__file__).resolve())
-        if replacement.get("original_sha256") != expected or replacement.get("replacement_sha256") != actual:
+        if sources["rq4_script"][1] != actual or replacement.get("replacement_sha256") != actual:
             fail("downstream recovery does not authorize this RQ4 script")
-        sources["rq4_script"] = (Path(__file__).resolve(), actual)
     for name, path in {
         "analysis_config": args.config,
         "rq4_script": Path(__file__).resolve(),

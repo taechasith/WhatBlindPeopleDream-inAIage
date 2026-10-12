@@ -59,21 +59,23 @@ def load_coded_sources(
         path = Path(str(row["path"]))
         digest = str(row["sha256"])
         actual = sha256(path) if path.is_file() else ""
+        replacements = recovery.get("replacements", {}) if recovery else {}
         permitted_recovery = (
             recovery is not None
-            and str(row["artifact"]) == "analysis_script"
-            and digest == str(recovery["original_analysis_script_sha256"])
-            and actual == str(recovery["replacement_analysis_script_sha256"])
+            and str(row["artifact"]) in replacements
+            and digest == str(replacements[str(row["artifact"])]["original_sha256"])
+            and actual == str(replacements[str(row["artifact"])]["replacement_sha256"])
         )
         if not path.is_file() or (actual != digest and not permitted_recovery):
             fail(f"coded-data committed source is unavailable or changed: {row['artifact']}")
         sources[str(row["artifact"])] = (path, actual if permitted_recovery else digest)
     for name, digest in dict(coded.get("source_checksums", {})).items():
+        replacements = recovery.get("replacements", {}) if recovery else {}
         permitted_recovery = (
             recovery is not None
-            and name == "analysis_script"
-            and str(digest) == str(recovery["original_analysis_script_sha256"])
-            and sources.get(name, (None, None))[1] == str(recovery["replacement_analysis_script_sha256"])
+            and name in replacements
+            and str(digest) == str(replacements[name]["original_sha256"])
+            and sources.get(name, (None, None))[1] == str(replacements[name]["replacement_sha256"])
         )
         if name not in sources or (sources[name][1] != str(digest) and not permitted_recovery):
             fail(f"coded-data receipt does not reconcile committed source: {name}")
@@ -273,15 +275,13 @@ def main() -> None:
         replacements = downstream.get("replacements", {})
         if replacements.get("analysis_script", {}).get("replacement_sha256") != str(recovery.get("replacement_analysis_script_sha256") if recovery else ""):
             fail("downstream recovery does not chain to the initial analysis recovery")
-        recovery = {"original_analysis_script_sha256": replacements["analysis_script"]["original_sha256"], "replacement_analysis_script_sha256": replacements["analysis_script"]["replacement_sha256"]}
+        recovery = {"replacements": {"analysis_script": replacements["analysis_script"], "results_freeze_script": replacements["results_freeze_script"]}}
     sources = load_coded_sources(args.coded_data_freeze, coded, recovery)
     if downstream is not None:
         replacement = downstream["replacements"].get("results_freeze_script", {})
-        expected = sources["results_freeze_script"][1]
         actual = sha256(Path(__file__).resolve())
-        if replacement.get("original_sha256") != expected or replacement.get("replacement_sha256") != actual:
+        if sources["results_freeze_script"][1] != actual or replacement.get("replacement_sha256") != actual:
             fail("downstream recovery does not authorize this results-freeze script")
-        sources["results_freeze_script"] = (Path(__file__).resolve(), actual)
     if Path(__file__).resolve() != sources["results_freeze_script"][0].resolve() or sha256(Path(__file__).resolve()) != sources["results_freeze_script"][1]:
         fail("results-freeze script differs from its pre-unblinding commitment")
     config_path, _ = sources["analysis_config"]
