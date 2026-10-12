@@ -440,11 +440,11 @@ def render_tex(plan: dict[str, Any], facts: dict[str, dict[str, Any]], figures: 
 \usepackage{{tabularx}}
 \settopmatter{{printacmref=false,printfolios=false}}
 \hypersetup{{pdfauthor={{}},pdfcreator={{}},pdfsubject={{Anonymous review submission}}}}
-\input{{results_macros.tex}}
 
 \title{{{latex_escape(plan['title'])}}}
 
 \begin{{document}}
+\input{{results_macros.tex}}
 \begin{{abstract}}
 We present a public-data study that connects historical blind dream expression, blind and low-vision (BLV) information-seeking questions, human accessibility references, and frozen multimodal-AI outputs. The study uses a controlled within-item prompting intervention and computational measurement, with external public-human calibration where the released data directly support it. {latex_escape(plan['motivation'])} The reported estimates concern output-text properties and bounded reference alignment; they do not test changes in dreams, cognition, neural organization, or lived experience.
 \end{{abstract}}
