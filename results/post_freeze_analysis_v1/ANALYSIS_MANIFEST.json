@@ -1,0 +1,18 @@
+{
+  "alt_test_current_study": "NOT_APPLICABLE_TO_CURRENT_DESIGN",
+  "analysis_boundary": "VLM-output effects and bounded human-reference alignment only; no human-equivalence or lived-experience inference.",
+  "analysis_checksums_sha256": "0fe8664c1c15958fb0932273e8c4cb5f5de37687019f40b9591fbabb7ff9711c",
+  "condition_unblinded_once": true,
+  "frozen_coded_data_status": "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY",
+  "judges": [
+    "Phi_3.5_mini_2fe19245",
+    "Qwen2.5_1.5B_989aa798"
+  ],
+  "new_human_data_collected": false,
+  "primary_outputs": 3000,
+  "status": "RQ2_RQ3_RQ5_COMPLETE_PUBLIC_DATA_ONLY",
+  "synthetic_label_rows": 60000,
+  "unblinding_completion_receipt": "C:\\Users\\HP OMEN\\WhatBlindPeopleDream-inAIage\\results\\UNBLINDING_COMPLETED_v1.json",
+  "unblinding_ledger": "C:\\Users\\HP OMEN\\WhatBlindPeopleDream-inAIage\\results\\UNBLINDING_LEDGER_v1.json",
+  "unblinding_technical_recovery_receipt": "C:\\Users\\HP OMEN\\WhatBlindPeopleDream-inAIage\\results\\UNBLINDING_TECHNICAL_RECOVERY_v1.json"
+}

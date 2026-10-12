@@ -1,0 +1,10 @@
+{
+  "analysis_config_sha256": "894b66ccbafb6c237e014903ec04b6b0e437288a84b31ca32a887a0e1e490c8a",
+  "coded_data_freeze_sha256": "0fb3301f49c9c5281799a5a374028e0c278d2b7d2635012618db13533af8321a",
+  "condition_effects_estimated_before_recovery": false,
+  "initial_ledger_sha256": "e5719c5e5870b00c4c910b98c2b6811518ad5b22a2f43e85acb34852c4657c74",
+  "mapping_sha256": "518d6ab6ffcb8e34223434f55c861099b733ced4c68e980559d7260aef8573d3",
+  "new_human_data_collected": false,
+  "reason": "The initial authorized run failed before result creation during a pre-analysis provenance-path check.",
+  "status": "UNBLINDING_TECHNICAL_RECOVERY_AUTHORIZED"
+}
