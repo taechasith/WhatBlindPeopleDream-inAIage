@@ -82,6 +82,7 @@ PAPER_COLUMNS = {
     ],
     "RQ4_profiles": [
         "space", "category", "n_text_units", "proportion_expressed", "measurement_status",
+        "claim_boundary",
     ],
     "RQ4_association_status": ["analysis", "status", "reason"],
 }
