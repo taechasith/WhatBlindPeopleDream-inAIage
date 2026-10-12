@@ -9,7 +9,10 @@ param()
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$analysisPython = (Get-Command python.exe -CommandType Application -ErrorAction Stop).Source
+# A Windows PATH may legitimately expose more than one python.exe.  Select one
+# executable deterministically rather than allowing PowerShell to stringify the
+# whole command-info collection into a non-executable composite path.
+$analysisPython = (Get-Command python.exe -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
 $freeze = Join-Path $root 'results\coded_data_freeze\CODED_DATA_FREEZE.json'
 $mapping = Join-Path $root 'annotation_public\private\blinding_map_primary_v1.csv'
 $panelDir = Join-Path $root 'annotation_public\private\synthetic_panel_v1'

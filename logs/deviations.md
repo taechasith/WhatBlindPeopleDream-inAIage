@@ -389,3 +389,19 @@ status.
   definition, scoring rule, or frozen artifact changed. The fix narrows accepted
   paths to the one provenance-committed panel root and restores the intended
   fail-closed checksum chain.
+
+## 2026-10-12 -- Repair post-freeze Python executable selection
+
+- **Original plan/implementation:** The post-freeze PowerShell watcher assigned
+  `.Source` from every `python.exe` command found on Windows PATH.
+- **New plan/implementation:** The watcher deterministically selects the first
+  executable command result before reading `.Source`.
+- **Reason:** This workstation exposes multiple Python installations. PowerShell
+  converted their paths into one invalid composite command, so the authorized
+  analysis launcher could not start after the coded-data freeze.
+- **Outcome visibility:** No condition mapping, output content, label,
+  condition-level result, or RQ2--RQ5 result was read. The failure occurred
+  before Python analysis execution.
+- **Confirmatory effect:** The frozen analysis script, mapping, data, results
+  plan, ontology, and all source artifacts remain unchanged; this solely repairs
+  deterministic local process launch.
