@@ -1,0 +1,41 @@
+{
+  "alt_test_current_study": "NOT_APPLICABLE_TO_CURRENT_DESIGN",
+  "analysis_ledger_sha256": "0fe8664c1c15958fb0932273e8c4cb5f5de37687019f40b9591fbabb7ff9711c",
+  "coded_data_freeze_sha256": "0fb3301f49c9c5281799a5a374028e0c278d2b7d2635012618db13533af8321a",
+  "coded_data_status": "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY",
+  "condition_unblinded_once": true,
+  "figure_script_sha256": "b027d75cc121c4698e65c3477c8d0a005fb71357de77cf8ac83ae43cd7a346a6",
+  "interpretation_boundary": "Frozen VLM-output and distributional text results only; no human-equivalence, lived-experience, cognitive, dream-causation, or user-benefit claim is authorized.",
+  "new_human_data_collected": false,
+  "post_freeze_analysis_manifest_sha256": "50fc98fffcb17c946e7a4b86aeec9a12625d89dea973a36e46e065562af1bddd",
+  "results_freeze_script_sha256": "d2e3914e41af5d5999196e574627278c63d1c394e2038438274d33eb660ec753",
+  "results_ledger_sha256": "24506e04a303ef2bffce97ba0b448f2232198d1146e049469860a97d26eaa5c2",
+  "rq4_manifest_sha256": "fa3c4f34f4d474da6a6e2a01e02bd03a8751188061cbd7edfc440218611236da",
+  "status": "RESULTS_FROZEN_PUBLIC_DATA_ONLY",
+  "tables": {
+    "RQ2": {
+      "rows": 40,
+      "sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971"
+    },
+    "RQ3": {
+      "rows": 4,
+      "sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b"
+    },
+    "RQ4": {
+      "rows": 15,
+      "sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac"
+    },
+    "RQ4_association_status": {
+      "rows": 1,
+      "sha256": "4204295e882bbc7e5afc6d09d9b34d701f4eae277b7b4ad6d8ea4dc1c8979215"
+    },
+    "RQ4_profiles": {
+      "rows": 150,
+      "sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b"
+    },
+    "RQ5": {
+      "rows": 40,
+      "sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c"
+    }
+  }
+}

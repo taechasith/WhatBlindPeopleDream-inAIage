@@ -1,0 +1,1 @@
+Conceptual diagram. Historical dream-report expression, BLV-originating questions, frozen VLM outputs, and the accessible information environment are connected. The only causal intervention is user question and accessibility instruction changing VLM output; a dashed arrow explicitly labels cognition or dream change as untested.

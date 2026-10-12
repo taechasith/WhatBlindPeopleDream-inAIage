@@ -1,0 +1,1 @@
+Jensen-Shannon divergence and 95% bootstrap intervals for 9 comparisons between AI condition text profiles and DreamSpace, IntentSpace, or HumanSpace. Lower distance is only textual distributional resemblance, not cognitive similarity or accessibility value.

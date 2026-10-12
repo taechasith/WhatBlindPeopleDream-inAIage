@@ -1,0 +1,1 @@
+Paired differences with 95% bootstrap intervals for 4 bounded released-human-reference metrics. These metrics are answer-string coverage and maximum caption token F1; they are not BLV preference, usefulness, or human ratings.

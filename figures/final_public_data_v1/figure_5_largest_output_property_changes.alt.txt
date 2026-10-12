@@ -1,0 +1,1 @@
+The 12 largest absolute paired changes in computationally measured output properties, with the construct measurement role embedded in each label. Solid gray bars are increases in the numerator condition; hatched white bars are decreases. These are output properties, not measured human harms or preferences.
