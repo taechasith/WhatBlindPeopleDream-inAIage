@@ -208,7 +208,20 @@ def validate_figures(figures_dir: Path, expected_freeze_hash: str) -> tuple[dict
 def macro_name(fact_id: str, family: str, field: str) -> str:
     ordinal = int(fact_id.rsplit("_", 1)[1])
     title_field = "".join(piece.capitalize() for piece in field.split("_"))
-    return rf"\Paper{FAMILY_MACROS[family]}F{ordinal:04d}{title_field}"
+    return rf"\csname Paper{FAMILY_MACROS[family]}F{ordinal:04d}{title_field}\endcsname"
+
+
+def write_tex_macros(source: Path, destination: Path) -> None:
+    """Translate digit-bearing macro names to TeX ``csname`` definitions."""
+    lines: list[str] = []
+    pattern = re.compile(r"\\newcommand\{\\([A-Za-z]+\d+[A-Za-z0-9]*)\}\{(.*)\}$")
+    for raw in source.read_text(encoding="utf-8").splitlines():
+        match = pattern.fullmatch(raw)
+        if match:
+            lines.append(rf"\expandafter\def\csname {match.group(1)}\endcsname{{{match.group(2)}}}")
+        else:
+            lines.append(raw)
+    destination.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def paper_claim_id(fact_id: str, field: str) -> str:
@@ -536,7 +549,7 @@ def main() -> None:
     temp = args.outdir.parent / f".{args.outdir.name}.tmp-{uuid.uuid4().hex}"
     temp.mkdir(parents=True, exist_ok=False)
     (temp / "figures").mkdir()
-    shutil.copy2(macros_path, temp / "results_macros.tex")
+    write_tex_macros(macros_path, temp / "results_macros.tex")
     shutil.copy2(args.bibliography, temp / "references.bib")
     for figure in plan["figures"]:
         source = args.figures_dir / figure["artifact"]
