@@ -11,6 +11,35 @@
 # anonymous, distribution-safe protocol is PROTOCOL.md.
 /CHI2027_Blind_Dreams_AI_Research_Guide.md
 
+# Local credentials, tokens, and machine-specific configuration. Keep an
+# explicitly reviewed *.example file if a public template is needed.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+secrets/
+credentials/
+.secrets/
+.credentials/
+
+# Local agent instructions may include private workflow, identity, or tool
+# configuration. They are never part of the public research release.
+/**/AGENTS.md
+/**/AGENT.md
+/**/AGENT_GUIDE*.md
+/**/AGENT_RULES*.md
+/**/CLAUDE.md
+/**/GEMINI.md
+/**/CODEX.md
+/**/COPILOT.md
+/.github/copilot-instructions.md
+/.cursor/
+
 # Raw and derived research data are acquired and reproduced by documented scripts;
 # retain only manifests and small, explicitly approved fixtures in version control.
 /data/**/raw/
@@ -25,6 +54,7 @@
 .env_vlm/
 compute/model_cache/
 compute/runtime_logs/
+tmp/
 __pycache__/
 *.py[cod]
 /paper/**/build/

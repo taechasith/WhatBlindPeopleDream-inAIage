@@ -1,60 +1,110 @@
-# What People Dream in the AI Age
+# What Blind People Dream, Ask, and What AI Tells Them
 
-## Research status
+## A public-data study of sensory mediation in the AI age
 
-This repository's active CHI 2027 scope is a public-data study of three
-observable spaces: blind dream expression (DreamSpace), BLV-originating
-information intent (IntentSpace), and human/AI accessibility mediation
-(MediationSpace). The governing documents are `SCOPE_CHANGE_2026-10-06.md`,
-`PROTOCOL_PUBLIC_DATA_v2.md`, and `PUBLIC_DATA_ANALYSIS_PLAN_v2.md`.
+This repository contains the reproducible research record for an anonymous
+CHI Poster-track study. It connects four representational spaces:
 
-Existing Study 0 output remains exploratory/hypothesis-generating. The prior
-prospective human dream-incorporation protocol has been preserved under
-`future_human_study/` and is outside the current paper. No current claim
-concerns AI changing dreams, cognition, or neural organization.
+```text
+DreamSpace  -> historical blind dream expression
+IntentSpace -> information sought in BLV-originating questions
+HumanSpace  -> released human descriptions and accessibility references
+AISpace     -> information exposed by a frozen multimodal model
+```
+
+The computational intervention holds each image-question item and model fixed
+while changing the prompt condition. It tests whether BLV-originating intent
+changes observable properties of AI output. It does not test effects on people.
+
+## Read this first
+
+- This is a **public-data-only** study: no new participants, human labels, or
+  dream reports were collected for the active scope.
+- Synthetic judges are **computational measurement instruments**, not people,
+  BLV users, or substitutes for lived experience.
+- Dream-language distances are distributional text comparisons. They do not
+  establish cognitive equivalence, dream incorporation, neural change, or an
+  effect of AI on blind people.
+- Public human-labelled datasets provide bounded external calibration only for
+  the construct and population documented for that source.
+
+## Current research record
+
+The frozen analysis used 1,000 locked VizWiz image-question items under three
+prompt conditions, yielding 3,000 frozen VLM outputs. Two frozen, distinct
+model-family judges supplied computational measurements. Results, final figures,
+and publication artifacts are bound to checksums and manifests.
+
+Important negative result: preselected RQ2 and RQ5 measurements did not pass
+the computational robustness gate. They are retained as `MEASUREMENT_UNSTABLE`
+and are reported as not estimable rather than converted into substantive
+claims. This repository preserves that limitation.
+
+The local publication audit is recorded in
+[`audits/final_anonymous_package_v3_measurement_gated/`](audits/final_anonymous_package_v3_measurement_gated/).
+It is a technical package audit, not institutional ethics approval or an
+external submission decision.
 
 ## Repository map
 
-| Path | Purpose | Release status |
-| --- | --- | --- |
-| `PROTOCOL_PUBLIC_DATA_v2.md`, `PUBLIC_DATA_ANALYSIS_PLAN_v2.md` | Active public-data computational-intervention protocol and plan | Pre-outcome freeze |
-| `PROTOCOL.md`, `ANALYSIS_PLAN.md` | Historical Study 0 protocol and analysis plan | Exploratory context |
-| `future_human_study/` | Superseded prospective human-study materials | Future work only; no authorization |
-| `code/` | Active public-data processing, provenance, and export utilities | Source-only; inspect before execution |
-| `data/MANIFEST.csv`, `data/CHECKSUMS.csv`, `data/LICENSES.md` | Source provenance, local-file hashes, and access restrictions | Metadata only; no corpus text |
-| `results/` | Aggregate exploratory and synthetic-only outputs | Never interpret synthetic outputs as empirical |
-| `future_human_study/synthetic/` | Clearly labeled former human-study test fixtures | Not empirical evidence |
+| Path | What it contains |
+| --- | --- |
+| `PROTOCOL_PUBLIC_DATA_v2.md` | Active public-data protocol and scope boundary |
+| `PUBLIC_DATA_ANALYSIS_PLAN_v2.md` | Frozen analysis plan for RQ2-RQ5 |
+| `code/` | Deterministic corpus, validation, analysis, figure, and publication utilities |
+| `data/MANIFEST.csv`, `data/LICENSES.md` | Dataset provenance, access routes, and licensing notes |
+| `results/` | Frozen computational results, calibration records, robustness records, and ledgers |
+| `figures/final_public_data_v1/` | Final figures plus text alternatives and checksums |
+| `paper/anonymous/` | Anonymous source, fact packet, references, and publication traceability |
+| `poster/anonymous/` | Anonymous poster content plan and provenance |
+| `audits/` | Reproducibility, claim, anonymity, reference, and publication audits |
+| `future_human_study/`, `future_human_validation/` | Archived future-work materials; not part of the current study |
 
-## Reproduction and data access
+## Reproduce safely
 
-Start with `REPRODUCTION.md`, `REPRODUCTION_STATUS.md`, and
-`DATA_DICTIONARY.md`. The raw and processed source corpora are intentionally
-ignored by Git. They are not included in this repository, must not be inferred
-from aggregate outputs, and must be independently acquired only where their
-licenses and access terms permit it.
+Use Python 3.10+ in a clean environment:
 
-The current overall reproduction status is `PARTIAL_REPRODUCTION`, not a clean
-reproduction pass. Raw text and images remain excluded from version control;
-every new public source must be re-acquired under its recorded terms.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
-## Privacy, licensing, and anonymous review
+Then read [`REPRODUCTION.md`](REPRODUCTION.md) and
+[`REPRODUCTION_STATUS.md`](REPRODUCTION_STATUS.md) before running any command.
+Local raw corpora, images, private model manifests, model caches, and output
+text are intentionally excluded from Git. Acquire sources only through the
+documented provenance routes and only where their licenses permit it.
 
-Do not publish raw dream reports, raw source-platform text, participant records,
-source images, contact information, allocation files, or coder packets that
-contain source text. Consult `DATA_SHARING_PLAN_FINAL.md` and
-`ANONYMOUS_RELEASE_POLICY.md` before preparing any archive, supplement, or
-repository link.
+Useful non-destructive checks:
 
-`code/export_anonymous_review.py` creates a deliberately narrow, allowlisted
-review bundle after a content scan. It is not a substitute for a final human
-anonymity, legal, accessibility, or conference-policy audit.
+```powershell
+python code/verify_provenance.py
+python code/32_audit_final_anonymous_package.py --help
+```
 
-## Research-integrity commitments
+Do not run a script merely because it is present: frozen outputs and build
+directories are immutable by design. A new reproduction run must use a new
+output directory and retain its provenance receipt.
 
-- No fabricated participants, quotations, annotations, results, or citations.
-- No inference of blindness onset where source metadata do not state it.
-- No claim that AI changes dreams, cognition, or neural organization. The
-  current intervention changes model inputs, not human experience.
-- Synthetic records and planning simulations remain explicitly non-empirical.
-- All substantive AI-use disclosures are tracked in `AI_USE_LOG.md`; unresolved
-  provenance is marked unresolved rather than reconstructed from guesswork.
+## Outputs and submission boundary
+
+The anonymous manuscript and A0 poster are generated locally from frozen
+artifacts. Rendered PDFs are deliberately ignored because they are build
+outputs; their source, manifests, checksums, and audit records are retained.
+
+Before any external dissemination, complete the applicable institutional ethics
+determination, re-check the live CHI call, verify anonymization, and confirm
+the data-sharing terms of every included source. Do not add author identities,
+affiliations, email addresses, personal repositories, or private data to an
+anonymous review package.
+
+## Responsible reuse
+
+Please preserve the measurement tiers and claim boundaries if you reuse this
+work. In particular, do not reinterpret model-derived labels as human judgment,
+and do not silently remove null, contradictory, unstable, or non-estimable
+findings.
+
+No license is asserted by this repository until a maintainer adds an explicit
+license file. Third-party datasets and model weights retain their own terms.
