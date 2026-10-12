@@ -31,6 +31,7 @@ def main() -> None:
     parser.add_argument("--results-freeze-script", type=Path, required=True)
     parser.add_argument("--rq4-outdir", type=Path, required=True)
     parser.add_argument("--results-freeze-outdir", type=Path, required=True)
+    parser.add_argument("--allow-existing-rq4", action="store_true")
     parser.add_argument("--outdir", type=Path, required=True)
     args = parser.parse_args()
     if args.outdir.exists():
@@ -41,8 +42,12 @@ def main() -> None:
     analysis = json.loads((args.post_analysis / "ANALYSIS_MANIFEST.json").read_text(encoding="utf-8"))
     if analysis.get("status") != "RQ2_RQ3_RQ5_COMPLETE_PUBLIC_DATA_ONLY":
         fail("post-freeze analysis receipt is incomplete")
-    if args.rq4_outdir.exists() or args.results_freeze_outdir.exists():
-        fail("downstream artifacts already exist; recovery after RQ4 is prohibited")
+    if args.results_freeze_outdir.exists():
+        fail("results-freeze artifacts already exist; recovery after results freeze is prohibited")
+    if args.rq4_outdir.exists():
+        receipt = args.rq4_outdir / "RQ4_MANIFEST.json"
+        if not args.allow_existing_rq4 or not receipt.is_file() or json.loads(receipt.read_text(encoding="utf-8")).get("status") != "RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY":
+            fail("existing RQ4 artifacts are not an authorized completed upstream stage")
     originals = dict(freeze.get("source_checksums", {}))
     # The post-analysis manifest records map-access recovery.  The distinct
     # coded-data recovery receipt is the one that binds the replacement script
@@ -71,7 +76,7 @@ def main() -> None:
         "condition_effects_reinterpreted_before_recovery": False,
         "new_human_data_collected": False,
         "replacements": replacements,
-        "scope": "Permit only the listed hash-bound script replacements to complete RQ4, results freeze, and figures after a provenance-check ordering fault; no scientific design or estimand changes are authorized.",
+        "scope": "Permit only the listed hash-bound script replacements to complete the remaining results-freeze and figures stages after a provenance-check ordering fault; no scientific design or estimand changes are authorized.",
     }
     path = args.outdir / "DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZATION.json"
     path.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")

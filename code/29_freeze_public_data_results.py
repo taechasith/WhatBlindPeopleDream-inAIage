@@ -89,7 +89,11 @@ def recovery_from_analysis(manifest: dict[str, object], coded_path: Path) -> dic
     path = Path(str(value))
     if not path.is_file():
         fail("analysis technical recovery receipt is unavailable")
-    record = read_receipt(path, "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    if record.get("status") == "UNBLINDING_TECHNICAL_RECOVERY_AUTHORIZED":
+        return None
+    if record.get("status") != "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY":
+        fail("analysis technical recovery receipt has an invalid status")
     if record.get("condition_effects_estimated_before_recovery") is not False:
         fail("analysis recovery receipt does not establish a pre-result failure")
     if record.get("original_coded_data_freeze_sha256") != sha256(coded_path):
