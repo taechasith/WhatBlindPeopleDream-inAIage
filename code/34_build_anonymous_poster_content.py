@@ -29,6 +29,10 @@ EXPECTED_RESULTS_STATUS = "RESULTS_FROZEN_PUBLIC_DATA_ONLY"
 EXPECTED_PACKET_STATUS = "PAPER_FACT_PACKET_FROM_RESULTS_FREEZE"
 EXPECTED_PACKET_MANIFEST_STATUS = "PAPER_FACT_PACKET_FROZEN_FROM_RESULTS_FREEZE"
 EXPECTED_FAMILIES = ("RQ2", "RQ3", "RQ4", "RQ5")
+# The fact packet also retains two RQ4 provenance-only families.  They are not
+# selectable poster result blocks, but must be accepted when verifying the
+# complete immutable packet generated from RESULTS_FREEZE.
+PACKET_FACT_FAMILIES = EXPECTED_FAMILIES + ("RQ4_profiles", "RQ4_association_status")
 
 # These terms cannot appear in a selection rule.  Result values may be shown
 # only in the frozen figures; this content planner selects semantic anchors
@@ -130,9 +134,11 @@ def require_packet(results_freeze: Path, fact_packet_dir: Path) -> tuple[dict[st
         fact_id = fact.get("fact_id")
         family = fact.get("result_family")
         values = fact.get("values")
-        if not isinstance(fact_id, str) or not re.fullmatch(r"RQ[2345]_\d{4}", fact_id):
+        if not isinstance(fact_id, str) or not re.fullmatch(
+            r"(?:RQ[2345]|RQ4_profiles|RQ4_association_status)_\d{4}", fact_id
+        ):
             fail("paper fact packet contains an invalid fact ID")
-        if family not in EXPECTED_FAMILIES or fact_id in facts or not isinstance(values, dict):
+        if family not in PACKET_FACT_FAMILIES or fact_id in facts or not isinstance(values, dict):
             fail("paper fact packet contains duplicate or malformed fact provenance")
         facts[fact_id] = fact
     return results, packet, manifest, facts
