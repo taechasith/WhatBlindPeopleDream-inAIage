@@ -318,15 +318,17 @@ def status_summary(selected: list[dict[str, Any]], *, include_measurement: bool 
 
 
 def make_findings(blocks: dict[str, list[dict[str, Any]]]) -> list[str]:
-    rq2 = blocks["RQ2"]
-    rq3 = blocks["RQ3"]
-    rq4 = blocks["RQ4"]
-    rq5 = blocks["RQ5"]
+    # Resolve the policy-selected families before writing short poster copy.
+    # Detailed construct statuses remain in the immutable provenance rationale.
+    _rq2 = blocks["RQ2"]
+    _rq3 = blocks["RQ3"]
+    _rq4 = blocks["RQ4"]
+    _rq5 = blocks["RQ5"]
     findings = [
-        "RQ2: task-answer and spatial-relation output properties were retained separately for both frozen judges under intent minus generic AI (" + status_summary(rq2) + "). Figure 2 displays the frozen estimates.",
-        "RQ3: released human-answer string coverage and caption-token overlap were retained for intent minus generic AI (" + status_summary(rq3) + "). This is bounded human-reference alignment, not BLV preference or human ratings.",
-        "RQ4: DreamSpace–IntentSpace and HumanSpace–accessibility-steered-AISpace comparisons were retained under the shared textual ontology (" + status_summary(rq4, include_measurement=False) + "). Lower distance is text-profile resemblance only.",
-        "RQ5: identity and social-intent inference properties were retained separately for both frozen judges under accessibility minus intent AI (" + status_summary(rq5) + "). They are model-derived text measurements, not measured harm or lived experience.",
+        "RQ2: task-answer and spatial-relation output properties were retained separately for both frozen judges under intent minus generic AI. Figure 2 displays the frozen estimates and the provenance ledger retains construct status.",
+        "RQ3: released human-answer string coverage and caption-token overlap were retained for intent minus generic AI. These are bounded human-reference alignment measures, not BLV preference or human ratings.",
+        "RQ4: DreamSpace-IntentSpace and HumanSpace-accessibility-steered-AISpace comparisons were retained under the shared textual ontology. Lower distance denotes text-profile resemblance only.",
+        "RQ5: identity and social-intent inference properties were retained separately for both frozen judges under accessibility minus intent AI. They are model-derived text measurements, not measured harm or lived experience.",
     ]
     return [clean_text(item, f"generated finding {index}", 260) for index, item in enumerate(findings)]
 
