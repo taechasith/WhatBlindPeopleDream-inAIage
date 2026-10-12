@@ -88,10 +88,17 @@ def verify_panel_chain(panel: dict[str, Any], panel_dir: Path, manifest: pd.Data
         row = checksums.loc[checksums.artifact == artifact]
         if len(row) != 1 or str(row.iloc[0]["sha256"]) != sha256(path):
             fail(f"panel checksum ledger does not match {artifact}")
+    # The immutable receipt and its ledgers live in ``synthetic_panel_v1/freeze``
+    # while the frozen raw and parsed judge artifacts live alongside that
+    # directory in ``synthetic_panel_v1``.  Requiring artifacts to be inside the
+    # receipt directory would reject the canonical panel layout that the freeze
+    # itself hashed.  Still require the one permitted parent directory; never
+    # accept an arbitrary absolute path from the manifest.
+    artifact_dir = panel_dir.parent.resolve()
     for row in manifest.to_dict("records"):
         for name, hash_column in (("labels_path", "labels_sha256"), ("raw_path", "raw_sha256")):
             path = Path(str(row[name]))
-            if path.resolve().parent != panel_dir.resolve():
+            if path.resolve().parent != artifact_dir:
                 fail(f"panel manifest artifact lies outside the frozen panel directory: {row.get('judge_id')} {name}")
             if not path.is_file() or sha256(path) != str(row[hash_column]):
                 fail(f"panel manifest hash mismatch for {row.get('judge_id')} {name}")

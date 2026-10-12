@@ -368,3 +368,24 @@ status.
   generation, raw output, or measurement rule changed. This is a prospective
   technical parsing correction that enables the already frozen blinded workflow
   to validate the same logical records.
+
+## 2026-10-12 -- Repair frozen-panel artifact-directory provenance check
+
+- **Original plan/implementation:** The coded-data freeze required the raw and
+  parsed judge artifacts named by the frozen panel manifest to be immediate
+  children of the receipt directory (`synthetic_panel_v1/freeze`).
+- **New plan/implementation:** The verifier accepts only the canonical frozen
+  panel root (`synthetic_panel_v1`) for those artifacts, while retaining the
+  manifest and checksum ledgers in its `freeze/` subdirectory and verifying all
+  committed SHA-256 values.
+- **Reason:** The established freeze layout deliberately stores immutable
+  receipts and ledgers in `freeze/`, and the hashed raw/parsed artifacts beside
+  it in the panel root. The prior directory test therefore rejected the
+  canonical manifest despite matching hashes.
+- **Outcome visibility:** Only paths, hashes, and receipt schema were inspected.
+  No output text, labels, condition mapping, condition-level effect, or RQ2--RQ5
+  result was accessed.
+- **Confirmatory effect:** No data, model, prompt, sample, ontology, construct
+  definition, scoring rule, or frozen artifact changed. The fix narrows accepted
+  paths to the one provenance-committed panel root and restores the intended
+  fail-closed checksum chain.
