@@ -21,6 +21,7 @@ $outdir = Join-Path $root 'results\post_freeze_analysis_v1'
 $spaceOutdir = Join-Path $root 'results\representational_space_v1'
 $resultsFreezeDir = Join-Path $root 'results\results_freeze'
 $figureOutdir = Join-Path $root 'figures\final_public_data_v1'
+$technicalRecovery = Join-Path $root 'results\coded_data_recovery\TECHNICAL_RECOVERY_AUTHORIZATION.json'
 
 if (-not (Test-Path -LiteralPath $analysisPython)) { throw 'Analysis Python is unavailable.' }
 
@@ -50,9 +51,13 @@ while (-not (Test-ReceiptStatus -Path $freeze -ExpectedStatus 'CODED_DATA_FROZEN
 $analysisReceipt = Join-Path $outdir 'ANALYSIS_MANIFEST.json'
 Assert-EmptyOrReceipt -Directory $outdir -Receipt $analysisReceipt -Status 'RQ2_RQ3_RQ5_COMPLETE_PUBLIC_DATA_ONLY'
 if (-not (Test-ReceiptStatus -Path $analysisReceipt -ExpectedStatus 'RQ2_RQ3_RQ5_COMPLETE_PUBLIC_DATA_ONLY')) {
+    $recoveryArgs = @()
+    if (Test-Path -LiteralPath $technicalRecovery) {
+        $recoveryArgs = @('--technical-recovery', $technicalRecovery)
+    }
     & $analysisPython (Join-Path $root 'code\27_run_post_freeze_public_analysis.py') `
         --coded-data-freeze $freeze --mapping $mapping --panel-dir $panelDir `
-        --construct-strength $strength --outdir $outdir
+        --construct-strength $strength --outdir $outdir @recoveryArgs
     if ($LASTEXITCODE -ne 0) { throw 'Post-freeze RQ2/RQ3/RQ5 analysis failed.' }
 }
 

@@ -125,7 +125,11 @@ def require_freeze(path: Path, expected_status: str) -> dict[str, object]:
     return record
 
 
-def load_committed_sources(freeze_path: Path, freeze: dict[str, object]) -> dict[str, tuple[Path, str]]:
+def load_committed_sources(
+    freeze_path: Path,
+    freeze: dict[str, object],
+    recovery: dict[str, object] | None = None,
+) -> dict[str, tuple[Path, str]]:
     """Validate every byte-level source commitment from the blinded freeze."""
     checksum_path = freeze_path.parent / "CODED_DATA_CHECKSUMS.csv"
     if not checksum_path.is_file() or freeze.get("coded_data_checksums_sha256") != sha256(checksum_path):
@@ -137,13 +141,43 @@ def load_committed_sources(freeze_path: Path, freeze: dict[str, object]) -> dict
     for row in checksums.to_dict("records"):
         path = Path(str(row["path"]))
         expected = str(row["sha256"])
-        if not path.is_file() or sha256(path) != expected:
+        actual = sha256(path) if path.is_file() else ""
+        permitted_recovery = (
+            recovery is not None
+            and str(row["artifact"]) == "analysis_script"
+            and expected == str(recovery["original_analysis_script_sha256"])
+            and actual == str(recovery["replacement_analysis_script_sha256"])
+        )
+        if not path.is_file() or (actual != expected and not permitted_recovery):
             fail(f"committed source is missing or changed: {row['artifact']}")
-        committed[str(row["artifact"])] = (path, expected)
+        committed[str(row["artifact"])] = (path, actual if permitted_recovery else expected)
     for name, expected in dict(freeze.get("source_checksums", {})).items():
-        if name not in committed or committed[name][1] != str(expected):
+        permitted_recovery = (
+            recovery is not None
+            and name == "analysis_script"
+            and str(expected) == str(recovery["original_analysis_script_sha256"])
+            and committed.get(name, (None, None))[1] == str(recovery["replacement_analysis_script_sha256"])
+        )
+        if name not in committed or (committed[name][1] != str(expected) and not permitted_recovery):
             fail(f"freeze source commitment is incomplete or inconsistent: {name}")
     return committed
+
+
+def load_technical_recovery(path: Path | None, *, freeze_path: Path, script: Path) -> dict[str, object] | None:
+    if path is None:
+        return None
+    if not path.is_file():
+        fail("technical recovery receipt is unavailable")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    if record.get("status") != "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY":
+        fail("technical recovery receipt has an invalid status")
+    if record.get("condition_effects_estimated_before_recovery") is not False:
+        fail("technical recovery receipt does not establish a pre-result failure")
+    if record.get("original_coded_data_freeze_sha256") != sha256(freeze_path):
+        fail("technical recovery receipt does not match coded-data freeze")
+    if record.get("replacement_analysis_script_sha256") != sha256(script):
+        fail("technical recovery receipt does not match current analysis script")
+    return record
 
 
 def require_committed_path(committed: dict[str, tuple[Path, str]], name: str, supplied: Path) -> None:
@@ -252,6 +286,8 @@ def main() -> None:
     parser.add_argument("--sample", type=Path, default=ROOT / "data" / "public_intervention" / "processed" / "vizwiz_val_sample_1000.csv")
     parser.add_argument("--panel-dir", type=Path, required=True)
     parser.add_argument("--construct-strength", type=Path, required=True)
+    parser.add_argument("--technical-recovery", type=Path, default=None,
+                        help="Immutable pre-result recovery authorization, if an authorized run failed before result creation.")
     parser.add_argument("--captions", type=Path, default=ROOT / "data" / "public_reference" / "processed" / "vizwiz_captions_val.csv")
     parser.add_argument("--outdir", type=Path, required=True)
     args = parser.parse_args()
@@ -264,7 +300,8 @@ def main() -> None:
     for source in (args.mapping, args.outputs, args.sample, args.captions, args.construct_strength):
         if not source.is_file():
             fail(f"required input unavailable: {source}")
-    committed = load_committed_sources(args.coded_data_freeze, freeze)
+    recovery = load_technical_recovery(args.technical_recovery, freeze_path=args.coded_data_freeze, script=Path(__file__).resolve())
+    committed = load_committed_sources(args.coded_data_freeze, freeze, recovery)
     for name, source in {
         "mapping_commitment": args.mapping,
         "primary_outputs": args.outputs,

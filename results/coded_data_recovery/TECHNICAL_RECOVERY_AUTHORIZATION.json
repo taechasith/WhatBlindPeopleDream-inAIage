@@ -1,0 +1,11 @@
+{
+  "condition_effects_estimated_before_recovery": false,
+  "condition_labels_exposed_before_recovery": true,
+  "initial_unblinding_ledger_sha256": "e5719c5e5870b00c4c910b98c2b6811518ad5b22a2f43e85acb34852c4657c74",
+  "new_human_data_collected": false,
+  "original_analysis_script_sha256": "14f33b04612964614d63ef3d27707910924f64dbcb348a194209da3524f929c2",
+  "original_coded_data_freeze_sha256": "0fb3301f49c9c5281799a5a374028e0c278d2b7d2635012618db13533af8321a",
+  "replacement_analysis_script_sha256": "577f4870ff4b3bd92f26277562577dcb6a811460efdb3004cbef9c403eb6ec0c",
+  "scope": "Permit the exact replacement analysis script solely to complete the previously authorized analysis after a pre-result provenance-path fault.",
+  "status": "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY"
+}
