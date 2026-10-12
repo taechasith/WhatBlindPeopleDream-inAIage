@@ -176,8 +176,6 @@ def measurement_status(fact_id: str, fact: dict[str, str]) -> str:
     status = raw or ("COMPUTATIONAL_PRIMARY" if family == "RQ4" else "")
     if status not in ALLOWED_MEASUREMENT_STATUSES:
         fail(f"fact {fact_id} has no eligible measurement status")
-    if status == "MEASUREMENT_UNSTABLE":
-        fail(f"fact {fact_id} is measurement-unstable and cannot support a publication claim")
     return status
 
 
@@ -219,6 +217,15 @@ def build_rows(
             if family not in NUMERIC_FIELDS:
                 fail(f"fact {fact_id} has unsupported result family: {family!r}")
             status = measurement_status(fact_id, fact)
+            if status == "MEASUREMENT_UNSTABLE":
+                for field in NUMERIC_FIELDS[family]:
+                    skipped.append({
+                        "delivery": delivery,
+                        "fact_id": fact_id,
+                        "source_column": field,
+                        "reason": "MEASUREMENT_UNSTABLE_NOT_A_PUBLICATION_CLAIM",
+                    })
+                continue
             for field in NUMERIC_FIELDS[family]:
                 if field not in fact:
                     fail(f"fact {fact_id} is missing expected source column {field}")

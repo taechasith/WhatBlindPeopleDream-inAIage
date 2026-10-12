@@ -364,6 +364,8 @@ def table_row(fact_id: str, fact: dict[str, Any]) -> str:
         label = latex_escape(str(values.get("construct", "unknown construct")))
         comparison = latex_escape(str(values.get("contrast", "unknown contrast")))
         status = latex_escape(str(values.get("measurement_status", "unknown status")))
+        if values.get("measurement_status") == "MEASUREMENT_UNSTABLE":
+            return rf"{label} ({status}) & {comparison} & \multicolumn{{3}}{{l}}{{Not estimable: the computational measurement robustness gate did not pass.}} \\\hline"
         estimate = macro_name(fact_id, family, "effect")
         ci_low = macro_name(fact_id, family, "ci_low")
         ci_high = macro_name(fact_id, family, "ci_high")
@@ -396,7 +398,8 @@ def render_result_block(block: dict[str, Any], facts: dict[str, dict[str, Any]])
         # table template may display.  The post-render traceability utility
         # retains only finite numeric values and treats NOT_ESTIMABLE as a
         # non-numeric state rather than silently inventing a claim.
-        rows.extend(paper_claim_markers(fact_id, facts[fact_id]))
+        if facts[fact_id]["values"].get("measurement_status") != "MEASUREMENT_UNSTABLE":
+            rows.extend(paper_claim_markers(fact_id, facts[fact_id]))
         rows.append(table_row(fact_id, facts[fact_id]))
     if family in {"RQ2", "RQ5"}:
         header = r"Property and measurement status & Contrast & Estimate [95\% CI] & Paired $n$ & FDR $q$"
