@@ -1,0 +1,47 @@
+{
+  "citations": [
+    {
+      "citation_key": "KANG2023",
+      "claim_use": "background_context",
+      "evidence_boundary": "Historical DreamBank analysis of a defined congenital-blind corpus; it provides historical dream-expression context only and does not establish contemporary AI effects, BLV intent, cognitive equivalence, or a causal dream effect.",
+      "paper_id": "KANG2023"
+    },
+    {
+      "citation_key": "XIE2025",
+      "claim_use": "background_context",
+      "evidence_boundary": "Ecological context on visually impaired users interacting with large multimodal models; it does not establish a blind-dream effect, cognitive change, or the effectiveness of the current frozen intervention.",
+      "paper_id": "XIE2025"
+    },
+    {
+      "citation_key": "KREISS2022",
+      "claim_use": "methodological_context",
+      "evidence_boundary": "Accessibility-description evaluation context showing limits of reference-only evaluation; it is not dream evidence and does not validate this study's computational measurements as human judgment.",
+      "paper_id": "KREISS2022"
+    },
+    {
+      "citation_key": "KAPUR2024",
+      "claim_use": "external_validation_context",
+      "evidence_boundary": "Peer-reviewed workshop article on blind and low-vision image-description preferences; it supplies bounded external BLV-preference context and does not make caption similarity a BLV preference measure for the current outputs.",
+      "paper_id": "KAPUR2024"
+    },
+    {
+      "citation_key": "GUIDEDOG2026",
+      "claim_use": "external_validation_context",
+      "evidence_boundary": "Accessibility-aware guidance dataset context used only as a separate external human-verified reference; it is not same-item ground truth for the frozen VizWiz outputs and does not evidence dream or cognitive effects.",
+      "paper_id": "GUIDEDOG2026"
+    },
+    {
+      "citation_key": "PATARANUTAPORN2025",
+      "claim_use": "methodological_context",
+      "evidence_boundary": "Methodological caution on testing model simulations against observed human evidence; it does not establish that synthetic annotations are human-equivalent, that models represent blind lived experience, or that this study collected human judgments.",
+      "paper_id": "PATARANUTAPORN2025"
+    }
+  ],
+  "results_access_boundary": "The binder may read RESULTS_FREEZE only as a JSON receipt to verify its status, zero-new-human-data attestation, single-unblinding attestation, and SHA-256. It must not open result tables, ledgers, raw outputs, condition mappings, or result values.",
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "review_stage": "ANONYMOUS_REVIEW",
+  "schema_version": 1,
+  "selection_policy_id": "anonymous_chi_audited_reference_selection_v1",
+  "selection_principle": "Use exactly the predeclared anonymous citation keys. Do not add, remove, rank, or alter citations after observing result direction, magnitude, uncertainty, or apparent favorability.",
+  "status": "REFERENCE_SELECTION_FROZEN_ANONYMOUS"
+}

@@ -1,0 +1,13 @@
+{
+  "anonymity_note": "This packet contains result-family identifiers, table basenames, and hashes only; it must not be supplemented with author-identifying metadata.",
+  "artifacts": {
+    "paper_fact_packet.csv": "3bb363a75e58dc58901a1471a58fef714243c4ff7199c3ead35ace243d05d951",
+    "paper_fact_packet.json": "661ac172ef0b3aa8bf0a579c299730c5b826ea6c8b0610a059cfe8164632f0b9",
+    "results_macros.tex": "35faf80905cf3637c79074cadd3368cba6c46a2080415d90e3a67933193168e3"
+  },
+  "fact_count": 250,
+  "script_sha256": "5eed105c4c4f92445c7f35fd3709540fcea2874422ebfc5d3dcbb3883c4c6c80",
+  "source_results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "source_results_ledger_sha256": "24506e04a303ef2bffce97ba0b448f2232198d1146e049469860a97d26eaa5c2",
+  "status": "PAPER_FACT_PACKET_FROZEN_FROM_RESULTS_FREEZE"
+}

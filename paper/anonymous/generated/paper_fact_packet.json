@@ -1,0 +1,4590 @@
+{
+  "fact_count": 250,
+  "facts": [
+    {
+      "fact_id": "RQ2_0001",
+      "result_family": "RQ2",
+      "source_data_row": 1,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.2068965517241379,
+        "ci_low": 0.0413793103448275,
+        "construct": "accessibility_grounded_content",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1241379310344827,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 145,
+        "paired_coverage": 0.145,
+        "permutation_p": 0.004999500049995,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0002",
+      "result_family": "RQ2",
+      "source_data_row": 2,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0054644808743169,
+        "ci_low": -0.1256830601092896,
+        "construct": "accessibility_grounded_content",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0655737704918032,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 183,
+        "paired_coverage": 0.183,
+        "permutation_p": 0.0501949805019498,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0003",
+      "result_family": "RQ2",
+      "source_data_row": 3,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0689655172413793,
+        "ci_low": -0.083743842364532,
+        "construct": "ambiguity",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0049261083743842,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 203,
+        "paired_coverage": 0.203,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0004",
+      "result_family": "RQ2",
+      "source_data_row": 4,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.1089494163424124,
+        "construct": "ambiguity",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0544747081712062,
+        "fdr_q": 0.353964603539646,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 257,
+        "paired_coverage": 0.257,
+        "permutation_p": 0.0707929207079292,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0005",
+      "result_family": "RQ2",
+      "source_data_row": 5,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1050420168067226,
+        "ci_low": -0.0252100840336134,
+        "construct": "grounded_uncertainty",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0378151260504201,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 238,
+        "paired_coverage": 0.238,
+        "permutation_p": 0.3091690830916908,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0006",
+      "result_family": "RQ2",
+      "source_data_row": 6,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0340136054421768,
+        "ci_low": -0.1292517006802721,
+        "construct": "grounded_uncertainty",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0816326530612244,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 294,
+        "paired_coverage": 0.294,
+        "permutation_p": 0.000999900009999,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0007",
+      "result_family": "RQ2",
+      "source_data_row": 7,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0568181818181818,
+        "ci_low": -0.0909090909090909,
+        "construct": "identity_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0113636363636363,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 88,
+        "paired_coverage": 0.088,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0008",
+      "result_family": "RQ2",
+      "source_data_row": 8,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0677966101694915,
+        "ci_low": -0.0254237288135593,
+        "construct": "identity_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0169491525423728,
+        "fdr_q": 0.905909409059094,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 118,
+        "paired_coverage": 0.118,
+        "permutation_p": 0.7247275272472753,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0009",
+      "result_family": "RQ2",
+      "source_data_row": 9,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.08,
+        "ci_low": -0.04,
+        "construct": "social_intent_inference",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0133333333333333,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 75,
+        "paired_coverage": 0.075,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0010",
+      "result_family": "RQ2",
+      "source_data_row": 10,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.07,
+        "construct": "social_intent_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.03,
+        "fdr_q": 0.6156884311568843,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 100,
+        "paired_coverage": 0.1,
+        "permutation_p": 0.2462753724627537,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0011",
+      "result_family": "RQ2",
+      "source_data_row": 11,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.135593220338983,
+        "ci_low": -0.2485875706214689,
+        "construct": "spatial_relation",
+        "contrast": "intent_minus_generic",
+        "effect": -0.192090395480226,
+        "fdr_q": 0.0002499750024997,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 177,
+        "paired_coverage": 0.177,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0012",
+      "result_family": "RQ2",
+      "source_data_row": 12,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0472972972972973,
+        "ci_low": -0.0608108108108108,
+        "construct": "spatial_relation",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0067567567567567,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 148,
+        "paired_coverage": 0.148,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0013",
+      "result_family": "RQ2",
+      "source_data_row": 13,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.2622950819672131,
+        "ci_low": 0.1147540983606557,
+        "construct": "task_answer",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1857923497267759,
+        "fdr_q": 0.0002499750024997,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 183,
+        "paired_coverage": 0.183,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0014",
+      "result_family": "RQ2",
+      "source_data_row": 14,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.048780487804878,
+        "ci_low": -0.02710027100271,
+        "construct": "task_answer",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.010840108401084,
+        "fdr_q": 0.905909409059094,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 369,
+        "paired_coverage": 0.369,
+        "permutation_p": 0.6779322067793221,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0015",
+      "result_family": "RQ2",
+      "source_data_row": 15,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1450980392156863,
+        "ci_low": 0.0352941176470588,
+        "construct": "task_relevance",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0901960784313725,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 255,
+        "paired_coverage": 0.255,
+        "permutation_p": 0.0025997400259974,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0016",
+      "result_family": "RQ2",
+      "source_data_row": 16,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0093457943925233,
+        "ci_low": -0.0607476635514018,
+        "construct": "task_relevance",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0257009345794392,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 428,
+        "paired_coverage": 0.428,
+        "permutation_p": 0.1880811918808119,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0017",
+      "result_family": "RQ2",
+      "source_data_row": 17,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0170454545454545,
+        "ci_low": -0.1420454545454545,
+        "construct": "unrequested_visual_detail",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0795454545454545,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 176,
+        "paired_coverage": 0.176,
+        "permutation_p": 0.0195980401959804,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0018",
+      "result_family": "RQ2",
+      "source_data_row": 18,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0532544378698224,
+        "ci_low": -0.0414201183431952,
+        "construct": "unrequested_visual_detail",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0059171597633136,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 169,
+        "paired_coverage": 0.169,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0019",
+      "result_family": "RQ2",
+      "source_data_row": 19,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1983805668016194,
+        "ci_low": 0.068825910931174,
+        "construct": "unsupported_information",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1336032388663967,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 247,
+        "paired_coverage": 0.247,
+        "permutation_p": 0.0001999800019998,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0020",
+      "result_family": "RQ2",
+      "source_data_row": 20,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0307692307692307,
+        "ci_low": -0.083076923076923,
+        "construct": "unsupported_information",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0276923076923076,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 325,
+        "paired_coverage": 0.325,
+        "permutation_p": 0.3867613238676132,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0021",
+      "result_family": "RQ2",
+      "source_data_row": 21,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0578034682080924,
+        "ci_low": -0.1329479768786127,
+        "construct": "accessibility_grounded_content",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0953757225433526,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 346,
+        "paired_coverage": 0.346,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0022",
+      "result_family": "RQ2",
+      "source_data_row": 22,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0344827586206896,
+        "ci_low": -0.0474137931034482,
+        "construct": "accessibility_grounded_content",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0043103448275862,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 232,
+        "paired_coverage": 0.232,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0023",
+      "result_family": "RQ2",
+      "source_data_row": 23,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1128526645768025,
+        "ci_low": -0.2100313479623824,
+        "construct": "ambiguity",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1598746081504702,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 319,
+        "paired_coverage": 0.319,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0024",
+      "result_family": "RQ2",
+      "source_data_row": 24,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0542986425339366,
+        "ci_low": -0.0361990950226244,
+        "construct": "ambiguity",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0090497737556561,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 221,
+        "paired_coverage": 0.221,
+        "permutation_p": 0.8312168783121687,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0025",
+      "result_family": "RQ2",
+      "source_data_row": 25,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0154525386313465,
+        "ci_low": -0.0529801324503311,
+        "construct": "grounded_uncertainty",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0331125827814569,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 453,
+        "paired_coverage": 0.453,
+        "permutation_p": 0.0018998100189981,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0026",
+      "result_family": "RQ2",
+      "source_data_row": 26,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0384615384615384,
+        "ci_low": -0.016025641025641,
+        "construct": "grounded_uncertainty",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0096153846153846,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 312,
+        "paired_coverage": 0.312,
+        "permutation_p": 0.6412358764123588,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0027",
+      "result_family": "RQ2",
+      "source_data_row": 27,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0952380952380952,
+        "ci_low": -0.1798941798941798,
+        "construct": "identity_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1375661375661375,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 378,
+        "paired_coverage": 0.378,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0028",
+      "result_family": "RQ2",
+      "source_data_row": 28,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0395256916996047,
+        "ci_low": -0.0395256916996047,
+        "construct": "identity_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 253,
+        "paired_coverage": 0.253,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0029",
+      "result_family": "RQ2",
+      "source_data_row": 29,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1130952380952381,
+        "ci_low": -0.2053571428571428,
+        "construct": "social_intent_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1577380952380952,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 336,
+        "paired_coverage": 0.336,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0030",
+      "result_family": "RQ2",
+      "source_data_row": 30,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0517241379310344,
+        "ci_low": -0.0344827586206896,
+        "construct": "social_intent_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0086206896551724,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 232,
+        "paired_coverage": 0.232,
+        "permutation_p": 0.8451154884511549,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0031",
+      "result_family": "RQ2",
+      "source_data_row": 31,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0068649885583524,
+        "construct": "spatial_relation",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0022883295194508,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 437,
+        "paired_coverage": 0.437,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0032",
+      "result_family": "RQ2",
+      "source_data_row": 32,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0098684210526315,
+        "ci_low": 0.0,
+        "construct": "spatial_relation",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0032894736842105,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 304,
+        "paired_coverage": 0.304,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0033",
+      "result_family": "RQ2",
+      "source_data_row": 33,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0063559322033898,
+        "construct": "task_answer",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0021186440677966,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 472,
+        "paired_coverage": 0.472,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0034",
+      "result_family": "RQ2",
+      "source_data_row": 34,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0077720207253886,
+        "ci_low": 0.0,
+        "construct": "task_answer",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0025906735751295,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 386,
+        "paired_coverage": 0.386,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ2_0035",
+      "result_family": "RQ2",
+      "source_data_row": 35,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0064377682403433,
+        "construct": "task_relevance",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0021459227467811,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 466,
+        "paired_coverage": 0.466,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0036",
+      "result_family": "RQ2",
+      "source_data_row": 36,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0084507042253521,
+        "ci_low": 0.0,
+        "construct": "task_relevance",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0028169014084507,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 355,
+        "paired_coverage": 0.355,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0037",
+      "result_family": "RQ2",
+      "source_data_row": 37,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1117478510028653,
+        "ci_low": -0.2034383954154728,
+        "construct": "unrequested_visual_detail",
+        "contrast": "intent_minus_generic",
+        "effect": -0.157593123209169,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 349,
+        "paired_coverage": 0.349,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0038",
+      "result_family": "RQ2",
+      "source_data_row": 38,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0484581497797356,
+        "ci_low": -0.0352422907488986,
+        "construct": "unrequested_visual_detail",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0088105726872246,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 227,
+        "paired_coverage": 0.227,
+        "permutation_p": 0.8362163783621638,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0039",
+      "result_family": "RQ2",
+      "source_data_row": 39,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1013071895424836,
+        "ci_low": -0.2026143790849673,
+        "construct": "unsupported_information",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1503267973856209,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 306,
+        "paired_coverage": 0.306,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ2_0040",
+      "result_family": "RQ2",
+      "source_data_row": 40,
+      "source_file": "RQ2_results.csv",
+      "source_sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0448430493273542,
+        "ci_low": -0.0403587443946188,
+        "construct": "unsupported_information",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0044843049327354,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 223,
+        "paired_coverage": 0.223,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ3_0001",
+      "result_family": "RQ3",
+      "source_data_row": 1,
+      "source_file": "RQ3_results.csv",
+      "source_sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b",
+      "values": {
+        "analysis_status": "ESTIMATED_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.154,
+        "ci_low": 0.097,
+        "claim_boundary": "Released human answers and captions are source references. String/token overlap is bounded reference alignment, not semantic correctness, BLV preference, usefulness, or human rating.",
+        "contrast": "intent_minus_generic",
+        "effect": 0.126,
+        "fdr_q": 0.0001999800019998,
+        "measurement_status": "PUBLIC_HUMAN_BENCHMARKED",
+        "metric": "human_answer_mode_string_coverage",
+        "n_paired_items": 1000,
+        "paired_coverage": 1.0,
+        "permutation_p": 9.999000099990002e-05
+      }
+    },
+    {
+      "fact_id": "RQ3_0002",
+      "result_family": "RQ3",
+      "source_data_row": 2,
+      "source_file": "RQ3_results.csv",
+      "source_sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b",
+      "values": {
+        "analysis_status": "ESTIMATED_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.028,
+        "ci_low": -0.075,
+        "claim_boundary": "Released human answers and captions are source references. String/token overlap is bounded reference alignment, not semantic correctness, BLV preference, usefulness, or human rating.",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.051,
+        "fdr_q": 0.0001999800019998,
+        "measurement_status": "PUBLIC_HUMAN_BENCHMARKED",
+        "metric": "human_answer_mode_string_coverage",
+        "n_paired_items": 1000,
+        "paired_coverage": 1.0,
+        "permutation_p": 9.999000099990002e-05
+      }
+    },
+    {
+      "fact_id": "RQ3_0003",
+      "result_family": "RQ3",
+      "source_data_row": 3,
+      "source_file": "RQ3_results.csv",
+      "source_sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b",
+      "values": {
+        "analysis_status": "ESTIMATED_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0117242933485801,
+        "ci_low": -0.0019673968097917,
+        "claim_boundary": "Released human answers and captions are source references. String/token overlap is bounded reference alignment, not semantic correctness, BLV preference, usefulness, or human rating.",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0048796918483287,
+        "fdr_q": 0.2230443622304436,
+        "measurement_status": "PUBLIC_HUMAN_BENCHMARKED",
+        "metric": "human_caption_max_token_f1",
+        "n_paired_items": 1000,
+        "paired_coverage": 1.0,
+        "permutation_p": 0.1672832716728327
+      }
+    },
+    {
+      "fact_id": "RQ3_0004",
+      "result_family": "RQ3",
+      "source_data_row": 4,
+      "source_file": "RQ3_results.csv",
+      "source_sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b",
+      "values": {
+        "analysis_status": "ESTIMATED_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.011823736705919,
+        "ci_low": -0.0045380123794657,
+        "claim_boundary": "Released human answers and captions are source references. String/token overlap is bounded reference alignment, not semantic correctness, BLV preference, usefulness, or human rating.",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0036290253943689,
+        "fdr_q": 0.3842615738426157,
+        "measurement_status": "PUBLIC_HUMAN_BENCHMARKED",
+        "metric": "human_caption_max_token_f1",
+        "n_paired_items": 1000,
+        "paired_coverage": 1.0,
+        "permutation_p": 0.3842615738426157
+      }
+    },
+    {
+      "fact_id": "RQ4_0001",
+      "result_family": "RQ4",
+      "source_data_row": 1,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.3159657600508579,
+        "hellinger_distance": 0.5714776643892975,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.4325282296050332,
+        "js_ci_high": 0.4542443886428075,
+        "js_ci_low": 0.4171394033212937,
+        "n_a": 381,
+        "n_b": 24842,
+        "n_categories": 25,
+        "space_a": "DREAM",
+        "space_b": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_0002",
+      "result_family": "RQ4",
+      "source_data_row": 2,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.7108840874344258,
+        "hellinger_distance": 0.430612025619899,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2415599079416432,
+        "js_ci_high": 0.2575592261475071,
+        "js_ci_low": 0.2292451430912614,
+        "n_a": 381,
+        "n_b": 37786,
+        "n_categories": 25,
+        "space_a": "DREAM",
+        "space_b": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_0003",
+      "result_family": "RQ4",
+      "source_data_row": 3,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.6338851146275546,
+        "hellinger_distance": 0.4618866882203039,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2772289138886922,
+        "js_ci_high": 0.2982206208461374,
+        "js_ci_low": 0.260106215858411,
+        "n_a": 381,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "DREAM",
+        "space_b": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_0004",
+      "result_family": "RQ4",
+      "source_data_row": 4,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.5600894361907081,
+        "hellinger_distance": 0.4788283751392613,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.3033681656680924,
+        "js_ci_high": 0.3314679294537141,
+        "js_ci_low": 0.2845607750257816,
+        "n_a": 381,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "DREAM",
+        "space_b": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0005",
+      "result_family": "RQ4",
+      "source_data_row": 5,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.61124291719559,
+        "hellinger_distance": 0.4628065489285586,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2777412157919576,
+        "js_ci_high": 0.3075249394285448,
+        "js_ci_low": 0.2579758655987478,
+        "n_a": 381,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "DREAM",
+        "space_b": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0006",
+      "result_family": "RQ4",
+      "source_data_row": 6,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.5936265684729988,
+        "hellinger_distance": 0.4591464128326245,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2791597539342982,
+        "js_ci_high": 0.2877314831907452,
+        "js_ci_low": 0.2721339896758947,
+        "n_a": 24842,
+        "n_b": 37786,
+        "n_categories": 25,
+        "space_a": "BLV_USER_QUESTION",
+        "space_b": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_0007",
+      "result_family": "RQ4",
+      "source_data_row": 7,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.6860259426571138,
+        "hellinger_distance": 0.4490196988977037,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2678738026393167,
+        "js_ci_high": 0.2794043430611407,
+        "js_ci_low": 0.2593042232757789,
+        "n_a": 24842,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "BLV_USER_QUESTION",
+        "space_b": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_0008",
+      "result_family": "RQ4",
+      "source_data_row": 8,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.7778263080983643,
+        "hellinger_distance": 0.395668782294921,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2088306572968389,
+        "js_ci_high": 0.2261185412622774,
+        "js_ci_low": 0.1964154354345808,
+        "n_a": 24842,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "BLV_USER_QUESTION",
+        "space_b": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0009",
+      "result_family": "RQ4",
+      "source_data_row": 9,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.741865381672752,
+        "hellinger_distance": 0.4086941794710962,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.2240638310319986,
+        "js_ci_high": 0.245197083950353,
+        "js_ci_low": 0.209028745689365,
+        "n_a": 24842,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "BLV_USER_QUESTION",
+        "space_b": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0010",
+      "result_family": "RQ4",
+      "source_data_row": 10,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.830340312930222,
+        "hellinger_distance": 0.2906733308004322,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.1163597084657797,
+        "js_ci_high": 0.1238911570211438,
+        "js_ci_low": 0.1102075687242308,
+        "n_a": 37786,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "HUMAN_CAPTION",
+        "space_b": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_0011",
+      "result_family": "RQ4",
+      "source_data_row": 11,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.7755572989831792,
+        "hellinger_distance": 0.3258870609692017,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.1461817470323869,
+        "js_ci_high": 0.158987355661412,
+        "js_ci_low": 0.1365153125328461,
+        "n_a": 37786,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "HUMAN_CAPTION",
+        "space_b": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0012",
+      "result_family": "RQ4",
+      "source_data_row": 12,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.8272281015532185,
+        "hellinger_distance": 0.2982658817552868,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.1218773422046655,
+        "js_ci_high": 0.1374316816532375,
+        "js_ci_low": 0.1114739064020135,
+        "n_a": 37786,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "HUMAN_CAPTION",
+        "space_b": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0013",
+      "result_family": "RQ4",
+      "source_data_row": 13,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.9780924234278064,
+        "hellinger_distance": 0.1135440897975654,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.0183421034649531,
+        "js_ci_high": 0.0246932990527144,
+        "js_ci_low": 0.015442756904708,
+        "n_a": 1000,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "AI_GENERIC",
+        "space_b": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0014",
+      "result_family": "RQ4",
+      "source_data_row": 14,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.9913018004960188,
+        "hellinger_distance": 0.0931540486055328,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.0121118894366813,
+        "js_ci_high": 0.018988558210588,
+        "js_ci_low": 0.0096059115003478,
+        "n_a": 1000,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "AI_GENERIC",
+        "space_b": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_0015",
+      "result_family": "RQ4",
+      "source_data_row": 15,
+      "source_file": "RQ4_results.csv",
+      "source_sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "values": {
+        "analysis_status": "DISTRIBUTIONAL_TEXT_PROFILE_ONLY",
+        "cosine_similarity": 0.9935294183485572,
+        "hellinger_distance": 0.0654137160720303,
+        "interpretation_boundary": "Distributional resemblance is not cognitive equivalence, dream transfer, or accessibility usefulness.",
+        "jensen_shannon_divergence": 0.0058095734509319,
+        "js_ci_high": 0.010326131635855,
+        "js_ci_low": 0.0050129753916932,
+        "n_a": 1000,
+        "n_b": 1000,
+        "n_categories": 25,
+        "space_a": "AI_INTENT_STEERED",
+        "space_b": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_association_status_0001",
+      "result_family": "RQ4_association_status",
+      "source_data_row": 1,
+      "source_file": "RQ4_association_status.csv",
+      "source_sha256": "4204295e882bbc7e5afc6d09d9b34d701f4eae277b7b4ad6d8ea4dc1c8979215",
+      "values": {
+        "analysis": "DreamSpace distance versus human-reference alignment",
+        "reason": "Three AI condition profiles do not support a stable association estimate.",
+        "status": "NOT_ESTIMABLE_WITH_THREE_CONDITION_PROFILES"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0001",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 1,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.2545931758530184,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0002",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 2,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.4960629921259842,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0003",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 3,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.2677165354330709,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0004",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 4,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0498687664041994,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0005",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 5,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0971128608923884,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0006",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 6,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.2519685039370078,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0007",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 7,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0288713910761154,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0008",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 8,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0262467191601049,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0009",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 9,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0498687664041994,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0010",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 10,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0288713910761154,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0011",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 11,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.4330708661417323,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0012",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 12,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.1102362204724409,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0013",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 13,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.3097112860892388,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0014",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 14,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.3832020997375328,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0015",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 15,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.7244094488188977,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0016",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 16,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.2257217847769028,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0017",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 17,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.2204724409448819,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0018",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 18,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0603674540682414,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0019",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 19,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0157480314960629,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0020",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 20,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.1469816272965879,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0021",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 21,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0603674540682414,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0022",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 22,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0629921259842519,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0023",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 23,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.1417322834645669,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0024",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 24,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.3937007874015748,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0025",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 25,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 381,
+        "proportion_expressed": 0.0629921259842519,
+        "space": "DREAM"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0026",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 26,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.1739392963529506,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0027",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 27,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0025762821028902,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0028",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 28,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0016906851300217,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0029",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 29,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0012881410514451,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0030",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 30,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0249174784638917,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0031",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 31,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0025762821028902,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0032",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 32,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 8.050881571532083e-05,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0033",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 33,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 8.050881571532083e-05,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0034",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 34,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.001650430722164,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0035",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 35,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0001610176314306,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0036",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 36,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0082521536108203,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0037",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 37,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0031398438128975,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0038",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 38,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0158602366959182,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0039",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 39,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0029788261814668,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0040",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 40,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0078496095322437,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0041",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 41,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0026165365107479,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0042",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 42,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0004427984864342,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0043",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 43,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0004427984864342,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0044",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 44,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0003220352628612,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0045",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 45,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0050720553900652,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0046",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 46,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0047097657193462,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0047",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 47,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0067224861122292,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0048",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 48,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.1096530070042669,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0049",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 49,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0106271636744223,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0050",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 50,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 24842,
+        "proportion_expressed": 0.0035021334836164,
+        "space": "BLV_USER_QUESTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0051",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 51,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.2428147991319536,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0052",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 52,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.003308103530408,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0053",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 53,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0158788969459588,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0054",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 54,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.000608691049595,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0055",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 55,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0046842745990578,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0056",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 56,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0224686391785317,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0057",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 57,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0004234372518922,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0058",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 58,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0012438469274334,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0059",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 59,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0050812470227068,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0060",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 60,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0006351558778383,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0061",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 61,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.1213412374953686,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0062",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 62,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0288731276134017,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0063",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 63,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0592812152649129,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0064",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 64,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0018790028052717,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0065",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 65,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.3324776372201344,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0066",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 66,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0351452919070555,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0067",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 67,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0006880855343248,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0068",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 68,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0010850579579738,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0069",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 69,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0019583972900015,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0070",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 70,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0144497962208225,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0071",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 71,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0168580955909596,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0072",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 72,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0003175779389191,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0073",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 73,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0668501561424866,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0074",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 74,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.010903509236225,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0075",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 75,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 37786,
+        "proportion_expressed": 0.0017996083205419,
+        "space": "HUMAN_CAPTION"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0076",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 76,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.988,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0077",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 77,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.012,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0078",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 78,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.07,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0079",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 79,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.003,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0080",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 80,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.016,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0081",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 81,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.067,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0082",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 82,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0083",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 83,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.004,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0084",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 84,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.026,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0085",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 85,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.003,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0086",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 86,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.193,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0087",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 87,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.321,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0088",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 88,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.28,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0089",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 89,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.008,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0090",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 90,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.884,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0091",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 91,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.65,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0092",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 92,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.002,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0093",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 93,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.003,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0094",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 94,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.012,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0095",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 95,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.675,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0096",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 96,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.023,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0097",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 97,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.003,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0098",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 98,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.584,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0099",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 99,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.047,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0100",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 100,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.08,
+        "space": "AI_GENERIC"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0101",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 101,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.588,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0102",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 102,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.008,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0103",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 103,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.024,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0104",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 104,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0105",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 105,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.035,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0106",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 106,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.028,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0107",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 107,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.002,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0108",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 108,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.002,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0109",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 109,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.01,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0110",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 110,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0111",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 111,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.081,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0112",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 112,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.072,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0113",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 113,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.066,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0114",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 114,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.01,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0115",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 115,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.375,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0116",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 116,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.339,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0117",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 117,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.003,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0118",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 118,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.002,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0119",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 119,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.008,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0120",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 120,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.367,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0121",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 121,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.014,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0122",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 122,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.005,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0123",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 123,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.405,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0124",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 124,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.017,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0125",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 125,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.044,
+        "space": "AI_INTENT_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0126",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 126,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "visual",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.344,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0127",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 127,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "auditory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.009,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0128",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 128,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "tactile",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.015,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0129",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 129,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "olfactory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0130",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 130,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "gustatory",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.02,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0131",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 131,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "proprioceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.015,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0132",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 132,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "vestibular",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0133",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 133,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "interoceptive",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.002,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0134",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 134,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "thermal",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.007,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0135",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 135,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "pain",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.0,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0136",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 136,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "spatial_layout",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.068,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0137",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 137,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "distance_depth",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.059,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0138",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 138,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "direction_orientation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.058,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0139",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 139,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "motion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.005,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0140",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 140,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "social_context",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.273,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0141",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 141,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "identity_inference",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.189,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0142",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 142,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "emotion",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.0,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0143",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 143,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "threat",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.001,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0144",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 144,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "safety",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.008,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0145",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 145,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "uncertainty",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.221,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0146",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 146,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "privacy",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.014,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0147",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 147,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "agency",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.006,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0148",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 148,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "text_reading",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.219,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0149",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 149,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "navigation",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.011,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ4_profiles_0150",
+      "result_family": "RQ4_profiles",
+      "source_data_row": 150,
+      "source_file": "RQ4_space_profiles.csv",
+      "source_sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "values": {
+        "category": "ambiguity",
+        "claim_boundary": "Expressed textual vocabulary only; not sensation, cognition, preference, or image-grounded truth.",
+        "measurement_status": "COMPUTATIONAL_SECONDARY_LEXICAL_PROFILE",
+        "n_text_units": 1000,
+        "proportion_expressed": 0.04,
+        "space": "AI_ACCESSIBILITY_STEERED"
+      }
+    },
+    {
+      "fact_id": "RQ5_0001",
+      "result_family": "RQ5",
+      "source_data_row": 1,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.2068965517241379,
+        "ci_low": 0.0413793103448275,
+        "construct": "accessibility_grounded_content",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1241379310344827,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 145,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.145,
+        "permutation_p": 0.004999500049995,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0002",
+      "result_family": "RQ5",
+      "source_data_row": 2,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0054644808743169,
+        "ci_low": -0.1256830601092896,
+        "construct": "accessibility_grounded_content",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0655737704918032,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 183,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.183,
+        "permutation_p": 0.0501949805019498,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0003",
+      "result_family": "RQ5",
+      "source_data_row": 3,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0689655172413793,
+        "ci_low": -0.083743842364532,
+        "construct": "ambiguity",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0049261083743842,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 203,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.203,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0004",
+      "result_family": "RQ5",
+      "source_data_row": 4,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.1089494163424124,
+        "construct": "ambiguity",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0544747081712062,
+        "fdr_q": 0.353964603539646,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 257,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.257,
+        "permutation_p": 0.0707929207079292,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0005",
+      "result_family": "RQ5",
+      "source_data_row": 5,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1050420168067226,
+        "ci_low": -0.0252100840336134,
+        "construct": "grounded_uncertainty",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0378151260504201,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 238,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.238,
+        "permutation_p": 0.3091690830916908,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0006",
+      "result_family": "RQ5",
+      "source_data_row": 6,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0340136054421768,
+        "ci_low": -0.1292517006802721,
+        "construct": "grounded_uncertainty",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0816326530612244,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 294,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.294,
+        "permutation_p": 0.000999900009999,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0007",
+      "result_family": "RQ5",
+      "source_data_row": 7,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0568181818181818,
+        "ci_low": -0.0909090909090909,
+        "construct": "identity_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0113636363636363,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 88,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.088,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0008",
+      "result_family": "RQ5",
+      "source_data_row": 8,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0677966101694915,
+        "ci_low": -0.0254237288135593,
+        "construct": "identity_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0169491525423728,
+        "fdr_q": 0.905909409059094,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 118,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.118,
+        "permutation_p": 0.7247275272472753,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0009",
+      "result_family": "RQ5",
+      "source_data_row": 9,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.08,
+        "ci_low": -0.04,
+        "construct": "social_intent_inference",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0133333333333333,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 75,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.075,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0010",
+      "result_family": "RQ5",
+      "source_data_row": 10,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.07,
+        "construct": "social_intent_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.03,
+        "fdr_q": 0.6156884311568843,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 100,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.1,
+        "permutation_p": 0.2462753724627537,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0011",
+      "result_family": "RQ5",
+      "source_data_row": 11,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.135593220338983,
+        "ci_low": -0.2485875706214689,
+        "construct": "spatial_relation",
+        "contrast": "intent_minus_generic",
+        "effect": -0.192090395480226,
+        "fdr_q": 0.0002499750024997,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 177,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.177,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0012",
+      "result_family": "RQ5",
+      "source_data_row": 12,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0472972972972973,
+        "ci_low": -0.0608108108108108,
+        "construct": "spatial_relation",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0067567567567567,
+        "fdr_q": 1.0,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 148,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.148,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0013",
+      "result_family": "RQ5",
+      "source_data_row": 13,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.2622950819672131,
+        "ci_low": 0.1147540983606557,
+        "construct": "task_answer",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1857923497267759,
+        "fdr_q": 0.0002499750024997,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 183,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.183,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0014",
+      "result_family": "RQ5",
+      "source_data_row": 14,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.048780487804878,
+        "ci_low": -0.02710027100271,
+        "construct": "task_answer",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.010840108401084,
+        "fdr_q": 0.905909409059094,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 369,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.369,
+        "permutation_p": 0.6779322067793221,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0015",
+      "result_family": "RQ5",
+      "source_data_row": 15,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1450980392156863,
+        "ci_low": 0.0352941176470588,
+        "construct": "task_relevance",
+        "contrast": "intent_minus_generic",
+        "effect": 0.0901960784313725,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 255,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.255,
+        "permutation_p": 0.0025997400259974,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0016",
+      "result_family": "RQ5",
+      "source_data_row": 16,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0093457943925233,
+        "ci_low": -0.0607476635514018,
+        "construct": "task_relevance",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0257009345794392,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 428,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.428,
+        "permutation_p": 0.1880811918808119,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0017",
+      "result_family": "RQ5",
+      "source_data_row": 17,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0170454545454545,
+        "ci_low": -0.1420454545454545,
+        "construct": "unrequested_visual_detail",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0795454545454545,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 176,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.176,
+        "permutation_p": 0.0195980401959804,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0018",
+      "result_family": "RQ5",
+      "source_data_row": 18,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0532544378698224,
+        "ci_low": -0.0414201183431952,
+        "construct": "unrequested_visual_detail",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0059171597633136,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 169,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.169,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0019",
+      "result_family": "RQ5",
+      "source_data_row": 19,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.1983805668016194,
+        "ci_low": 0.068825910931174,
+        "construct": "unsupported_information",
+        "contrast": "intent_minus_generic",
+        "effect": 0.1336032388663967,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 247,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.247,
+        "permutation_p": 0.0001999800019998,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0020",
+      "result_family": "RQ5",
+      "source_data_row": 20,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0307692307692307,
+        "ci_low": -0.083076923076923,
+        "construct": "unsupported_information",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0276923076923076,
+        "fdr_q": null,
+        "judge_id": "Phi_3.5_mini_2fe19245",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 325,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.325,
+        "permutation_p": 0.3867613238676132,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0021",
+      "result_family": "RQ5",
+      "source_data_row": 21,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0578034682080924,
+        "ci_low": -0.1329479768786127,
+        "construct": "accessibility_grounded_content",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0953757225433526,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 346,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.346,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0022",
+      "result_family": "RQ5",
+      "source_data_row": 22,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0344827586206896,
+        "ci_low": -0.0474137931034482,
+        "construct": "accessibility_grounded_content",
+        "contrast": "accessibility_minus_intent",
+        "effect": -0.0043103448275862,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 232,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.232,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0023",
+      "result_family": "RQ5",
+      "source_data_row": 23,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1128526645768025,
+        "ci_low": -0.2100313479623824,
+        "construct": "ambiguity",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1598746081504702,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 319,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.319,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0024",
+      "result_family": "RQ5",
+      "source_data_row": 24,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0542986425339366,
+        "ci_low": -0.0361990950226244,
+        "construct": "ambiguity",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0090497737556561,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 221,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.221,
+        "permutation_p": 0.8312168783121687,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0025",
+      "result_family": "RQ5",
+      "source_data_row": 25,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0154525386313465,
+        "ci_low": -0.0529801324503311,
+        "construct": "grounded_uncertainty",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0331125827814569,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 453,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.453,
+        "permutation_p": 0.0018998100189981,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0026",
+      "result_family": "RQ5",
+      "source_data_row": 26,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0384615384615384,
+        "ci_low": -0.016025641025641,
+        "construct": "grounded_uncertainty",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0096153846153846,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 312,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.312,
+        "permutation_p": 0.6412358764123588,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0027",
+      "result_family": "RQ5",
+      "source_data_row": 27,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.0952380952380952,
+        "ci_low": -0.1798941798941798,
+        "construct": "identity_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1375661375661375,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 378,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.378,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0028",
+      "result_family": "RQ5",
+      "source_data_row": 28,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0395256916996047,
+        "ci_low": -0.0395256916996047,
+        "construct": "identity_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 253,
+        "output_change_direction": "NO_ESTIMATED_DIFFERENCE",
+        "paired_coverage": 0.253,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0029",
+      "result_family": "RQ5",
+      "source_data_row": 29,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1130952380952381,
+        "ci_low": -0.2053571428571428,
+        "construct": "social_intent_inference",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1577380952380952,
+        "fdr_q": 0.0001666500016665,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 336,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.336,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0030",
+      "result_family": "RQ5",
+      "source_data_row": 30,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0517241379310344,
+        "ci_low": -0.0344827586206896,
+        "construct": "social_intent_inference",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0086206896551724,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 232,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.232,
+        "permutation_p": 0.8451154884511549,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0031",
+      "result_family": "RQ5",
+      "source_data_row": 31,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0068649885583524,
+        "construct": "spatial_relation",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0022883295194508,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 437,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.437,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0032",
+      "result_family": "RQ5",
+      "source_data_row": 32,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0098684210526315,
+        "ci_low": 0.0,
+        "construct": "spatial_relation",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0032894736842105,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 304,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.304,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0033",
+      "result_family": "RQ5",
+      "source_data_row": 33,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0063559322033898,
+        "construct": "task_answer",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0021186440677966,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 472,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.472,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0034",
+      "result_family": "RQ5",
+      "source_data_row": 34,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0077720207253886,
+        "ci_low": 0.0,
+        "construct": "task_answer",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0025906735751295,
+        "fdr_q": 1.0,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 386,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.386,
+        "permutation_p": 1.0,
+        "primary_family": true
+      }
+    },
+    {
+      "fact_id": "RQ5_0035",
+      "result_family": "RQ5",
+      "source_data_row": 35,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0,
+        "ci_low": -0.0064377682403433,
+        "construct": "task_relevance",
+        "contrast": "intent_minus_generic",
+        "effect": -0.0021459227467811,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 466,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.466,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0036",
+      "result_family": "RQ5",
+      "source_data_row": 36,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MEASUREMENT_UNSTABLE_NOT_FOR_SUBSTANTIVE_CLAIMS",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0084507042253521,
+        "ci_low": 0.0,
+        "construct": "task_relevance",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0028169014084507,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MEASUREMENT_UNSTABLE",
+        "n_paired_items": 355,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.355,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0037",
+      "result_family": "RQ5",
+      "source_data_row": 37,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1117478510028653,
+        "ci_low": -0.2034383954154728,
+        "construct": "unrequested_visual_detail",
+        "contrast": "intent_minus_generic",
+        "effect": -0.157593123209169,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 349,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.349,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0038",
+      "result_family": "RQ5",
+      "source_data_row": 38,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0484581497797356,
+        "ci_low": -0.0352422907488986,
+        "construct": "unrequested_visual_detail",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0088105726872246,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 227,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.227,
+        "permutation_p": 0.8362163783621638,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0039",
+      "result_family": "RQ5",
+      "source_data_row": 39,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": -0.1013071895424836,
+        "ci_low": -0.2026143790849673,
+        "construct": "unsupported_information",
+        "contrast": "intent_minus_generic",
+        "effect": -0.1503267973856209,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 306,
+        "output_change_direction": "NUMERATOR_OMITTED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.306,
+        "permutation_p": 9.999000099990002e-05,
+        "primary_family": false
+      }
+    },
+    {
+      "fact_id": "RQ5_0040",
+      "result_family": "RQ5",
+      "source_data_row": 40,
+      "source_file": "RQ5_results.csv",
+      "source_sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "values": {
+        "analysis_role": "MODEL_DERIVED_EXPLORATORY",
+        "analysis_status": "ESTIMATED_COMPLETE_CASE_PAIRED_CLUSTER_BOOTSTRAP_AND_SIGN_FLIP",
+        "ci_high": 0.0448430493273542,
+        "ci_low": -0.0403587443946188,
+        "construct": "unsupported_information",
+        "contrast": "accessibility_minus_intent",
+        "effect": 0.0044843049327354,
+        "fdr_q": null,
+        "judge_id": "Qwen2.5_1.5B_989aa798",
+        "measurement_status": "MODEL_DERIVED_EXPLORATORY",
+        "n_paired_items": 223,
+        "output_change_direction": "NUMERATOR_ADDED_RELATIVE_TO_DENOMINATOR",
+        "paired_coverage": 0.223,
+        "permutation_p": 1.0,
+        "primary_family": false
+      }
+    }
+  ],
+  "frozen_table_summary": [
+    {
+      "result_family": "RQ2",
+      "rows": 40,
+      "sha256": "6a62a5fc2f45b1ccecd244a24d35d30198c05403195abddd7f14b615f026a971",
+      "source_file": "RQ2_results.csv"
+    },
+    {
+      "result_family": "RQ3",
+      "rows": 4,
+      "sha256": "19247d8ab604f52a3396d780061d2c902c295f78e48d622475b30e39b30de73b",
+      "source_file": "RQ3_results.csv"
+    },
+    {
+      "result_family": "RQ5",
+      "rows": 40,
+      "sha256": "85abbd104d5fadcbfe5cf9b8029da66f4d97465c2cd4a6dc6db700ab9948848c",
+      "source_file": "RQ5_results.csv"
+    },
+    {
+      "result_family": "RQ4",
+      "rows": 15,
+      "sha256": "cc575e36b81560dced1d4b6441ccdc59446aa84dda5ceb6944af6101e258f6ac",
+      "source_file": "RQ4_results.csv"
+    },
+    {
+      "result_family": "RQ4_profiles",
+      "rows": 150,
+      "sha256": "af889479fc2056649a4bfcc9933adbcb15dc605ca869d6134bc0d6242468f16b",
+      "source_file": "RQ4_space_profiles.csv"
+    },
+    {
+      "result_family": "RQ4_association_status",
+      "rows": 1,
+      "sha256": "4204295e882bbc7e5afc6d09d9b34d701f4eae277b7b4ad6d8ea4dc1c8979215",
+      "source_file": "RQ4_association_status.csv"
+    }
+  ],
+  "interpretation_boundary": "Frozen VLM-output and distributional text results only; no human-equivalence, lived-experience, cognitive, dream-causation, or user-benefit claim is authorized.",
+  "new_human_data_collected": false,
+  "results_freeze_status": "RESULTS_FROZEN_PUBLIC_DATA_ONLY",
+  "source_results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "source_results_ledger_sha256": "24506e04a303ef2bffce97ba0b448f2232198d1146e049469860a97d26eaa5c2",
+  "status": "PAPER_FACT_PACKET_FROM_RESULTS_FREEZE"
+}

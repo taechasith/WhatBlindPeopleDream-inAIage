@@ -31,6 +31,7 @@ EXPECTED_RESULTS_STATUS = "RESULTS_FROZEN_PUBLIC_DATA_ONLY"
 EXPECTED_PACKET_STATUS = "PAPER_FACT_PACKET_FROM_RESULTS_FREEZE"
 EXPECTED_PACKET_MANIFEST_STATUS = "PAPER_FACT_PACKET_FROZEN_FROM_RESULTS_FREEZE"
 EXPECTED_FAMILIES = ("RQ2", "RQ3", "RQ4", "RQ5")
+FACT_FAMILIES = EXPECTED_FAMILIES + ("RQ4_profiles", "RQ4_association_status")
 FORBIDDEN_SELECTION_TERMS = {
     "effect", "effect_size", "ci", "ci_low", "ci_high", "p", "p_value",
     "permutation_p", "fdr", "fdr_q", "significance", "significant", "direction",
@@ -112,9 +113,9 @@ def validate_results_and_packet(
         fact_id = fact.get("fact_id")
         family = fact.get("result_family")
         values = fact.get("values")
-        if not isinstance(fact_id, str) or not re.fullmatch(r"RQ[2345]_\d{4}", fact_id):
+        if not isinstance(fact_id, str) or not re.fullmatch(r"(?:RQ[2345]|RQ4_profiles|RQ4_association_status)_\d{4}", fact_id):
             fail("paper fact packet contains an invalid fact identifier")
-        if family not in EXPECTED_FAMILIES or fact_id in facts or not isinstance(values, dict):
+        if family not in FACT_FAMILIES or fact_id in facts or not isinstance(values, dict):
             fail("paper fact packet has duplicate or malformed fact provenance")
         facts[fact_id] = fact
     if packet.get("fact_count") != len(facts):

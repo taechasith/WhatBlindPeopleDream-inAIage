@@ -1,0 +1,84 @@
+{
+  "bibliography_sha256": "02b3eca9e131281d5758fb3fd17095fa8f9cdea0fd475cb75071a20c49b48821",
+  "boundaries": [
+    "Citation records are bibliographically audited; they do not expand the evidentiary scope of a source.",
+    "Protocols are not completed outcome evidence; preprints are not peer-reviewed evidence.",
+    "This audit does not make model-derived measurement into human judgment or lived experience."
+  ],
+  "checksums_sha256": "aeeab829e52d758e766a5dea14dfa78573c7f0e8b1f841ce2ec13bc09a1da382",
+  "citation_count": 6,
+  "citations": [
+    {
+      "claim_use": "background_context",
+      "classification": "journal_article",
+      "doi": "10.3390/brainsci13101394",
+      "evidence_boundary": "Historical DreamBank analysis of a defined congenital-blind corpus; it provides historical dream-expression context only and does not establish contemporary AI effects, BLV intent, cognitive equivalence, or a causal dream effect.",
+      "key": "KANG2023",
+      "paper_id": "KANG2023",
+      "peer_review_status": "peer_reviewed",
+      "verification_status": "PASS"
+    },
+    {
+      "claim_use": "background_context",
+      "classification": "conference_article",
+      "doi": "10.1145/3706598.3714210",
+      "evidence_boundary": "Ecological context on visually impaired users interacting with large multimodal models; it does not establish a blind-dream effect, cognitive change, or the effectiveness of the current frozen intervention.",
+      "key": "XIE2025",
+      "paper_id": "XIE2025",
+      "peer_review_status": "peer_reviewed",
+      "verification_status": "PASS"
+    },
+    {
+      "claim_use": "methodological_context",
+      "classification": "conference_article",
+      "doi": "10.18653/v1/2022.emnlp-main.309",
+      "evidence_boundary": "Accessibility-description evaluation context showing limits of reference-only evaluation; it is not dream evidence and does not validate this study's computational measurements as human judgment.",
+      "key": "KREISS2022",
+      "paper_id": "KREISS2022",
+      "peer_review_status": "peer_reviewed",
+      "verification_status": "PASS"
+    },
+    {
+      "claim_use": "external_validation_context",
+      "classification": "workshop_article",
+      "doi": "10.18653/v1/2024.nlp4pi-1.26",
+      "evidence_boundary": "Peer-reviewed workshop article on blind and low-vision image-description preferences; it supplies bounded external BLV-preference context and does not make caption similarity a BLV preference measure for the current outputs.",
+      "key": "KAPUR2024",
+      "paper_id": "KAPUR2024",
+      "peer_review_status": "peer_reviewed_workshop",
+      "verification_status": "PASS"
+    },
+    {
+      "claim_use": "external_validation_context",
+      "classification": "conference_article",
+      "doi": "10.18653/v1/2026.acl-long.251",
+      "evidence_boundary": "Accessibility-aware guidance dataset context used only as a separate external human-verified reference; it is not same-item ground truth for the frozen VizWiz outputs and does not evidence dream or cognitive effects.",
+      "key": "GUIDEDOG2026",
+      "paper_id": "GUIDEDOG2026",
+      "peer_review_status": "peer_reviewed",
+      "verification_status": "PASS"
+    },
+    {
+      "claim_use": "methodological_context",
+      "classification": "journal_article",
+      "doi": "10.1073/pnas.2519394122",
+      "evidence_boundary": "Methodological caution on testing model simulations against observed human evidence; it does not establish that synthetic annotations are human-equivalent, that models represent blind lived experience, or that this study collected human judgments.",
+      "key": "PATARANUTAPORN2025",
+      "paper_id": "PATARANUTAPORN2025",
+      "peer_review_status": "peer_reviewed",
+      "verification_status": "PASS"
+    }
+  ],
+  "doi_audit_sha256": "57fd4c3dd03d994b96c5016ea71070e9f0670191c80f0260007b06d99a7baa4a",
+  "generated_at_utc": "2026-10-12T08:44:24+00:00",
+  "generator_script_sha256": "a8d384dde04aae3bbed8caabdb5da7e6ac4ed4589513724312b5a7f40b1ad10d",
+  "metadata_sha256": "3689f11ac66c39baf7789d06761c984b32f2f9776d85e9021b1e0b0e115ca3e4",
+  "metadata_used_sha256": "c64e98fbdde1be0444372e653b038a697e18bf5d487fa365840ab1ab49a39c87",
+  "reference_traceability_sha256": "4f01bfe8562137f8d02ea2e0f1ae2504e7feb108293bcda35020a1e301f86dd1",
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "results_freeze_status": "RESULTS_FROZEN_PUBLIC_DATA_ONLY",
+  "schema_version": 1,
+  "scope": "post-results anonymous bibliography audit; no result estimation or interpretation",
+  "selection_sha256": "a36a11ef160b34d8e40208c24897456bb6e2c27ead4529a60731752028690e75",
+  "status": "REFERENCE_AUDIT_CLEAN_ANONYMOUS"
+}

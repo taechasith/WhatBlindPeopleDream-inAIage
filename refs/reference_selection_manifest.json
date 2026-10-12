@@ -1,0 +1,26 @@
+{
+  "alt_test_current_study": "NOT_APPLICABLE_TO_CURRENT_DESIGN",
+  "audited_metadata_sha256": "3689f11ac66c39baf7789d06761c984b32f2f9776d85e9021b1e0b0e115ca3e4",
+  "citation_count": 6,
+  "citation_keys": [
+    "KANG2023",
+    "XIE2025",
+    "KREISS2022",
+    "KAPUR2024",
+    "GUIDEDOG2026",
+    "PATARANUTAPORN2025"
+  ],
+  "condition_unblinded_once": true,
+  "doi_audit_sha256": "57fd4c3dd03d994b96c5016ea71070e9f0670191c80f0260007b06d99a7baa4a",
+  "generated_at_utc": "2026-10-12T08:44:24+00:00",
+  "generator_script_sha256": "966402b9da9c6253d72223bc28ed7c4c65aa091fd54a380a3152540f79273336",
+  "manuscript_render_policy_sha256": "9ed6fee6de41c12d1ffe207824f9190835f2518d1b92f1333173d4dff2040d7d",
+  "new_human_data_collected": false,
+  "reference_selection_policy_sha256": "698d54ae8369abc3f6eff510d52c8d157827a5afd5dc07e4de3820c7e7a63256",
+  "reference_selection_sha256": "a36a11ef160b34d8e40208c24897456bb6e2c27ead4529a60731752028690e75",
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "results_freeze_status": "RESULTS_FROZEN_PUBLIC_DATA_ONLY",
+  "schema_version": 1,
+  "scope": "predeclared anonymous citation selection only; no result values, result tables, raw outputs, synthetic labels, or condition mappings were read",
+  "status": "REFERENCE_SELECTION_FROZEN_ANONYMOUS"
+}
