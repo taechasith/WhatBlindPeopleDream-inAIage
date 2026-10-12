@@ -575,7 +575,8 @@ def main() -> None:
     for figure in plan["figures"]:
         artifact = f"figures/{figure['artifact']}"
         manifest["artifacts"][artifact] = sha256(temp / artifact)
-        manifest["artifacts"][f"{artifact}.alt.txt"] = sha256(temp / f"{artifact}.alt.txt")
+        alt_artifact = f"figures/{Path(figure['artifact']).with_suffix('.alt.txt').name}"
+        manifest["artifacts"][alt_artifact] = sha256(temp / alt_artifact)
     (temp / "MANUSCRIPT_RENDER_MANIFEST.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temp.replace(args.outdir)
     print(json.dumps({"status": manifest["status"], "facts": len(manifest["fact_ids_rendered"]), "figures": len(manifest["figures_rendered"])}, sort_keys=True))
