@@ -325,10 +325,10 @@ def make_findings(blocks: dict[str, list[dict[str, Any]]]) -> list[str]:
     _rq4 = blocks["RQ4"]
     _rq5 = blocks["RQ5"]
     findings = [
-        "RQ2: task-answer and spatial-relation output properties were retained separately for both frozen judges under intent minus generic AI. Figure 2 displays the frozen estimates and the provenance ledger retains construct status.",
-        "RQ3: released human-answer string coverage and caption-token overlap were retained for intent minus generic AI. These are bounded human-reference alignment measures, not BLV preference or human ratings.",
-        "RQ4: DreamSpace-IntentSpace and HumanSpace-accessibility-steered-AISpace comparisons were retained under the shared textual ontology. Lower distance denotes text-profile resemblance only.",
-        "RQ5: identity and social-intent inference properties were retained separately for both frozen judges under accessibility minus intent AI. They are model-derived text measurements, not measured harm or lived experience.",
+        "RQ2: task-answer and spatial properties were preselected for the intent-versus-generic contrast; Figure 2 reports frozen computational estimates.",
+        "RQ3: human-answer and caption overlap quantify bounded external human-reference alignment, not preference or ratings.",
+        "RQ4: Dream/intent and human-caption/AI distances compare text profiles only, not cognition or accessibility value.",
+        "RQ5: identity and social-intent inference are model-derived output properties, not measured harms or lived experience.",
     ]
     return [clean_text(item, f"generated finding {index}", 260) for index, item in enumerate(findings)]
 
