@@ -1,0 +1,36 @@
+{
+  "anonymous_review": true,
+  "artifacts": {
+    "MANUSCRIPT_RENDER_PLAN_RATIONALE.md": "65da7a41003fa35d10f5e6600e234b62b2f4f1a7b9e264dedf3ecb19382c4641",
+    "RENDER_PLAN_SELECTION_TRACE.csv": "5e5e049edd8d1cad9abaedff3611a41bf05ca5673695b252f4d2246046870f62",
+    "manuscript_render_plan.json": "e9098a03220cee1bb864512384922a2ac126d0700ca0c2da61d3be00649d84ce"
+  },
+  "fact_packet_manifest_sha256": "a32752feb913e5135cc41f33bc14c1f11c71ac39464d9b6382e0493d0d2eaf8a",
+  "figure_manifest_sha256": "ce9e10d8a886281c52b6c4b77c5ffc122c68a50321bed1d574b077790a7db5c9",
+  "new_human_data_collected": false,
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "script_sha256": "15a657e56fb3b7fceff8292ed4f95fc7a0f98e695b87e9f822f35d1b3fc222c1",
+  "selected_fact_ids": [
+    "RQ2_0013",
+    "RQ2_0033",
+    "RQ2_0011",
+    "RQ2_0031",
+    "RQ3_0001",
+    "RQ3_0003",
+    "RQ4_0001",
+    "RQ4_0012",
+    "RQ5_0008",
+    "RQ5_0028",
+    "RQ5_0010",
+    "RQ5_0030"
+  ],
+  "selected_figures": [
+    "figure_1_reciprocal_cognitive_sensing_loop.png",
+    "figure_2_prompt_condition_effects.png",
+    "figure_4_representational_space_distances.png"
+  ],
+  "selection_basis": "fixed semantic keys only; no effect, uncertainty, p value, FDR, direction, or ranking was used",
+  "selection_policy_id": "anonymous_chi_render_selection_v1",
+  "selection_policy_sha256": "9ed6fee6de41c12d1ffe207824f9190835f2518d1b92f1333173d4dff2040d7d",
+  "status": "ANONYMOUS_MANUSCRIPT_RENDER_PLAN_FROZEN_FROM_RESULTS_FREEZE"
+}

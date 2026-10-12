@@ -1,0 +1,81 @@
+{
+  "citation_keys": [
+    "KANG2023",
+    "XIE2025",
+    "KREISS2022",
+    "KAPUR2024",
+    "GUIDEDOG2026",
+    "PATARANUTAPORN2025"
+  ],
+  "fact_packet_manifest_sha256": "a32752feb913e5135cc41f33bc14c1f11c71ac39464d9b6382e0493d0d2eaf8a",
+  "figure_manifest_sha256": "ce9e10d8a886281c52b6c4b77c5ffc122c68a50321bed1d574b077790a7db5c9",
+  "figures": [
+    {
+      "artifact": "figure_1_reciprocal_cognitive_sensing_loop.png",
+      "caption": "Conceptual architecture connecting DreamSpace, BLV-originating intent, frozen AI mediation, and the accessible information environment. The only tested intervention is prompt condition on AI output; cognition and dream change remain untested.",
+      "fact_ids": []
+    },
+    {
+      "artifact": "figure_2_prompt_condition_effects.png",
+      "caption": "Predeclared within-item paired computational measurements for the user-intent prompt contrast. The two frozen measurement judges are displayed separately; values describe output-text properties rather than human judgment.",
+      "fact_ids": [
+        "RQ2_0013",
+        "RQ2_0033",
+        "RQ2_0011",
+        "RQ2_0031"
+      ]
+    },
+    {
+      "artifact": "figure_4_representational_space_distances.png",
+      "caption": "Distributional distances among historical dream-report expression, BLV-originating questions, human captions, and AI text. Lower distance denotes only closer measured text-profile distributions, not cognitive similarity or accessibility value.",
+      "fact_ids": [
+        "RQ4_0001",
+        "RQ4_0012"
+      ]
+    }
+  ],
+  "impact_scope": "The paper discusses design implications for how systems expose task-relevant, spatial, uncertainty, and social information. It does not report perceived benefit, lived experience, measured harm, cognitive change, or a dream effect.",
+  "method_scope": "We analyze released research datasets and a frozen within-item VLM intervention with no new human data collection. Synthetic annotations are computational measurements, not human judgments; released human-labelled datasets provide bounded external calibration only where their labels directly support the construct.",
+  "motivation": "This public-data study connects historical blind dream expression, BLV-originating information-seeking questions, human accessibility references, and the information made available by a frozen multimodal AI system. It tests a prompt intervention on model output while separating distributional comparison from claims about cognition or lived experience.",
+  "render_plan_generator_sha256": "15a657e56fb3b7fceff8292ed4f95fc7a0f98e695b87e9f822f35d1b3fc222c1",
+  "result_blocks": [
+    {
+      "fact_ids": [
+        "RQ2_0013",
+        "RQ2_0033",
+        "RQ2_0011",
+        "RQ2_0031"
+      ],
+      "family": "RQ2"
+    },
+    {
+      "fact_ids": [
+        "RQ3_0001",
+        "RQ3_0003"
+      ],
+      "family": "RQ3"
+    },
+    {
+      "fact_ids": [
+        "RQ4_0001",
+        "RQ4_0012"
+      ],
+      "family": "RQ4"
+    },
+    {
+      "fact_ids": [
+        "RQ5_0008",
+        "RQ5_0028",
+        "RQ5_0010",
+        "RQ5_0030"
+      ],
+      "family": "RQ5"
+    }
+  ],
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "review_stage": "ANONYMOUS_REVIEW",
+  "schema_version": 1,
+  "selection_basis": "fixed semantic keys only; no effect, uncertainty, p value, FDR, direction, or ranking was used",
+  "selection_policy_sha256": "9ed6fee6de41c12d1ffe207824f9190835f2518d1b92f1333173d4dff2040d7d",
+  "title": "What Blind People Dream, Ask, and What AI Tells Them: A Public-Data Study of Sensory Mediation in the AI Age"
+}
