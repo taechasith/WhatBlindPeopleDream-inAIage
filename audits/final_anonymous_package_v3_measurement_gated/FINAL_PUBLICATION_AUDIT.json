@@ -1,0 +1,23 @@
+{
+  "audit_script_sha256": "1d2f7a778dd01fee3ae5d44dc0a90f9270a7fb7fee1da96e4feb8887fa986cfa",
+  "errors": 0,
+  "inputs": {
+    "claim_ledger": "paper\\anonymous\\publication_trace_v3_measurement_gated\\CLAIM_TRACEABILITY.csv",
+    "doi_audit": "refs\\doi_audit.csv",
+    "fact_packet_dir": "paper\\anonymous\\generated",
+    "figures_dir": "figures\\final_public_data_v1",
+    "identity_patterns": "private\\anonymous_release_forbidden_patterns.txt",
+    "manuscript_dir": "paper\\anonymous\\build\\review_source_v2_measurement_gated",
+    "manuscript_pdf": "paper\\anonymous\\build\\pdf_review_v2_measurement_gated\\main.pdf",
+    "page_accounting": "paper\\anonymous\\publication_trace_v3_measurement_gated\\PAGE_ACCOUNTING.json",
+    "poster_content": "poster\\anonymous\\content_plan_v2_measurement_gated\\POSTER_CONTENT.json",
+    "poster_pdf": "poster\\anonymous\\build\\a0_review_v5_measurement_gated\\A0_anonymous_poster.pdf",
+    "reference_traceability": "paper\\anonymous\\reference_audit\\REFERENCE_TRACEABILITY.csv",
+    "results_freeze": "results\\results_freeze\\RESULTS_FREEZE.json",
+    "traceability_manifest": "paper\\anonymous\\publication_trace_v3_measurement_gated\\PUBLICATION_TRACEABILITY_MANIFEST.json"
+  },
+  "report_sha256": "dd1a8c5ee0ca9dac15a5169cbf1704eb7877d5e78d8715b763eeb01fb9d0d3f3",
+  "scope": "post-results anonymous publication audit; no new human data and no result estimation",
+  "status": "FINAL_PUBLICATION_AUDIT_PASS",
+  "warnings": 4
+}

@@ -1,0 +1,19 @@
+severity,check,status,path,detail
+PASS,RESULTS_FREEZE,PASS,results\results_freeze\RESULTS_FREEZE.json,public-data results freeze status is present
+PASS,PUBLIC_DATA_SCOPE,PASS,results\results_freeze\RESULTS_FREEZE.json,freeze attests to zero new human data collection
+PASS,UNBLINDING_PROVENANCE,PASS,results\results_freeze\RESULTS_FREEZE.json,freeze attests to the authorized one-time unblinding
+PASS,RESULTS_LEDGER,PASS,results\results_freeze\RESULTS_LEDGER.csv,6 frozen result artifacts reconcile to the ledger
+PASS,FACT_PACKET,PASS,paper\anonymous\generated,250 ledger-backed fact rows are available
+PASS,TRACEABILITY_PROVENANCE,PASS,paper\anonymous\publication_trace_v3_measurement_gated\PUBLICATION_TRACEABILITY_MANIFEST.json,post-render claim and page records bind to this frozen manuscript and source provenance
+PASS,NUMERIC_TRACEABILITY,PASS,paper\anonymous\publication_trace_v3_measurement_gated\CLAIM_TRACEABILITY.csv,40 claimed numeric assertions reconcile to frozen fact IDs
+WARNING,CAUSAL_BOUNDARY,REVIEW,paper\anonymous\build\review_source_v2_measurement_gated\main.tex,negated/limited claim retained for review: AI_CHANGES_DREAMS at line 32: AI output; cognition and dream change remain untested.} \Description{Conceptual diagram. Historical dream
+WARNING,CAUSAL_BOUNDARY,REVIEW,paper\anonymous\build\review_source_v2_measurement_gated\main.tex,negated/limited claim retained for review: AI_CHANGES_DREAMS at line 128: AI changes dreams
+WARNING,CAUSAL_BOUNDARY,REVIEW,paper\anonymous\build\review_source_v2_measurement_gated\main.tex,"negated/limited claim retained for review: AI_CHANGES_COGNITION at line 128: AI changes dreams, cognition, neural organization"
+PASS,MANUSCRIPT_SOURCE,PASS,paper\anonymous\build\review_source_v2_measurement_gated,scanned 5 anonymous manuscript text files
+PASS,FIGURES,PASS,figures\final_public_data_v1,all five required final figures have manifest hashes and matching alt text
+WARNING,MANUSCRIPT_PDF,REVIEW,paper\anonymous\build\pdf_review_v2_measurement_gated\main.pdf,PDF /Author metadata is blank rather than explicit Anonymous
+PASS,MANUSCRIPT_PDF,PASS,paper\anonymous\build\pdf_review_v2_measurement_gated\main.pdf,PDF metadata and 5 page(s) were inspected
+PASS,PAPER_PAGE_LIMIT,PASS,paper\anonymous\publication_trace_v3_measurement_gated\PAGE_ACCOUNTING.json,4 main page(s) plus 1 reference page(s) are recorded
+PASS,POSTER_PDF,PASS,poster\anonymous\build\a0_review_v5_measurement_gated\A0_anonymous_poster.pdf,PDF metadata and 1 page(s) were inspected
+PASS,REFERENCE_AUDIT,PASS,paper\anonymous\reference_audit\REFERENCE_TRACEABILITY.csv,6 cited works reconcile to audited reference records
+PASS,REPRODUCIBILITY,PASS,,9 required provenance/reproduction files exist

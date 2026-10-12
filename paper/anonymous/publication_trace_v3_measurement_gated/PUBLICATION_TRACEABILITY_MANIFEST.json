@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "CLAIM_TRACEABILITY.csv": "78660945067683a00d30eba0f360f6ae1c20d3427f6ad935d6f0b7ad6a2d5c01",
+    "NON_NUMERIC_CLAIM_EXCLUSIONS.csv": "9e1f93c14645f550c16166f3836238b2d9f3a2f07d282dd87e88e2d79a0f8f9e",
+    "PAGE_ACCOUNTING.json": "cb5803a3f99dc5d367a97e8a5b28b81f74ac89e3cf3dd927837ae224c6285bf5"
+  },
+  "boundary": "This ledger binds frozen numeric artifacts only. It does not make computational measurement into human judgment or expand the study's causal scope.",
+  "claim_count": 40,
+  "fact_packet_manifest_sha256": "a32752feb913e5135cc41f33bc14c1f11c71ac39464d9b6382e0493d0d2eaf8a",
+  "manuscript_pdf_sha256": "3ae3587a38ee38e8f51222951c463f58a1bd75165f04676672234e1db5561d83",
+  "manuscript_render_manifest_sha256": "160f7549ee0b94be0afe7d83808c3f56b9bb9499d3f398955d98a7d0b0148cf5",
+  "new_human_data_collected": false,
+  "non_numeric_claim_exclusion_count": 80,
+  "page_accounting": {
+    "call_checked_date": "2026-10-12",
+    "call_url": "https://chi2027.acm.org/authors/posters/",
+    "main_pages_excluding_references": 4,
+    "reference_pages": 1,
+    "total_pdf_pages": 5
+  },
+  "poster_content_manifest_sha256": "2eee3933103b3c76d727f03e7966e8973f9921417358a634e7e16a414b578129",
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "script_sha256": "50a396396028e7b7c0979e833f422c00c60497623dc025cafa73c25e6f0b4f69",
+  "status": "PUBLICATION_TRACEABILITY_FROZEN_FROM_RENDERED_ARTIFACTS"
+}

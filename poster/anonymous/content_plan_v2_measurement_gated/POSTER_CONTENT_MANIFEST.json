@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "POSTER_CONTENT.json": "b86a863ecee4c189d82ea58954a236d2d83ade8c9ff6846013701151449ac727",
+    "POSTER_CONTENT_RATIONALE.md": "a52e87b971598c8dd375773fb858ce7c5a51a0e6f65af98a3cf75391fda07664",
+    "POSTER_CONTENT_SELECTION_TRACE.csv": "9706a4c477bd5907f5430dd2b7ea2cac3c8c4cd572902dccd9f3461f5bdadc95"
+  },
+  "design_anchor": {
+    "frozen_judge_count": 2,
+    "locked_items": 1000,
+    "prompt_conditions": 3
+  },
+  "fact_packet_manifest_sha256": "a32752feb913e5135cc41f33bc14c1f11c71ac39464d9b6382e0493d0d2eaf8a",
+  "figure_manifest_sha256": "ce9e10d8a886281c52b6c4b77c5ffc122c68a50321bed1d574b077790a7db5c9",
+  "new_human_data_collected": false,
+  "required_figures": [
+    "figure_1_reciprocal_cognitive_sensing_loop.svg",
+    "figure_2_prompt_condition_effects.svg",
+    "figure_3_human_reference_alignment.svg",
+    "figure_4_representational_space_distances.svg",
+    "figure_5_largest_output_property_changes.svg"
+  ],
+  "results_freeze_sha256": "e0aa7a206fc64d7613270baee26e979615c606424d30ffe2d482e9162a53e560",
+  "review_stage": "ANONYMOUS_REVIEW",
+  "script_sha256": "a24d877de47e624b8a223adcbcca2b9901c1f8d4f59be7d5a540e52d5b595da6",
+  "selected_fact_ids": [
+    "RQ2_0013",
+    "RQ2_0033",
+    "RQ2_0011",
+    "RQ2_0031",
+    "RQ3_0001",
+    "RQ3_0003",
+    "RQ4_0001",
+    "RQ4_0012",
+    "RQ5_0008",
+    "RQ5_0028",
+    "RQ5_0010",
+    "RQ5_0030"
+  ],
+  "selection_basis": "fixed semantic keys only; no effect, uncertainty, p value, FDR, direction, or ranking was used",
+  "selection_policy_id": "anonymous_a0_poster_content_selection_v1",
+  "selection_policy_sha256": "48345909309a489df0b30bcd8956aa7a1663846d6cc48bb08d0bedacac1657d1",
+  "status": "ANONYMOUS_A0_POSTER_CONTENT_FROZEN_FROM_RESULTS_FREEZE"
+}
