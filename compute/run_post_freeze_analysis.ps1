@@ -22,6 +22,7 @@ $spaceOutdir = Join-Path $root 'results\representational_space_v1'
 $resultsFreezeDir = Join-Path $root 'results\results_freeze'
 $figureOutdir = Join-Path $root 'figures\final_public_data_v1'
 $technicalRecovery = Join-Path $root 'results\coded_data_recovery\TECHNICAL_RECOVERY_AUTHORIZATION.json'
+$downstreamRecovery = Join-Path $root 'results\downstream_technical_recovery\DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZATION.json'
 
 if (-not (Test-Path -LiteralPath $analysisPython)) { throw 'Analysis Python is unavailable.' }
 
@@ -64,8 +65,12 @@ if (-not (Test-ReceiptStatus -Path $analysisReceipt -ExpectedStatus 'RQ2_RQ3_RQ5
 $spaceReceipt = Join-Path $spaceOutdir 'RQ4_MANIFEST.json'
 Assert-EmptyOrReceipt -Directory $spaceOutdir -Receipt $spaceReceipt -Status 'RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY'
 if (-not (Test-ReceiptStatus -Path $spaceReceipt -ExpectedStatus 'RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY')) {
+    $downstreamArgs = @()
+    if (Test-Path -LiteralPath $downstreamRecovery) {
+        $downstreamArgs = @('--downstream-recovery', $downstreamRecovery)
+    }
     & $analysisPython (Join-Path $root 'code\28_run_representational_space_analysis.py') `
-        --coded-data-freeze $freeze --post-freeze-analysis $outdir --outdir $spaceOutdir
+        --coded-data-freeze $freeze --post-freeze-analysis $outdir --outdir $spaceOutdir @downstreamArgs
     if ($LASTEXITCODE -ne 0) { throw 'Post-freeze RQ4 representational-space analysis failed.' }
 }
 
@@ -74,7 +79,7 @@ Assert-EmptyOrReceipt -Directory $resultsFreezeDir -Receipt $resultsReceipt -Sta
 if (-not (Test-ReceiptStatus -Path $resultsReceipt -ExpectedStatus 'RESULTS_FROZEN_PUBLIC_DATA_ONLY')) {
     & $analysisPython (Join-Path $root 'code\29_freeze_public_data_results.py') `
         --coded-data-freeze $freeze --post-freeze-analysis $outdir `
-        --space-analysis $spaceOutdir --outdir $resultsFreezeDir
+        --space-analysis $spaceOutdir --outdir $resultsFreezeDir @downstreamArgs
     if ($LASTEXITCODE -ne 0) { throw 'Public-data results freeze failed.' }
 }
 

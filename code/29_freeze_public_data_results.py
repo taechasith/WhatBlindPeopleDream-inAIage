@@ -42,7 +42,11 @@ def require_columns(frame: pd.DataFrame, columns: set[str], name: str) -> None:
         fail(f"{name} schema is incomplete: {', '.join(sorted(missing))}")
 
 
-def load_coded_sources(coded_path: Path, coded: dict[str, object]) -> dict[str, tuple[Path, str]]:
+def load_coded_sources(
+    coded_path: Path,
+    coded: dict[str, object],
+    recovery: dict[str, object] | None = None,
+) -> dict[str, tuple[Path, str]]:
     ledger_path = coded_path.parent / "CODED_DATA_CHECKSUMS.csv"
     if not ledger_path.is_file() or coded.get("coded_data_checksums_sha256") != sha256(ledger_path):
         fail("coded-data checksum ledger is unavailable or changed")
@@ -54,13 +58,54 @@ def load_coded_sources(coded_path: Path, coded: dict[str, object]) -> dict[str, 
     for row in ledger.to_dict("records"):
         path = Path(str(row["path"]))
         digest = str(row["sha256"])
-        if not path.is_file() or sha256(path) != digest:
+        actual = sha256(path) if path.is_file() else ""
+        permitted_recovery = (
+            recovery is not None
+            and str(row["artifact"]) == "analysis_script"
+            and digest == str(recovery["original_analysis_script_sha256"])
+            and actual == str(recovery["replacement_analysis_script_sha256"])
+        )
+        if not path.is_file() or (actual != digest and not permitted_recovery):
             fail(f"coded-data committed source is unavailable or changed: {row['artifact']}")
-        sources[str(row["artifact"])] = (path, digest)
+        sources[str(row["artifact"])] = (path, actual if permitted_recovery else digest)
     for name, digest in dict(coded.get("source_checksums", {})).items():
-        if name not in sources or sources[name][1] != str(digest):
+        permitted_recovery = (
+            recovery is not None
+            and name == "analysis_script"
+            and str(digest) == str(recovery["original_analysis_script_sha256"])
+            and sources.get(name, (None, None))[1] == str(recovery["replacement_analysis_script_sha256"])
+        )
+        if name not in sources or (sources[name][1] != str(digest) and not permitted_recovery):
             fail(f"coded-data receipt does not reconcile committed source: {name}")
     return sources
+
+
+def recovery_from_analysis(manifest: dict[str, object], coded_path: Path) -> dict[str, object] | None:
+    value = manifest.get("unblinding_technical_recovery_receipt")
+    if value in (None, ""):
+        return None
+    path = Path(str(value))
+    if not path.is_file():
+        fail("analysis technical recovery receipt is unavailable")
+    record = read_receipt(path, "TECHNICAL_RECOVERY_AUTHORIZED_PRE_RESULT_ONLY")
+    if record.get("condition_effects_estimated_before_recovery") is not False:
+        fail("analysis recovery receipt does not establish a pre-result failure")
+    if record.get("original_coded_data_freeze_sha256") != sha256(coded_path):
+        fail("analysis recovery receipt does not match coded-data freeze")
+    return record
+
+
+def downstream_recovery(path: Path | None, coded_path: Path, post_manifest: Path) -> dict[str, object] | None:
+    if path is None:
+        return None
+    if not path.is_file():
+        fail("downstream technical recovery receipt is unavailable")
+    record = read_receipt(path, "DOWNSTREAM_TECHNICAL_RECOVERY_AUTHORIZED_PRE_RQ4_ONLY")
+    if record.get("coded_data_freeze_sha256") != sha256(coded_path) or record.get("post_analysis_manifest_sha256") != sha256(post_manifest):
+        fail("downstream technical recovery receipt does not match frozen upstream artifacts")
+    if record.get("condition_effects_reinterpreted_before_recovery") is not False:
+        fail("downstream technical recovery receipt violates the pre-interpretation boundary")
+    return record
 
 
 def require_analysis_ledger(
@@ -211,6 +256,7 @@ def main() -> None:
     parser.add_argument("--coded-data-freeze", type=Path, required=True)
     parser.add_argument("--post-freeze-analysis", type=Path, required=True)
     parser.add_argument("--space-analysis", type=Path, required=True)
+    parser.add_argument("--downstream-recovery", type=Path, default=None)
     parser.add_argument("--outdir", type=Path, required=True)
     args = parser.parse_args()
     if args.outdir.exists():
@@ -221,7 +267,21 @@ def main() -> None:
     space = read_receipt(args.space_analysis / "RQ4_MANIFEST.json", "RQ4_COMPLETE_DISTRIBUTIONAL_PUBLIC_DATA_ONLY")
     if post.get("condition_unblinded_once") is not True or post.get("frozen_coded_data_status") != coded.get("status"):
         fail("post-freeze analysis does not document the one authorized unblinding")
-    sources = load_coded_sources(args.coded_data_freeze, coded)
+    recovery = recovery_from_analysis(post, args.coded_data_freeze)
+    downstream = downstream_recovery(args.downstream_recovery, args.coded_data_freeze, post_manifest_path)
+    if downstream is not None:
+        replacements = downstream.get("replacements", {})
+        if replacements.get("analysis_script", {}).get("replacement_sha256") != str(recovery.get("replacement_analysis_script_sha256") if recovery else ""):
+            fail("downstream recovery does not chain to the initial analysis recovery")
+        recovery = {"original_analysis_script_sha256": replacements["analysis_script"]["original_sha256"], "replacement_analysis_script_sha256": replacements["analysis_script"]["replacement_sha256"]}
+    sources = load_coded_sources(args.coded_data_freeze, coded, recovery)
+    if downstream is not None:
+        replacement = downstream["replacements"].get("results_freeze_script", {})
+        expected = sources["results_freeze_script"][1]
+        actual = sha256(Path(__file__).resolve())
+        if replacement.get("original_sha256") != expected or replacement.get("replacement_sha256") != actual:
+            fail("downstream recovery does not authorize this results-freeze script")
+        sources["results_freeze_script"] = (Path(__file__).resolve(), actual)
     if Path(__file__).resolve() != sources["results_freeze_script"][0].resolve() or sha256(Path(__file__).resolve()) != sources["results_freeze_script"][1]:
         fail("results-freeze script differs from its pre-unblinding commitment")
     config_path, _ = sources["analysis_config"]
