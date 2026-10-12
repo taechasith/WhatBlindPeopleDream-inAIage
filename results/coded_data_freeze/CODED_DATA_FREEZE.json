@@ -1,0 +1,59 @@
+{
+  "alt_test_current_study": "NOT_APPLICABLE_TO_CURRENT_DESIGN",
+  "authorization_after_freeze": "Condition mapping may be unblinded once for the prespecified RQ2--RQ5 analysis. This freeze does not authorize human-equivalence, preference, lived-experience, or cognitive-equivalence claims.",
+  "coded_data_checksums_sha256": "f8bfe465d0e698c72e1fadd4224b63826340417d8a76f2950722d67e10e636f1",
+  "condition_labels_exposed": false,
+  "construct_status_counts": {
+    "COMPUTATIONAL_SECONDARY": 23,
+    "MEASUREMENT_UNSTABLE": 7,
+    "MODEL_DERIVED_EXPLORATORY": 3,
+    "PUBLIC_HUMAN_BENCHMARKED": 3
+  },
+  "constructs_per_judge": 10,
+  "expected_labels_per_judge": 30000,
+  "frozen_judges": [
+    "Qwen2.5_1.5B_989aa798",
+    "Phi_3.5_mini_2fe19245"
+  ],
+  "limitations": "Synthetic annotation is a computational instrument. Existing public human-labelled sources provide external calibration only; they are not same-item ratings of the frozen VLM outputs.",
+  "new_human_data_collected": false,
+  "packet_rows": 3000,
+  "source_checksums": {
+    "analysis_config": "894b66ccbafb6c237e014903ec04b6b0e437288a84b31ca32a887a0e1e490c8a",
+    "analysis_script": "14f33b04612964614d63ef3d27707910924f64dbcb348a194209da3524f929c2",
+    "audit_manifest": "521bccaa05981ac67ef3b3b476fe481a5ced16993c9faf5c92a037dff7f088a4",
+    "audit_metrics": "45217112dc43f8878bc6d59364b44ef5a2941d4a88ec47ace7579ef1e596925c",
+    "blinded_packet": "6e8ecbe0ef389c5c9cd501d5f2e9461b62b2f4c2e507f3c48309bd41811d1cfe",
+    "calibration_matrix": "213b8a29a16ca1c689e879307f816450c8e5d0f99de146857e0ada785980c8cf",
+    "calibration_receipt": "a091a3e860547829707b283e6aa92dbb3958b016a5f8e7d780269faf2af251f0",
+    "captions": "c6d344ca2b44524f34da14f4c3c836fe215cbbac1792323e2539a4d0e0561f70",
+    "coded_data_freeze_script": "39b15bf1f908adf18295d18f7b1a775a358774db7bbee881a13e930b60ec5cfb",
+    "construct_strength": "f8add4a50a8dfb934b2c11fb3cbafc055a6753d4ecb3409af7eea713797ce87e",
+    "construct_strength_manifest": "80047109ef65ce7f455700839db51e9233a0bdfbb37aa9fd8431a17a9cecd9fb",
+    "disagreement_map": "3d989b270ac3a09bb5dbcf53345f17228538140b3fb15f040a8ab413d384c880",
+    "dreams": "36a7bce8809ac4923f0c1d444fef07ed5bcc3adbdc9a038538f00cb479daad81",
+    "figure_script": "b027d75cc121c4698e65c3477c8d0a005fb71357de77cf8ac83ae43cd7a346a6",
+    "frozen_sample": "e74198e8afbadf82a62743efba33f63b259c0aaaec3f65a58c157414b6efdb02",
+    "intent_corpus": "4de92338c40f700d2b875e8158d68d7c9fd41d2f926d79f35565f475568e82e2",
+    "lexical_codebook": "4559a4c85839fc76d96f1413e58d243021e768800c1fd4a2e2cddc38e848635c",
+    "mapping_commitment": "518d6ab6ffcb8e34223434f55c861099b733ced4c68e980559d7260aef8573d3",
+    "panel_checksums": "12b7c04e1925a66aa0a5107d25fa13562214d61ea4c35d1f0e96463b9bfa263e",
+    "panel_freeze": "6f8c82869e9466a62622b3fa8bc2ee5991a03da9747539b9f9819492c46f5391",
+    "panel_manifest": "c04d8248b529e327708d8233bf0f95ed0d1727558b5e0aada57083fab9a83734",
+    "primary_output_checksums": "1403e13c1f23ab2cd344c9ce09c52e20b80f9b3d55181d8a7f6b2f8af1d65fe5",
+    "primary_output_manifest": "5566ded0f4366030a875834edb81b0d38475536be85acb31ad4e78aca6ff3fa6",
+    "primary_outputs": "0bbfe6cff0d46dfe6587d5818cb3f7724e01251eb5c8b14e3ee99ec1d45a29be",
+    "results_freeze_script": "11ce65a4216c063a64e123002febf6bb7efee230b809695302d21b3c8efb374c",
+    "rq4_script": "f7bc9240d7af89c6114bc2179f22ebe2b11f32b5f31e27446f22170b700f2351",
+    "rule_anchor_manifest": "33c2a565466bd629abad6ee24540c49467b8cf1f533f829d0cd7c892fca3ac68",
+    "rule_anchor_summary": "73764c104ccb772f5e4bc84aae7b6ae243c09e5eac95d0405790e539c2076c83",
+    "subset_checksums": "6bcf51cdfe8451041060ad8f5b40aae7cd302285aa00fc251bb95a1f3709205e",
+    "subset_manifest": "1eb4c121b4ad8007fc87b33318d53cd77154d9964a7843bf36764559f73353c7",
+    "tier_matrix": "ac05a92c16198083214bc97eef81f2f88dbb4cb4527e3ea78d472f9b791aa67d"
+  },
+  "status": "CODED_DATA_FROZEN_PUBLIC_DATA_ONLY",
+  "technical_robustness_subsets": {
+    "exact_rerun_rows": 60,
+    "prompt_paraphrase_rows": 300
+  }
+}
