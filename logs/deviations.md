@@ -405,3 +405,31 @@ status.
 - **Confirmatory effect:** The frozen analysis script, mapping, data, results
   plan, ontology, and all source artifacts remain unchanged; this solely repairs
   deterministic local process launch.
+
+## 2026-10-12 -- Controlled technical recovery after authorized map access
+
+- **Original plan/implementation:** The post-freeze analysis runner created an
+  authorization ledger and parsed the committed condition map before validating
+  that the supplied synthetic-panel root matched the root recorded by the
+  coded-data freeze. A path comparison incorrectly expected the receipt
+  subdirectory rather than the canonical panel root, so the run stopped before
+  outputs, condition effects, or result files were created.
+- **New plan/implementation:** All non-private provenance and path checks now
+  precede map access. The runner permits one narrowly documented recovery only
+  when the original authorized ledger, coded-data freeze, map hash, and analysis
+  configuration hash match exactly; no completion receipt or result directory
+  exists; and a separate immutable technical-recovery receipt records the
+  failure boundary.
+- **Reason:** The condition map was already accessed once under the valid
+  coded-data authorization, but the initial process failed in technical
+  pre-analysis validation. Completing the prespecified run requires reading the
+  same committed bytes again; treating this as a new experiment or silently
+  restarting would be less transparent.
+- **Outcome visibility:** The initial error occurred before RQ2/RQ3/RQ5 result
+  creation. No condition-level statistic, table, figure, or interpretation was
+  inspected before this recovery amendment.
+- **Confirmatory effect:** The 1,000-item sample, 3,000 frozen VLM outputs,
+  prompts, generator, judges, ontology, frozen analysis configuration,
+  contrasts, and measurement statuses are unchanged. The final provenance will
+  disclose the technical recovery and retains the original ledger, map hash,
+  and recovery receipt.

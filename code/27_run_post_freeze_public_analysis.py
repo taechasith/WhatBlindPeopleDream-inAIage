@@ -154,8 +154,14 @@ def require_committed_path(committed: dict[str, tuple[Path, str]], name: str, su
         fail(f"supplied {name} does not match its pre-unblinding commitment")
 
 
-def create_unblinding_ledger(path: Path, *, freeze_path: Path, mapping: Path, config: Path) -> None:
-    """Atomically record the one authorized mapping use before parsing it."""
+def create_unblinding_ledger(path: Path, *, freeze_path: Path, mapping: Path, config: Path) -> Path | None:
+    """Record initial map access or a hash-bound technical recovery.
+
+    A recovery is permitted only when a prior authorized run wrote its started
+    ledger but failed before results/completion existed.  It is deliberately
+    explicit because the map will be read again from the same committed bytes;
+    it is not represented as a fresh blinded analysis or a second experiment.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     receipt = {
         "status": "UNBLINDING_STARTED_PUBLIC_DATA_ONLY",
@@ -172,8 +178,42 @@ def create_unblinding_ledger(path: Path, *, freeze_path: Path, mapping: Path, co
             stream.write("\n")
             stream.flush()
             os.fsync(stream.fileno())
-    except FileExistsError as exc:
-        raise ValueError("POST_FREEZE_ANALYSIS_FAILED: an unblinding ledger already exists; repeat mapping access is prohibited") from exc
+        return None
+    except FileExistsError:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        expected = {
+            "status": "UNBLINDING_STARTED_PUBLIC_DATA_ONLY",
+            "coded_data_freeze_sha256": sha256(freeze_path),
+            "mapping_sha256": sha256(mapping),
+            "analysis_config_sha256": sha256(config),
+        }
+        if any(existing.get(key) != value for key, value in expected.items()):
+            raise ValueError("POST_FREEZE_ANALYSIS_FAILED: existing unblinding ledger is incompatible with this recovery")
+        completion = path.with_name("UNBLINDING_COMPLETED_v1.json")
+        recovery = path.with_name("UNBLINDING_TECHNICAL_RECOVERY_v1.json")
+        if completion.exists():
+            raise ValueError("POST_FREEZE_ANALYSIS_FAILED: completed unblinding cannot be rerun")
+        recovery_record = {
+            "status": "UNBLINDING_TECHNICAL_RECOVERY_AUTHORIZED",
+            "reason": "The initial authorized run failed before result creation during a pre-analysis provenance-path check.",
+            "initial_ledger_sha256": sha256(path),
+            "coded_data_freeze_sha256": sha256(freeze_path),
+            "mapping_sha256": sha256(mapping),
+            "analysis_config_sha256": sha256(config),
+            "condition_effects_estimated_before_recovery": False,
+            "new_human_data_collected": False,
+        }
+        try:
+            with recovery.open("x", encoding="utf-8") as stream:
+                json.dump(recovery_record, stream, indent=2, sort_keys=True)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+        except FileExistsError:
+            prior = json.loads(recovery.read_text(encoding="utf-8"))
+            if prior != recovery_record:
+                raise ValueError("POST_FREEZE_ANALYSIS_FAILED: existing recovery receipt is incompatible")
+        return recovery
 
 
 def validate_frozen_labels(panel_manifest: pd.DataFrame, mapping_ids: set[str], constructs: set[str], judges: set[str]) -> pd.DataFrame:
@@ -236,11 +276,18 @@ def main() -> None:
     }.items():
         require_committed_path(committed, name, source)
 
-    # The ledger is created only after source-byte commitments are verified, but
-    # before the condition-bearing map is parsed. A failed run is intentionally
-    # not silently rerunnable because repeat mapping exposure is prohibited.
+    # Validate every non-private source and the canonical frozen-panel location
+    # before recording or parsing the condition-bearing map.
+    panel_manifest_path, _ = committed["panel_manifest"]
+    if args.panel_dir.resolve() != panel_manifest_path.parent.parent.resolve():
+        fail("supplied panel directory differs from the frozen panel commitment")
+
+    # The ledger is created only after source-byte commitments and all
+    # non-private path checks are verified, but before the condition-bearing map
+    # is parsed. A narrowly logged recovery is permitted only for an earlier
+    # authorized attempt that failed before any result creation.
     unblinding_ledger = DEFAULT_UNBLINDING_LEDGER
-    create_unblinding_ledger(unblinding_ledger, freeze_path=args.coded_data_freeze, mapping=args.mapping, config=args.config)
+    recovery_receipt = create_unblinding_ledger(unblinding_ledger, freeze_path=args.coded_data_freeze, mapping=args.mapping, config=args.config)
     # Check the private bytes once more immediately before its one authorized parse.
     require_committed_path(committed, "mapping_commitment", args.mapping)
 
@@ -275,9 +322,6 @@ def main() -> None:
     if len(unblinded) != len(mapping):
         fail("mapping/output join has missing or unmatched frozen rows")
 
-    panel_manifest_path, _ = committed["panel_manifest"]
-    if args.panel_dir.resolve() != panel_manifest_path.parent.resolve():
-        fail("supplied panel directory differs from the frozen panel commitment")
     packet_path, _ = committed["blinded_packet"]
     blinded_packet = pd.read_csv(packet_path, dtype=str, keep_default_na=False)
     if not {"blind_item_id", "output_text"}.issubset(blinded_packet.columns) or blinded_packet.blind_item_id.duplicated().any():
@@ -366,10 +410,14 @@ def main() -> None:
     eligibility.to_csv(args.outdir / "SYNTHETIC_MEASUREMENT_MISSINGNESS.csv", index=False)
     private_metrics_path = args.outdir / "private_human_reference_metrics.csv"
     unblinded[["sample_row_id", "model_id", "condition", "human_answer_mode_string_coverage", "human_caption_max_token_f1"]].to_csv(private_metrics_path, index=False)
-    analysis_checksums = pd.DataFrame({
-        "artifact": ["config", "coded_data_freeze", "mapping", "outputs", "sample", "captions", "construct_strength", "unblinding_ledger", "RQ2_results", "RQ3_results", "RQ5_results", "measurement_missingness", "private_human_reference_metrics"],
-        "sha256": [sha256(args.config), sha256(args.coded_data_freeze), sha256(args.mapping), sha256(args.outputs), sha256(args.sample), sha256(args.captions), sha256(args.construct_strength), sha256(unblinding_ledger), sha256(args.outdir / "RQ2_results.csv"), sha256(args.outdir / "RQ3_results.csv"), sha256(args.outdir / "RQ5_results.csv"), sha256(args.outdir / "SYNTHETIC_MEASUREMENT_MISSINGNESS.csv"), sha256(private_metrics_path)],
-    })
+    checksum_artifacts = ["config", "coded_data_freeze", "mapping", "outputs", "sample", "captions", "construct_strength", "unblinding_ledger"]
+    checksum_values = [sha256(args.config), sha256(args.coded_data_freeze), sha256(args.mapping), sha256(args.outputs), sha256(args.sample), sha256(args.captions), sha256(args.construct_strength), sha256(unblinding_ledger)]
+    if recovery_receipt is not None:
+        checksum_artifacts.append("unblinding_technical_recovery")
+        checksum_values.append(sha256(recovery_receipt))
+    checksum_artifacts += ["RQ2_results", "RQ3_results", "RQ5_results", "measurement_missingness", "private_human_reference_metrics"]
+    checksum_values += [sha256(args.outdir / "RQ2_results.csv"), sha256(args.outdir / "RQ3_results.csv"), sha256(args.outdir / "RQ5_results.csv"), sha256(args.outdir / "SYNTHETIC_MEASUREMENT_MISSINGNESS.csv"), sha256(private_metrics_path)]
+    analysis_checksums = pd.DataFrame({"artifact": checksum_artifacts, "sha256": checksum_values})
     checksums_path = args.outdir / "ANALYSIS_CHECKSUMS.csv"
     analysis_checksums.to_csv(checksums_path, index=False)
     completion_path = unblinding_ledger.with_name("UNBLINDING_COMPLETED_v1.json")
@@ -397,6 +445,7 @@ def main() -> None:
         "synthetic_label_rows": len(labels),
         "judges": sorted(labels.judge_id.unique().tolist()),
         "unblinding_ledger": str(unblinding_ledger),
+        "unblinding_technical_recovery_receipt": str(recovery_receipt) if recovery_receipt is not None else None,
         "unblinding_completion_receipt": str(completion_path),
         "analysis_checksums_sha256": sha256(checksums_path),
         "analysis_boundary": "VLM-output effects and bounded human-reference alignment only; no human-equivalence or lived-experience inference.",
