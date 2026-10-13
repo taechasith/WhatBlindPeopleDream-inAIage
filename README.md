@@ -2,8 +2,7 @@
 
 ## A public-data study of sensory mediation in the AI age
 
-This repository contains the reproducible research record for an anonymous
-CHI Poster-track study. It connects four representational spaces:
+This repository contains the reproducible research record. It connects four representational spaces:
 
 ```text
 DreamSpace  -> historical blind dream expression
